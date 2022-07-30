@@ -1,0 +1,13 @@
+:root {
+  --accent-color: hsl(226deg 100% 50%);
+  --global-background: hsl(0 0% 100%);
+  --global-foreground: hsl(0 0% 0%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-color: hsl(226deg 100% 50%);
+    --global-background: hsl(0 0% 0%);
+    --global-foreground: hsl(0 0% 100%);
+  }
+}

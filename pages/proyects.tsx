@@ -1,19 +1,16 @@
 import Head from "next/head";
 import { ProyectCard } from "../components/ProyectCard";
 import proyects from "../data/proyects.json";
-import data from "../data/info.json";
 
-const Home = () => {
+const Proyects = () => {
   return (
     <>
       <Head>
-        <title>Aggutierrez</title>
-        <meta name="description" content="Agustin Gutierrez web page" />
+        <title>Proyects</title>
+        <meta name="description" content="Proyects made by aggutierrez" />
       </Head>
 
-      <h1 id="#about">{data.title}</h1>
-
-      <h2 id="#proyects">Proyects</h2>
+      <h1>Proyects</h1>
 
       {proyects.frontend.map((proyect, index) => (
         <ProyectCard key={index} proyectData={proyect} />
@@ -22,4 +19,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Proyects;
