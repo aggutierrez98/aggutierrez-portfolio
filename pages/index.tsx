@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { ProyectCard } from "../components/ProyectCard";
-import proyects from "../data/proyects.json";
+import projects from "../data/projects.json";
 import data from "../data/info.json";
+import { ProjectsList } from "../components/ProjectsList";
 
 const Home = () => {
   return (
@@ -13,11 +13,7 @@ const Home = () => {
 
       <h1 id="#about">{data.title}</h1>
 
-      <h2 id="#proyects">Proyects</h2>
-
-      {proyects.frontend.map((proyect, index) => (
-        <ProyectCard key={index} proyectData={proyect} />
-      ))}
+      <ProjectsList projects={projects} />
     </>
   );
 };

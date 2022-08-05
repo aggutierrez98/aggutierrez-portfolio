@@ -1,0 +1,17 @@
+{
+  "react": "#5CCEEE",
+  "nextjs": "#000000",
+  "typescript": "#2D79C7",
+  "javascript": "#F0DC4F",
+  "firebase": "#F2C129",
+  "graphql": "#E20799",
+  "apollo-client": "#112B48",
+  "android": "#A4C638",
+  "tailwind": "#39B7D6",
+  "redux": "#764ABC",
+  "nodejs": "#90C53F",
+  "sass": "#CF649A",
+  "postcss": "#DD3735",
+  "mongodb": "#38AA52",
+  "socket-io": "#000000"
+}

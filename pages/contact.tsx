@@ -1,16 +1,25 @@
 import Head from "next/head";
-import "rodal/lib/rodal.css";
-//@ts-ignore
-import Rodal from "rodal";
 import { useContactForm } from "../hooks/useContactForm";
+import { ContactForm } from "../components/ContactForm";
+import styles from "../styles/pages/contact.module.css";
+import { CustomModal } from "../components/CustomModal";
+import {
+  CheckCircleIcon,
+  ExclamationCircleIcon,
+} from "@heroicons/react/outline";
+import { useContext } from "react";
+import { ToastContext } from "../context/ToastContext";
+import { CustomToast } from "../components/CustomToast";
+import { Loading } from "../components/Loading";
 
 const Contact = () => {
   const {
-    email,
-    message,
-    name,
+    formData,
+    success,
+    loading,
+    errorFields,
     modalVisible,
-    sendEmail,
+    sendEmailHandler,
     formRef,
     onChange,
     modalData,
@@ -23,59 +32,36 @@ const Contact = () => {
         <title>Contact</title>
         <meta name="description" content="Get in touch with aggutierrez" />
       </Head>
-
-      <main>
-        <h1>
-          Get in touch sending me an email or contacting by one of my social
-          media accounts
-        </h1>
-        <form
-          ref={formRef}
-          id="contact-form"
-          onSubmit={sendEmail}
-          method="POST"
-        >
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              className="form-control"
-              name="name"
-              value={name}
-              onChange={onChange}
-            />
+      <main className={styles.contactContainer}>
+        <div className={styles.textContainer}>
+          <h1 className={styles.title}>
+            Get in touch sending me an email or contacting by one of my social
+            media accounts
+          </h1>
+        </div>
+        <ContactForm
+          errorFields={errorFields}
+          formData={formData}
+          formRef={formRef}
+          onChange={onChange}
+          sendEmail={sendEmailHandler}
+        />
+        <CustomModal onClose={closeModal} visible={modalVisible}>
+          <div className={styles.modalContainer}>
+            {success ? <CheckCircleIcon /> : <ExclamationCircleIcon />}
+            <h2>{modalData.title}</h2>
+            <ul>
+              {modalData.messages.map((message) => (
+                <li key={message}>{message}</li>
+              ))}
+            </ul>
           </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              aria-describedby="emailHelp"
-              name="email"
-              value={email}
-              onChange={onChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea
-              name="message"
-              className="form-control"
-              value={message}
-              onChange={onChange}
-              rows={5}
-            ></textarea>
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </form>
-
-        <Rodal visible={modalVisible} onClose={closeModal}>
-          <div>{modalData.title}</div>
-          <div>{modalData.message}</div>
-        </Rodal>
+        </CustomModal>
       </main>
+
+      <Loading loading={loading} />
+
+      <CustomToast />
     </>
   );
 };

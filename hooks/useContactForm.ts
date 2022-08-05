@@ -1,6 +1,7 @@
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useContext, useRef, useState } from "react";
 import { useForm } from "./useForm";
-import emailjs from "@emailjs/browser";
+import { sendEmail } from "../helpers/sendEmail";
+import { ToastContext } from "../context/ToastContext";
 
 export const useContactForm = () => {
   const {
@@ -16,57 +17,82 @@ export const useContactForm = () => {
     message: "",
   });
   const formRef = useRef<HTMLFormElement>(null);
+  const { newToast } = useContext(ToastContext);
 
+  const [success, setSuccess] = useState(false);
+  const [errorFields, setErrorFields] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
+  const [loading, setLoading] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [modalData, setModalData] = useState({
     title: "",
-    message: "",
+    messages: [""],
   });
 
-  const sendEmail = (e: FormEvent<HTMLElement>) => {
+  const sendEmailHandler = async (e: FormEvent<HTMLElement>) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        formRef.current!,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          openModal(
-            "Mail sent succesfully!",
-            "Mail was sent to Agustin Gutierrez, soon he will be in touch"
-          );
-        },
-        (error) => {
-          openModal(
-            "Error sending mail!",
-            "Something went wrong, please try again"
-          );
+    setLoading(true);
+    const { messages, title, success, fields } = await sendEmail(
+      formRef,
+      formData
+    );
+    if (success) {
+      setSuccess(success);
+      setFormValues({
+        name: "",
+        email: "",
+        message: "",
+      });
+    }
+
+    setLoading(false);
+
+    setErrorFields((prevFields) => {
+      Object.keys(prevFields).forEach((key) => {
+        if (!fields?.includes(key)) {
+          prevFields[key as "email" | "name" | "message"] = false;
+        } else {
+          prevFields[key as "email" | "name" | "message"] = true;
         }
-      );
+      });
+
+      return prevFields;
+    });
+
+    if (success) return newToast("Email sent successfully", "Success");
+    openModal({ title, messages });
   };
 
-  const openModal = (title: string, message: string) => {
+  const openModal = ({
+    title,
+    messages,
+  }: {
+    title: string;
+    messages: string[];
+  }) => {
     setModalVisible(true);
     setModalData({
       title,
-      message,
+      messages,
     });
   };
 
-  const closeModal = () => {
-    setModalVisible(false);
-  };
+  const closeModal = () => setModalVisible(false);
 
   return {
     name,
     email,
     message,
+    formData,
+    errorFields,
+    success,
+    loading,
     onChange,
-    sendEmail,
+    sendEmailHandler,
     formRef,
     modalVisible,
     closeModal,

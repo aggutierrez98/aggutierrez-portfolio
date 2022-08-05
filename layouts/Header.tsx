@@ -12,11 +12,11 @@ export const Header = () => {
       </Link>
 
       <menu>
-        <Link href="/about">
-          <a>About</a>
+        <Link href="/">
+          <a>Home</a>
         </Link>
-        <Link href="/proyects">
-          <a>Proyects</a>
+        <Link href="/projects">
+          <a>Projects</a>
         </Link>
         <Link href="/contact">
           <a>Contact</a>

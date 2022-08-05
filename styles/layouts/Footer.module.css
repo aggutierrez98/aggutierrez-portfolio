@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-top: 0.5px solid var(--foreground-color);
+  width: 85%;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0px 10px;
+  color: var(--accent-color);
+  top: -35px;
+  background-color: var(--background-color);
+}
+
+.textContainer {
+}
+
+.footer a button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.socialMediaContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialMediaLinks {
+  display: flex;
+  width: 55%;
+  align-items: center;
+  justify-content: space-between;
+
+  a,
+  button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  button {
+    padding-top: 4px;
+  }
+}
+
+.legendContainer {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.legendText {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.legendIcon {
+  margin: 0 5px;
+  width: 20px;
+}
+
+.socialMediaButton {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Postter",
+    "description": "Twitter clone app made with",
+    "front_github_url": "https://github.com/aggutierrez98/twitter-clone-proyect",
+    "demo_url": "https://twitter-clone-proyect.vercel.app",
+    "back_github_url": null,
+    "image_url": "https://res.cloudinary.com/aggutierrez/image/upload/v1658846463/Portfolio/postter-image_l0hq9o.png",
+    "techs": ["react", "nextjs", "firebase", "typescript", "tailwind"]
+  },
+  {
+    "title": "ProductsApp",
+    "description": "Products management app made with",
+    "front_github_url": "https://github.com/aggutierrez98/products-app-mobile-client",
+    "back_github_url": "https://github.com/aggutierrez98/products-app-graphql-server",
+    "demo_url": "https://play.google.com/store/apps/details?id=com.aggutierrez.productsapprn",
+    "server_url": "https://products-app-server.up.railway.app/",
+    "image_url": "https://res.cloudinary.com/aggutierrez/image/upload/v1659122438/Portfolio/products-app-image.jpg",
+    "techs": [
+      "nodejs",
+      "react",
+      "android",
+      "graphql",
+      "apollo-client",
+      "mongodb"
+    ]
+  },
+  {
+    "title": "MessingApp",
+    "description": "Products management app made with",
+    "front_github_url": "https://github.com/aggutierrez98/WhatsappWeb-Clone-MessingApp",
+    "back_github_url": "https://github.com/aggutierrez98/MessingApp-Server",
+    "demo_url": "https://messingapp-server.herokuapp.com/",
+    "server_url": "https://messingapp-server.herokuapp.com/",
+    "techs": ["nodejs", "react", "redux", "sass", "socket-io", "mongodb"]
+  },
+  {
+    "title": "TodoApp",
+    "description": "Todo app made with",
+    "front_github_url": "https://github.com/aggutierrez98/todo-app-monorepo",
+    "demo_url": "https://todo-app-aggutierrez.herokuapp.com",
+    "image_url": "https://res.cloudinary.com/aggutierrez/image/upload/v1658846463/Portfolio/postter-image_l0hq9o.png",
+    "techs": ["nodejs", "react", "tailwind", "mongodb"]
+  },
+  {
+    "title": "Where's my book app",
+    "description": "Library app made with",
+    "front_github_url": "https://github.com/aggutierrez98/Trabajo-Practico-React-G3-Final",
+    "demo_url": "https://aggutierrez98.github.io/",
+    "back_github_url": "https://github.com/aggutierrez98/Trabajo-Practico-Obligatorio-Curso-Node-G",
+    "server_url": "https://aggutierrez98.github.io/",
+    "techs": ["nodejs", "react", "redux", "mongodb"]
+  }
+]
