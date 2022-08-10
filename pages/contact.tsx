@@ -7,9 +7,6 @@ import {
   CheckCircleIcon,
   ExclamationCircleIcon,
 } from "@heroicons/react/outline";
-import { useContext } from "react";
-import { ToastContext } from "../context/ToastContext";
-import { CustomToast } from "../components/CustomToast";
 import { Loading } from "../components/Loading";
 
 const Contact = () => {
@@ -60,8 +57,6 @@ const Contact = () => {
       </main>
 
       <Loading loading={loading} />
-
-      <CustomToast />
     </>
   );
 };

@@ -9,3 +9,53 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+[data-title] {
+  color: var(--accent-color);
+  font-weight: bold;
+  font-family: Raleway;
+  position: relative;
+  font-size: 0.9em;
+}
+[data-title]:hover:after {
+  opacity: 1 !important;
+  visibility: visible;
+  transition: all ease 0.75s;
+}
+[data-title]:after {
+  font-size: 0.9em;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  content: attr(data-title);
+  position: absolute;
+  bottom: -35px;
+  left: -10%;
+  padding: 4px 8px;
+  white-space: nowrap;
+  border-radius: 5px;
+  box-shadow: var(--shadow-elevation-medium);
+  opacity: 0;
+  z-index: 5;
+  visibility: hidden;
+}
+[data-title]:before {
+  visibility: hidden;
+  border: solid;
+  border-color: var(--accent-color) transparent;
+  border-width: 0 5px 5px 5px;
+  bottom: -11px;
+  content: "";
+  position: absolute;
+  opacity: 0;
+  z-index: 5;
+}
+[data-title]:hover:before {
+  transition: all ease 0.75s;
+  opacity: 1;
+  visibility: visible;
+}

@@ -1,9 +1,7 @@
 .toastsContainer {
-  top: 100px;
-  height: calc(100vh - 100px);
+  overflow: visible !important;
   right: 0;
-  bottom: 0;
-  width: 280px;
+  bottom: 40px;
   position: fixed;
   display: flex;
   justify-content: flex-start;
@@ -11,6 +9,7 @@
 }
 
 .toastContent {
+  z-index: 5;
   box-shadow: var(--shadow-elevation-medium);
   display: flex;
   padding: 10px;
@@ -46,7 +45,8 @@
 
 .textContainer {
   padding: 8px 0;
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   h4 {
     margin: 0;
     font-size: 15px;

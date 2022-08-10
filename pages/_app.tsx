@@ -25,7 +25,12 @@ export default function MyApp({
   const prevPath = usePreviousPathname(router.asPath);
 
   const getLayout =
-    Component.getLayout ?? ((page) => <MainLayout>{page}</MainLayout>);
+    Component.getLayout ??
+    ((page) => (
+      <ToastProvider>
+        <MainLayout>{page}</MainLayout>
+      </ToastProvider>
+    ));
 
   return getLayout(
     <AnimatePresence exitBeforeEnter>
@@ -37,9 +42,7 @@ export default function MyApp({
         transition={{ type: "spring", duration: 0.3, delay: 0 }}
         variants={getPagesVariants(router.pathname, prevPath)}
       >
-        <ToastProvider>
-          <Component {...pageProps} />
-        </ToastProvider>
+        <Component {...pageProps} />
       </motion.div>
     </AnimatePresence>
   );

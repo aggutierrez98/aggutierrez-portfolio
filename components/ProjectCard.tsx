@@ -1,8 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/components/ProjectCard.module.css";
-import { motion } from "framer-motion";
-import { getTechColor } from "../helpers/getTechColor";
+import {
+  domAnimation,
+  LayoutGroup,
+  LazyMotion,
+  m,
+  useAnimation,
+} from "framer-motion";
+import { TechsList } from "./TechsList";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface Proyect {
   title: string;
@@ -17,62 +25,55 @@ interface Props {
   proyectData: Proyect;
 }
 
+const squareVariants = {
+  visible: { opacity: 1, transition: { duration: 0.35 } },
+  hidden: { opacity: 0 },
+};
+
 export const ProjectCard = ({
-  proyectData: { title, description, github_url, demo_url, image_url, techs },
+  proyectData: { title, description, image_url, techs },
 }: Props) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <article
-      onMouseUp={(e) => {
-        if (e.button === 1) {
-          window.open(`projects/${title}`, "_blank");
+    <LazyMotion features={domAnimation}>
+      <m.article
+        ref={ref}
+        whileHover={{ scale: 1.05 }}
+        variants={squareVariants}
+        animate={controls}
+        initial="hidden"
+        onMouseUp={(e) =>
+          e.button === 1 && window.open(`/projects/${title}`, "_blank")
         }
-      }}
-    >
-      <Link key={title} href={`projects/${title}`} passHref>
-        <motion.div
-          whileInView={{ opacity: 1 }}
-          whileHover={{ scale: 1.05 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 0.2, ease: "easeInOut" }}
-          className={styles.cardContainer}
-        >
-          <div className={styles.textContainer}>
-            <h3>{title}</h3>
-            <h4>{description}</h4>
-            <div className={styles.techsContainer}>
-              {techs?.map((name) => (
-                <motion.div
-                  layout
-                  whileHover={{ width: "100px" }}
-                  initial={{ width: "auto" }}
-                  transition={{ duration: 0.15 }}
-                  className={styles.techTag}
-                  key={name}
-                  title={`${name}-icon`}
-                >
-                  <Image
-                    src={`/assets/svg/mini-icons/${name}.svg`}
-                    width={25}
-                    height={25}
-                    alt={`${name}-icon`}
-                  />
-                  <p style={{ color: getTechColor(name) }}>{name}</p>
-                </motion.div>
-              ))}
+      >
+        <Link key={title} href={`/projects/${title}`} passHref>
+          <div className={styles.cardContainer}>
+            <div className={styles.textContainer}>
+              <h3>{title}</h3>
+              <h4>{description}</h4>
+              <TechsList techs={techs} />
             </div>
+            {image_url && (
+              <div className={styles.imageContainer}>
+                <Image
+                  priority
+                  src={image_url}
+                  layout="fill"
+                  objectFit="contain"
+                  alt={`${title}-example`}
+                />
+              </div>
+            )}
           </div>
-          {image_url && (
-            <div className={styles.imageContainer}>
-              <Image
-                src={image_url}
-                layout="fill"
-                objectFit="contain"
-                alt={`${title}-example`}
-              />
-            </div>
-          )}
-        </motion.div>
-      </Link>
-    </article>
+        </Link>
+      </m.article>
+    </LazyMotion>
   );
 };

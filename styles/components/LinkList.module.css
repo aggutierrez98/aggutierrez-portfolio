@@ -4,7 +4,6 @@
   }
 
   ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,16 +14,10 @@
         margin: 0 15px;
         color: var(--background-color);
         border-radius: 2rem;
-        transition: opacity ease 0.15s;
         padding: 10px 15px;
         display: flex;
         align-items: center;
       }
-
-      &:hover {
-        opacity: 0.8;
-      }
-
       svg {
         width: 30px;
       }

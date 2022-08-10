@@ -1,10 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import { motion } from "framer-motion";
 import { Project } from "../interfaces";
 import styles from "../styles/pages/projects.module.css";
-import { ExternalLinkIcon } from "@heroicons/react/solid";
 import { LinksList } from "./LinksList";
 
 interface Props {

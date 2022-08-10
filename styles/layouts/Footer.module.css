@@ -10,17 +10,11 @@
   position: relative;
 }
 
-.title {
+.logo {
   position: absolute;
-  font-size: 1.5rem;
-  font-weight: bold;
   padding: 0px 10px;
-  color: var(--accent-color);
-  top: -35px;
+  top: -25px;
   background-color: var(--background-color);
-}
-
-.textContainer {
 }
 
 .footer a button {
@@ -53,8 +47,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: fit-content;
+    height: fit-content;
   }
 
   button {

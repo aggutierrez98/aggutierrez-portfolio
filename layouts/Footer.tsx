@@ -4,21 +4,32 @@ import styles from "../styles/layouts/Footer.module.css";
 import { HeartIcon } from "@heroicons/react/outline";
 import socialMediaData from "../data/socialMediaData.json";
 import { motion } from "framer-motion";
+import { useCopyToClipboard } from "../hooks/useCopyToClipboard";
+import AggutierrezLogo from "../public/assets/aggutierrez.svg";
+import { Logo } from "../components/Logo";
 
 export const Footer = () => {
+  const { copyToClipboard } = useCopyToClipboard();
+
   return (
     <footer className={styles.container}>
-      <h2 className={styles.title}>Aggutierrez</h2>
+      <Logo color={"#1e2022"} className={styles.logo} />
       <div className={styles.textContainer}>
         <div className={styles.socialMediaContainer}>
           <p>You can follow me on</p>
           <div className={styles.socialMediaLinks}>
             <Link href={socialMediaData.github_profile} passHref>
               <motion.a
+                data-title="Go to github profile"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.15 }}
+                whileHover={{ scale: 1.2 }}
+                transition={{
+                  duration: 0.15,
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                }}
                 initial={{ scale: 1 }}
               >
                 <Image
@@ -31,10 +42,16 @@ export const Footer = () => {
             </Link>
             <Link href={socialMediaData.linkedin_profile} passHref>
               <motion.a
+                data-title="Go to linkedin profile"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.15 }}
+                whileHover={{ scale: 1.2 }}
+                transition={{
+                  duration: 0.15,
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                }}
                 initial={{ scale: 1 }}
               >
                 <Image
@@ -43,18 +60,21 @@ export const Footer = () => {
                   width={35}
                   alt="linkedin-image"
                 />
+                {/* <LinkedinSvg /> */}
               </motion.a>
             </Link>
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.15 }}
+              data-title="Copy discord user"
+              whileHover={{ scale: 1.2 }}
+              transition={{
+                duration: 0.15,
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
               initial={{ scale: 1 }}
               className={styles.socialMediaButton}
-              onClick={() => {
-                console.log(
-                  `Must copy: ${socialMediaData.discord_user} in clipboard`
-                );
-              }}
+              onClick={() => copyToClipboard(socialMediaData.discord_user)}
             >
               <Image
                 src={"/assets/svg/social-media/discord.svg"}

@@ -13,5 +13,12 @@
   "sass": "#CF649A",
   "postcss": "#DD3735",
   "mongodb": "#38AA52",
-  "socket-io": "#000000"
+  "mysql": "#18608A",
+  "socket-io": "#000000",
+  "react-query": "#FF4154",
+  "sequelize": "#3B76C3",
+  "boostrap": "#8F75FC",
+  "mongoose": "#810303",
+  "framer-motion": "#E602D1",
+  "styled-components": "#934081"
 }

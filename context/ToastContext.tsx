@@ -2,7 +2,7 @@ import {
   CheckCircleIcon,
   ExclamationCircleIcon,
 } from "@heroicons/react/outline";
-import { createContext, ReactElement, useState } from "react";
+import { createContext, ReactElement, useState, useCallback } from "react";
 
 interface ContextProps {
   toastList: Toast[];
@@ -11,7 +11,7 @@ interface ContextProps {
   setToastList: React.Dispatch<React.SetStateAction<Toast[]>>;
 }
 
-type Toast = {
+export type Toast = {
   id: number;
   title?: string;
   description?: string;
@@ -44,11 +44,11 @@ export const ToastProvider = ({
     setToastList((prevToastList) => [...prevToastList, leToast]);
   };
 
-  const deleteToast = (id: number) => {
-    const toastListItem = toastList.findIndex((e) => e.id === id);
-    toastList.splice(toastListItem, 1);
-    setToastList([...toastList]);
-  };
+  const deleteToast = useCallback((id: number) => {
+    setToastList((prevToastList) =>
+      prevToastList.filter((toast) => toast.id !== id)
+    );
+  }, []);
 
   return (
     <ToastContext.Provider

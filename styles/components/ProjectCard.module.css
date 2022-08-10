@@ -30,35 +30,3 @@
   width: 50%;
   position: relative;
 }
-
-.techsContainer {
-  display: flex;
-  flex-grow: 1;
-  justify-content: flex-start;
-  align-items: flex-end;
-}
-
-.techTag {
-  border: 1px var(--accent-color) solid;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  border-radius: 30px;
-  margin: 0 7px;
-  overflow: hidden;
-  width: 25px;
-  p {
-    display: none;
-    margin: 0;
-    width: 0;
-    margin-left: 5px;
-    font-weight: bold;
-  }
-  &:hover {
-    p {
-      display: block;
-      margin: 0;
-      margin-left: 5px;
-    }
-  }
-}

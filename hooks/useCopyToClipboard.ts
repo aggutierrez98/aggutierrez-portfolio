@@ -1,16 +1,18 @@
-import { useState } from "react";
-// import copy from "copy-to-clipboard"
+import { useState, useContext } from "react";
 import copy from "copy-text-to-clipboard";
+import { ToastContext } from "../context/ToastContext";
 
-export default function useCopyToClipboard() {
+export const useCopyToClipboard = () => {
   const [value, setValue] = useState("");
-  const [success, setSuccess] = useState<boolean>();
+  const [success, setSuccess] = useState<boolean>(false);
+  const { newToast } = useContext(ToastContext);
 
-  const copyToClipboard = (text: string, options: any) => {
+  const copyToClipboard = (text: string, options?: any) => {
     const result = copy(text, options);
     if (result) setValue(text);
     setSuccess(result);
+    newToast("Copied to clipboard", "Success");
   };
 
-  return [copyToClipboard, { value, success }];
-}
+  return { copyToClipboard, success, value };
+};
