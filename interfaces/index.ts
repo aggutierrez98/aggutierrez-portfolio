@@ -8,3 +8,9 @@ export interface Project {
   image_url?: string;
   techs: string[];
 }
+
+export interface Tech {
+  name: string;
+  color: string;
+  url?: string;
+}

@@ -1,9 +1,26 @@
 :root {
   --overlay-color: rgba(82, 97, 107, 0.4);
-  --background-color: #f0f5f9;
+
+  /* --background-color: #f0f5f9;
   --foreground-color: #c9d6df;
   --primary-color: #52616b;
-  --accent-color: #1e2022;
+  --accent-color: #1e2022; */
+
+  /* --background-color: #e7f6f2;
+  --foreground-color: #a5c9ca;
+  --primary-color: #395b64;
+  --accent-color: #2c3333; */
+
+  /* --background-color: #f1f1f1;
+  --foreground-color: #e2dcc8;
+  --primary-color: #100f0f;
+  --accent-color: #0f3d3e; */
+
+  --background-color: #eeeeee;
+  --foreground-color: #393e46;
+  --primary-color: #00adb5;
+  --secondary-color: #a5c9ca;
+  --accent-color: #100f0f;
 
   --shadow-color: 0deg 0% 73%;
   --second-shadow-color: 286deg 36% 72%;

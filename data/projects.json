@@ -1,7 +1,7 @@
 [
   {
     "title": "Postter",
-    "description": "Twitter clone app made with",
+    "description": "Twitter clone web application made with Nextjs, Tailwindcss, and Firebase. It has Auth0 authentication system combined with firebase authentication for saving login credentials. It also has dark and light mode using tailwind and css-variables and the option for change the content lenguage for one of the two options (English and Spanish). The pages are generated statically using Nextjs (except for the feed page). All users are generated a Profile page when they register.",
     "front_github_url": "https://github.com/aggutierrez98/twitter-clone-proyect",
     "demo_url": "https://twitter-clone-proyect.vercel.app",
     "back_github_url": null,
@@ -10,7 +10,7 @@
   },
   {
     "title": "ProductsApp",
-    "description": "Products management app made with",
+    "description": "Mobile application made with React-native, Apollo client, Styled-components, GraphQL, NodeJS and MongoDB. Compatible with Android and available in google play-store. It has JWT Authentication system using the NodeJS api-rest. It also has dark and light mode using styled-components. It's capable of Products, Categories, and Users managment for an e-commerce app with the pages for preview list of each ones and Details Pages.",
     "front_github_url": "https://github.com/aggutierrez98/products-app-mobile-client",
     "back_github_url": "https://github.com/aggutierrez98/products-app-graphql-server",
     "demo_url": "https://play.google.com/store/apps/details?id=com.aggutierrez.productsapprn",
@@ -18,8 +18,8 @@
     "image_url": "https://res.cloudinary.com/aggutierrez/image/upload/v1659122438/Portfolio/products-app-image.jpg",
     "techs": [
       "nodejs",
+      "express",
       "react",
-      "android",
       "graphql",
       "apollo-client",
       "mongodb"
@@ -27,28 +27,43 @@
   },
   {
     "title": "MessingApp",
-    "description": "Products management app made with",
+    "description": "Whatsapp-web clone SPA made with React, Redux, Sass, Socket-io, Nodejs and MongoDB. It has JWT Authentication system using the NodeJS api-rest. It also has dark and light mode using sass variables. It has one only page like whatsapp-web. Socket-io is used for message-handling. Using web-sockets it has the capability of send and recive messages in real time.",
     "front_github_url": "https://github.com/aggutierrez98/WhatsappWeb-Clone-MessingApp",
     "back_github_url": "https://github.com/aggutierrez98/MessingApp-Server",
     "demo_url": "https://messingapp-server.herokuapp.com/",
     "server_url": "https://messingapp-server.herokuapp.com/",
-    "techs": ["nodejs", "react", "redux", "sass", "socket-io", "mongodb"]
+    "techs": [
+      "nodejs",
+      "express",
+      "react",
+      "redux",
+      "sass",
+      "socket-io",
+      "mongodb"
+    ]
   },
   {
     "title": "TodoApp",
-    "description": "Todo app made with",
+    "description": "Todo app SPA made with React, Tailwind, React-Query, Nodejs and MongoDB. It has JWT Authentication system using the NodeJS api-rest. It also has dark and light mode using tailwind and css-variables. It has JWT Authentication system using the NodeJS api-rest. It has auth pages and then the todo page. React-query is used to manage all the state globally around the app. It's a more performant and less boilerplated option from Redux. Data is saved in cache for future visits to the page.",
     "front_github_url": "https://github.com/aggutierrez98/todo-app-monorepo",
     "demo_url": "https://todo-app-aggutierrez.herokuapp.com",
     "image_url": "https://res.cloudinary.com/aggutierrez/image/upload/v1658846463/Portfolio/postter-image_l0hq9o.png",
-    "techs": ["nodejs", "react", "tailwind", "mongodb"]
+    "techs": [
+      "nodejs",
+      "express",
+      "react",
+      "tailwind",
+      "mongodb",
+      "react-query"
+    ]
   },
   {
     "title": "Where's my book app",
-    "description": "Library app made with",
+    "description": "Library SPA made with React, Redux, Nodejs, Express and MongoDB. It has JWT Authentication system using the NodeJS api-rest. It's capability of manage books, categories and users. There is a page for each one and books can be borrowed and returned from an user too. Redux is used for global state managment giving the possibilty of share information between pages easily.",
     "front_github_url": "https://github.com/aggutierrez98/Trabajo-Practico-React-G3-Final",
     "demo_url": "https://aggutierrez98.github.io/",
     "back_github_url": "https://github.com/aggutierrez98/Trabajo-Practico-Obligatorio-Curso-Node-G",
     "server_url": "https://aggutierrez98.github.io/",
-    "techs": ["nodejs", "react", "redux", "mongodb"]
+    "techs": ["nodejs", "express", "react", "redux", "mongodb"]
   }
 ]

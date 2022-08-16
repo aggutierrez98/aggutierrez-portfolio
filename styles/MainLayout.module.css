@@ -1,62 +1,32 @@
 .main {
-  width: 100vw;
+  padding-top: 80px;
+  /* background-image: url("https://res.cloudinary.com/aggutierrez/image/upload/v1660272151/Portfolio/background_hjhihe.svg"); */
+  z-index: -1;
   overflow: auto;
+  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
   scroll-behavior: smooth;
-
   &::-webkit-scrollbar {
-    width: 10px;
-    /* height: 1px; */
+    width: 6px;
   }
-
   &::-webkit-scrollbar-track {
-    border-radius: 100vw;
     margin-block: 0.2em;
+    margin-top: 85px;
+    margin-bottom: 5px;
   }
-
   &::-webkit-scrollbar-thumb {
     background: var(--foreground-color);
-    border-radius: 100vw;
+    border-radius: 5px;
   }
-
   &::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-color);
+    background: var(--primary-color);
   }
 }
 
 .body {
-  margin-top: 50px;
+  margin-top: 20px;
   width: 1024px;
-}
-
-.header {
-  z-index: 2;
-  max-width: 100%;
-  height: 100px;
-  background-color: var(--accent-color);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 0 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  a {
-    margin: 5px;
-    color: var(--background-color);
-    font-weight: bold;
-    font-size: medium;
-    text-decoration: none;
-  }
-}
-
-.header__title {
-  color: var(--background-color);
-  margin-left: 50px;
 }

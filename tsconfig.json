@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "paths": {
+      "@p/*": ["pages/*"],
+      "@c/*": ["components/*"]
+    },
+    "baseUrl": ".",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

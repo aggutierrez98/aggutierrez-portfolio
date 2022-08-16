@@ -3,11 +3,11 @@ import "../styles/theme.css";
 import { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
-import { MainLayout } from "../layouts/MainLayout";
+import { MainLayout } from "components";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePreviousPathname } from "../hooks/usePreviousPathname";
-import { getPagesVariants } from "../helpers/getPagesVariants";
-import { ToastProvider } from "../context/ToastContext";
+import { usePreviousPathname } from "hooks/usePreviousPathname";
+import { getPagesVariants } from "helpers/getPagesVariants";
+import { ToastProvider } from "context/ToastContext";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;

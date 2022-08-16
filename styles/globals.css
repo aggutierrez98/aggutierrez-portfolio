@@ -1,8 +1,25 @@
+html {
+  overflow-y: hidden;
+}
+
 body {
-  background-color: var(--background-color);
   font-family: Raleway;
   margin: 0;
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+a,
+span,
+p {
+  &::selection {
+    background: var(--primary-color);
+    color: var(--background-color);
+  }
+  color: var(--accent-color);
 }
 
 a {

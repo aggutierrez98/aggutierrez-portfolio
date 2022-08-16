@@ -1,13 +1,8 @@
-import { ExternalLinkIcon } from "@heroicons/react/outline";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import projects from "../../data/projects.json";
-import { Project } from "../../interfaces/index";
-import styles from "../../styles/pages/projects.module.css";
-import { motion } from "framer-motion";
-import { ProjectDetails } from "../../components/ProjectDetails";
+import projects from "data/projects.json";
+import { Project } from "interfaces";
+import { ProjectDetails } from "components/projects/ProjectDetails";
 
 interface Props {
   projectData: Project;
