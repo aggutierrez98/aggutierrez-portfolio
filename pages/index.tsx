@@ -1,15 +1,15 @@
 import Head from "next/head";
 import projects from "data/projects.json";
-import data from "data/info.json";
-import { ProjectsList } from "components/projects/ProjectsList";
+import { home as homeData, about as aboutData } from "data/info.json";
+import { ProjectsModule } from "components";
 import { Project } from "../interfaces/index";
-import { Aggutierrez, ContactModule } from "components";
+import { Home, ContactModule, About } from "components";
 
 interface Props {
   projects: Project[];
 }
 
-const Home = ({ projects }: Props) => {
+const HomePage = ({ projects }: Props) => {
   return (
     <>
       <Head>
@@ -17,20 +17,20 @@ const Home = ({ projects }: Props) => {
         <meta name="description" content="Agustin Gutierrez web page" />
       </Head>
 
-      <Aggutierrez />
+      <Home data={homeData} />
 
-      <h1 id="projects">Projects</h1>
-      <ProjectsList projects={projects} />
+      <About data={aboutData} />
 
-      <h1 id="work">Work</h1>
+      <ProjectsModule projects={projects} />
 
-      <h1 id="contact">Contact</h1>
+      {/* <h1 id="work">Work</h1> */}
+
       <ContactModule />
     </>
   );
 };
 
-export default Home;
+export default HomePage;
 
 export const getStaticProps = async () => {
   return {
