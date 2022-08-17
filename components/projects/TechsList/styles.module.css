@@ -1,0 +1,86 @@
+.techsContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 0;
+}
+
+.techTag {
+  display: block;
+  border: 1px var(--primary-color) solid;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  margin-right: 12px;
+  overflow: hidden;
+  height: 20px;
+  &::after {
+    content: attr(data-text);
+    opacity: 0;
+    font-weight: bold;
+    font-family: Raleway;
+    font-size: 80%;
+    display: inline-block;
+    max-width: 0;
+    transition: all 0.3s;
+    vertical-align: bottom;
+    overflow: hidden;
+  }
+  &:hover::after {
+    margin-left: 5px;
+    opacity: 1;
+    visibility: visible;
+    max-width: 80px;
+  }
+  &:not(:hover) {
+    svg path {
+      fill: var(--primary-color);
+    }
+  }
+}
+
+.techTagExtended {
+  display: block;
+  border: 1px var(--primary-color) solid;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  margin-right: 12px;
+  overflow: hidden;
+  height: 20px;
+  &::after {
+    content: attr(data-text);
+    opacity: 0;
+    font-weight: bold;
+    font-family: Raleway;
+    font-size: 80%;
+    display: inline-block;
+    max-width: 0;
+    transition: all 0.3s;
+    vertical-align: bottom;
+    overflow: hidden;
+  }
+  &:hover::after {
+    margin-left: 5px;
+    opacity: 1;
+    visibility: visible;
+    max-width: 80px;
+  }
+  &:hover {
+    &:after {
+      margin-left: 10px;
+      opacity: 1;
+      visibility: visible;
+      max-width: 120px;
+    }
+  }
+  &::after {
+    margin-left: 10px;
+    opacity: 1;
+    visibility: visible;
+    max-width: 120px;
+    font-size: 16px;
+  }
+}
