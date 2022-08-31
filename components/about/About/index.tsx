@@ -1,7 +1,8 @@
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import React from "react";
 import styles from "./styles.module.css";
+import { ResumeButton } from "./ResumeButton";
+import { SkillsList } from "./SkillsList";
 
 interface Props {
   data: any;
@@ -14,6 +15,7 @@ export const About = ({ data }: Props) => {
         <div className={styles.textContainer}>
           <h2>{data.title}</h2>
           <p>{data.description1}</p>
+          <ResumeButton />
         </div>
         <div className={styles.imageContainer}>
           <Image
@@ -24,36 +26,7 @@ export const About = ({ data }: Props) => {
           />
         </div>
       </div>
-      {/* <h3>{about.subtitle}</h3>
-      <div className={styles.titleContainer}>
-        <h1>{about.title1}</h1>
-        <h2 className={styles.text}>
-          {about.title2}
-          <span className={styles.typewrittingText} id="typewritting-text">
-            {content}
-          </span>
-        </h2>
-      </div>
-      <p>{about.description}</p> */}
-
-      <div className={styles.skillsContainer}>
-        <h2>Skills</h2>
-        <ul>
-          {data.skills?.map((skill: string, index: number) => {
-            const Icon = dynamic(
-              async () =>
-                await import(`public/assets/svg/mini-icons/${skill}.svg`)
-            );
-
-            return (
-              <li key={index} className={styles.skillCard}>
-                <Icon />
-                <p>{skill}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <SkillsList data={data} />
     </section>
   );
 };

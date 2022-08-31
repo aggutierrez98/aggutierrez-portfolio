@@ -9,8 +9,16 @@ export interface Project {
   techs: string[];
 }
 
-export interface Tech {
+export interface Skill {
   name: string;
   color: string;
+  assetName: string;
   url?: string;
+}
+
+export interface Work {
+  title: string;
+  place: string;
+  time: string;
+  tasks: string[];
 }

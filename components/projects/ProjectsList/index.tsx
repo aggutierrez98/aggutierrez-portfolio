@@ -1,6 +1,7 @@
 import React from "react";
 import { ProjectCard } from "components";
 import { Project } from "interfaces";
+import styles from "./styles.module.css";
 
 interface Props {
   projects: Project[];
@@ -8,8 +9,8 @@ interface Props {
 
 export const ProjectsModule = ({ projects }: Props) => {
   return (
-    <div>
-      <h1 id="projects">Projects</h1>
+    <div className={styles.projectsContainer} id="projects">
+      <h2>Some things I have made:</h2>
 
       {projects.map((proyect, index) => (
         <ProjectCard key={index} proyectData={proyect} />

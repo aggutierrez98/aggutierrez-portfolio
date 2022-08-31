@@ -23,7 +23,6 @@ export const ProjectDetails = ({ projectData }: Props) => {
   return (
     <div className={styles.detailsContainer}>
       <h1>{title}</h1>
-      <div className={styles.separator} />
       {image_url && (
         <div className={styles.imageContainer}>
           <div className={styles.imageBox}>

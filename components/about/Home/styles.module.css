@@ -1,10 +1,14 @@
 .aboutContainer {
-  margin: 40px;
+  /* align-items: center; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 50px;
   overflow-x: hidden;
+  height: 100vh;
 
-  h3 {
-    font-size: 25px;
+  h4 {
+    font-size: clamp(1rem, 2vw, 2rem);
     color: var(--primary-color);
     margin-bottom: 0;
   }
@@ -12,15 +16,24 @@
     width: fit-content;
   }
   h1 {
-    font-size: 55px;
+    font-size: clamp(2rem, 5vw, 6rem);
     font-weight: 300;
     font-family: "Source Code Pro", monospace;
     margin: 5px 0px;
     color: var(--accent-color);
   }
 
-  h2 {
-    font-size: 50px;
+  h3 {
+    @media (max-width: 450px) {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      .typewrittingText {
+        margin-left: 0;
+      }
+    }
+
+    font-size: clamp(2rem, 4.5vw, 6rem);
     margin-top: 10px;
     letter-spacing: 0.02rem;
     margin-bottom: 10px;
@@ -28,36 +41,41 @@
 
   .typewrittingText {
     margin-left: 15px;
-    font-size: 55px;
+    font-size: clamp(2rem, 5vw, 6rem);
     font-weight: 300;
     font-family: "Source Code Pro", monospace;
     position: relative;
     color: var(--primary-color);
-
-    &:before {
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* &:before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       height: 100%;
-      width: 100%;
+      width: 100vw;
       background-color: var(--background-color);
       border-left: 2px solid var(--primary-color);
       animation: type-effect 5s steps(var(--typewrittetext-length)) infinite,
         pulse 0.35s infinite alternate ease-in;
-    }
+    } */
   }
 
   p {
-    color: var(--foreground-color);
-    font-size: 25px;
-    width: 50%;
+    margin-top: 1.5rem;
+    color: var(--secondary-color);
+    font-size: clamp(1rem, 1.8vw, 2.25rem);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
+    max-width: 80%;
+    @media (min-width: 450px) {
+      max-width: 50%;
+    }
   }
 }
 
-@keyframes type-effect {
+/* @keyframes type-effect {
   40%,
   50% {
     left: calc(100% + 4px);
@@ -74,4 +92,4 @@
   100% {
     border-left: solid 2px rgba(16, 15, 15, 0);
   }
-}
+} */

@@ -1,7 +1,7 @@
 .toastsContainer {
   overflow: visible !important;
   right: 0;
-  bottom: 0;
+  bottom: 60px;
   position: fixed;
   display: flex;
   justify-content: flex-start;
@@ -9,7 +9,7 @@
 }
 
 .toastContent {
-  z-index: 5;
+  z-index: 3;
   box-shadow: var(--shadow-elevation-medium);
   display: flex;
   padding: 10px;
@@ -19,6 +19,7 @@
   position: relative;
   margin-bottom: 20px;
   margin-right: 20px;
+  background-color: var(--background-color);
   svg {
     width: 18px;
     path {

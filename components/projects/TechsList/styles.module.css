@@ -3,11 +3,18 @@
   justify-content: flex-start;
   align-items: flex-end;
   padding: 0;
+  @media (max-width: 500px) {
+    margin: 0;
+  }
+}
+
+.extended {
+  flex-wrap: wrap;
 }
 
 .techTag {
   display: block;
-  border: 1px var(--primary-color) solid;
+  border: 1px var(--secondary-color) solid;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -35,8 +42,11 @@
   }
   &:not(:hover) {
     svg path {
-      fill: var(--primary-color);
+      fill: var(--secondary-color);
     }
+  }
+  @media (max-width: 500px) {
+    display: none;
   }
 }
 
@@ -50,6 +60,8 @@
   margin-right: 12px;
   overflow: hidden;
   height: 20px;
+  margin-bottom: 10px;
+
   &::after {
     content: attr(data-text);
     opacity: 0;

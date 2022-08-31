@@ -16,11 +16,51 @@ h4,
 a,
 span,
 p {
+  margin: 0;
   &::selection {
     background: var(--primary-color);
     color: var(--background-color);
   }
   color: var(--accent-color);
+}
+
+h1 {
+  font-family: Source Code Pro;
+  font-weight: 400;
+  width: fit-content;
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  color: var(--accent-color);
+  background: linear-gradient(
+      90deg,
+      var(--primary-color) calc(100% / 3),
+      transparent 0 calc(200% / 3),
+      var(--primary-color) 0
+    )
+    var(--d, 0%) 100% /300% 1px no-repeat;
+  transition: 0.5s;
+  &:hover {
+    --d: 100%;
+  }
+}
+
+h2 {
+  font-family: Source Code Pro;
+  font-weight: 400;
+  width: fit-content;
+  font-size: clamp(1.5rem, 4vw, 5rem);
+  color: var(--accent-color);
+  background: linear-gradient(
+      90deg,
+      var(--primary-color) calc(100% / 3),
+      transparent 0 calc(200% / 3),
+      var(--primary-color) 0
+    )
+    var(--d, 0%) 100% /300% 1px no-repeat;
+  transition: 0.5s;
+  &:hover {
+    --d: 100%;
+  }
 }
 
 a {
@@ -31,6 +71,26 @@ a {
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.blur {
+  overflow: hidden !important;
+  #body {
+    /* animation: blur 0.2s forwards; */
+    filter: blur(5px) brightness(0.7);
+    #home h3 > span {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(0px) brightness(0.7);
+  }
+  100% {
+    filter: blur(5px) brightness(0.7);
+  }
 }
 
 [data-title] {

@@ -65,9 +65,11 @@ export const ProjectCard = ({
             <h3 id="style-2" data-replace={title}>
               <span>{title}</span>
             </h3>
-            <h4>{description}</h4>
-            <TechsList techs={techs} variants={techsVariants} />
-            <SeeMoreButton title={title} />
+            <p>{description}</p>
+            <div className={styles.textBottom}>
+              <TechsList techs={techs} variants={techsVariants} />
+              <SeeMoreButton title={title} />
+            </div>
           </div>
           {image_url && (
             <div className={styles.imageContainer}>

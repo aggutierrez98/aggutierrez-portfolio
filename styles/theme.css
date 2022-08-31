@@ -15,17 +15,26 @@
   --foreground-color: #e2dcc8;
   --primary-color: #100f0f;
   --accent-color: #0f3d3e; */
-
+  /* 
   --background-color: #eeeeee;
   --foreground-color: #393e46;
   --primary-color: #00adb5;
   --secondary-color: #a5c9ca;
-  --accent-color: #100f0f;
+  --accent-color: #100f0f; */
 
-  --shadow-color: 0deg 0% 73%;
-  --second-shadow-color: 286deg 36% 72%;
-  --shadow-elevation-low: 0px 0.3px 0.5px hsl(var(--second-shadow-color) / 0),
-    -0.1px 1.6px 2.4px hsl(var(--second-shadow-color) / 0.78);
+  --background-color: #222831;
+  --foreground-color: #393e46;
+  --overlay-color: #1d2938;
+  --primary-color: #00adb5;
+  --secondary-color: #a5c9ca;
+  --accent-color: #eeeeee;
+
+  --shadow-color: 209deg 38% 6%;
+  --shadow-color: 209deg 38% 6%;
+  --shadow-elevation-low: 0px 0.1px 0.1px hsl(var(--second-shadow-color) / 1),
+    -0.1px 0.7px 0.7px -1.2px hsl(var(--second-shadow-color) / 1),
+    -0.4px 2.7px 2.6px -2.5px hsl(var(--second-shadow-color) / 1),
+    -1.1px 7.7px 7.3px -3.7px hsl(var(--second-shadow-color) / 0.76);
   --shadow-elevation-medium: 0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
     2px 3px 5.4px hsl(var(--shadow-color) / 0.22),
     5.8px 8.6px 15.6px hsl(var(--shadow-color) / 0.45);

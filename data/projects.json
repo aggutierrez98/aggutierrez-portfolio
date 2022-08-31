@@ -6,7 +6,7 @@
     "demo_url": "https://twitter-clone-proyect.vercel.app",
     "back_github_url": null,
     "image_url": "https://res.cloudinary.com/aggutierrez/image/upload/v1658846463/Portfolio/postter-image_l0hq9o.png",
-    "techs": ["react", "nextjs", "firebase", "typescript", "tailwind"]
+    "techs": ["React", "Nextjs", "Firebase", "Typescript", "Tailwind"]
   },
   {
     "title": "ProductsApp",
@@ -17,12 +17,12 @@
     "server_url": "https://products-app-server.up.railway.app/",
     "image_url": "https://res.cloudinary.com/aggutierrez/image/upload/v1659122438/Portfolio/products-app-image.jpg",
     "techs": [
-      "nodejs",
-      "express",
-      "react",
-      "graphql",
-      "apollo-client",
-      "mongodb"
+      "Nodejs",
+      "Express",
+      "React",
+      "GraphQL",
+      "Apollo client",
+      "MongoDB"
     ]
   },
   {
@@ -33,13 +33,13 @@
     "demo_url": "https://messingapp-server.herokuapp.com/",
     "server_url": "https://messingapp-server.herokuapp.com/",
     "techs": [
-      "nodejs",
-      "express",
-      "react",
-      "redux",
-      "sass",
-      "socket-io",
-      "mongodb"
+      "Nodejs",
+      "Express",
+      "React",
+      "Redux",
+      "Sass",
+      "Socket-io",
+      "MongoDB"
     ]
   },
   {
@@ -49,12 +49,12 @@
     "demo_url": "https://todo-app-aggutierrez.herokuapp.com",
     "image_url": "https://res.cloudinary.com/aggutierrez/image/upload/v1658846463/Portfolio/postter-image_l0hq9o.png",
     "techs": [
-      "nodejs",
-      "express",
-      "react",
-      "tailwind",
-      "mongodb",
-      "react-query"
+      "Nodejs",
+      "Express",
+      "React",
+      "Tailwind",
+      "MongoDB",
+      "React query"
     ]
   },
   {
@@ -64,6 +64,6 @@
     "demo_url": "https://aggutierrez98.github.io/",
     "back_github_url": "https://github.com/aggutierrez98/Trabajo-Practico-Obligatorio-Curso-Node-G",
     "server_url": "https://aggutierrez98.github.io/",
-    "techs": ["nodejs", "express", "react", "redux", "mongodb"]
+    "techs": ["Nodejs", "Express", "React", "Redux", "MongoDB"]
   }
 ]

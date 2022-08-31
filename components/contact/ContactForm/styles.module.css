@@ -1,10 +1,16 @@
 .formContainer {
   flex: 1;
-  padding: 20px 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: fit-content;
+  box-shadow: var(--shadow-elevation-medium);
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  border-radius: 30px;
+
+  @media (max-width: 850px) {
+    width: 100%;
+  }
 }
 
 .formTitle {
@@ -14,18 +20,17 @@
 }
 
 .formGroup {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
   position: relative;
   width: 100%;
-
   &.groupError {
     .input,
-    textarea {
-      outline: 1px solid var(--error-icon-color);
-
-      &::placeholder {
+    .textarea {
+      outline-color: var(--error-icon-color);
+      ~ label {
         color: var(--error-icon-color);
       }
     }
@@ -39,7 +44,7 @@
 .icon {
   position: absolute;
   margin-left: 12px;
-  color: var(--foreground-color);
+  color: var(--secondary-color);
   transform: translateY(-50%);
   top: 50%;
   width: 20px;
@@ -48,26 +53,32 @@
 .textareaIcon {
   position: absolute;
   margin-left: 12px;
-  color: var(--foreground-color);
-  top: 12.5px;
+  color: var(--secondary-color);
+  top: 10px;
   width: 20px;
 }
 
 .input {
   display: flex;
   flex-direction: column;
-  background-color: var(--secondary-color);
-  outline: none;
+  padding: 0 38px;
+  height: 35px;
+}
+
+.textarea {
+  resize: none;
+  padding: 12px 38px;
+}
+
+.input,
+.textarea {
+  outline: 1px solid var(--foreground-color);
+  color: var(--accent-color);
+  background-color: transparent;
   border: none;
   border-radius: 20px;
   font-family: Raleway;
   font-weight: bold;
-  padding: 0 38px;
-  height: 35px;
-
-  &::placeholder {
-    color: var(--foreground-color);
-  }
 
   &:-webkit-autofill,
   :-webkit-autofill:hover,
@@ -75,20 +86,7 @@
   :-webkit-autofill:active {
     transition: all 0s 50000s;
   }
-}
 
-.textarea {
-  background-color: var(--secondary-color);
-  outline: none;
-  border: none;
-  border-radius: 20px;
-  resize: none;
-  font-family: Raleway;
-  font-weight: bold;
-  padding: 15px 38px;
-  &::placeholder {
-    color: var(--foreground-color);
-  }
   &::-webkit-scrollbar {
     -webkit-appearance: none;
 
@@ -109,23 +107,103 @@
   &::-webkit-scrollbar-track {
     margin: 15px;
   }
+
+  &:focus {
+    outline-color: var(--primary-color);
+  }
+
+  &:focus ~ .label,
+  &:not(:placeholder-shown) ~ .label {
+    transform: translateY(-0.15rem);
+    font-size: 12px;
+    padding: 0 3px;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    font-weight: bold;
+  }
+
+  &::placeholder {
+    color: transparent;
+  }
+}
+
+.label {
+  position: absolute;
+  left: 40px;
+  font-size: 14px;
+  font-weight: 300;
+  top: -5px;
+  background-color: transparent;
+  color: var(--secondary-color);
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button {
-  margin-top: 20px;
+  font-family: inherit;
+  font-size: 20px;
+  background-color: var(--primary-color);
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.2s;
+  margin-top: 10px;
   cursor: pointer;
   border: none;
   border-radius: 20px;
-  height: 35px;
-  font-family: Raleway;
-  font-weight: bold;
-  color: var(--background-color);
-  background-color: var(--accent-color);
+  height: 40px;
   width: 100%;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    /* color: var(--background-color); */
+    color: var(--accent-color);
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  span {
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 15px;
+    margin-left: 10px !important;
+    color: var(--accent-color);
+    /* color: var(--background-color); */
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+
   &:hover {
-    /* color: var(--primary-color); */
-    /* background-color: var(--primary-color); */
-    opacity: 0.8;
-    transition: all ease 0.2s;
+    background-color: var(--secondary-color);
+    svg {
+      transform: translateX(1.2em) rotate(45deg) scale(1.1);
+    }
+    span {
+      opacity: 0;
+    }
+    .svg-wrapper {
+      animation: fly-1 0.6s ease-in-out infinite alternate;
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
   }
 }

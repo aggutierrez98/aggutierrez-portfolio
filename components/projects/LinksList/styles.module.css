@@ -1,12 +1,14 @@
 .linksContainer {
   h3 {
-    font-size: 22px;
+    margin-bottom: 2rem;
+    font-size: clamp(1.25rem, 5vw, 2rem);
   }
 
   ul {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
 
     li {
       a {
@@ -17,9 +19,19 @@
         padding: 10px 15px;
         display: flex;
         align-items: center;
+        margin-bottom: 10px;
+        @media (max-width: 800px) {
+          padding: 5px 10px;
+          margin: 10px 5px;
+        }
       }
       svg {
         width: 30px;
+        height: 30px;
+        @media (max-width: 800px) {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
 
@@ -27,27 +39,33 @@
       font-weight: bold;
       margin: 0 0;
       margin-left: 15px;
-      font-size: 15px;
+      font-size: 1rem;
+      @media (max-width: 800px) {
+        font-size: 0.8rem;
+        margin-left: 5px;
+      }
     }
   }
 }
 
-/* From uiverse.io by @gagan-gv */
 .button {
   height: 30px;
-  font-size: 16px;
   border: none;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   background: transparent !important;
   cursor: pointer;
-
   p {
     color: var(--background-color);
   }
 
   svg {
-    width: 30px;
+    color: var(--foreground-color);
+    width: 25px;
+    height: 25px;
+  }
+  @media (max-width: 800px) {
+    height: 40px;
   }
 }
 
@@ -65,7 +83,7 @@
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
-  background-color: var(--foreground-color);
+  background-color: var(--secondary-color);
   border-radius: 25px;
 }
 

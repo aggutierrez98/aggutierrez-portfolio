@@ -1,5 +1,4 @@
 .main {
-  padding-top: 80px;
   /* background-image: url("https://res.cloudinary.com/aggutierrez/image/upload/v1660272151/Portfolio/background_hjhihe.svg"); */
   z-index: -1;
   overflow: auto;
@@ -7,12 +6,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 80px);
+  height: 100vh;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
   &::-webkit-scrollbar {
+    visibility: visible;
     width: 6px;
   }
   &::-webkit-scrollbar-track {
+    visibility: hidden;
     margin-block: 0.2em;
     margin-top: 85px;
     margin-bottom: 5px;
@@ -27,6 +29,34 @@
 }
 
 .body {
-  margin-top: 20px;
   width: 1024px;
+  @media (max-width: 1100px) {
+    width: 85%;
+  }
+}
+
+.goToTopButton {
+  display: flex;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  padding: 15px;
+  color: var(--background-color);
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+  @media (max-width: 600px) {
+    padding: 12px;
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+    bottom: 15px;
+    right: 15px;
+  }
 }

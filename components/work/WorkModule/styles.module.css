@@ -1,0 +1,26 @@
+.workContainer {
+  padding-top: 10rem;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    margin-bottom: 2rem;
+    align-self: center;
+  }
+  @media (max-width: 800px) {
+    li:first-child {
+      div:nth-child(3) {
+        padding-top: 0px !important;
+      }
+    }
+  }
+  li:last-child {
+    div:nth-child(3) {
+      ul {
+        li:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

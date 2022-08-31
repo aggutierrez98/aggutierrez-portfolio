@@ -1,0 +1,61 @@
+/* From uiverse.io by @Ali-Tahmazi99 */
+.check {
+  -webkit-appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+.bar {
+  z-index: 5;
+  position: relative;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  display: none;
+  @media (max-width: 550px) {
+    display: block;
+  }
+}
+
+.bar span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 15px;
+  display: inline-block;
+  transition: 0.3s ease;
+  left: 0;
+}
+
+.bar span.top {
+  top: 0;
+}
+
+.bar span.middle {
+  top: 42.5%;
+}
+
+.bar span.bottom {
+  bottom: 0;
+}
+
+.check[type]:checked ~ span.top {
+  transform-origin: top left;
+  width: 109%;
+  transform: rotate(45deg);
+  left: 7.5%;
+}
+
+.check[type]:checked ~ span.bottom {
+  transform-origin: top left;
+  transform: rotate(-45deg);
+  bottom: -5%;
+  width: 107%;
+  box-shadow: 0 0 10px #495057;
+}
+
+.check[type]:checked ~ span.middle {
+  transform: translateX(-20px);
+  opacity: 0;
+}

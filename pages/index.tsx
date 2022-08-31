@@ -1,15 +1,19 @@
 import Head from "next/head";
 import projects from "data/projects.json";
-import { home as homeData, about as aboutData } from "data/info.json";
+import data from "data/info.json";
+import works from "data/experience.json";
 import { ProjectsModule } from "components";
 import { Project } from "../interfaces/index";
 import { Home, ContactModule, About } from "components";
+import { WorkModule } from "components";
 
 interface Props {
   projects: Project[];
 }
 
 const HomePage = ({ projects }: Props) => {
+  const { home: homeData, about: aboutData } = data;
+
   return (
     <>
       <Head>
@@ -21,9 +25,9 @@ const HomePage = ({ projects }: Props) => {
 
       <About data={aboutData} />
 
-      <ProjectsModule projects={projects} />
+      <WorkModule works={works} />
 
-      {/* <h1 id="work">Work</h1> */}
+      <ProjectsModule projects={projects} />
 
       <ContactModule />
     </>

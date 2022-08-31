@@ -1,45 +1,61 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import styles from "./styles.module.css";
+import TypeIt from "typeit";
 
 interface Props {
   data: any;
 }
 
 export const Home = ({ data }: Props) => {
-  const [content, setContent] = useState("");
+  const typeItRef = useRef(null);
+  const strings = useMemo(
+    () => [...data.specials.map((title: string) => `a ${title}.`)],
+    [data.specials]
+  );
+
+  // console.log(strings);
 
   useEffect(() => {
-    let endTime = 0;
-    const textLoad = () => {
-      let time = 0;
-      data.specials.map((text: string) => {
-        setTimeout(() => {
-          setContent(text);
-          const bodyStyles = document.body.style;
-          bodyStyles.setProperty(
-            "--typewrittetext-length",
-            String(text.length)
-          );
-        }, time);
-        time = time + 5000;
-      });
-      endTime = time;
+    const delays = {
+      beforeTyping: 375,
+      afterTyping: 1500,
     };
-    textLoad();
-    setInterval(textLoad, endTime);
-  }, [data.specials]);
+
+    // @ts-ignore: TypeIt is not working with TS yet
+    const typeIt = new TypeIt(typeItRef.current, {
+      startDelay: delays.afterTyping,
+      startDelete: true,
+      breakLines: false,
+      loop: true,
+      nextStringDelay: 0,
+      loopDelay: 0,
+    }).delete(null, { delay: delays.beforeTyping });
+
+    for (let i = 0; i < strings.length; i++) {
+      typeIt.type(strings[i], { delay: delays.afterTyping });
+      if (i !== strings.length - 1) {
+        typeIt.delete(null, { delay: delays.beforeTyping });
+      }
+    }
+
+    typeIt.go();
+    return () => typeIt.destroy();
+  }, [strings]);
 
   return (
     <section className={styles.aboutContainer} id="home">
-      <h3>{data.subtitle}</h3>
+      <h4>{data.subtitle}</h4>
       <div className={styles.titleContainer}>
         <h1>{data.title1}</h1>
-        <h2 className={styles.text}>
+        <h3 className={styles.text}>
           {data.title2}
-          <span className={styles.typewrittingText} id="typewritting-text">
-            {content}
+          <span ref={typeItRef} className={styles.typewrittingText}>
+            {strings[strings.length - 1]}
           </span>
-        </h2>
+          {/* <span className={styles.typewrittingText} id="typewritting-text">
+            {content}
+          </span> */}
+        </h3>
       </div>
       <p>{data.description}</p>
     </section>

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { HeaderMenu } from "./HeaderMenu";
-import { Logo } from "../Logo";
 import styles from "./styles.module.css";
 import { useScrollingUp } from "hooks";
+import Logo from "public/assets/logo-agg.svg";
 
 export const Header = () => {
   const isScrollingUp = useScrollingUp();
@@ -13,7 +13,7 @@ export const Header = () => {
       <div className={styles.headerContainer}>
         <Link href="/" passHref>
           <a>
-            <Logo color={"#00adb5"} />
+            <Logo />
           </a>
         </Link>
         <HeaderMenu />

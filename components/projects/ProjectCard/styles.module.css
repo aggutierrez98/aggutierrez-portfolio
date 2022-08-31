@@ -1,60 +1,76 @@
 .cardContainer {
   /* background: rgba(255, 255, 255, 0.25); */
-  -webkit-backdrop-filter: blur(2px);
   box-shadow: var(--shadow-elevation-medium);
   backdrop-filter: blur(2px);
-  height: 400px;
+  height: 500px;
   border-radius: 30px;
   padding: 10px;
   margin-bottom: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  /* @media (max-width: 800px) {
+    background: rgba(255, 255, 255, 0.25);
+  } */
+  @media (max-width: 800px) {
+    height: 400px;
+  }
+  @media (max-width: 500px) {
+    height: 320px;
+  }
 }
 
 .textContainer {
-  margin: 20px 30px;
+  margin: 30px 30px;
   display: flex;
   flex-direction: column;
   width: 45%;
-  h4 {
-    color: var(--foreground-color);
+  overflow: hidden;
+  p {
+    color: var(--secondary-color);
     flex-grow: 1;
     text-overflow: ellipsis;
     overflow: hidden;
     margin-right: 30px;
     display: -webkit-box !important;
-    -webkit-line-clamp: 7;
-    line-height: 20px;
+    line-height: 22.5px;
     -webkit-box-orient: vertical;
     white-space: normal;
     font-weight: 300;
-    font-style: italic;
+    -webkit-line-clamp: 9;
+    max-height: 20ch;
+    @media (max-width: 800px) {
+      -webkit-line-clamp: 6;
+      max-height: 14ch;
+    }
   }
-
+  .textBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
   h3 {
-    font-family: "Source Code Pro", monospace;
-    font-weight: 400;
     color: var(--primary-color);
     max-width: fit-content;
-    overflow: hidden;
     position: relative;
     display: inline-block;
-    margin: 10px 0px;
+    margin: 15px 0px;
     font-size: 30px;
-    background: linear-gradient(
-        90deg,
-        var(--primary-color) calc(100% / 3),
-        transparent 0 calc(200% / 3),
-        var(--primary-color) 0
-      )
-      var(--d, 0%) 100% /300% 1px no-repeat;
-    transition: 0.5s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media (max-width: 500px) {
+      margin: 10px 0px;
+    }
   }
-  h3:hover {
-    --d: 100%;
+
+  @media (max-width: 800px) {
+    width: 100%;
   }
 }
+
 .imageContainer {
   height: 100%;
   width: 50%;
@@ -71,9 +87,28 @@
       transition: all 0.15s;
     }
   }
+
+  @media (max-width: 800px) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    height: 98%;
+    width: 98%;
+    backdrop-filter: blur(2px);
+    z-index: -1;
+    background-color: var(--background-color);
+    border-radius: inherit;
+    img {
+      opacity: 0.09;
+    }
+  }
 }
 
 .button {
+  margin-top: 1rem;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -89,13 +124,13 @@
   height: 2.9rem;
   &:hover {
     .buttonText {
-      color: var(--background-color);
+      color: var(--accent-color);
     }
     .circle {
       width: 100%;
     }
     .circle .iconArrow {
-      background: var(--background-color);
+      background: var(--accent-color);
       transform: translate(1rem, 0);
     }
   }
@@ -111,7 +146,7 @@
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: var(--primary-color);
+  color: var(--accent-color);
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -134,7 +169,7 @@
   top: 1px;
   bottom: 0;
   margin: auto;
-  background: var(--background-color);
+  background: var(--accent-color);
   left: 0.4rem;
   width: 1.125rem;
   height: 0.125rem;
@@ -146,8 +181,8 @@
     right: 0.0625rem;
     width: 0.625rem;
     height: 0.625rem;
-    border-top: 0.125rem solid var(--background-color);
-    border-right: 0.125rem solid var(--background-color);
+    border-top: 0.125rem solid var(--accent-color);
+    border-right: 0.125rem solid var(--accent-color);
     transform: rotate(45deg);
   }
 }

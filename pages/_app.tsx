@@ -33,7 +33,15 @@ export default function MyApp({
     ));
 
   return getLayout(
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence
+      exitBeforeEnter
+      onExitComplete={() => {
+        document.getElementById("main-layout")!.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }}
+    >
       <motion.div
         key={router.pathname}
         animate="enter"

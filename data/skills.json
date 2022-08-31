@@ -1,0 +1,230 @@
+[
+  {
+    "name": "React",
+    "color": "#5CCEEE",
+    "url": "https://es.reactjs.org/",
+    "assetName": "react.svg"
+  },
+  {
+    "name": "Nextjs",
+    "color": "#000000",
+    "url": "https://nextjs.org/",
+    "assetName": "nextjs.svg"
+  },
+  {
+    "name": "Typescript",
+    "color": "#2D79C7",
+    "url": "https://www.typescriptlang.org/",
+    "assetName": "typescript.svg"
+  },
+  {
+    "name": "Javascript",
+    "color": "#F0DC4F",
+    "url": "https://www.javascript.com/",
+    "assetName": "javascript.svg"
+  },
+  {
+    "name": "HTML",
+    "color": "#E44F26",
+    "url": "https://www.javascript.com/",
+    "assetName": "html.svg"
+  },
+  {
+    "name": "CSS",
+    "color": "#1572B6",
+    "url": "https://www.javascript.com/",
+    "assetName": "css.svg"
+  },
+  {
+    "name": "Firebase",
+    "color": "#F2C129",
+    "url": "https://firebase.google.com/",
+    "assetName": "firebase.svg"
+  },
+  {
+    "name": "GraphQL",
+    "color": "#E20799",
+    "url": "https://graphql.org/",
+    "assetName": "graphql.svg"
+  },
+  {
+    "name": "Apollo client",
+    "color": "#112B48",
+    "url": "https://www.apollographql.com/docs/react/",
+    "assetName": "apollo-client.svg"
+  },
+  {
+    "name": "Tailwind",
+    "color": "#39B7D6",
+    "url": "https://tailwindcss.com/",
+    "assetName": "tailwind.svg"
+  },
+  {
+    "name": "Redux",
+    "color": "#764ABC",
+    "url": "https://redux.js.org/",
+    "assetName": "redux.svg"
+  },
+  {
+    "name": "Nodejs",
+    "color": "#90C53F",
+    "url": "https://nodejs.org/",
+    "assetName": "nodejs.svg"
+  },
+  {
+    "name": "Python",
+    "color": "#FFD845",
+    "url": "https://nodejs.org/",
+    "assetName": "python.svg"
+  },
+  {
+    "name": "PHP",
+    "color": "#6181B6",
+    "url": "https://nodejs.org/",
+    "assetName": "php.svg"
+  },
+  {
+    "name": "Django",
+    "color": "#103E2E",
+    "url": "https://nodejs.org/",
+    "assetName": "django.svg"
+  },
+  {
+    "name": "Express",
+    "color": "#353535",
+    "url": "https://expressjs.com/",
+    "assetName": "express.svg"
+  },
+  {
+    "name": "Sass",
+    "color": "#CF649A",
+    "url": "https://sass-lang.com/",
+    "assetName": "sass.svg"
+  },
+  {
+    "name": "Postcss",
+    "color": "#DD3735",
+    "url": "https://postcss.org/",
+    "assetName": "postcss.svg"
+  },
+  {
+    "name": "React-native",
+    "color": "#5CCEEE",
+    "url": "https://postcss.org/",
+    "assetName": "react.svg"
+  },
+  {
+    "name": "MongoDB",
+    "color": "#38AA52",
+    "url": "https://www.mongodb.com/",
+    "assetName": "mongodb.svg"
+  },
+  {
+    "name": "MySQL",
+    "color": "#18608A",
+    "url": "https://www.mysql.com/",
+    "assetName": "mysql.svg"
+  },
+  {
+    "name": "PostgreSQL",
+    "color": "#336791",
+    "url": "https://www.mysql.com/",
+    "assetName": "postgresql.svg"
+  },
+  {
+    "name": "Socket-io",
+    "color": "#000000",
+    "url": "https://socket.io/",
+    "assetName": "socket-io.svg"
+  },
+  {
+    "name": "React query",
+    "color": "#FF4154",
+    "url": "https://react-query-v3.tanstack.com/",
+    "assetName": "react-query.svg"
+  },
+  {
+    "name": "Sequelize",
+    "color": "#3B76C3",
+    "url": "https://sequelize.org/",
+    "assetName": "sequelize.svg"
+  },
+  {
+    "name": "Bootstrap",
+    "color": "#8F75FC",
+    "url": "https://getbootstrap.com/",
+    "assetName": "bootstrap.svg"
+  },
+  {
+    "name": "Mongoose",
+    "color": "#810303",
+    "url": "https://mongoosejs.com/",
+    "assetName": "mongoose.svg"
+  },
+  {
+    "name": "Framer Motion",
+    "color": "#E602D1",
+    "url": "https://www.framer.com/motion/",
+    "assetName": "framer-motion.svg"
+  },
+  {
+    "name": "Styled-components",
+    "color": "#934081",
+    "url": "https://styled-components.com/",
+    "assetName": "styled-components.svg"
+  },
+  {
+    "name": "Docker",
+    "color": "#019BC6",
+    "url": "https://styled-components.com/",
+    "assetName": "docker.svg"
+  },
+  {
+    "name": "Kubernetes",
+    "color": "#326CE5",
+    "url": "https://styled-components.com/",
+    "assetName": "kubernetes.svg"
+  },
+  {
+    "name": "Jest",
+    "color": "#99425B",
+    "url": "https://styled-components.com/",
+    "assetName": "jest.svg"
+  },
+  {
+    "name": "Mocha",
+    "color": "#8D6748",
+    "url": "https://styled-components.com/",
+    "assetName": "mocha.svg"
+  },
+  {
+    "name": "Cypress",
+    "color": "#4A4A4D",
+    "url": "https://styled-components.com/",
+    "assetName": "cypress.svg"
+  },
+  {
+    "name": "Github-actions",
+    "color": "#4A7EBF",
+    "url": "https://styled-components.com/",
+    "assetName": "github-actions.svg"
+  },
+  {
+    "name": "Git",
+    "color": "#F34F29",
+    "url": "https://styled-components.com/",
+    "assetName": "git.svg"
+  },
+  {
+    "name": "Linux",
+    "color": "#000000",
+    "url": "https://styled-components.com/",
+    "assetName": "linux.svg"
+  },
+  {
+    "name": "Figma",
+    "color": "#A259FF",
+    "url": "https://styled-components.com/",
+    "assetName": "figma.svg"
+  }
+]

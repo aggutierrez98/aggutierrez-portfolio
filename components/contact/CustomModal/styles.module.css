@@ -1,7 +1,7 @@
 .modalOverlay {
   position: fixed;
   background-color: var(--overlay-color);
-  top: 100px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -17,10 +17,12 @@
   position: relative;
   border-radius: 5px;
   .button {
+    color: var(--primary-color);
     position: absolute;
     border: none;
     top: 15px;
     right: 15px;
+    padding: 5px;
     border-radius: 50%;
     cursor: pointer;
     background-color: transparent;
@@ -31,12 +33,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
 
-    svg path {
-      width: 20px;
-      fill: var(--accent-color);
+    svg {
+      width: 22px;
+      height: 22px;
+
+      fill: var(--primary-color);
     }
   }
 }

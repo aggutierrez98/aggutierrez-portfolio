@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { getTechInfo } from "helpers";
+import { getSkillInfo } from "helpers";
 import styles from "./styles.module.css";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -13,25 +13,35 @@ interface Props {
 
 export const TechsList = ({ techs, variants, detailsPage = false }: Props) => {
   return (
-    <motion.ul className={styles.techsContainer} variants={variants?.container}>
+    <motion.ul
+      className={`${styles.techsContainer} ${
+        detailsPage ? `${styles.extended}` : ""
+      }`}
+      variants={variants?.container}
+    >
       {techs?.map((name) => {
-        const { color, url } = getTechInfo(name);
+        const skillData = getSkillInfo(name);
 
         const Icon = dynamic(
-          async () => await import(`public/assets/svg/mini-icons/${name}.svg`)
+          async () =>
+            await import(`public/assets/svg/mini-icons/${skillData?.assetName}`)
         );
 
         return (
           <li title={`${name}-icon`} key={name}>
             <motion.a
-              whileHover={detailsPage ? {} : { borderColor: color }}
+              whileHover={detailsPage ? {} : { borderColor: skillData?.color }}
               transition={{ duration: 0.15 }}
               variants={variants?.item}
-              style={detailsPage ? { borderColor: color, color } : { color }}
+              style={
+                detailsPage
+                  ? { borderColor: skillData?.color, color: skillData?.color }
+                  : { color: skillData?.color }
+              }
               target="_blank"
               rel="noopener noreferrer"
-              href={url}
-              data-text={name}
+              href={skillData?.url}
+              data-text={skillData?.name}
               className={`${
                 detailsPage ? `${styles.techTagExtended}` : `${styles.techTag}`
               }`}

@@ -7,16 +7,18 @@ interface Props {
   href: string;
   title: string;
   id: number;
+
+  toogle?: () => void;
 }
 
-export const HeaderLink = ({ href, title, id }: Props) => {
+export const HeaderLink = ({ href, title, id, toogle }: Props) => {
   const { asPath } = useRouter();
   const active = asPath === href;
 
   return (
     <li className={`${active ? styles[`item${id}`] : ""}`}>
       <Link href={href}>
-        <a>{title}</a>
+        <a onClick={toogle}>{title}</a>
       </Link>
     </li>
   );

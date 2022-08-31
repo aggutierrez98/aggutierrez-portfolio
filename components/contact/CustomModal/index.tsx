@@ -2,7 +2,7 @@ import { createPortal } from "react-dom";
 import { useOutsideAndEscapeKeyAlerter } from "hooks";
 import { useRef } from "react";
 import styles from "./styles.module.css";
-import { XIcon } from "@heroicons/react/solid";
+import { MdOutlineClose } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface ModalProps {
@@ -40,7 +40,7 @@ const ModalBase = ({
         ref={modalRef}
       >
         <button className={styles.button} onClick={onClose} ref={buttonRef}>
-          <XIcon />
+          <MdOutlineClose />
         </button>
         {children}
       </div>

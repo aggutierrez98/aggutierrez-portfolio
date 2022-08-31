@@ -1,18 +1,26 @@
 import styles from "./styles.module.css";
 import { CustomToastsContainer, Header, Footer } from "components";
+import { useContext } from "react";
+import { ScrollToTopButtton } from "./ScrollToTopButtton";
+import { SocialMediaLinks } from "./SocialMediaLinks";
 interface Props {
   children: React.ReactElement;
 }
 
 export const MainLayout = ({ children }: Props) => {
   return (
-    <main className={styles.main}>
+    <main className={styles.main} id="main-layout">
+      <div id="top-section"></div>
       <Header />
-      <main className={styles.body}>{children}</main>
+      <main className={styles.body} id="body">
+        {children}
+      </main>
       <Footer />
       <div id="modal"></div>
       <div id="loader"></div>
+      <div id="side-menu"></div>
       <CustomToastsContainer />
+      <ScrollToTopButtton />
     </main>
   );
 };
