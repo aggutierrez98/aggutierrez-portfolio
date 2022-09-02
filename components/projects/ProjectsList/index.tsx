@@ -10,7 +10,7 @@ interface Props {
 export const ProjectsModule = ({ projects }: Props) => {
   return (
     <div className={styles.projectsContainer} id="projects">
-      <h2>Some things I have made:</h2>
+      <h2>My Projects:</h2>
 
       {projects.map((proyect, index) => (
         <ProjectCard key={index} proyectData={proyect} />

@@ -8,6 +8,12 @@
   h2 {
     margin-left: 50px;
   }
+  @media (max-width: 600px) {
+    h2 {
+      margin-left: 0;
+    }
+    align-items: center;
+  }
 }
 .contactContainer {
   margin-top: 4rem;
@@ -26,6 +32,9 @@
   font-size: clamp(1rem, 2.5vw, 1.8rem);
   font-weight: bold;
   margin: 2.5rem 0 1.5rem 0;
+  @media (max-width: 600px) {
+    text-align: center;
+  }
 }
 
 /* .imageContainer {

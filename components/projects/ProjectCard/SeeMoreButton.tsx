@@ -13,7 +13,7 @@ export const SeeMoreButton = ({ title }: Props) => {
         <span className={styles.circle} aria-hidden="true">
           <span className={styles.iconArrow}></span>
         </span>
-        <span className={styles.buttonText}>See More</span>
+        <span className={styles.buttonText}>Learn More</span>
       </button>
     </Link>
   );

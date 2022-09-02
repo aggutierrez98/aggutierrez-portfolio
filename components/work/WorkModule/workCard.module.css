@@ -15,7 +15,8 @@
     display: none;
   }
   p {
-    font-size: clamp(0.8rem, 1.2vw, 2rem);
+    margin-top: 0.1rem;
+    font-size: clamp(0.8rem, 1.1vw, 2rem);
   }
 }
 

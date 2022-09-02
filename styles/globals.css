@@ -25,30 +25,33 @@ p {
 }
 
 h1 {
-  font-family: Source Code Pro;
-  font-weight: 400;
   width: fit-content;
   margin: 0;
-  font-size: clamp(1.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 6rem);
   color: var(--accent-color);
   background: linear-gradient(
       90deg,
-      var(--primary-color) calc(100% / 3),
+      var(--secondary-color) calc(100% / 3),
       transparent 0 calc(200% / 3),
-      var(--primary-color) 0
+      var(--secondary-color) 0
     )
     var(--d, 0%) 100% /300% 1px no-repeat;
   transition: 0.5s;
   &:hover {
     --d: 100%;
   }
+
+  @media (max-width: 342px) {
+    background: none;
+    text-decoration: underline 1px var(--primary-color);
+  }
 }
 
 h2 {
   font-family: Source Code Pro;
-  font-weight: 400;
+  font-weight: 300;
   width: fit-content;
-  font-size: clamp(1.5rem, 4vw, 5rem);
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
   color: var(--accent-color);
   background: linear-gradient(
       90deg,

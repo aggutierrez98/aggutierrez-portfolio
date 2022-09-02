@@ -1,5 +1,4 @@
 .aboutContainer {
-  padding: 10vh 0;
   display: flex;
   justify-content: center;
   margin-bottom: 10vh;
@@ -14,7 +13,7 @@
   width: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   @media (max-width: 600px) {
     width: 90%;
@@ -26,7 +25,7 @@
   p {
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     font-size: clamp(1.2rem, 2vw, 1.4rem);
     font-style: italic;
     font-weight: 300;
@@ -52,14 +51,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  h2 {
-    font-weight: 200;
+  h5 {
+    font-weight: 400;
+    font-style: italic;
     font-family: Source Code Pro;
     width: fit-content;
     margin: 0;
     margin-bottom: 25px;
-    font-weight: bolder;
-    font-size: clamp(1.25rem, 5vw, 3rem);
+    font-size: clamp(1.25rem, 4vw, 2rem);
     color: var(--accent-color);
   }
 }
@@ -82,6 +81,10 @@
     h3 {
       font-size: 18px;
       color: var(--primary-color);
+      font-weight: 500;
+      @media (max-width: 500px) {
+        font-size: 15px;
+      }
     }
     ul {
       display: flex;
@@ -122,70 +125,6 @@
     padding: 10px;
     p {
       font-size: 14px;
-    }
-  }
-}
-
-.resumeButton {
-  width: fit-content;
-  border-radius: 30px;
-  button {
-    border-radius: inherit;
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    width: fit-content;
-    position: relative;
-    overflow: hidden;
-    height: 3rem;
-    padding: 0 1.5rem;
-    border: none;
-    outline: 1px solid var(--primary-color);
-    background-size: 400%;
-    cursor: pointer;
-
-    svg {
-      color: var(--accent-color);
-      margin-right: 10px;
-      width: 28px;
-      height: 25px;
-      z-index: 1;
-    }
-
-    span {
-      color: var(--accent-color);
-      position: relative;
-      z-index: 1;
-      font-family: Raleway;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    &::before {
-      content: "";
-      border-radius: inherit;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: scaleX(0);
-      transform-origin: 0 50%;
-      width: 100%;
-      height: inherit;
-      background: linear-gradient(
-        82.3deg,
-        var(--primary-color),
-        var(--secondary-color)
-      );
-      transition: all 0.475s;
-    }
-
-    &:hover {
-      transition: all 0.475s;
-      box-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 20px var(--primary-color),
-        0 0 30px var(--primary-color);
-      &::before {
-        transform: scaleX(1);
-      }
     }
   }
 }

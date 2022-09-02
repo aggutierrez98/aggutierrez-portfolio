@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 export const SkillsList = ({ data }: { data: any }) => {
   return (
     <div className={styles.skillsContainer}>
-      <h2>My skills</h2>
+      <h5>My skills</h5>
       <div className={styles.skillsTable}>
         <div className={styles.skillsSection}>
           <h3>Frontend</h3>

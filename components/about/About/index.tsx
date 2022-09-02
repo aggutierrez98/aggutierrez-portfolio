@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./styles.module.css";
-import { ResumeButton } from "./ResumeButton";
 import { SkillsList } from "./SkillsList";
 
 interface Props {
@@ -15,7 +14,6 @@ export const About = ({ data }: Props) => {
         <div className={styles.textContainer}>
           <h2>{data.title}</h2>
           <p>{data.description1}</p>
-          <ResumeButton />
         </div>
         <div className={styles.imageContainer}>
           <Image
