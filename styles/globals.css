@@ -24,6 +24,21 @@ p {
   color: var(--accent-color);
 }
 
+.divider-1 {
+  color: var(--background-color);
+  fill: var(--background-light-color);
+}
+.divider-2 {
+  color: var(--background-light-color);
+  fill: var(--background-color);
+}
+
+.detailsBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
   width: fit-content;
   margin: 0;

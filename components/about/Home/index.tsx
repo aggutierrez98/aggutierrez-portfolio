@@ -29,17 +29,19 @@ export const Home = ({ data }: Props) => {
   }, [memoizedData.specials]);
 
   return (
-    <section className={styles.aboutContainer} id="home">
-      <h4>{memoizedData.subtitle}</h4>
-      <div className={styles.titleContainer}>
-        <h1>{memoizedData.title1}</h1>
-        <h3 className={styles.text}>
-          {memoizedData.title2}
-          <span id="typing" className={styles.typewrittingText}></span>
-        </h3>
+    <section id="home" className={styles.home}>
+      <div className={styles.aboutContainer}>
+        <h4>{memoizedData.subtitle}</h4>
+        <div className={styles.titleContainer}>
+          <h1>{memoizedData.title1}</h1>
+          <h3 className={styles.text}>
+            {memoizedData.title2}
+            <span id="typing" className={styles.typewrittingText}></span>
+          </h3>
+        </div>
+        <p>{memoizedData.description}</p>
+        <ResumeButton />
       </div>
-      <p>{memoizedData.description}</p>
-      <ResumeButton />
     </section>
   );
 };

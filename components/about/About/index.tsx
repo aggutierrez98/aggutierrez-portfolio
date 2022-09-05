@@ -10,21 +10,23 @@ interface Props {
 export const About = ({ data }: Props) => {
   return (
     <section id="about">
-      <div className={styles.aboutContainer}>
-        <div className={styles.textContainer}>
-          <h2>{data.title}</h2>
-          <p>{data.description1}</p>
+      <div className={styles.about}>
+        <div className={styles.aboutContainer}>
+          <div className={styles.textContainer}>
+            <h2>{data.title}</h2>
+            <p>{data.description1}</p>
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/assets/avatar-image-placeholder.svg"}
+              width={300}
+              height={300}
+              alt="Aggutierrez image"
+            />
+          </div>
         </div>
-        <div className={styles.imageContainer}>
-          <Image
-            src={"/assets/avatar-image-placeholder.svg"}
-            width={300}
-            height={300}
-            alt="Aggutierrez image"
-          />
-        </div>
+        <SkillsList data={data} />
       </div>
-      <SkillsList data={data} />
     </section>
   );
 };

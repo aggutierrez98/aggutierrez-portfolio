@@ -3,6 +3,7 @@ import Head from "next/head";
 import projects from "data/projects.json";
 import { Project } from "interfaces";
 import { ProjectDetails } from "components/projects/ProjectDetails";
+import LayeredWaves from "@c/dividers/LayeredWaves";
 
 interface Props {
   projectData: Project;
@@ -15,8 +16,10 @@ const ProyectPage = ({ projectData }: Props) => {
         <title>Proyects</title>
         <meta name="description" content="Proyects made by aggutierrez" />
       </Head>
-      <main>
+      <main className="detailsBody">
         <ProjectDetails projectData={projectData} />
+
+        <LayeredWaves color="#222830" />
       </main>
     </>
   );

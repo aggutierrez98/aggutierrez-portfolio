@@ -48,6 +48,11 @@
   @media (max-width: 500px) {
     display: none;
   }
+
+  svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
 }
 
 .techTagExtended {
@@ -94,5 +99,10 @@
     visibility: visible;
     max-width: 120px;
     font-size: 16px;
+  }
+
+  svg {
+    width: 20px !important;
+    height: 20px !important;
   }
 }

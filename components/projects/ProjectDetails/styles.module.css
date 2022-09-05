@@ -1,5 +1,13 @@
 .detailsContainer {
-  margin-top: 18vh;
+  /* display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center; */
+  /* align-self: center;
+  justify-self: center; */
+  width: 85%;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
   color: var(--accent-color);
   h1 {
     margin: 5px;

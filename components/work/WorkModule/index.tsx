@@ -8,13 +8,15 @@ interface Props {
 
 export const WorkModule = ({ works }: Props) => {
   return (
-    <section id="work" className={styles.workContainer}>
-      <h2>Work</h2>
-      <ul>
-        {works.map((work, index) => (
-          <WorkCard key={index} workData={work} />
-        ))}
-      </ul>
+    <section id="work" className={styles.work}>
+      <div className={styles.workContainer}>
+        <h2>Work</h2>
+        <ul>
+          {works.map((work, index) => (
+            <WorkCard key={index} workData={work} />
+          ))}
+        </ul>
+      </div>
     </section>
   );
 };

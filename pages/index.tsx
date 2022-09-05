@@ -6,6 +6,8 @@ import { ProjectsModule } from "components";
 import { Project } from "../interfaces/index";
 import { Home, ContactModule, About } from "components";
 import { WorkModule } from "components";
+import LayeredWaves from "@c/dividers/LayeredWaves";
+import WaveSmooth from "components/dividers/WaveSmooth";
 
 interface Props {
   projects: Project[];
@@ -23,13 +25,23 @@ const HomePage = ({ projects }: Props) => {
 
       <Home data={homeData} />
 
+      <WaveSmooth number={1} />
+
       <About data={aboutData} />
+
+      <WaveSmooth number={2} />
 
       <WorkModule works={works} />
 
+      <WaveSmooth number={1} />
+
       <ProjectsModule projects={projects} />
 
+      <WaveSmooth number={2} />
+
       <ContactModule />
+
+      <LayeredWaves color="#2B3338" />
     </>
   );
 };

@@ -11,6 +11,11 @@
   @media (max-width: 850px) {
     width: 100%;
   }
+  @media (max-width: 350px) {
+    width: 90%;
+  }
+
+  /* max-width: 95%; */
 }
 
 .formTitle {
@@ -47,15 +52,18 @@
   color: var(--secondary-color);
   transform: translateY(-50%);
   top: 50%;
-  width: 20px;
+  left: 5px;
+  width: 16px !important;
+  height: 16px !important;
 }
 
 .textareaIcon {
   position: absolute;
   margin-left: 12px;
   color: var(--secondary-color);
-  top: 10px;
-  width: 20px;
+  top: 11px;
+  width: 16px !important;
+  height: 16px !important;
 }
 
 .input {
@@ -118,7 +126,8 @@
     font-size: 12px;
     padding: 0 3px;
     color: var(--primary-color);
-    background-color: var(--background-color);
+    /* background-color: #2b3338; */
+    background-color: var(--background-light-color);
     font-weight: bold;
   }
 
@@ -132,7 +141,7 @@
   left: 40px;
   font-size: 14px;
   font-weight: 300;
-  top: -5px;
+  top: -6px;
   background-color: transparent;
   color: var(--secondary-color);
   pointer-events: none;
