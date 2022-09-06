@@ -22,3 +22,9 @@ export interface Work {
   time: string;
   tasks: string[];
 }
+
+export interface Metadata {
+  title: string;
+  description: string;
+  image?: string;
+}

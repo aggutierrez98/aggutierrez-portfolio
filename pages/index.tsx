@@ -3,24 +3,49 @@ import projects from "data/projects.json";
 import data from "data/info.json";
 import works from "data/experience.json";
 import { ProjectsModule } from "components";
-import { Project } from "../interfaces/index";
+import { Metadata, Project } from "../interfaces/index";
 import { Home, ContactModule, About } from "components";
 import { WorkModule } from "components";
 import LayeredWaves from "@c/dividers/LayeredWaves";
 import WaveSmooth from "components/dividers/WaveSmooth";
+import metadata from "data/metadata/index.json";
+import { useRouter } from "next/router";
 
 interface Props {
   projects: Project[];
+  metaData: Metadata;
 }
 
-const HomePage = ({ projects }: Props) => {
+const HomePage = ({ projects, metaData }: Props) => {
   const { home: homeData, about: aboutData } = data;
+
+  const origin = typeof window === "undefined" ? "" : window.location.origin;
+  const { pathname } = useRouter();
+
+  const seo = {
+    title: metaData.title,
+    description: metaData.description,
+    url: `${origin}${pathname}`,
+  };
 
   return (
     <>
       <Head>
-        <title>Aggutierrez</title>
-        <meta name="description" content="Agustin Gutierrez web page" />
+        <title>{`${seo.title}`}</title>
+        <meta name="description" content={`${seo.description}`} />
+        <meta name="description" content={seo.description} />
+        <meta name="image" content={`${origin}/banner.jpg`} />
+
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:image" content={`${origin}/banner.jpg`} />
+        <meta property="og:url" content={seo.url} />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content={`${origin}/banner.jpg`} />
       </Head>
 
       <Home data={homeData} />
@@ -52,6 +77,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       projects,
+      metaData: metadata,
     },
   };
 };

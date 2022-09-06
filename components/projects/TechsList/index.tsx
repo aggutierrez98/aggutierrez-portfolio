@@ -30,7 +30,14 @@ export const TechsList = ({ techs, variants, detailsPage = false }: Props) => {
         return (
           <li title={`${name}-icon`} key={name}>
             <motion.a
-              whileHover={detailsPage ? {} : { borderColor: skillData?.color }}
+              whileHover={
+                detailsPage
+                  ? {}
+                  : {
+                      borderColor: skillData?.color,
+                      boxShadow: `0 0 5px ${skillData?.color}`,
+                    }
+              }
               transition={{ duration: 0.15 }}
               variants={variants?.item}
               style={

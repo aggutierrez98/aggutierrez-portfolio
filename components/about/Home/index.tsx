@@ -16,15 +16,15 @@ export const Home = ({ data }: Props) => {
       const typeIt = new TypeIt("#typing", {
         loop: true,
         waitUntilVisible: true,
+        cursorSpeed: 500,
+        speed: 150,
+        deleteSpeed: 50,
+        lifeLike: false,
       });
-
       for (const str of memoizedData.specials) {
-        console.log({ str });
-        typeIt.type(str).pause(100).delete(str.length);
+        typeIt.type(str).pause(200).delete(str.length);
       }
-
       typeIt.go();
-      // return () => typeIt.destroy();
     }
   }, [memoizedData.specials]);
 

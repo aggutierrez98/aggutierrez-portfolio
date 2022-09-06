@@ -1,9 +1,8 @@
 .container {
   position: fixed;
   left: 5%;
-  top: 0;
   bottom: 0;
-  height: 100vh;
+  height: fit-content;
   display: flex;
   align-items: flex-end;
   li {

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
-import { FaChevronUp } from "react-icons/fa";
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 export const ScrollToTopButtton = () => {
   const [showButton, setShowButton] = useState(false);
@@ -13,39 +13,62 @@ export const ScrollToTopButtton = () => {
     });
   };
 
+  console.log({ showButton });
+
   useEffect(() => {
     const options = {
       root: null,
       rootMargin: "0px",
       threshold: 1.0,
     };
-
     const topSection = document.getElementById("top-section")!;
     const observer = new IntersectionObserver(callback, options);
     observer.observe(topSection);
   }, []);
 
   return (
-    <AnimatePresence>
-      {showButton && (
-        <motion.button
-          id="side-button"
-          initial={{ opacity: 0, scaleX: 0 }}
-          exit={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          whileHover={{ opacity: 0.7 }}
-          transition={{ duration: 0.25 }}
-          className={styles.goToTopButton}
-          onClick={() => {
-            document.getElementById("main-layout")!.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          }}
-        >
-          <FaChevronUp />
-        </motion.button>
+    <>
+      {showButton ? (
+        <AnimatePresence>
+          <motion.button
+            id="side-button-up"
+            initial={{ opacity: 0, scaleX: 0 }}
+            exit={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            whileHover={{ opacity: 0.7 }}
+            transition={{ duration: 0.25, delay: 0.5 }}
+            className={styles.goToTopButton}
+            onClick={() => {
+              document.getElementById("main-layout")!.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            <FaChevronUp />
+          </motion.button>
+        </AnimatePresence>
+      ) : (
+        <AnimatePresence>
+          <motion.button
+            id="side-button-down"
+            initial={{ opacity: 0, scaleX: 0 }}
+            exit={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            whileHover={{ opacity: 0.7 }}
+            transition={{ duration: 0.25, delay: 0.5 }}
+            className={styles.goToTopButton}
+            onClick={() => {
+              setShowButton(false);
+              document
+                .getElementById("about")!
+                .scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            <FaChevronDown />
+          </motion.button>
+        </AnimatePresence>
       )}
-    </AnimatePresence>
+    </>
   );
 };

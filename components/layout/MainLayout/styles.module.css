@@ -52,8 +52,10 @@
 .goToTopButton {
   display: flex;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  /* bottom: 7%;
+  right: 5%; */
+  bottom: 5vw;
+  right: 5vh;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -64,13 +66,19 @@
     width: 18px;
     height: 18px;
   }
-  @media (max-width: 600px) {
+  bottom: 35px;
+  right: 35px;
+  @media (max-width: 550px) {
     padding: 12px;
     svg {
       width: 15px;
       height: 15px;
     }
-    bottom: 15px;
-    right: 15px;
+    /* bottom: 15px;
+    right: 15px; */
+    /* bottom: 7%;
+    right: 5%; */
+    /* bottom: 10%;
+    right: 10%; */
   }
 }
