@@ -21,7 +21,7 @@
     margin-bottom: 5px;
   }
   &::-webkit-scrollbar-thumb {
-    background: var(--foreground-color);
+    background: var(--secondary-color);
     border-radius: 5px;
   }
   &::-webkit-scrollbar-thumb:hover {
@@ -80,5 +80,10 @@
     right: 5%; */
     /* bottom: 10%;
     right: 10%; */
+  }
+
+  &:hover {
+    box-shadow: 0 0 8px var(--primary-color);
+    transition: all 0.15s ease;
   }
 }

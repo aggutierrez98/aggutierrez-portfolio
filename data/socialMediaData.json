@@ -1,5 +1,22 @@
 {
-  "github_profile": "https://github.com/aggutierrez98",
-  "linkedin_profile": "https://www.linkedin.com/in/agustin-gutierrez-59993020b/",
-  "discord_user": "aggutierrez#1860"
+  "github": {
+    "link": "https://github.com/aggutierrez98",
+    "icon": "github",
+    "title": "Go to github profile"
+  },
+  "linkedin": {
+    "link": "https://www.linkedin.com/in/agustin-gutierrez-59993020b/",
+    "icon": "linkedin",
+    "title": "Go to linkedin profile"
+  },
+  "discord": {
+    "title": "Copy my discord user",
+    "icon": "discord",
+    "action": "copyuser"
+  },
+  "mail": {
+    "title": "Send me an email",
+    "icon": "gmail",
+    "action": "sendemail"
+  }
 }

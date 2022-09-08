@@ -55,6 +55,7 @@ h1 {
   transition: 0.5s;
   &:hover {
     --d: 100%;
+    text-shadow: 0 0 10px var(--accent-color);
   }
 
   @media (max-width: 342px) {
@@ -79,6 +80,7 @@ h2 {
   transition: 0.5s;
   &:hover {
     --d: 100%;
+    text-shadow: 0 0 7px var(--accent-color);
   }
 }
 

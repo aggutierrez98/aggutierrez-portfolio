@@ -28,3 +28,10 @@ export interface Metadata {
   description: string;
   image?: string;
 }
+
+export interface MediaData {
+  link: string;
+  icon: string;
+  title: string;
+  action: string;
+}

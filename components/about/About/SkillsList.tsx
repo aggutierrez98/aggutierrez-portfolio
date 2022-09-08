@@ -17,9 +17,7 @@ export const SkillsList = ({ data }: { data: any }) => {
               const skillData = getSkillInfo(skill);
               const Icon = dynamic(
                 async () =>
-                  await import(
-                    `public/assets/svg/mini-icons/${skillData?.assetName}`
-                  )
+                  await import(`public/assets/techs/${skillData?.assetName}`)
               );
               return (
                 <li key={index}>
@@ -52,9 +50,7 @@ export const SkillsList = ({ data }: { data: any }) => {
               const skillData = getSkillInfo(skill);
               const Icon = dynamic(
                 async () =>
-                  await import(
-                    `public/assets/svg/mini-icons/${skillData?.assetName}`
-                  )
+                  await import(`public/assets/techs/${skillData?.assetName}`)
               );
               return (
                 <li key={index}>
@@ -87,9 +83,7 @@ export const SkillsList = ({ data }: { data: any }) => {
               const skillData = getSkillInfo(skill);
               const Icon = dynamic(
                 async () =>
-                  await import(
-                    `public/assets/svg/mini-icons/${skillData?.assetName}`
-                  )
+                  await import(`public/assets/techs/${skillData?.assetName}`)
               );
               return (
                 <li key={index}>
@@ -122,9 +116,7 @@ export const SkillsList = ({ data }: { data: any }) => {
               const skillData = getSkillInfo(skill);
               const Icon = dynamic(
                 async () =>
-                  await import(
-                    `public/assets/svg/mini-icons/${skillData?.assetName}`
-                  )
+                  await import(`public/assets/techs/${skillData?.assetName}`)
               );
               return (
                 <li key={index}>

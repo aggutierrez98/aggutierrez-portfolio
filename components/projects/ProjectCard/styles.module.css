@@ -140,6 +140,7 @@
     }
     .circle {
       width: 100%;
+      box-shadow: 0 0 4px var(--primary-color);
     }
     .circle .iconArrow {
       background: var(--accent-color);

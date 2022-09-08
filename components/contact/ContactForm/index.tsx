@@ -41,7 +41,6 @@ export const ContactForm = ({
           errorFields.name ? styles.groupError : ""
         }`}
       >
-        <MdPerson className={styles.icon} />
         <input
           type="text"
           name="name"
@@ -49,7 +48,10 @@ export const ContactForm = ({
           value={name}
           className={styles.input}
           onChange={onChange}
+          // autoComplete="off"
         />
+        <MdPerson className={styles.icon} />
+
         <label className={styles.label}>Name</label>
       </div>
       <div
@@ -57,7 +59,6 @@ export const ContactForm = ({
           errorFields.email ? styles.groupError : ""
         }`}
       >
-        <MdMail className={styles.icon} />
         <input
           aria-invalid="true"
           type="email"
@@ -67,7 +68,9 @@ export const ContactForm = ({
           value={email}
           className={styles.input}
           onChange={onChange}
+          // autoComplete="off"
         />
+        <MdMail className={styles.icon} />
         <label className={styles.label}>Email</label>
       </div>
 
@@ -76,7 +79,6 @@ export const ContactForm = ({
           errorFields.message ? styles.groupError : ""
         }`}
       >
-        <MdChat className={styles.textareaIcon} />
         <textarea
           name="message"
           placeholder="message"
@@ -85,6 +87,7 @@ export const ContactForm = ({
           onChange={onChange}
           rows={6}
         />
+        <MdChat className={styles.textareaIcon} />
         <label className={styles.label}>Message</label>
       </div>
       <SendButton />

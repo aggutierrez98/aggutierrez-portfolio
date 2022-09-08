@@ -35,8 +35,8 @@ export const ScrollToTopButtton = () => {
             initial={{ opacity: 0, scaleX: 0 }}
             exit={{ opacity: 0, scaleX: 0 }}
             whileInView={{ opacity: 1, scaleX: 1 }}
-            whileHover={{ opacity: 0.7 }}
-            transition={{ duration: 0.25, delay: 0.5 }}
+            whileHover={{ scale: 1.15 }}
+            transition={{ duration: 0.15 }}
             className={styles.goToTopButton}
             onClick={() => {
               document.getElementById("main-layout")!.scrollTo({
@@ -55,8 +55,8 @@ export const ScrollToTopButtton = () => {
             initial={{ opacity: 0, scaleX: 0 }}
             exit={{ opacity: 0, scaleX: 0 }}
             whileInView={{ opacity: 1, scaleX: 1 }}
-            whileHover={{ opacity: 0.7 }}
-            transition={{ duration: 0.25, delay: 0.5 }}
+            whileHover={{ scale: 1.15 }}
+            transition={{ duration: 0.15 }}
             className={styles.goToTopButton}
             onClick={() => {
               setShowButton(false);

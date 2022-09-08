@@ -35,7 +35,9 @@
       outline-color: var(--error-icon-color);
       ~ label {
         color: var(--error-icon-color);
+        text-shadow: 0 0 1px var(--error-icon-color) !important;
       }
+      box-shadow: 0 0 6px var(--error-icon-color);
     }
     .icon,
     .textareaIcon {
@@ -89,8 +91,10 @@
   &:-webkit-autofill,
   :-webkit-autofill:hover,
   :-webkit-autofill:focus,
-  :-webkit-autofill:active {
+  :-webkit-autofill:active,
+  :-internal-autofill-selected {
     transition: all 0s 50000s;
+    background-color: transparent !important;
   }
 
   &::-webkit-scrollbar {
@@ -116,13 +120,21 @@
 
   &:focus {
     outline-color: var(--primary-color);
+    box-shadow: 0 0 4.5px var(--primary-color);
+    transition: all 0.15s ease;
+
+    ~ .icon,
+    ~ .textareaIcon {
+      color: var(--primary-color) !important;
+    }
   }
 
   &:focus ~ .label,
   &:not(:placeholder-shown) ~ .label {
+    text-shadow: 0 0 1px var(--primary-color);
     transform: translateY(-0.15rem);
     font-size: 12px;
-    padding: 0 3px;
+    padding: 0 4px;
     color: var(--primary-color);
     /* background-color: #2b3338; */
     background-color: var(--background-light-color);
@@ -189,6 +201,7 @@
 
   &:hover {
     background-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color);
     svg {
       transform: translateX(1.2em) rotate(45deg) scale(1.1);
     }

@@ -6,36 +6,11 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { SeeMoreButton } from "./SeeMoreButton";
 import { Project } from "interfaces";
+import { boxVariants } from "./variants";
 
 interface Props {
   proyectData: Project;
 }
-
-const squareVariants = {
-  visible: { opacity: 1, transition: { duration: 0.35 } },
-  hidden: { opacity: 0 },
-};
-
-const techsVariants = {
-  container: {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.2,
-      },
-    },
-  },
-  item: {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  },
-};
 
 export const ProjectCard = ({
   proyectData: { title, description, image_url, techs },
@@ -52,7 +27,7 @@ export const ProjectCard = ({
     <LazyMotion features={domAnimation}>
       <m.article
         ref={ref}
-        variants={squareVariants}
+        variants={boxVariants}
         animate={controls}
         initial="hidden"
         // // onMouseUp={(e) =>
@@ -67,7 +42,7 @@ export const ProjectCard = ({
             </h3>
             <p>{description}</p>
             <div className={styles.textBottom}>
-              <TechsList techs={techs} variants={techsVariants} />
+              <TechsList techs={techs} />
               <SeeMoreButton title={title} />
             </div>
           </div>

@@ -7,7 +7,7 @@
   },
   {
     "name": "Nextjs",
-    "color": "#000000",
+    "color": "#FFFFFF",
     "url": "https://nextjs.org/",
     "assetName": "nextjs.svg"
   },
@@ -49,7 +49,7 @@
   },
   {
     "name": "Apollo client",
-    "color": "#112B48",
+    "color": "#371EA0",
     "url": "https://www.apollographql.com/docs/react/",
     "assetName": "apollo-client.svg"
   },
@@ -85,13 +85,13 @@
   },
   {
     "name": "Django",
-    "color": "#103E2E",
+    "color": "#44b78b",
     "url": "https://nodejs.org/",
     "assetName": "django.svg"
   },
   {
     "name": "Express",
-    "color": "#353535",
+    "color": "#B3B3B3",
     "url": "https://expressjs.com/",
     "assetName": "express.svg"
   },
@@ -121,7 +121,7 @@
   },
   {
     "name": "MySQL",
-    "color": "#18608A",
+    "color": "#47809D",
     "url": "https://www.mysql.com/",
     "assetName": "mysql.svg"
   },
@@ -133,7 +133,7 @@
   },
   {
     "name": "Socket-io",
-    "color": "#000000",
+    "color": "#FFFFFF",
     "url": "https://socket.io/",
     "assetName": "socket-io.svg"
   },
@@ -199,7 +199,7 @@
   },
   {
     "name": "Cypress",
-    "color": "#4A4A4D",
+    "color": "#69D3A7",
     "url": "https://styled-components.com/",
     "assetName": "cypress.svg"
   },
@@ -217,7 +217,7 @@
   },
   {
     "name": "Linux",
-    "color": "#000000",
+    "color": "#FCD22F",
     "url": "https://styled-components.com/",
     "assetName": "linux.svg"
   },
