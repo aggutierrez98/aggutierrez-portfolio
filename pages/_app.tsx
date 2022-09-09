@@ -26,11 +26,16 @@ export default function MyApp({
 
   const getLayout =
     Component.getLayout ??
-    ((page) => (
-      <ToastProvider>
-        <MainLayout>{page}</MainLayout>
-      </ToastProvider>
-    ));
+    ((page) => {
+      console.log(page.props);
+      return (
+        <ToastProvider>
+          <MainLayout socialMediaData={page.props.socialMediaData}>
+            {page}
+          </MainLayout>
+        </ToastProvider>
+      );
+    });
 
   return getLayout(
     <AnimatePresence

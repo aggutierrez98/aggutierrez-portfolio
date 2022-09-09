@@ -9,6 +9,7 @@ import { WorkModule } from "components";
 import LayeredWaves from "@c/dividers/LayeredWaves";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import metadata from "data/metadata/index.json";
+import socialMediaData from "data/socialMediaData.json";
 import { useRouter } from "next/router";
 
 interface Props {
@@ -78,6 +79,7 @@ export const getStaticProps = async () => {
     props: {
       projects,
       metaData: metadata,
+      socialMediaData,
     },
   };
 };
