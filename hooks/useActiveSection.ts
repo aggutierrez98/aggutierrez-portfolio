@@ -1,15 +1,19 @@
 import { useEffect, useState, useTransition } from "react";
 
-const sectionIds = ["home", "about", "experience", "projects", "contact"];
-export type SectionId =
-  | "home"
-  | "about"
-  | "experience"
-  | "projects"
-  | "contact";
+const sections = [
+  "contact",
+  "projects",
+  "experience",
+  "about",
+  "home",
+] as const;
 
-const isSectionId = (value: string): value is SectionId =>
-  sectionIds.includes(value);
+type SectionId = typeof sections[number];
+
+const isSectionId = (value: string): value is SectionId => {
+  const sectionIds = sections;
+  return sectionIds.includes(value as SectionId);
+};
 
 const useActiveSectionId = (): SectionId => {
   const [, startTransition] = useTransition();
@@ -18,6 +22,7 @@ const useActiveSectionId = (): SectionId => {
   useEffect(() => {
     const initId = window.location.hash?.slice(1);
     if (isSectionId(initId)) setActiveSectionId(initId);
+    const sectionIds = (sections as unknown as string[]).reverse();
 
     const handleScroll = () => {
       const body = document.getElementById("main-layout");
