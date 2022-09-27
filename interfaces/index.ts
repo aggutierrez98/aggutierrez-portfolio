@@ -30,8 +30,8 @@ export interface Metadata {
 }
 
 export interface MediaData {
-  link: string;
+  link?: string;
   icon: string;
   title: string;
-  action: string;
+  action?: string;
 }

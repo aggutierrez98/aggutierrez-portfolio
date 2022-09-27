@@ -10,6 +10,8 @@ import { HeaderLink } from "./HeaderLink";
 import { HeaderButtonMenu } from "./HeaderButtonMenu";
 import { SideMenu } from "./SideMenu";
 import { useOutsideAndEscapeKeyAlerter } from "hooks";
+import { LazyMotion, m, domAnimation } from "framer-motion";
+import { headerListVariant } from "./variants";
 export const HeaderMenu = () => {
   const [showSideMenu, setShowSideMenu] = useState(false);
 
@@ -34,13 +36,13 @@ export const HeaderMenu = () => {
 
   return (
     <menu className={styles.menu}>
-      <ul>
-        <HeaderLink href="/#about" title="About" id={1} />
-        <HeaderLink href="/#projects" title="Projects" id={2} />
-        <HeaderLink href="/#work" title="Work" id={3} />
-        <HeaderLink href="/#contact" title="Contact" id={4} />
-        <hr />
-      </ul>
+      <m.ul initial="hidden" animate="visible" variants={headerListVariant}>
+        <HeaderLink href="/#home" title="Home" />
+        <HeaderLink href="/#about" title="About" />
+        <HeaderLink href="/#experience" title="Experience" />
+        <HeaderLink href="/#projects" title="Projects" />
+        <HeaderLink href="/#contact" title="Contact" />
+      </m.ul>
       <HeaderButtonMenu
         action={() => setShowSideMenu(!showSideMenu)}
         value={showSideMenu}

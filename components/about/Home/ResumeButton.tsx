@@ -1,13 +1,16 @@
 import styles from "./styles.module.css";
+import { m } from "framer-motion";
+import { itemVariant } from "./variants";
 
 export const ResumeButton = () => {
   return (
-    <a
+    <m.a
       href="/cv.pdf"
       title="Download CV"
       target="_blank"
       rel="nooperner noreferrer"
       className={styles.resumeButton}
+      variants={itemVariant}
     >
       <button>
         <svg
@@ -24,6 +27,6 @@ export const ResumeButton = () => {
         </svg>
         <span>Download Resume</span>
       </button>
-    </a>
+    </m.a>
   );
 };

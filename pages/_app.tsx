@@ -5,9 +5,8 @@ import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { MainLayout } from "components";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePreviousPathname } from "hooks/usePreviousPathname";
-import { getPagesVariants } from "helpers/getPagesVariants";
 import { ToastProvider } from "context/ToastContext";
+import { usePreserveScroll } from "hooks";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -22,38 +21,31 @@ export default function MyApp({
   pageProps,
   router,
 }: AppPropsWithLayout) {
-  const prevPath = usePreviousPathname(router.asPath);
+  usePreserveScroll();
 
   const getLayout =
     Component.getLayout ??
     ((page) => {
-      console.log(page.props);
       return (
         <ToastProvider>
-          <MainLayout socialMediaData={page.props.socialMediaData}>
-            {page}
-          </MainLayout>
+          <MainLayout>{page}</MainLayout>
         </ToastProvider>
       );
     });
 
   return getLayout(
-    <AnimatePresence
-      exitBeforeEnter
-      onExitComplete={() => {
-        document.getElementById("main-layout")!.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }}
-    >
+    <AnimatePresence exitBeforeEnter>
       <motion.div
         key={router.pathname}
         animate="enter"
         exit="exit"
         initial="hidden"
-        transition={{ type: "spring", duration: 0.3, delay: 0 }}
-        variants={getPagesVariants(router.pathname, prevPath)}
+        transition={{ type: "spring", duration: 0.3 }}
+        variants={{
+          hidden: { opacity: 0 },
+          enter: { opacity: 1 },
+          exit: { opacity: 0 },
+        }}
       >
         <Component {...pageProps} />
       </motion.div>

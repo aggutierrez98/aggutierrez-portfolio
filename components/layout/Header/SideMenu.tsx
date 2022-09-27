@@ -1,7 +1,8 @@
 import React, { RefObject } from "react";
 import styles from "./sideMenu.module.css";
 import { HeaderLink } from "./HeaderLink";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, m } from "framer-motion";
+import { headerSideListVariant } from "./variants";
 
 interface Props {
   isShowing: boolean;
@@ -18,35 +19,43 @@ export const SideMenu = ({
   return (
     <AnimatePresence>
       {isShowing && (
-        <motion.aside
+        <m.aside
           ref={refValue}
           id="side-menu"
           className={styles.menu}
-          initial={{ width: 0, opacity: 0 }}
-          animate={{
-            width: "75%",
-            opacity: 1,
-          }}
-          transition={{ duration: 0.2 }}
-          exit={{ width: 0, opacity: 0 }}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={headerSideListVariant}
         >
           <ul>
-            <HeaderLink href="/#about" title="About" id={1} toogle={toogle} />
+            <HeaderLink href="/#home" title="Home" toogle={toogle} isSideLink />
+            <HeaderLink
+              href="/#about"
+              title="About"
+              toogle={toogle}
+              isSideLink
+            />
             <HeaderLink
               href="/#projects"
               title="Projects"
-              id={2}
               toogle={toogle}
+              isSideLink
             />
-            <HeaderLink href="/#work" title="Work" id={3} toogle={toogle} />
+            <HeaderLink
+              href="/#experience"
+              title="Experience"
+              toogle={toogle}
+              isSideLink
+            />
             <HeaderLink
               href="/#contact"
               title="Contact"
-              id={4}
               toogle={toogle}
+              isSideLink
             />
           </ul>
-        </motion.aside>
+        </m.aside>
       )}
     </AnimatePresence>
   );

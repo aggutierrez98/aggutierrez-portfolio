@@ -42,6 +42,9 @@
     5.8px 8.6px 15.6px hsl(var(--shadow-color) / 0.45);
   --error-icon-color: #e53935;
   --success-icon-color: #4caf50;
+
+  --ti-cursor-color: var(--secondary-color);
+  --ti-cursor-font-weight: 200;
 }
 
 @media (prefers-color-scheme: dark) {

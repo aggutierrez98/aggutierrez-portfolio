@@ -64,38 +64,56 @@
   li {
     text-align: center;
     margin: 5px;
-    width: 60px;
+    margin-left: 10px;
+    @media (max-width: 750px) {
+      margin-left: 5px;
+    }
   }
   a {
     color: var(--accent-color);
-    font-size: 14px;
-    font-size: medium;
+    /* z-index: 3; */
+    /* font-family: Source Code Pro; */
+    font-size: 18px;
     text-decoration: none;
     display: inline-block;
     padding: 0.75rem 0;
     margin: 0;
-    padding: 0;
+    padding: 5px;
+    position: relative;
+
+    background: linear-gradient(-90deg, var(--primary-color) 100%, #000 0)
+      left/200% 100% no-repeat;
+    background-clip: text;
+    transition: 0.2s linear;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: auto 100% 0 0;
+      height: 1px;
+      background: var(--primary-color);
+      transition: inherit;
+    }
+
+    @media (max-width: 1300px) {
+      font-size: 17px;
+    }
+    @media (max-width: 750px) {
+      font-size: 15px;
+    }
+
+    &:hover {
+      text-shadow: 0 0 5px #eeeeee;
+    }
   }
-  hr {
-    position: absolute;
-    bottom: 0;
-    height: 0.25rem;
-    width: 25%;
-    margin: 0;
-    background: var(--primary-color);
-    border: none;
-    transition: 0.3s ease-in-out;
-  }
-  .item1 ~ hr {
-    margin-left: 0%;
-  }
-  .item2 ~ hr {
-    margin-left: 25%;
-  }
-  .item3 ~ hr {
-    margin-left: 50%;
-  }
-  .item4 ~ hr {
-    margin-left: 75%;
+
+  .active {
+    a {
+      text-shadow: 0 0 5px #eeeeee;
+      background-position: right;
+      &::before {
+        inset: auto 0 0 0;
+      }
+    }
   }
 }

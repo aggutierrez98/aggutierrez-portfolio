@@ -17,6 +17,8 @@
   border: 1px var(--secondary-color) solid;
   padding: 10px;
   display: flex;
+  min-width: 20px;
+  min-height: 20px;
   align-items: center;
   border-radius: 30px;
   margin-right: 12px;
@@ -42,11 +44,6 @@
       max-width: 80px;
     }
   }
-  /* &:not(:hover) {
-    svg path {
-      fill: var(--secondary-color);
-    }
-  } */
   @media (max-width: 500px) {
     display: none;
   }
@@ -71,12 +68,6 @@
     display: block;
   }
 
-  /* &:not(:hover) {
-    svg path {
-      fill: inherit !important;
-    }
-  } */
-
   &:hover {
     &:after {
       margin-left: 10px;
@@ -84,9 +75,6 @@
       visibility: visible;
       max-width: 120px;
     }
-    /* svg path {
-      fill: inherit;
-    } */
   }
   &::after {
     margin-left: 10px;
@@ -96,44 +84,3 @@
     font-size: 16px;
   }
 }
-
-/* .techTagExtended {
-  display: block;
-  border: 1px var(--primary-color) solid;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  border-radius: 30px;
-  margin-right: 12px;
-  overflow: hidden;
-  height: 20px;
-  margin-bottom: 10px;
-
-  &::after {
-    content: attr(data-text);
-    font-weight: bold;
-    font-family: Raleway;
-    display: inline-block;
-    transition: all 0.3s;
-    vertical-align: bottom;
-    overflow: hidden;
-    margin-left: 10px;
-    opacity: 1;
-    visibility: visible;
-    max-width: 120px;
-    font-size: 16px;
-  }
-  &:hover {
-    &:after {
-      margin-left: 10px;
-      opacity: 1;
-      visibility: visible;
-      max-width: 120px;
-    }
-  }
-
-  svg {
-    width: 20px !important;
-    height: 20px !important;
-  }
-} */

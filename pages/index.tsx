@@ -9,8 +9,8 @@ import { WorkModule } from "components";
 import LayeredWaves from "@c/dividers/LayeredWaves";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import metadata from "data/metadata/index.json";
-import socialMediaData from "data/socialMediaData.json";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 interface Props {
   projects: Project[];
@@ -19,7 +19,6 @@ interface Props {
 
 const HomePage = ({ projects, metaData }: Props) => {
   const { home: homeData, about: aboutData } = data;
-
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
 
@@ -79,7 +78,6 @@ export const getStaticProps = async () => {
     props: {
       projects,
       metaData: metadata,
-      socialMediaData,
     },
   };
 };

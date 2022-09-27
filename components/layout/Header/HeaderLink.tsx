@@ -1,25 +1,35 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React from "react";
 import styles from "./styles.module.css";
+import { m } from "framer-motion";
+import { headerItemVariant } from "./variants";
+import useActiveSectionId from "hooks/useActiveSection";
 
 interface Props {
   href: string;
   title: string;
-  id: number;
-
   toogle?: () => void;
+  isSideLink?: boolean;
 }
 
-export const HeaderLink = ({ href, title, id, toogle }: Props) => {
-  const { asPath } = useRouter();
-  const active = asPath === href;
+export const HeaderLink = ({
+  href,
+  title,
+  toogle,
+  isSideLink = false,
+}: Props) => {
+  const scrollingSection = useActiveSectionId();
+  const active = scrollingSection === href.split("#")[1];
 
   return (
-    <li className={`${active ? styles[`item${id}`] : ""}`}>
-      <Link href={href}>
+    <m.li
+      className={`${active ? styles.active : ""}`}
+      custom={isSideLink}
+      variants={headerItemVariant}
+    >
+      <Link href={href} scroll={false}>
         <a onClick={toogle}>{title}</a>
       </Link>
-    </li>
+    </m.li>
   );
 };

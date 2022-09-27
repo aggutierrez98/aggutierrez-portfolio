@@ -5,10 +5,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: fit-content;
+  /* overflow-x: hidden; */
 }
 
 .footerContainer {
   display: flex;
+  /* overflow-y: visible; */
   /* padding-top: 3rem; */
   padding-bottom: 1rem;
   width: 1024px !important;
@@ -22,6 +25,9 @@
   @media (max-width: 600px) {
     margin-left: 5%;
     margin-right: 5%;
+  }
+  @media (max-width: 500px) {
+    overflow-x: hidden;
   }
 }
 

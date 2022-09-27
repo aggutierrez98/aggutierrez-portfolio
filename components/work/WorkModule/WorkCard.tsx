@@ -1,5 +1,13 @@
 import { Work } from "interfaces";
 import styles from "./workCard.module.css";
+import { m } from "framer-motion";
+import { sectionItemVariant } from "../../layout/variants";
+import { timeLineVariant } from "./variants";
+import {
+  tasksContainerVariant,
+  taskItemVariant,
+  containerVariant,
+} from "./variants";
 
 interface Props {
   workData: Work;
@@ -9,30 +17,39 @@ export const WorkCard = ({
   workData: { place, tasks, time, title },
 }: Props) => {
   return (
-    <li className={styles.cardContainer}>
+    <m.li
+      className={styles.cardContainer}
+      variants={containerVariant}
+      initial="hidden"
+      whileInView="visible"
+    >
       <div className={styles.leftSide}>
         <p>{time}</p>
       </div>
       <div className={styles.timeLineContainer}>
-        <span className={styles.previousLine}></span>
+        <m.span className={styles.previousLine} variants={timeLineVariant} />
         <span className={styles.circle}></span>
-        <span className={styles.line}></span>
+        <m.span className={styles.line} variants={timeLineVariant} />
       </div>
       <div className={styles.rightSide}>
         <p className={styles.timeRight}>{time}</p>
         <h4>{title}</h4>
         <p>{place}</p>
-        <ul>
+        <m.ul variants={tasksContainerVariant}>
           {tasks.map((task, index) => (
-            <li key={index} className={styles.taskContainer}>
+            <m.li
+              key={index}
+              className={styles.taskContainer}
+              variants={taskItemVariant}
+            >
               <div className={styles.number}>
-                <span>0{index}</span>
+                <span>{index + 1}</span>
               </div>
               <span className={styles.task}>{task}</span>
-            </li>
+            </m.li>
           ))}
-        </ul>
+        </m.ul>
       </div>
-    </li>
+    </m.li>
   );
 };

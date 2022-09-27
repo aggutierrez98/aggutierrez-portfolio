@@ -4,20 +4,44 @@ import { HeaderMenu } from "./HeaderMenu";
 import styles from "./styles.module.css";
 import { useScrollingUp } from "hooks";
 import Logo from "public/assets/logo-agg.svg";
+import { LazyMotion, motion, domAnimation, m } from "framer-motion";
+
+const variants = {
+  hidden: {
+    opacity: 1,
+    y: -80,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.4,
+      duration: 0.5,
+    },
+  },
+};
 
 export const Header = () => {
   const isScrollingUp = useScrollingUp();
-  const cls = !isScrollingUp ? styles.hidden : "";
+  const showClass = !isScrollingUp ? styles.hidden : "";
+
   return (
-    <header className={`${styles.header} ${cls}`}>
-      <div className={styles.headerContainer}>
-        <Link href="/" passHref>
-          <a>
-            <Logo />
-          </a>
-        </Link>
-        <HeaderMenu />
-      </div>
-    </header>
+    <LazyMotion features={domAnimation}>
+      <m.header
+        className={`${styles.header} ${showClass}`}
+        variants={variants}
+        animate="visible"
+        initial="hidden"
+      >
+        <div className={styles.headerContainer}>
+          <Link href="/" passHref scroll={false}>
+            <a>
+              <Logo />
+            </a>
+          </Link>
+          <HeaderMenu />
+        </div>
+      </m.header>
+    </LazyMotion>
   );
 };

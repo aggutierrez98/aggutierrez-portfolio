@@ -53,9 +53,10 @@ h1 {
     )
     var(--d, 0%) 100% /300% 1px no-repeat;
   transition: 0.5s;
+  /* text-shadow: 0 0 2px var(--accent-color); */
   &:hover {
     --d: 100%;
-    text-shadow: 0 0 10px var(--accent-color);
+    /* text-shadow: 0 0 10px var(--accent-color); */
   }
 
   @media (max-width: 342px) {
@@ -115,21 +116,20 @@ ul {
 }
 
 [data-title] {
-  color: var(--accent-color);
+  color: var(--background-color);
   font-weight: bold;
   font-family: Raleway;
   position: relative;
-  font-size: 0.9em;
 }
 [data-title]:hover:after {
   opacity: 1 !important;
   visibility: visible;
   transition: all ease 0.75s;
+  z-index: 5;
 }
 [data-title]:after {
-  font-size: 0.9em;
-  background-color: var(--accent-color);
-  color: var(--background-color);
+  background-color: var(--background-color);
+  color: var(--accent-color);
   content: attr(data-title);
   position: absolute;
   bottom: -35px;
@@ -141,11 +141,18 @@ ul {
   opacity: 0;
   z-index: 5;
   visibility: hidden;
+  font-size: 1.2em;
+  @media (max-width: 800px) {
+    font-size: 1em;
+  }
+  @media (max-width: 500px) {
+    font-size: 0.8em;
+  }
 }
 [data-title]:before {
   visibility: hidden;
   border: solid;
-  border-color: var(--accent-color) transparent;
+  border-color: var(--background-color) transparent;
   border-width: 0 5px 5px 5px;
   bottom: -11px;
   content: "";

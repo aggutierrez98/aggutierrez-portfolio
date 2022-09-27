@@ -11,7 +11,7 @@ interface Props {
 
 export const GlassButton = ({ text, link, deploy = false }: Props) => {
   return (
-    <Link href={link} passHref>
+    <Link href={link} passHref scroll={false}>
       <a className={styles.button} target="_blank" rel="noopener noreferrer">
         {deploy ? <VscLink /> : <VscGithub />}
         <p>{text}</p>

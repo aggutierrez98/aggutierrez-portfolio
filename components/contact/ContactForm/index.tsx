@@ -2,6 +2,8 @@ import React, { ChangeEvent, FormEvent } from "react";
 import styles from "./styles.module.css";
 import { SendButton } from "./SendButton";
 import { MdSubject, MdMail, MdChat, MdPerson } from "react-icons/md";
+import { m } from "framer-motion";
+import { sectionItemVariant } from "../../layout/variants";
 
 interface Props {
   formRef: React.RefObject<HTMLFormElement>;
@@ -29,7 +31,8 @@ export const ContactForm = ({
   errorFields,
 }: Props) => {
   return (
-    <form
+    <m.form
+      variants={sectionItemVariant}
       ref={formRef}
       id="contact-form"
       onSubmit={sendEmail}
@@ -91,6 +94,6 @@ export const ContactForm = ({
         <label className={styles.label}>Message</label>
       </div>
       <SendButton />
-    </form>
+    </m.form>
   );
 };

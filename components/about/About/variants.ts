@@ -18,7 +18,7 @@ export const pMotion = {
       duration: 0.1,
     },
   }),
-  rest: {
-    textShadow: "none",
-  },
+  rest: (color: string) => ({
+    textShadow: `0 0 0px #eeeeee`,
+  }),
 };

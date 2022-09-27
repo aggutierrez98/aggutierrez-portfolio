@@ -30,24 +30,3 @@ export const useScrollingUp = () => {
 
   return isScrollingUp;
 };
-
-// export const useScrollingUp = () => {
-//   const [position, setPosition] = useState(
-//     typeof window !== "undefined" ? window.pageYOffset : null
-//   );
-//   const [visible, setVisible] = useState(true);
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       let moving = window.pageYOffset;
-
-//       setVisible(position ? position > moving : false);
-//       setPosition(moving);
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   });
-
-//   return visible;
-// };

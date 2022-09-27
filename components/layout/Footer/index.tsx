@@ -1,37 +1,42 @@
 import styles from "./styles.module.css";
 import { HeartIcon } from "@heroicons/react/outline";
-import { useCopyToClipboard } from "hooks";
-import Logo from "public/assets/logo-agg.svg";
+import { Logo } from "components";
 import { SocialMediaLinks } from "../MainLayout/SocialMediaLinks";
-import { MediaData } from "../../../interfaces/index";
+import { LazyMotion, m, domAnimation } from "framer-motion";
+import { sectionVariant, sectionItemVariant } from "../variants";
 
-interface Props {
-  socialMediaData: MediaData[];
-}
-
-export const Footer = ({ socialMediaData }: Props) => {
-  const { copyToClipboard } = useCopyToClipboard();
-
+export const Footer = () => {
   return (
     <footer className={styles.container}>
-      <div className={styles.footerContainer}>
-        <Logo className={styles.logo} />
-        <div className={styles.textContainer}>
-          <div className={styles.socialMediaContainer}>
-            <p>You can follow me on</p>
-            <SocialMediaLinks data={socialMediaData} />
+      <LazyMotion features={domAnimation}>
+        <m.div
+          whileInView="visible"
+          initial="hidden"
+          viewport={{ once: true }}
+          className={styles.footerContainer}
+          variants={sectionVariant}
+        >
+          <Logo className={styles.logo} />
+          <div className={styles.textContainer}>
+            <div className={styles.socialMediaContainer}>
+              <p>You can follow me on</p>
+              <SocialMediaLinks />
+            </div>
+            <div className={styles.legendContainer}>
+              <m.p className={styles.legendText} variants={sectionItemVariant}>
+                Made with <HeartIcon className={styles.legendIcon} /> by Agustin
+                Gutierrez
+              </m.p>
+              <m.p
+                className={styles.legendTextyles}
+                variants={sectionItemVariant}
+              >
+                Copyright © 2022 Agustin Gutierrez
+              </m.p>
+            </div>
           </div>
-          <div className={styles.legendContainer}>
-            <p className={styles.legendText}>
-              Made with <HeartIcon className={styles.legendIcon} /> by Agustin
-              Gutierrez
-            </p>
-            <p className={styles.legendTextyles}>
-              Copyright © 2022 Agustin Gutierrez
-            </p>
-          </div>
-        </div>
-      </div>
+        </m.div>
+      </LazyMotion>
     </footer>
   );
 };

@@ -1,16 +1,17 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, m } from "framer-motion";
 import { pMotion, tagMotion } from "./variants";
 import { getSkillInfo } from "helpers";
 import dynamic from "next/dynamic";
 import styles from "./styles.module.css";
+import { sectionItemVariant } from "../../layout/variants";
 
 export const SkillsList = ({ data }: { data: any }) => {
   return (
     <div className={styles.skillsContainer}>
-      <h5>My skills</h5>
+      <m.h5>My skills</m.h5>
       <div className={styles.skillsTable}>
-        <div className={styles.skillsSection}>
+        <m.div className={styles.skillsSection} variants={sectionItemVariant}>
           <h3>Frontend</h3>
           <ul>
             {data.skills.frontend?.map((skill: string, index: number) => {
@@ -42,8 +43,8 @@ export const SkillsList = ({ data }: { data: any }) => {
               );
             })}
           </ul>
-        </div>
-        <div className={styles.skillsSection}>
+        </m.div>
+        <m.div className={styles.skillsSection} variants={sectionItemVariant}>
           <h3>Backend</h3>
           <ul>
             {data.skills.backend?.map((skill: string, index: number) => {
@@ -75,8 +76,8 @@ export const SkillsList = ({ data }: { data: any }) => {
               );
             })}
           </ul>
-        </div>
-        <div className={styles.skillsSection}>
+        </m.div>
+        <m.div className={styles.skillsSection} variants={sectionItemVariant}>
           <h3>Database</h3>
           <ul>
             {data.skills.database?.map((skill: string, index: number) => {
@@ -108,8 +109,8 @@ export const SkillsList = ({ data }: { data: any }) => {
               );
             })}
           </ul>
-        </div>
-        <div className={styles.skillsSection}>
+        </m.div>
+        <m.div className={styles.skillsSection} variants={sectionItemVariant}>
           <h3>Others</h3>
           <ul>
             {data.skills.others?.map((skill: string, index: number) => {
@@ -141,7 +142,7 @@ export const SkillsList = ({ data }: { data: any }) => {
               );
             })}
           </ul>
-        </div>
+        </m.div>
       </div>
     </div>
   );
