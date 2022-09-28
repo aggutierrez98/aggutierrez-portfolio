@@ -9,12 +9,12 @@ interface Props {
   deploy?: boolean;
 }
 
-export const GlassButton = ({ text, link, deploy = false }: Props) => {
+export const LinkButton = ({ text, link, deploy = false }: Props) => {
   return (
     <Link href={link} passHref scroll={false}>
-      <a className={styles.button} target="_blank" rel="noopener noreferrer">
+      <a target="_blank" rel="noopener noreferrer" className={styles.button}>
         {deploy ? <VscLink /> : <VscGithub />}
-        <p>{text}</p>
+        {text}
       </a>
     </Link>
   );

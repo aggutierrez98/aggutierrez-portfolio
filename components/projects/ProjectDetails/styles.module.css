@@ -1,10 +1,4 @@
 .detailsContainer {
-  /* display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center; */
-  /* align-self: center;
-  justify-self: center; */
   max-width: 1024px;
   margin-top: 7.5rem;
   margin-bottom: 5rem;
@@ -20,19 +14,24 @@
 }
 
 .imageContainer {
-  height: 20rem;
+  height: 45vw;
   width: 100%;
   position: relative;
+  @media (max-width: 600px) {
+    height: 55vw;
+  }
+  @media (min-width: 1400px) {
+    height: 650px;
+  }
 }
 
 .imageBox {
   z-index: 1;
-  width: 100%;
-  height: 100%;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  width: 100%;
   width: 100%;
   height: 100%;
 }
@@ -46,8 +45,9 @@
   left: 50%;
   width: 100%;
   height: 100%;
-  background-color: var(--secondary-color);
-  filter: blur(2px);
+  background-color: var(--background-light-color);
+  border-radius: 30px;
+  filter: blur(3px);
 }
 
 .separator {
@@ -66,8 +66,9 @@
   p {
     color: var(--secondary-color);
     font-size: clamp(1rem, 5vw, 1.5rem);
-    font-weight: 300;
-    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    /* letter-spacing: 1px; */
   }
 }
 .techStackContainer {

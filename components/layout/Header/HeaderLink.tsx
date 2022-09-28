@@ -4,6 +4,7 @@ import styles from "./styles.module.css";
 import { m } from "framer-motion";
 import { headerItemVariant } from "./variants";
 import useActiveSectionId from "hooks/useActiveSection";
+import { useRouter } from "next/router";
 
 interface Props {
   href: string;
@@ -18,8 +19,7 @@ export const HeaderLink = ({
   toogle,
   isSideLink = false,
 }: Props) => {
-  const scrollingSection = useActiveSectionId();
-  const active = scrollingSection === href.split("#")[1];
+  const [, active] = useActiveSectionId(href);
 
   return (
     <m.li

@@ -1,4 +1,5 @@
 import { useEffect, useState, useTransition } from "react";
+import { useRouter } from "next/router";
 
 const sections = [
   "contact",
@@ -15,9 +16,17 @@ const isSectionId = (value: string): value is SectionId => {
   return sectionIds.includes(value as SectionId);
 };
 
-const useActiveSectionId = (): SectionId => {
+const useActiveSectionId = (href: string): [SectionId, boolean] => {
+  const { asPath } = useRouter();
   const [, startTransition] = useTransition();
   const [activeSectionId, setActiveSectionId] = useState("home");
+  let active = activeSectionId === href.split("#")[1];
+
+  if (asPath.includes("/projects/")) {
+    if (href.split("#")[1] === "projects") {
+      active = true;
+    } else active = false;
+  }
 
   useEffect(() => {
     const initId = window.location.hash?.slice(1);
@@ -48,7 +57,7 @@ const useActiveSectionId = (): SectionId => {
         ?.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return activeSectionId as SectionId;
+  return [activeSectionId as SectionId, active];
 };
 
 export default useActiveSectionId;

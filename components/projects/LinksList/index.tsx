@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
-import { GlassButton } from "./GlassButton";
+import { LinkButton } from "./LinkButton";
 
 interface Props {
   github_repo_front_url: string;
@@ -21,7 +21,7 @@ export const LinksList = ({
       <ul>
         {github_repo_front_url && (
           <li>
-            <GlassButton
+            <LinkButton
               text={"Github frontend repo"}
               link={github_repo_front_url}
             />
@@ -29,7 +29,7 @@ export const LinksList = ({
         )}
         {github_repo_back_url && (
           <li>
-            <GlassButton
+            <LinkButton
               text={"Github backend repo"}
               link={github_repo_back_url}
             />
@@ -37,12 +37,12 @@ export const LinksList = ({
         )}
         {demo_url && (
           <li>
-            <GlassButton text={"Client deploy"} link={demo_url} deploy={true} />
+            <LinkButton text={"Client deploy"} link={demo_url} deploy={true} />
           </li>
         )}
         {server_url && (
           <li>
-            <GlassButton
+            <LinkButton
               text={"Server deploy"}
               link={server_url}
               deploy={true}
