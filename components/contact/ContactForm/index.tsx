@@ -51,7 +51,6 @@ export const ContactForm = ({
           value={name}
           className={styles.input}
           onChange={onChange}
-          // autoComplete="off"
         />
         <MdPerson className={styles.icon} />
 
@@ -63,7 +62,6 @@ export const ContactForm = ({
         }`}
       >
         <input
-          aria-invalid="true"
           type="email"
           aria-describedby="emailHelp"
           name="email"
@@ -71,7 +69,6 @@ export const ContactForm = ({
           value={email}
           className={styles.input}
           onChange={onChange}
-          // autoComplete="off"
         />
         <MdMail className={styles.icon} />
         <label className={styles.label}>Email</label>

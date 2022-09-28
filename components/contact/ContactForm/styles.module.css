@@ -78,6 +78,14 @@
   padding: 12px 38px;
 }
 
+@keyframes autofill {
+  0%,
+  100% {
+    color: #666;
+    background: transparent;
+  }
+}
+
 .input,
 .textarea {
   outline: 1px solid var(--foreground-color);
@@ -87,15 +95,6 @@
   border-radius: 20px;
   font-family: Raleway;
   font-weight: bold;
-
-  &:-webkit-autofill,
-  :-webkit-autofill:hover,
-  :-webkit-autofill:focus,
-  :-webkit-autofill:active,
-  :-internal-autofill-selected {
-    transition: all 0s 50000s;
-    background-color: transparent !important;
-  }
 
   &::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -122,7 +121,6 @@
     outline-color: var(--primary-color);
     box-shadow: 0 0 4.5px var(--primary-color);
     transition: all 0.15s ease;
-
     ~ .icon,
     ~ .textareaIcon {
       color: var(--primary-color) !important;
@@ -136,13 +134,17 @@
     font-size: 12px;
     padding: 0 4px;
     color: var(--primary-color);
-    /* background-color: #2b3338; */
     background-color: var(--background-light-color);
     font-weight: bold;
   }
 
   &::placeholder {
     color: transparent;
+  }
+
+  &:-webkit-autofill {
+    background-clip: text;
+    -webkit-text-fill-color: var(--accent-color);
   }
 }
 
@@ -176,11 +178,9 @@
   border-radius: 20px;
   height: 40px;
   width: 100%;
-
   svg {
     width: 20px;
     height: 20px;
-    /* color: var(--background-color); */
     color: var(--accent-color);
     display: block;
     transform-origin: center center;
@@ -193,7 +193,6 @@
     font-size: 15px;
     margin-left: 10px !important;
     color: var(--accent-color);
-    /* color: var(--background-color); */
     display: block;
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
