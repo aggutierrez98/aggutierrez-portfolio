@@ -11,16 +11,12 @@
   justify-content: space-between;
   overflow: hidden;
   position: relative;
-  /* max-width: 850px; */
-
-  /* @media (max-width: 800px) {
-    background: rgba(255, 255, 255, 0.25);
-  } */
   @media (max-width: 800px) {
     height: 400px;
   }
   @media (max-width: 500px) {
     height: 320px;
+    padding: 0px;
   }
 }
 
@@ -33,6 +29,7 @@
   p {
     color: var(--secondary-color);
     flex-grow: 1;
+    font-size: 18px;
     text-overflow: ellipsis;
     overflow: hidden;
     margin-right: 30px;
@@ -42,10 +39,10 @@
     white-space: normal;
     font-weight: 300;
     -webkit-line-clamp: 9;
-    max-height: 20ch;
+    max-height: calc(18ch + 5px);
     @media (max-width: 800px) {
       -webkit-line-clamp: 6;
-      max-height: 14ch;
+      max-height: calc(12ch + 2px);
     }
   }
   .textBottom {
@@ -55,15 +52,18 @@
     flex-grow: 1;
   }
   h3 {
-    color: var(--primary-color);
-    max-width: fit-content;
-    /* position: relative; */
-    display: inline-block;
     margin: 15px 0px;
-    font-size: clamp(1.25rem, 2vw, 2rem);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    span {
+      max-width: fit-content;
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all 0.2s ease;
+      &:hover {
+        text-shadow: 0 0 5px var(--primary-color);
+      }
+    }
     @media (max-width: 500px) {
       margin: 10px 0px;
     }
@@ -76,7 +76,7 @@
 
 .imageContainer {
   height: 100%;
-  width: 50%;
+  width: 60%;
   position: relative;
   span {
     img {

@@ -16,7 +16,7 @@
   }
   p {
     margin-top: 0.1rem;
-    font-size: clamp(0.8rem, 1.1vw, 2rem);
+    font-size: clamp(1rem, 1.2vw, 2rem);
   }
 }
 
@@ -67,10 +67,10 @@
   h4 {
     margin-bottom: 5px;
     /* font-size: 18px; */
-    font-size: clamp(1rem, 1.2vw, 2rem);
+    font-size: clamp(1rem, 1.5vw, 2rem);
   }
   p {
-    font-size: clamp(0.9rem, 1.2vw, 2rem);
+    font-size: clamp(1rem, 1.3vw, 2rem);
     color: var(--primary-color);
   }
 
@@ -104,6 +104,6 @@
   }
 
   .task {
-    font-size: clamp(0.9rem, 1.2vw, 2rem);
+    font-size: clamp(1rem, 1.4vw, 2rem);
   }
 }

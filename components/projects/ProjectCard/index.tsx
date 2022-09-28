@@ -5,13 +5,14 @@ import { TechsList } from "components";
 import { SeeMoreButton } from "./SeeMoreButton";
 import { Project } from "interfaces";
 import { boxVariants } from "./variants";
+import Link from "next/link";
 
 interface Props {
   proyectData: Project;
 }
 
 export const ProjectCard = ({
-  proyectData: { title, description, image_url, techs },
+  proyectData: { title, description, image_url, techs, demo_url },
 }: Props) => {
   return (
     <LazyMotion features={domAnimation}>
@@ -24,7 +25,11 @@ export const ProjectCard = ({
         <div className={styles.cardContainer}>
           <div className={styles.textContainer}>
             <h3 id="style-2" data-replace={title}>
-              <span>{title}</span>
+              <Link href={demo_url} passHref>
+                <a>
+                  <span>{title}</span>
+                </a>
+              </Link>
             </h3>
             <p>{description}</p>
             <div className={styles.textBottom}>
@@ -34,13 +39,17 @@ export const ProjectCard = ({
           </div>
           {image_url && (
             <div className={styles.imageContainer}>
-              <Image
-                priority
-                src={image_url}
-                layout="fill"
-                objectFit="contain"
-                alt={`${title}-example`}
-              />
+              <Link href={demo_url} passHref>
+                <a>
+                  <Image
+                    priority
+                    src={image_url}
+                    layout="fill"
+                    objectFit="contain"
+                    alt={`${title}-example`}
+                  />
+                </a>
+              </Link>
             </div>
           )}
         </div>

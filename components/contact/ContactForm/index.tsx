@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent } from "react";
 import styles from "./styles.module.css";
 import { SendButton } from "./SendButton";
-import { MdSubject, MdMail, MdChat, MdPerson } from "react-icons/md";
+import { MdMail, MdChat, MdPerson } from "react-icons/md";
 import { m } from "framer-motion";
 import { sectionItemVariant } from "../../layout/variants";
 

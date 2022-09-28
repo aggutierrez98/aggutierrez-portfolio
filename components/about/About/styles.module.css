@@ -131,12 +131,11 @@
   align-items: center;
   width: fit-content;
   border-radius: 15px;
-  outline: 1px solid var(--secondary-color);
+  outline: 1px solid var(--foreground-color);
   cursor: pointer;
   p {
     font-weight: 300;
     margin-left: 10px;
-    /* font-size: clamp(0.5rem, 2vw, 3rem); */
     color: var(--accent-color);
   }
 

@@ -1,7 +1,7 @@
 .toastsContainer {
   overflow: visible !important;
   right: 0;
-  bottom: 60px;
+  bottom: 80px;
   position: fixed;
   display: flex;
   justify-content: flex-start;

@@ -22,8 +22,9 @@ export const Home = ({ data }: Props) => {
         cursorSpeed: 600,
         speed: 150,
       });
+      typeIt.pause(1000);
       for (const special of memoizedData.specials) {
-        typeIt.pause(1000).type(special).pause(2000).delete(special.length);
+        typeIt.type(special).pause(2000).delete(special.length);
       }
       typeIt.go();
     }

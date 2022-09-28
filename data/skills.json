@@ -2,7 +2,7 @@
   {
     "name": "React",
     "color": "#5CCEEE",
-    "url": "https://es.reactjs.org/",
+    "url": "https://reactjs.org/",
     "assetName": "react.svg"
   },
   {
@@ -26,13 +26,13 @@
   {
     "name": "HTML",
     "color": "#E44F26",
-    "url": "https://www.javascript.com/",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
     "assetName": "html.svg"
   },
   {
     "name": "CSS",
     "color": "#1572B6",
-    "url": "https://www.javascript.com/",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
     "assetName": "css.svg"
   },
   {
@@ -49,7 +49,7 @@
   },
   {
     "name": "Apollo client",
-    "color": "#371EA0",
+    "color": "#492DBE",
     "url": "https://www.apollographql.com/docs/react/",
     "assetName": "apollo-client.svg"
   },
@@ -74,19 +74,19 @@
   {
     "name": "Python",
     "color": "#FFD845",
-    "url": "https://nodejs.org/",
+    "url": "https://www.python.org/",
     "assetName": "python.svg"
   },
   {
     "name": "PHP",
     "color": "#6181B6",
-    "url": "https://nodejs.org/",
+    "url": "https://www.php.net/",
     "assetName": "php.svg"
   },
   {
     "name": "Django",
     "color": "#44b78b",
-    "url": "https://nodejs.org/",
+    "url": "https://www.djangoproject.com/",
     "assetName": "django.svg"
   },
   {
@@ -110,7 +110,7 @@
   {
     "name": "React-native",
     "color": "#5CCEEE",
-    "url": "https://postcss.org/",
+    "url": "https://reactnative.dev/",
     "assetName": "react.svg"
   },
   {
@@ -121,14 +121,14 @@
   },
   {
     "name": "MySQL",
-    "color": "#47809D",
+    "color": "#21758F",
     "url": "https://www.mysql.com/",
     "assetName": "mysql.svg"
   },
   {
     "name": "PostgreSQL",
-    "color": "#336791",
-    "url": "https://www.mysql.com/",
+    "color": "#3367C9",
+    "url": "https://www.postgresql.org/",
     "assetName": "postgresql.svg"
   },
   {
@@ -157,7 +157,7 @@
   },
   {
     "name": "Mongoose",
-    "color": "#810303",
+    "color": "#F11218",
     "url": "https://mongoosejs.com/",
     "assetName": "mongoose.svg"
   },
@@ -169,62 +169,62 @@
   },
   {
     "name": "Styled-components",
-    "color": "#934081",
+    "color": "#DC7ACA",
     "url": "https://styled-components.com/",
     "assetName": "styled-components.svg"
   },
   {
     "name": "Docker",
     "color": "#019BC6",
-    "url": "https://styled-components.com/",
+    "url": "https://www.docker.com/",
     "assetName": "docker.svg"
   },
   {
     "name": "Kubernetes",
     "color": "#326CE5",
-    "url": "https://styled-components.com/",
+    "url": "https://kubernetes.io/",
     "assetName": "kubernetes.svg"
   },
   {
     "name": "Jest",
-    "color": "#99425B",
-    "url": "https://styled-components.com/",
+    "color": "#99325A",
+    "url": "https://jestjs.io/",
     "assetName": "jest.svg"
   },
   {
     "name": "Mocha",
-    "color": "#8D6748",
-    "url": "https://styled-components.com/",
+    "color": "#925F39",
+    "url": "https://mochajs.org/",
     "assetName": "mocha.svg"
   },
   {
     "name": "Cypress",
     "color": "#69D3A7",
-    "url": "https://styled-components.com/",
+    "url": "https://www.cypress.io/",
     "assetName": "cypress.svg"
   },
   {
     "name": "Github-actions",
-    "color": "#4A7EBF",
-    "url": "https://styled-components.com/",
+    "color": "#8AC0FF",
+    "url": "https://github.com/features/actions",
     "assetName": "github-actions.svg"
   },
   {
     "name": "Git",
     "color": "#F34F29",
-    "url": "https://styled-components.com/",
+    "url": "https://git-scm.com/",
     "assetName": "git.svg"
   },
   {
     "name": "Linux",
     "color": "#FCD22F",
-    "url": "https://styled-components.com/",
+    "url": "https://www.linux.org/",
     "assetName": "linux.svg"
   },
   {
     "name": "Figma",
     "color": "#A259FF",
-    "url": "https://styled-components.com/",
+    "url": "https://www.figma.com/",
     "assetName": "figma.svg"
   }
 ]
