@@ -12,13 +12,10 @@ export const useOutsideAndEscapeKeyAlerter = (
     };
 
     const handleClickOutside = (event: MouseEvent) => {
-      // console.log({
-      //   eventTarget: event.target,
-      //   buttonRef: buttonRef?.current,
-      // });
       if (
         ref.current &&
         !ref.current.contains(event.target as Node) &&
+        !buttonRef?.current?.contains(event.target as Node) &&
         event.target !== buttonRef?.current
       )
         closeModal();
