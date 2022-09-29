@@ -80,8 +80,10 @@
   @media (min-width: 600px) {
     margin-top: 3rem;
   }
+  display: flex;
   width: fit-content;
   border-radius: 30px;
+  outline: none;
   button {
     border-radius: inherit;
     display: flex;
@@ -141,15 +143,17 @@
       );
       transition: all 0.475s;
     }
+  }
 
-    &:hover {
+  &:hover,
+  &:focus {
+    button {
       transition: ease-in-out 0.475s;
       box-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 20px var(--primary-color),
         0 0 30px var(--primary-color);
       &::before {
         transform: scaleX(1);
       }
-
       @media (max-width: 500px) {
         box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 5px var(--primary-color),
           0 0 10px var(--primary-color);

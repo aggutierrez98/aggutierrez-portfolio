@@ -2,7 +2,8 @@ import { Work } from "interfaces";
 import styles from "./workCard.module.css";
 import { m } from "framer-motion";
 import { sectionItemVariant } from "../../layout/variants";
-import { timeLineVariant ,
+import {
+  timeLineVariant,
   tasksContainerVariant,
   taskItemVariant,
   containerVariant,
@@ -13,7 +14,7 @@ interface Props {
 }
 
 export const WorkCard = ({
-  workData: { place, tasks, time, title },
+  workData: { place, tasks, time, title, place_url },
 }: Props) => {
   return (
     <m.li
@@ -33,10 +34,18 @@ export const WorkCard = ({
       <div className={styles.rightSide}>
         <p className={styles.timeRight}>{time}</p>
         <h4>{title}</h4>
-        <p>{place}</p>
+        <a
+          href={place_url}
+          tabIndex={2}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {place}
+        </a>
         <m.ul variants={tasksContainerVariant}>
           {tasks.map((task, index) => (
             <m.li
+              tabIndex={2}
               key={index}
               className={styles.taskContainer}
               variants={taskItemVariant}

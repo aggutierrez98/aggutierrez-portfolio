@@ -34,7 +34,9 @@ export const ContactModule = () => {
           initial="hidden"
           whileInView="visible"
         >
-          <m.h2 variants={sectionItemVariant}>Get in touch!</m.h2>
+          <m.h2 tabIndex={2} variants={sectionItemVariant}>
+            Get in touch!
+          </m.h2>
           <div className={styles.firstContainer}>
             <m.h3 className={styles.title} variants={sectionItemVariant}>
               Contact me through an email or by any of my social media accounts
@@ -81,7 +83,11 @@ export const ContactModule = () => {
             />
             <CustomModal onClose={closeModal} visible={modalVisible}>
               <div className={styles.modalContainer}>
-                {success ? <IoIosCheckmarkCircleOutline /> : <IoMdInformationCircleOutline />}
+                {success ? (
+                  <IoIosCheckmarkCircleOutline />
+                ) : (
+                  <IoMdInformationCircleOutline />
+                )}
                 <h2>{modalData.title}</h2>
                 <ul>
                   {modalData.messages.map((message) => (

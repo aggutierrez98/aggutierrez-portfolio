@@ -19,7 +19,9 @@ export const ProjectsModule = ({ projects }: Props) => {
           initial="hidden"
           whileInView="visible"
         >
-          <m.h2 variants={sectionItemVariant}>My Projects:</m.h2>
+          <m.h2 tabIndex={2} variants={sectionItemVariant}>
+            My Projects:
+          </m.h2>
           <m.div variants={sectionItemVariant}>
             {projects.map((proyect, index) => (
               <ProjectCard key={index} proyectData={proyect} />

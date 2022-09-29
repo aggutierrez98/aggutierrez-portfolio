@@ -40,7 +40,7 @@
   padding: 0px 10px;
   color: var(--primary-color);
   top: -11vw;
-
+  outline: none;
   font-weight: bold;
   font-style: italic;
   background-color: transparent;
@@ -50,6 +50,10 @@
   @media (max-width: 600px) {
     top: -15vw;
   }
+  transition: all ease-in-out 0.2s;
+  padding: 10px;
+  outline: 1px solid var(--primary-color);
+  border-radius: 50%;
 }
 
 .footer a button {
@@ -100,6 +104,11 @@
   margin: 0 5px;
   width: 20px;
   color: var(--primary-color);
+  outline: none;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 80px var(--primary-color);
+  }
 }
 
 .socialMediaButton {

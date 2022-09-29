@@ -66,12 +66,17 @@
   align-items: flex-start;
   h4 {
     margin-bottom: 5px;
-    /* font-size: 18px; */
     font-size: clamp(1rem, 1.5vw, 2rem);
   }
-  p {
+  a {
+    outline: none;
+    transition: all 0.2s ease;
     font-size: clamp(1rem, 1.3vw, 2rem);
     color: var(--primary-color);
+    &:hover,
+    &:focus {
+      text-shadow: 0 0 10px var(--primary-color);
+    }
   }
 
   .timeRight {
@@ -86,9 +91,15 @@
   .taskContainer {
     display: flex;
     margin: 1.5rem 0 1.5rem;
-
+    outline: none;
     &:last-child {
       margin-bottom: 4rem;
+    }
+
+    &:focus,
+    &:hover {
+      transform: translateY(-5px) !important;
+      transition: all 0.2s ease-in-out;
     }
   }
 

@@ -42,13 +42,10 @@ export const Home = ({ data }: Props) => {
           <m.h4 variants={itemVariant}>{memoizedData.subtitle}</m.h4>
           <div className={styles.titleContainer}>
             <m.h1
+              tabIndex={2}
               variants={itemVariant}
-              whileHover={{
-                textShadow: `0 0 10px #eeeeee`,
-                transition: {
-                  duration: 0.15,
-                },
-              }}
+              whileHover="hover"
+              whileFocus="focus"
             >
               {memoizedData.title1}
             </m.h1>

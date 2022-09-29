@@ -11,8 +11,9 @@ export const ResumeButton = () => {
       rel="nooperner noreferrer"
       className={styles.resumeButton}
       variants={itemVariant}
+      tabIndex={2}
     >
-      <button>
+      <button tabIndex={-1}>
         <svg
           height="24"
           width="24"

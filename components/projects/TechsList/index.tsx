@@ -27,8 +27,21 @@ export const TechsList = ({ techs, detailsPage = false }: Props) => {
         return (
           <li title={`${name}-icon`} key={name}>
             <m.a
+              tabIndex={2}
               viewport={{ once: true }}
               whileHover={
+                detailsPage
+                  ? {
+                      boxShadow: `0 0 10px ${skillData.color}`,
+                      transition: { duration: 0.15 },
+                    }
+                  : {
+                      borderColor: skillData.color,
+                      boxShadow: `0 0 5px ${skillData.color}`,
+                      transition: { duration: 0.25 },
+                    }
+              }
+              whileFocus={
                 detailsPage
                   ? {
                       boxShadow: `0 0 10px ${skillData.color}`,

@@ -31,6 +31,7 @@ export const SocialMediaLinks = () => {
                 return (
                   <li key={index}>
                     <m.a
+                      tabIndex={1}
                       variants={socialMediaVariants.item}
                       className={styles.logo}
                       href={mediaData.link}

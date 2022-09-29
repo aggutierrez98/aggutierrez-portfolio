@@ -30,6 +30,7 @@
   margin-right: 12px;
   overflow: hidden;
   height: 20px;
+  outline: none;
   &::after {
     content: attr(data-text);
     opacity: 0;
@@ -42,7 +43,8 @@
     vertical-align: bottom;
     overflow: hidden;
   }
-  &:hover {
+  &:hover,
+  &:focus {
     &:after {
       margin-left: 5px;
       opacity: 1;

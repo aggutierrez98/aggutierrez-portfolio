@@ -123,6 +123,12 @@
       color: var(--accent-color);
       font-weight: 600;
       font-size: clamp(0.85rem, 2vw, 1.1rem);
+      transition: all 0.2s ease-in-out;
+      outline: none;
+      &:hover,
+      &:focus {
+        text-shadow: 0 0 10px var(--accent-color);
+      }
     }
     display: flex;
     flex-direction: column;

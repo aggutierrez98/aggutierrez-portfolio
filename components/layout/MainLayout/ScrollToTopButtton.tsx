@@ -33,11 +33,13 @@ export const ScrollToTopButtton = () => {
         <div>
           {showButton ? (
             <motion.button
+              tabIndex={2}
               id="side-button-up"
               initial={{ opacity: 0, scaleX: 0 }}
               exit={{ opacity: 0, scaleX: 0 }}
               whileInView={{ opacity: 1, scaleX: 1 }}
               whileHover={{ scale: 1.15 }}
+              whileFocus={{ scale: 1.15 }}
               transition={{ duration: 0.25 }}
               className={styles.goToTopButton}
               onClick={() => {
@@ -51,6 +53,7 @@ export const ScrollToTopButtton = () => {
             </motion.button>
           ) : (
             <motion.button
+              tabIndex={1}
               id="side-button-down"
               initial={{ opacity: 0, scaleX: 0 }}
               exit={{ opacity: 0, scaleX: 0 }}

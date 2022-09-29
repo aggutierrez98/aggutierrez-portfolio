@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 export const SendButton = () => {
   return (
-    <button className={styles.button} type="submit">
+    <button tabIndex={2} className={styles.button} type="submit">
       <div>
         <div className={styles["svg-wrapper"]}>
           <svg

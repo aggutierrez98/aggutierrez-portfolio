@@ -19,6 +19,7 @@ export interface Skill {
 export interface Work {
   title: string;
   place: string;
+  place_url?: string;
   time: string;
   tasks: string[];
 }

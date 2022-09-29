@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --fix --resolve-plugins-relative-to .eslintrc",
+    "lint": "eslint . --fix",
     "stylelint-check": "stylelint-config-prettier-check",
     "prettier": "prettier . --write",
     "prepare": "husky install"

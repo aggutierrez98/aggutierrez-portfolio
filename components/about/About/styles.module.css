@@ -133,6 +133,7 @@
   border-radius: 15px;
   outline: 1px solid var(--foreground-color);
   cursor: pointer;
+  transition: all 0.2s ease;
   p {
     font-weight: 300;
     margin-left: 10px;
@@ -144,7 +145,7 @@
     height: 20px !important;
   }
 
-  &:not(:hover) {
+  &:not(:hover, :focus) {
     svg path {
       transition: all 0.3s ease;
       fill: var(--accent-color);

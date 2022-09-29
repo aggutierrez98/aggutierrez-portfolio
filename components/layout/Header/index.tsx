@@ -35,7 +35,7 @@ export const Header = () => {
       >
         <div className={styles.headerContainer}>
           <Link href="/" passHref scroll={false}>
-            <Logo />
+            <Logo tabIndex={1} />
           </Link>
           <HeaderMenu />
         </div>

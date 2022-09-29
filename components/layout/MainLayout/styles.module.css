@@ -62,6 +62,7 @@
   background-color: var(--primary-color);
   padding: 15px;
   color: var(--background-color);
+  outline: none;
   svg {
     width: 18px;
     height: 18px;
@@ -74,16 +75,11 @@
       width: 15px;
       height: 15px;
     }
-    /* bottom: 15px;
-    right: 15px; */
-    /* bottom: 7%;
-    right: 5%; */
-    /* bottom: 10%;
-    right: 10%; */
   }
 
-  &:hover {
-    box-shadow: 0 0 8px var(--primary-color);
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 10px var(--primary-color);
     transition: all 0.15s ease;
   }
 }

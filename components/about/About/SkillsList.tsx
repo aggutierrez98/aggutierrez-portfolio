@@ -23,7 +23,9 @@ export const SkillsList = ({ data }: { data: any }) => {
               return (
                 <li key={index}>
                   <motion.a
+                    tabIndex={2}
                     whileHover="hover"
+                    whileFocus="focus"
                     animate="rest"
                     initial="rest"
                     exit="hidden"
@@ -56,7 +58,9 @@ export const SkillsList = ({ data }: { data: any }) => {
               return (
                 <li key={index}>
                   <motion.a
+                    tabIndex={2}
                     whileHover="hover"
+                    whileFocus="focus"
                     animate="rest"
                     initial="rest"
                     exit="hidden"
@@ -89,7 +93,9 @@ export const SkillsList = ({ data }: { data: any }) => {
               return (
                 <li key={index}>
                   <motion.a
+                    tabIndex={2}
                     whileHover="hover"
+                    whileFocus="focus"
                     animate="rest"
                     initial="rest"
                     exit="hidden"
@@ -122,7 +128,9 @@ export const SkillsList = ({ data }: { data: any }) => {
               return (
                 <li key={index}>
                   <motion.a
+                    tabIndex={2}
                     whileHover="hover"
+                    whileFocus="focus"
                     animate="rest"
                     initial="rest"
                     exit="hidden"

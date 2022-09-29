@@ -52,11 +52,13 @@ h1 {
       var(--secondary-color) 0
     )
     var(--d, 0%) 100% /300% 1px no-repeat;
-  transition: 0.5s;
+  transition: all ease 0.5s;
   /* text-shadow: 0 0 2px var(--accent-color); */
-  &:hover {
+  &:hover,
+  &:focus-visible {
     --d: 100%;
-    /* text-shadow: 0 0 10px var(--accent-color); */
+    outline: none;
+    text-shadow: 0 0 7px var(--accent-color);
   }
 
   @media (max-width: 342px) {
@@ -79,9 +81,11 @@ h2 {
     )
     var(--d, 0%) 100% /300% 1px no-repeat;
   transition: 0.5s;
-  &:hover {
+  &:hover,
+  &:focus {
     --d: 100%;
     text-shadow: 0 0 7px var(--accent-color);
+    outline: none;
   }
 }
 
@@ -120,12 +124,21 @@ ul {
   font-weight: bold;
   font-family: Raleway;
   position: relative;
-}
-[data-title]:hover:after {
-  opacity: 1 !important;
-  visibility: visible;
-  transition: all ease 0.75s;
-  z-index: 5;
+
+  &:hover,
+  &:focus {
+    &:after {
+      opacity: 1 !important;
+      visibility: visible;
+      transition: all ease 0.75s;
+      z-index: 5;
+    }
+    &:before {
+      transition: all ease 0.75s;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 [data-title]:after {
   background-color: var(--background-color);
@@ -159,9 +172,4 @@ ul {
   position: absolute;
   opacity: 0;
   z-index: 5;
-}
-[data-title]:hover:before {
-  transition: all ease 0.75s;
-  opacity: 1;
-  visibility: visible;
 }
