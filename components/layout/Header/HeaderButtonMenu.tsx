@@ -4,19 +4,13 @@ import styles from "./headerButtonMenu.module.css";
 interface Props {
   action: () => void;
   value: boolean;
-  refValue: RefObject<HTMLLabelElement>;
+  refValue: RefObject<HTMLButtonElement>;
 }
 
 export const HeaderButtonMenu = ({ action, value, refValue }: Props) => {
   return (
-    <label
-      htmlFor="check"
-      className={styles.bar}
-      ref={refValue}
-      onClick={action}
-    >
+    <button className={styles.bar} ref={refValue} onClick={action}>
       <input
-        id="check"
         type="checkbox"
         className={styles.check}
         checked={value}
@@ -25,6 +19,6 @@ export const HeaderButtonMenu = ({ action, value, refValue }: Props) => {
       <span className={styles.top}></span>
       <span className={styles.middle}></span>
       <span className={styles.bottom}></span>
-    </label>
+    </button>
   );
 };

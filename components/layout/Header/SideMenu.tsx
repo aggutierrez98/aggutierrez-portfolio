@@ -10,12 +10,7 @@ interface Props {
   toogle: () => void;
 }
 
-export const SideMenu = ({
-  isShowing = true,
-  refValue,
-
-  toogle,
-}: Props) => {
+export const SideMenu = ({ isShowing = true, refValue, toogle }: Props) => {
   return (
     <AnimatePresence>
       {isShowing && (

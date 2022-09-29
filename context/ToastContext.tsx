@@ -1,7 +1,7 @@
 import {
-  CheckCircleIcon,
-  ExclamationCircleIcon,
-} from "@heroicons/react/outline";
+  IoIosCheckmarkCircleOutline,
+  IoMdInformationCircleOutline,
+} from "react-icons/io";
 import { createContext, ReactElement, useState, useCallback } from "react";
 
 interface ContextProps {
@@ -21,11 +21,15 @@ export type Toast = {
 export const ToastContext = createContext({} as ContextProps);
 
 const TypeToast = [
-  { title: "Success", backgroundColor: "#5cb85c", icon: <CheckCircleIcon /> },
+  {
+    title: "Success",
+    backgroundColor: "#5cb85c",
+    icon: <IoIosCheckmarkCircleOutline />,
+  },
   {
     title: "Info",
     backgroundColor: "#5bc0de",
-    icon: <ExclamationCircleIcon />,
+    icon: <IoMdInformationCircleOutline />,
   },
 ];
 

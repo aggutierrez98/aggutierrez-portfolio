@@ -12,7 +12,12 @@ interface Props {
 export const LinkButton = ({ text, link, deploy = false }: Props) => {
   return (
     <Link href={link} passHref scroll={false}>
-      <a target="_blank" rel="noopener noreferrer" className={styles.button}>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.button}
+      >
         {deploy ? <VscLink /> : <VscGithub />}
         {text}
       </a>

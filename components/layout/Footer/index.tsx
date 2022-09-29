@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import { HeartIcon } from "@heroicons/react/outline";
+import { IoIosHeartEmpty } from "react-icons/io";
 import { Logo } from "components";
 import { SocialMediaLinks } from "../MainLayout/SocialMediaLinks";
 import { LazyMotion, m, domAnimation } from "framer-motion";
@@ -24,8 +24,8 @@ export const Footer = () => {
             </div>
             <div className={styles.legendContainer}>
               <m.p className={styles.legendText} variants={sectionItemVariant}>
-                Made with <HeartIcon className={styles.legendIcon} /> by Agustin
-                Gutierrez
+                Made with <IoIosHeartEmpty className={styles.legendIcon} /> by
+                Agustin Gutierrez
               </m.p>
               <m.p
                 className={styles.legendTextyles}

@@ -10,7 +10,7 @@ import { HeaderLink } from "./HeaderLink";
 import { HeaderButtonMenu } from "./HeaderButtonMenu";
 import { SideMenu } from "./SideMenu";
 import { useOutsideAndEscapeKeyAlerter } from "hooks";
-import { LazyMotion, m, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import { headerListVariant } from "./variants";
 export const HeaderMenu = () => {
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -18,7 +18,7 @@ export const HeaderMenu = () => {
   const onClose = () => setShowSideMenu(false);
 
   const menuRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLLabelElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   useOutsideAndEscapeKeyAlerter(
     menuRef,
     onClose,

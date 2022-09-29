@@ -2,8 +2,7 @@ import { Work } from "interfaces";
 import styles from "./workCard.module.css";
 import { m } from "framer-motion";
 import { sectionItemVariant } from "../../layout/variants";
-import { timeLineVariant } from "./variants";
-import {
+import { timeLineVariant ,
   tasksContainerVariant,
   taskItemVariant,
   containerVariant,

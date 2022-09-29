@@ -18,9 +18,11 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    li {
+      margin-bottom: 25px;
+    }
     a {
       font-size: 18px;
-      margin-bottom: 20px;
     }
     li[class*="item"] {
       a {

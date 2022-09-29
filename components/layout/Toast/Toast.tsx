@@ -2,7 +2,7 @@ import React, { memo, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./styles.module.css";
 import { Toast as ToastType } from "context/ToastContext";
-import { XIcon } from "@heroicons/react/solid";
+import { IoIosClose } from "react-icons/io";
 
 interface ToastProps {
   toastClassName?: string;
@@ -42,7 +42,7 @@ const ToastBase = ({
       }}
     >
       <button className={styles.button} onClick={() => deleteToast(toast.id)}>
-        <XIcon />
+        <IoIosClose />
       </button>
       <div className={styles.iconContainer}>{toast.icon}</div>
       <div className={styles.textContainer}>

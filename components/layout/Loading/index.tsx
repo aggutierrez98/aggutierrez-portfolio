@@ -3,6 +3,10 @@ import React from "react";
 import { createPortal } from "react-dom";
 import styles from "./styles.module.css";
 
+interface Props {
+  loading?: boolean;
+}
+
 const LoadingBase = () => {
   return (
     <motion.span
@@ -17,7 +21,7 @@ const LoadingBase = () => {
   );
 };
 
-export const Loading = ({ loading = true }) => {
+export const Loading = ({ loading = true }: Props) => {
   if (typeof document === "undefined") return <></>;
 
   return createPortal(

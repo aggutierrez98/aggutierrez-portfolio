@@ -45,6 +45,7 @@ export const ContactForm = ({
         }`}
       >
         <input
+          id="name"
           type="text"
           name="name"
           placeholder="name"
@@ -53,8 +54,9 @@ export const ContactForm = ({
           onChange={onChange}
         />
         <MdPerson className={styles.icon} />
-
-        <label className={styles.label}>Name</label>
+        <label htmlFor="name" className={styles.label}>
+          Name
+        </label>
       </div>
       <div
         className={`${styles.formGroup} ${
@@ -62,6 +64,7 @@ export const ContactForm = ({
         }`}
       >
         <input
+          id="email"
           type="email"
           aria-describedby="emailHelp"
           name="email"
@@ -71,7 +74,9 @@ export const ContactForm = ({
           onChange={onChange}
         />
         <MdMail className={styles.icon} />
-        <label className={styles.label}>Email</label>
+        <label htmlFor="name" className={styles.label}>
+          Email
+        </label>
       </div>
 
       <div
@@ -80,6 +85,7 @@ export const ContactForm = ({
         }`}
       >
         <textarea
+          id="message"
           name="message"
           placeholder="message"
           value={message}
@@ -88,7 +94,9 @@ export const ContactForm = ({
           rows={6}
         />
         <MdChat className={styles.textareaIcon} />
-        <label className={styles.label}>Message</label>
+        <label htmlFor="message" className={styles.label}>
+          Message
+        </label>
       </div>
       <SendButton />
     </m.form>

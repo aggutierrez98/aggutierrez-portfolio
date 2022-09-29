@@ -49,9 +49,6 @@ export const ProjectDetails = ({ projectData }: Props) => {
         <div className={styles.descriptionContainer}>
           <h3>Description</h3>
           <p>{description}</p>
-          <div>
-            <h2></h2>
-          </div>
         </div>
 
         <div className={styles.separator} />

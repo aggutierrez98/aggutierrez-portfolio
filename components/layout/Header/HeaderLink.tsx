@@ -26,9 +26,10 @@ export const HeaderLink = ({
       className={`${active ? styles.active : ""}`}
       custom={isSideLink}
       variants={headerItemVariant}
+      onClick={toogle}
     >
       <Link href={href} scroll={false}>
-        <a onClick={toogle}>{title}</a>
+        <a href={href}>{title}</a>
       </Link>
     </m.li>
   );

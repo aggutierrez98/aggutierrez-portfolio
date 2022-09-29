@@ -6,6 +6,8 @@
 }
 
 .bar {
+  background-color: transparent;
+  border: none;
   z-index: 5;
   position: relative;
   cursor: pointer;

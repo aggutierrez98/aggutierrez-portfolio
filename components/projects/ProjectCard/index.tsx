@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 import { TechsList } from "components";
-import { SeeMoreButton } from "./SeeMoreButton";
+import { LearnMoreButton } from "./LearnMoreButton";
 import { Project } from "interfaces";
 import { boxVariants } from "./variants";
 import Link from "next/link";
@@ -26,7 +26,7 @@ export const ProjectCard = ({
           <div className={styles.textContainer}>
             <h3 id="style-2" data-replace={title}>
               <Link href={demo_url} passHref>
-                <a>
+                <a href={demo_url}>
                   <span>{title}</span>
                 </a>
               </Link>
@@ -34,13 +34,13 @@ export const ProjectCard = ({
             <p>{description}</p>
             <div className={styles.textBottom}>
               <TechsList techs={techs} />
-              <SeeMoreButton title={title} />
+              <LearnMoreButton title={title} />
             </div>
           </div>
           {image_url && (
             <div className={styles.imageContainer}>
               <Link href={demo_url} passHref>
-                <a>
+                <a href={demo_url}>
                   <Image
                     priority
                     src={image_url}

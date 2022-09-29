@@ -3,9 +3,9 @@ import { CustomModal, ContactForm, Loading } from "components";
 import { useContactForm } from "hooks";
 import styles from "./styles.module.css";
 import {
-  CheckCircleIcon,
-  ExclamationCircleIcon,
-} from "@heroicons/react/outline";
+  IoIosCheckmarkCircleOutline,
+  IoMdInformationCircleOutline,
+} from "react-icons/io";
 import { MdLocationPin, MdMail, MdPhoneAndroid } from "react-icons/md";
 import Image from "next/image";
 import { LazyMotion, domAnimation, m } from "framer-motion";
@@ -81,7 +81,7 @@ export const ContactModule = () => {
             />
             <CustomModal onClose={closeModal} visible={modalVisible}>
               <div className={styles.modalContainer}>
-                {success ? <CheckCircleIcon /> : <ExclamationCircleIcon />}
+                {success ? <IoIosCheckmarkCircleOutline /> : <IoMdInformationCircleOutline />}
                 <h2>{modalData.title}</h2>
                 <ul>
                   {modalData.messages.map((message) => (
