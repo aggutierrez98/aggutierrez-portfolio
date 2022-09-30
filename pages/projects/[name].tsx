@@ -25,6 +25,7 @@ const ProyectPage = ({ projectData, metaData }: Props) => {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{`${seo.title} ${projectData.title}`}</title>
         <meta name="description" content="Agustin Gutierrez web page" />
         <meta

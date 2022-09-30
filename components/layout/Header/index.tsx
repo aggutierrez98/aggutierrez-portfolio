@@ -1,10 +1,10 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { HeaderMenu } from "./HeaderMenu";
 import styles from "./styles.module.css";
 import { useScrollingUp } from "hooks";
-import Logo from "public/assets/logo-agg.svg";
-import { LazyMotion, motion, domAnimation, m } from "framer-motion";
+import { Logo } from "components";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 const variants = {
   hidden: {
@@ -35,7 +35,7 @@ export const Header = () => {
       >
         <div className={styles.headerContainer}>
           <Link href="/" passHref scroll={false}>
-            <Logo tabIndex={1} />
+            <Logo tabIndex={1} className={styles.logo} />
           </Link>
           <HeaderMenu />
         </div>

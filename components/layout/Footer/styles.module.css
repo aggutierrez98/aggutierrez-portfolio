@@ -32,10 +32,6 @@
 }
 
 .logo {
-  path {
-    width: 10px;
-    height: 10px;
-  }
   position: absolute;
   padding: 0px 10px;
   color: var(--primary-color);
@@ -51,9 +47,6 @@
     top: -15vw;
   }
   transition: all ease-in-out 0.2s;
-  padding: 10px;
-  outline: 1px solid var(--primary-color);
-  border-radius: 50%;
 }
 
 .footer a button {

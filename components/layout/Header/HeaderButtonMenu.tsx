@@ -9,7 +9,7 @@ interface Props {
 
 export const HeaderButtonMenu = ({ action, value, refValue }: Props) => {
   return (
-    <button className={styles.bar} ref={refValue} onClick={action}>
+    <button tabIndex={1} className={styles.bar} ref={refValue} onClick={action}>
       <input
         type="checkbox"
         className={styles.check}

@@ -2,7 +2,13 @@ import Head from "next/head";
 import projects from "data/projects.json";
 import data from "data/info.json";
 import works from "data/experience.json";
-import { ProjectsModule , Home, ContactModule, About , WorkModule } from "components";
+import {
+  ProjectsModule,
+  Home,
+  ContactModule,
+  About,
+  WorkModule,
+} from "components";
 import { Metadata, Project } from "../interfaces/index";
 import LayeredWaves from "@c/dividers/LayeredWaves";
 import WaveSmooth from "components/dividers/WaveSmooth";
@@ -29,6 +35,7 @@ const HomePage = ({ projects, metaData }: Props) => {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{`${seo.title}`}</title>
         <meta name="description" content={`${seo.description}`} />
         <meta name="description" content={seo.description} />
