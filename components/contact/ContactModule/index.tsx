@@ -67,7 +67,9 @@ export const ContactModule = () => {
               <h3>You can send me a message here</h3>
               <div className={styles.imageContainer}>
                 <Image
-                  src={"/assets/send-email.png"}
+                  src={
+                    "https://res.cloudinary.com/aggutierrez/image/upload/v1664806129/Portfolio/send-email-art-image.png"
+                  }
                   width={265}
                   height={265}
                   alt="send-email"

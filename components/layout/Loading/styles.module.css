@@ -1,43 +1,56 @@
 .loader {
   position: fixed;
-  bottom: 80px;
-  right: 80px;
+  bottom: 100px;
+  right: 100px;
   width: 80px;
   height: 80px;
   display: block;
   margin: 15px auto;
   box-sizing: border-box;
-  animation: rotation 1s linear infinite;
 }
-.loader::after,
-.loader::before {
+.loader:before,
+.loader:after {
   content: "";
-  box-sizing: border-box;
   position: absolute;
-  width: 2.5rem;
-  height: 2.5rem;
+  transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  transform: scale(0.5) translate(0, 0);
-  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  animation: animloader 1s infinite ease-in-out;
+  animation: pulsOut 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75));
 }
-.loader::before {
-  background-color: var(--accent-color);
-  transform: scale(0.5) translate(-80px, -80px);
+.loader:before {
+  box-shadow: inset 0 0 0 1rem var(--accent-color);
+  animation-name: pulsIn;
+}
+.loader:after {
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  box-shadow: 0 0 0 0 var(--accent-color);
 }
 
-@keyframes rotation {
+@keyframes pulsIn {
   0% {
-    transform: rotate(0deg);
+    box-shadow: inset 0 0 0 1rem var(--accent-color);
+    opacity: 1;
   }
+  50%,
   100% {
-    transform: rotate(360deg);
+    box-shadow: inset 0 0 0 0 var(--accent-color);
+    opacity: 0;
   }
 }
-@keyframes animloader {
+
+@keyframes pulsOut {
+  0%,
   50% {
-    transform: scale(1) translate(-50%, -50%);
+    box-shadow: 0 0 0 0 #fff;
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 1rem #fff;
+    opacity: 1;
   }
 }

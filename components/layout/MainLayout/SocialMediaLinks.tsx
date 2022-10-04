@@ -37,7 +37,7 @@ export const SocialMediaLinks = () => {
                       href={mediaData.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      data-title={mediaData.title}
+                      // data-title={mediaData.title}
                       onClick={() => {
                         if (mediaData.action === "copyuser") {
                           copyToClipboard("aggutierrez#1860");
@@ -48,6 +48,10 @@ export const SocialMediaLinks = () => {
                         }
                       }}
                     >
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
                       <Icon />
                     </m.a>
                   </li>

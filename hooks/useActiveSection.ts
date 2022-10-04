@@ -17,7 +17,7 @@ const isSectionId = (value: string): value is SectionId => {
 };
 
 const useActiveSectionId = (href: string): [SectionId, boolean] => {
-  const { asPath } = useRouter();
+  const { asPath, route } = useRouter();
   const [, startTransition] = useTransition();
   const [activeSectionId, setActiveSectionId] = useState("home");
   let active = activeSectionId === href.split("#")[1];
@@ -26,6 +26,8 @@ const useActiveSectionId = (href: string): [SectionId, boolean] => {
     if (href.split("#")[1] === "projects") {
       active = true;
     } else active = false;
+  } else if (route === "/404") {
+    active = false;
   }
 
   useEffect(() => {

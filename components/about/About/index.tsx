@@ -30,12 +30,16 @@ export const About = ({ data }: Props) => {
               className={styles.imageContainer}
               variants={sectionItemVariant}
             >
-              <Image
-                src={"/assets/avatar-image-placeholder.svg"}
-                width={300}
-                height={300}
-                alt="Aggutierrez image"
-              />
+              <div className={styles.imageContainerInner}>
+                <div className={styles.circle}></div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={
+                    "https://res.cloudinary.com/aggutierrez/image/upload/e_colorize:45,co_rgb:00adb5/v1664817205/Portfolio/avatar-image3.png"
+                  }
+                  alt="Agustin Gutierrez"
+                />
+              </div>
             </m.div>
           </div>
           <SkillsList data={data} />

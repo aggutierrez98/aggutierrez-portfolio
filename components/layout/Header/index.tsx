@@ -34,9 +34,7 @@ export const Header = () => {
         initial="hidden"
       >
         <div className={styles.headerContainer}>
-          <Link href="/" passHref scroll={false}>
-            <Logo tabIndex={1} className={styles.logo} />
-          </Link>
+          <Logo className={styles.logo} tabIndex={1} />
           <HeaderMenu />
         </div>
       </m.header>

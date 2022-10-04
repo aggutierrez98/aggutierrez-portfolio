@@ -38,6 +38,7 @@
   transition: all ease-in-out 0.2s;
   border-radius: 10px;
   padding: 0;
+  outline: none;
   &:focus,
   &:hover {
     box-shadow: 0 0 15px var(--primary-color);

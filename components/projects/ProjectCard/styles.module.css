@@ -82,9 +82,14 @@
   width: 60%;
   position: relative;
   span {
+    background-color: var(--primary-color);
+    object-fit: cover;
+    object-fit: fill;
     img {
+      object-fit: fill;
       display: block;
-      filter: grayscale(60%) contrast(1);
+      filter: sepia(14%) saturate(292%) hue-rotate(15deg) brightness(86%)
+        contrast(85%) opacity(80%);
       position: relative;
       width: 100%;
       &:hover {

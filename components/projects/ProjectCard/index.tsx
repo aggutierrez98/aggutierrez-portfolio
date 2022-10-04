@@ -42,7 +42,6 @@ export const ProjectCard = ({
               <Link href={demo_url} passHref>
                 <a href={demo_url}>
                   <Image
-                    priority
                     src={image_url}
                     layout="fill"
                     objectFit="contain"
