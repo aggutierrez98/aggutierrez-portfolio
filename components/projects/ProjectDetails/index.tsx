@@ -26,7 +26,13 @@ export const ProjectDetails = ({ projectData }: Props) => {
   return (
     <LazyMotion features={domAnimation}>
       <div className={styles.detailsContainer}>
-        <m.h1 initial="hidden" whileHover="visible" variants={titleVariants}>
+        <m.h1
+          tabIndex={2}
+          initial="hidden"
+          whileHover="visible"
+          whileFocus="visible"
+          variants={titleVariants}
+        >
           {title}
         </m.h1>
         {image_url && (
@@ -47,7 +53,15 @@ export const ProjectDetails = ({ projectData }: Props) => {
         <div className={styles.separator} />
 
         <div className={styles.descriptionContainer}>
-          <h3>Description</h3>
+          <m.h3
+            initial="hidden"
+            whileHover="visible"
+            whileFocus="visible"
+            variants={titleVariants}
+            tabIndex={2}
+          >
+            Description
+          </m.h3>
           <p>{description}</p>
         </div>
 
@@ -56,10 +70,20 @@ export const ProjectDetails = ({ projectData }: Props) => {
         <m.div
           variants={boxVariants}
           className={styles.techStackContainer}
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
           initial="hidden"
         >
-          <h3>Tech Stack</h3>
+          <m.h3
+            initial="hidden"
+            animate="none"
+            whileHover="visible"
+            whileFocus="visible"
+            variants={titleVariants}
+            tabIndex={2}
+          >
+            Tech Stack
+          </m.h3>
           <TechsList techs={techs} detailsPage />
         </m.div>
 

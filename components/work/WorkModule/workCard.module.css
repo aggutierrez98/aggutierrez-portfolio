@@ -115,6 +115,8 @@
   }
 
   .task {
+    letter-spacing: 1px;
+    font-weight: 300;
     font-size: clamp(1rem, 1.4vw, 2rem);
   }
 }

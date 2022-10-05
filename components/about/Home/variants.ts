@@ -27,10 +27,4 @@ export const itemVariant = {
       duration: 0.15,
     },
   },
-  focus: {
-    textShadow: `0 0 10px #eeeeee`,
-    transition: {
-      duration: 0.15,
-    },
-  },
 };

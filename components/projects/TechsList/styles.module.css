@@ -20,7 +20,7 @@
 
 .techTag {
   display: block;
-  border: 1px var(--secondary-color) solid;
+  border: 1px var(--foreground-color) solid;
   padding: 10px;
   display: flex;
   min-width: 20px;
@@ -60,13 +60,17 @@
     width: 20px !important;
     height: 20px !important;
   }
+
+  &:not(:hover, :focus, .extendedTag) {
+    svg path {
+      fill: var(--accent-color);
+    }
+  }
 }
 
 .extendedTag {
   margin-bottom: 10px;
   display: flex !important;
-
-  /* width: 100px !important; */
 
   &:hover::after {
     margin-left: 5px;

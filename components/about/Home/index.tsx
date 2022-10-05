@@ -44,8 +44,10 @@ export const Home = ({ data }: Props) => {
             <m.h1
               tabIndex={2}
               variants={itemVariant}
+              initial="hidden"
+              animate="visible"
               whileHover="hover"
-              whileFocus="focus"
+              whileFocus="hover"
             >
               {memoizedData.title1}
             </m.h1>

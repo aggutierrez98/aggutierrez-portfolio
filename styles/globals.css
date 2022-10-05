@@ -58,7 +58,7 @@ h1 {
   &:focus-visible {
     --d: 100%;
     outline: none;
-    text-shadow: 0 0 7px var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
   }
 
   @media (max-width: 342px) {
@@ -69,7 +69,7 @@ h1 {
 
 h2 {
   font-family: Source Code Pro;
-  font-weight: 300;
+  font-weight: 500;
   width: fit-content;
   font-size: clamp(1.8rem, 3.2vw, 3rem);
   color: var(--accent-color);
@@ -84,7 +84,7 @@ h2 {
   &:hover,
   &:focus {
     --d: 100%;
-    text-shadow: 0 0 7px var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
     outline: none;
   }
 }

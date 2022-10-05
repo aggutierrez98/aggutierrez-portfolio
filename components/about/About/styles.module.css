@@ -38,8 +38,8 @@
     text-overflow: ellipsis;
     margin: 1.5rem 0;
     font-size: clamp(1.2rem, 2vw, 1.4rem);
-    font-style: italic;
     font-weight: 300;
+    letter-spacing: 1px;
   }
   @media (max-width: 1000px) {
     margin-right: 20px;
@@ -103,7 +103,7 @@
   bottom: 0;
   width: 380px;
   clip-path: path(
-    "M 380 386 C 380 504.9341 283 575 192 571 C 106 579 0 504.9341 0 380 V 1 H 200 H 380 Z"
+    "M 380 386 C 380 504.9341 285 571 190 571 C 94 572 0 504.9341 0 380 V 1 H 200 H 380 Z"
   );
 
   @media (max-width: 850px) {
@@ -165,8 +165,7 @@
   align-items: center;
   justify-content: center;
   h5 {
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 500;
     font-family: Source Code Pro;
     width: fit-content;
     margin: 0;
@@ -185,6 +184,7 @@
   grid-auto-rows: max-content;
 
   .skillsSection {
+    margin-top: 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -192,9 +192,9 @@
     justify-content: flex-start;
     align-items: center;
     h3 {
-      font-size: 18px;
+      font-size: 20px;
       color: var(--primary-color);
-      font-weight: 500;
+      font-weight: 600;
       @media (max-width: 500px) {
         font-size: 15px;
       }
@@ -223,7 +223,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   p {
-    font-weight: 300;
+    font-weight: 200;
     margin-left: 10px;
     color: var(--accent-color);
   }

@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { LinkButton } from "./LinkButton";
+import { m } from "framer-motion";
+import { titleVariants } from "../ProjectDetails/variants";
 
 interface Props {
   github_repo_front_url: string;
@@ -17,7 +19,15 @@ export const LinksList = ({
 }: Props) => {
   return (
     <div className={styles.linksContainer}>
-      <h3>Links</h3>
+      <m.h3
+        initial="hidden"
+        whileHover="visible"
+        whileFocus="visible"
+        variants={titleVariants}
+        tabIndex={2}
+      >
+        Links
+      </m.h3>
       <ul>
         {github_repo_front_url && (
           <li>

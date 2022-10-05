@@ -17,6 +17,7 @@ export const LinkButton = ({ text, link, deploy = false }: Props) => {
         target="_blank"
         rel="noopener noreferrer"
         className={styles.button}
+        tabIndex={2}
       >
         {deploy ? <VscLink /> : <VscGithub />}
         {text}

@@ -78,7 +78,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     box-shadow: 0 0 10px var(--primary-color);
     transition: all 0.15s ease;
   }

@@ -16,10 +16,7 @@ export const LearnMoreButton = ({ title }: Props) => {
           e.button === 1 && window.open(`/projects/${title}`, "_blank")
         }
       >
-        <span className={styles.circle} aria-hidden="true">
-          <span className={styles.iconArrow}></span>
-        </span>
-        <span className={styles.buttonText}>Learn More</span>
+        Learn More
       </button>
     </Link>
   );

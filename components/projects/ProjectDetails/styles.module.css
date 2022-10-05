@@ -4,6 +4,7 @@
   margin-bottom: 5rem;
   color: var(--accent-color);
   h1 {
+    outline: none;
     margin: 5px;
     margin-bottom: 20px;
     font-size: clamp(2.3rem, 3.5vw, 5rem);
@@ -58,6 +59,7 @@
 
 .descriptionContainer {
   h3 {
+    outline: none;
     color: var(--accent-color);
     font-size: clamp(1.25rem, 5vw, 2rem);
     margin-bottom: 1.5rem;
@@ -72,6 +74,7 @@
 }
 .techStackContainer {
   h3 {
+    outline: none;
     margin-bottom: 2rem;
     font-size: clamp(1.25rem, 5vw, 2rem);
   }
