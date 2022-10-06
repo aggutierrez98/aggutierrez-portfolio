@@ -5323,11 +5323,6 @@ popmotion@11.0.3:
     style-value-types "5.0.0"
     tslib "^2.1.0"
 
-postcss-dark-theme-class@^0.7.3:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/postcss-dark-theme-class/-/postcss-dark-theme-class-0.7.3.tgz#b17e8ea6070645d748fb2ff1783c21ae792139b8"
-  integrity sha512-M9vtfh8ORzQsVdT9BWb+xpEDAzC7nHBn7wVc988/JkEVLPupKcUnV0jw7RZ8sSj0ovpqN1POf6PLdt19JCHfhQ==
-
 postcss-media-query-parser@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/postcss-media-query-parser/-/postcss-media-query-parser-0.2.3.tgz#27b39c6f4d94f81b1a73b8f76351c609e5cef244"
