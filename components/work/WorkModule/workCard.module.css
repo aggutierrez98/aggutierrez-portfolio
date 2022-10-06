@@ -68,7 +68,8 @@
     margin-bottom: 5px;
     font-size: clamp(1rem, 1.5vw, 2rem);
   }
-  a {
+  a,
+  p {
     outline: none;
     transition: all 0.2s ease;
     font-size: clamp(1rem, 1.3vw, 2rem);

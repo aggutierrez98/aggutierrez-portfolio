@@ -30,30 +30,44 @@ export const SocialMediaLinks = () => {
 
                 return (
                   <li key={index}>
-                    <m.a
-                      tabIndex={1}
-                      variants={socialMediaVariants.item}
-                      className={styles.logo}
-                      href={mediaData.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      // data-title={mediaData.title}
-                      onClick={() => {
-                        if (mediaData.action === "copyuser") {
-                          copyToClipboard("aggutierrez#1860");
-                        } else if (mediaData.action === "sendemail") {
-                          window.open(
-                            "mailto:agustinguti123@gmail.com?subject=Subject&body=Hi!%20I%20want%20to%20get%20in%20touch!"
-                          );
-                        }
-                      }}
-                    >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <Icon />
-                    </m.a>
+                    {mediaData.link ? (
+                      <m.a
+                        tabIndex={1}
+                        variants={socialMediaVariants.item}
+                        className={styles.logo}
+                        href={mediaData.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        // data-title={mediaData.title}
+                      >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <Icon />
+                      </m.a>
+                    ) : (
+                      <m.button
+                        tabIndex={1}
+                        variants={socialMediaVariants.item}
+                        className={styles.logo}
+                        onClick={() => {
+                          if (mediaData.action === "copyuser") {
+                            copyToClipboard("aggutierrez#1860");
+                          } else if (mediaData.action === "sendemail") {
+                            window.open(
+                              "mailto:agustinguti123@gmail.com?subject=Subject&body=Hi!%20I%20want%20to%20get%20in%20touch!"
+                            );
+                          }
+                        }}
+                      >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <Icon />
+                      </m.button>
+                    )}
                   </li>
                 );
               }

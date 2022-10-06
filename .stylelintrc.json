@@ -4,7 +4,6 @@
   "rules": {
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true,
-    "scss/selector-no-redundant-nesting-selector": true,
-    "MD033/no-inline-html": false
+    "scss/selector-no-redundant-nesting-selector": true
   }
 }

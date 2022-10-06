@@ -34,14 +34,18 @@ export const WorkCard = ({
       <div className={styles.rightSide}>
         <p className={styles.timeRight}>{time}</p>
         <h4>{title}</h4>
-        <a
-          href={place_url}
-          tabIndex={2}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {place}
-        </a>
+        {place_url ? (
+          <a
+            href={place_url}
+            tabIndex={2}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {place}
+          </a>
+        ) : (
+          <p> {place}</p>
+        )}
         <m.ul variants={tasksContainerVariant}>
           {tasks.map((task, index) => (
             <m.li
