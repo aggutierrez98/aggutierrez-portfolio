@@ -9,11 +9,6 @@
     "url": "https://github.com/aggutierrez98/aggutierrez-portfolio",
     "type": "git"
   },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
   "author": "Agustin Manuel Gutierrez <agustinguti123@gmail.com>",
   "keywords": [
     "react",
@@ -70,12 +65,17 @@
     "typescript": "4.6.3",
     "husky": "^8.0.0"
   },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
-    "@semantic-release/github",
     "@semantic-release/npm",
-    "@semantic-release/git"
+    "@semantic-release/git",
+    "@semantic-release/github"
   ]
 }
