@@ -19,6 +19,7 @@ const ProyectPage = ({ projectData, metaData }: Props) => {
   const seo = {
     title: metaData.title,
     description: metaData.description,
+    image_source: metaData.image_source,
     url: `${origin}${pathname}`,
   };
 
@@ -37,7 +38,7 @@ const ProyectPage = ({ projectData, metaData }: Props) => {
           content={
             projectData.image_url
               ? projectData.image_url
-              : `${origin}/banner.jpg`
+              : `${seo.image_source}/banner.png`
           }
         />
         <meta
@@ -53,7 +54,7 @@ const ProyectPage = ({ projectData, metaData }: Props) => {
           content={
             projectData.image_url
               ? projectData.image_url
-              : `${origin}/banner.jpg`
+              : `${seo.image_source}/banner.png`
           }
         />
         <meta property="og:url" content={seo.url} />
@@ -73,7 +74,7 @@ const ProyectPage = ({ projectData, metaData }: Props) => {
           content={
             projectData.image_url
               ? projectData.image_url
-              : `${origin}/banner.jpg`
+              : `${seo.image_source}/banner.png`
           }
         />
       </Head>

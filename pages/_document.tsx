@@ -55,6 +55,8 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#00adb5" />
         <meta name="theme-color" content="#2b3338" />
         <meta name="author" content="Agustin Gutierrez"></meta>
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Aggutierrez"></meta>
         <meta
           name="keywords"
           content="Aggutierrez, Agustin, Gutierrez, developer, software, engineer, web, mobile, backend, react, node, javascript, typescript"

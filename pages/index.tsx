@@ -14,7 +14,6 @@ import LayeredWaves from "@c/dividers/LayeredWaves";
 import WaveSmooth from "components/dividers/WaveSmooth";
 import metadata from "data/metadata/index.json";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 interface Props {
   projects: Project[];
@@ -29,6 +28,7 @@ const HomePage = ({ projects, metaData }: Props) => {
   const seo = {
     title: metaData.title,
     description: metaData.description,
+    image_source: metadata.image_source,
     url: `${origin}${pathname}`,
   };
 
@@ -38,18 +38,18 @@ const HomePage = ({ projects, metaData }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{`${seo.title}`}</title>
         <meta name="description" content={`${seo.description}`} />
-        <meta name="image" content={`${origin}/banner.jpg`} />
+        <meta name="image" content={`${seo.image_source}/banner.png`} />
 
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
-        <meta property="og:image" content={`${origin}/banner.jpg`} />
+        <meta property="og:image" content={`${seo.image_source}/banner.png`} />
         <meta property="og:url" content={seo.url} />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seo.title} />
         <meta name="twitter:description" content={seo.description} />
-        <meta name="twitter:image" content={`${origin}/banner.jpg`} />
+        <meta name="twitter:image" content={`${seo.image_source}/banner.png`} />
       </Head>
 
       <Home data={homeData} />

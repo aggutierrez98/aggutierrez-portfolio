@@ -16,6 +16,7 @@ const HomePage = ({ metaData }: Props) => {
   const seo = {
     title: metaData.title,
     description: metaData.description,
+    image_source: metaData.image_source,
     url: `${origin}${pathname}`,
   };
 
@@ -25,18 +26,22 @@ const HomePage = ({ metaData }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{`Page Not Found | ${seo.title}`}</title>
         <meta name="description" content={`${seo.description}`} />
-        <meta name="image" content={`${origin}/banner.jpg`} />
+        <meta name="image" content={`${seo.image_source}/banner.png`} />
 
         <meta property="og:title" content={`Page Not Found | ${seo.title}`} />
         <meta property="og:description" content={seo.description} />
-        <meta property="og:image" content={`${origin}/banner.jpg`} />
+        <meta
+          property="og:image:secure_url"
+          itemProp="image"
+          content={`${seo.image_source}/banner.png`}
+        />
         <meta property="og:url" content={seo.url} />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`Page Not Found | ${seo.title}`} />
         <meta name="twitter:description" content={seo.description} />
-        <meta name="twitter:image" content={`${origin}/banner.jpg`} />
+        <meta name="twitter:image" content={`${seo.image_source}/banner.png`} />
       </Head>
 
       <NotFoundSign />

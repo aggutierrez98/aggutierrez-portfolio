@@ -27,7 +27,7 @@ export interface Work {
 export interface Metadata {
   title: string;
   description: string;
-  image?: string;
+  image_source: string;
 }
 
 export interface MediaData {
