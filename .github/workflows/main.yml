@@ -35,9 +35,9 @@ name: Deployment Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: ["main"]
   pull_request:
-    branches: [main]
+    branches: ["main"]
 
 # env:
 #   MONGODB_TEST_CNN: ${{ secrets.MONGODB_TEST_CNN }}
