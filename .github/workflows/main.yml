@@ -48,8 +48,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Lint
-        run: yarn lint
-        run: yarn stylelint
+        run: yarn lint | yarn stylelint
 
   build:
     needs: install
