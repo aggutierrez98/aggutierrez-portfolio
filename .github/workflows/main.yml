@@ -6,125 +6,91 @@ on:
   pull_request:
     branches: ["main"]
 
-jobs:
-  automatic-versioning:
-    runs-on: ubuntu-latest
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
+jobs:
+  avoid_reduncy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Redundant Builds
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+  install:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: 14.17
+          cache: npm
+          node-version: "16"
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Install Dependencies
-        run: yarn install
+  lint:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: "16"
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint-staged
 
+  build:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: "16"
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: .next
+
+  semantic-release:
+    needs: [lint, build]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: "16"
+          cache-dependency-path: package-lock.json
+      - name: Install semantic-release extra plugins
+        run: npm install --save-dev @semantic-release/changelog @semantic-release/git
       - name: Semantic Relase
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
-# name: Deployment Pipeline
 
-# on:
-#   push:
-#     branches: ["main"]
-#   pull_request:
-#     branches: ["main"]
-
-# env:
-#   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-#   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
-# jobs:
-#   avoid_reduncy:
-#     runs-on: ubuntu-18.04
-#     steps:
-#       - name: Cancel Previous Redundant Builds
-#         uses: styfle/cancel-workflow-action@0.9.1
-#         with:
-#           access_token: ${{ github.token }}
-
-#   install:
-#     runs-on: ubuntu-18.04
-#     steps:
-#       - uses: actions/checkout@v2
-#         with:
-#           fetch-depth: 0
-#       - uses: actions/setup-node@v2
-#         with:
-#           cache: npm
-#           node-version: "16"
-#           cache-dependency-path: package-lock.json
-#       - name: Install dependencies
-#         run: npm ci
-
-#   lint:
-#     needs: install
-#     runs-on: ubuntu-18.04
-#     steps:
-#       - uses: actions/checkout@v2
-#         with:
-#           fetch-depth: 0
-#       - uses: actions/setup-node@v2
-#         with:
-#           cache: npm
-#           node-version: "16"
-#           cache-dependency-path: package-lock.json
-#       - name: Install dependencies
-#         run: npm ci
-#       - name: Lint
-#         run: npm run lint-staged
-
-#   build:
-#     needs: install
-#     runs-on: ubuntu-18.04
-#     steps:
-#       - uses: actions/checkout@v2
-#         with:
-#           fetch-depth: 0
-#       - uses: actions/setup-node@v2
-#         with:
-#           cache: npm
-#           node-version: "16"
-#           cache-dependency-path: package-lock.json
-#       - name: Install dependencies
-#         run: npm ci
-#       - name: Build
-#         run: npm run build
-#       - uses: actions/upload-artifact@v2
-#         with:
-#           name: build
-#           path: .next
-
-#   semantic-release:
-#     needs: [lint, build]
-#     steps:
-#       - uses: actions/checkout@v2
-#         with:
-#           fetch-depth: 0
-#       - uses: actions/setup-node@v2
-#         with:
-#           cache: npm
-#           node-version: "16"
-#           cache-dependency-path: package-lock.json
-#       - name: Install semantic-release extra plugins
-#         run: npm install --save-dev @semantic-release/changelog @semantic-release/git
-#       - name: Semantic Relase
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-#         run: npx semantic-release
-
-#   deploy:
-#     needs: [lint, build]
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Install Vercel CLI
-#         run: npm install --global vercel@latest
-#       - name: Pull Vercel Environment Information
-#         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-#       - name: Build Project Artifacts
-#         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-#       - name: Deploy Project Artifacts to Vercel
-#         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+  deploy:
+    needs: [lint, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
