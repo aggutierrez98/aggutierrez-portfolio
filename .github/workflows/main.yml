@@ -2,28 +2,26 @@ name: Semantic Release
 
 on:
   push:
-    branches: [main]
+    branches: ["main"]
   pull_request:
-    branches: [main]
+    branches: ["main"]
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 jobs:
-  # avoid_reduncy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Cancel Previous Redundant Builds
-  #       uses: styfle/cancel-workflow-action@0.9.1
-  #       with:
-  #         access_token: ${{ github.token }}
+  avoid_reduncy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Redundant Builds
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
 
   install:
     runs-on: ubuntu-latest
     steps:
-      - name: echoHola
-        run: echo "HOLA"
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
         with:
@@ -69,6 +67,7 @@ jobs:
 
   automatic-versioning:
     needs: [lint, build]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
