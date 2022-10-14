@@ -1,3 +1,28 @@
+# [1.2.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.1.7...v1.2.0) (2022-10-14)
+
+### Bug Fixes
+
+- Changes to improve main.yml ([26a4237](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/26a423790626b873af46e5695d6437dddcc82619))
+- Changes to improve main.yml ([4c0d737](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/4c0d737d4eae2ae8f25fd04c1d905a749e5a94ad))
+- Changes to improve main.yml ([5ca4b55](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/5ca4b55ff79d5200f83cbf8097c925e1c66f01a5))
+- Changes to improve main.yml ([4769f86](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/4769f8650380384fb3ffb020cd23e037e5dcaddd))
+- Changes to improve main.yml ([f9b7fa9](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/f9b7fa99512fd9d786aa9b32123c0d0dcb79bad2))
+- Changes to improve main.yml ([46c6322](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/46c6322c8a44cd8043812b9304f80e8afcba57fd))
+- Changes to improve main.yml ([768a72a](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/768a72aae332c2732c4b74bf05f8671ec0cf44db))
+- Changes to improve main.yml ([dc52826](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/dc52826bdaa5adf60ab8f019d8cb059318b3f8b0))
+- Changes to improve main.yml ([aedcc95](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/aedcc95787e1c35533944546164e8f9f021924f1))
+- Changes to improve main.yml ([d0aff8a](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/d0aff8acc24b4ff7c56f0145f3c8151ad164c98e))
+- Changes to improve main.yml ([091764b](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/091764b7243b12815aaac3dfc0c357f427de0eed))
+- Changes to improve main.yml ([ebafe8d](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/ebafe8d9a3f0ea35a26a3027442cad5393e444c7))
+- Changes to improve main.yml ([b006bcf](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/b006bcf7aa92db48bd171ffddcc91eaa63b49caa))
+- Changes to improve main.yml ([dc57f61](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/dc57f61d1f1873b42680ce7b4ca6924898e65ae9))
+
+### Features
+
+- Changes to improve main.yml ([1fde265](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/1fde2653200dc6b6c023b51c9beee69521a02e6b))
+- Changes to improve main.yml ([b15dc3a](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/b15dc3a9e1bf7e60e6c0fc59e40532bc009a3d33))
+- Changes to improve main.yml ([b5d860e](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/b5d860e676da9e0bdaf102efe7dcbd7b82000fe9))
+
 ## [1.1.7](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.1.6...v1.1.7) (2022-10-14)
 
 ### Bug Fixes
