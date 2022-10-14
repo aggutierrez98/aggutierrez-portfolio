@@ -1,41 +1,141 @@
-# This is a basic workflow to help you get started with Actions
+# name: Semantic Release
 
-name: Semantic Release
+# on:
+#   push:
+#     branches: ["main"]
+#   pull_request:
+#     branches: ["main"]
+
+# jobs:
+#   automatic-versioning:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: 14.17
+
+#       - name: Install dependencies
+#         run: npx ci
+
+#       - name: Lint files
+#         run: yarn lint-staged
+
+#       - name: Install semantic-release extra plugins
+#         run: npm install --save-dev @semantic-release/changelog @semantic-release/git
+
+#       - name: Semantic Relase
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+#         run: npx semantic-release
+
+name: Deployment Pipeline
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
   pull_request:
-    branches: ["main"]
+    branches: [main]
+    types: [opened, synchronize]
+
+# env:
+#   MONGODB_TEST_CNN: ${{ secrets.MONGODB_TEST_CNN }}
+#   SECRETORPRIVATEKEY: ${{ secrets.SECRETORPRIVATEKEY }}
 
 jobs:
-  automatic-versioning:
-    runs-on: ubuntu-latest
-
+  avoid_reduncy:
+    runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - name: Cancel Previous Redundant Builds
+        uses: styfle/cancel-workflow-action@0.9.1
         with:
-          node-version: 14.17
+          access_token: ${{ github.token }}
 
+  install:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: "16"
+          cache-dependency-path: package-lock.json
       - name: Install dependencies
-        run: npx ci
+        run: npm ci
 
-      - name: Lint files
-        run: yarn lint-staged
+  lint:
+    needs: install
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: "16"
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint-staged
 
+  build:
+    needs: install
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: "16"
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: .next
+
+  semantic-release:
+    needs: [lint, build]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: "16"
+          cache-dependency-path: package-lock.json
       - name: Install semantic-release extra plugins
         run: npm install --save-dev @semantic-release/changelog @semantic-release/git
-
       - name: Semantic Relase
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
 
-      # - name: Automated Version Bump
-      #   uses: phips28/gh-action-bump-version@master
-      #   with:
-      #     tag-prefix: ""
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  # deploy:
+  #   needs: [lint, build]
+  #   runs-on: ubuntu-18.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         fetch-depth: 0
+  #     - name: Deploy to heroku
+  #       if: ${{ github.event_name == 'push' }}
+  #       uses: akhileshns/heroku-deploy@v3.12.12
+  #       with:
+  #         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+  #         heroku_app_name: ${{secrets.HEROKU_APP}}
+  #         heroku_email: ${{secrets.HEROKU_API_EMAIL}}
+  #         healthcheck: "https://${{secrets.HEROKU_APP}}.herokuapp.com/healt"
+  #         rollbackonhealthcheckfailed: true
