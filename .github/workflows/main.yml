@@ -62,8 +62,8 @@ jobs:
           cache: yarn
           node-version: 16
           cache-dependency-path: yarn.lock
-      # - name: Install semantic-release extra plugins
-      #   run: npm install --save-dev @semantic-release/changelog @semantic-release/git
+      - name: Install semantic-release extra plugins
+        run: yarn add --save-dev @semantic-release/changelog @semantic-release/git
       - name: Semantic Relase
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
