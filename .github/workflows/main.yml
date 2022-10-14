@@ -11,13 +11,13 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 jobs:
-  # avoid_reduncy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Cancel Previous Redundant Builds
-  #       uses: styfle/cancel-workflow-action@0.9.1
-  #       with:
-  #         access_token: ${{ github.token }}
+  avoid_reduncy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Redundant Builds
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
 
   install:
     runs-on: ubuntu-latest
@@ -50,29 +50,8 @@ jobs:
       - name: Lint
         run: yarn lint | yarn stylelint
 
-  build:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v2
-        with:
-          cache: yarn
-          node-version: 16
-          cache-dependency-path: yarn.lock
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Build
-        run: npm run build
-      - uses: actions/upload-artifact@v2
-        with:
-          name: build
-          path: .next
-
   automatic-versioning:
-    needs: [lint, build]
+    needs: [lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -83,15 +62,15 @@ jobs:
           cache: yarn
           node-version: 16
           cache-dependency-path: yarn.lock
-      - name: Install semantic-release extra plugins
-        run: npm install --save-dev @semantic-release/changelog @semantic-release/git
+      # - name: Install semantic-release extra plugins
+      #   run: npm install --save-dev @semantic-release/changelog @semantic-release/git
       - name: Semantic Relase
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
 
   deploy:
-    needs: [lint, build]
+    needs: [lint, automatic-versioning]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
