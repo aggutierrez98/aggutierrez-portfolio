@@ -1,5 +1,3 @@
-import Image from "next/image";
-import React from "react";
 import { getSkillInfo } from "helpers";
 import styles from "./styles.module.css";
 import { m } from "framer-motion";
@@ -27,7 +25,6 @@ export const TechsList = ({ techs, detailsPage = false }: Props) => {
         return (
           <li title={`${name}-icon`} key={name}>
             <m.a
-              tabIndex={2}
               viewport={{ once: true }}
               whileHover={
                 detailsPage
@@ -62,6 +59,7 @@ export const TechsList = ({ techs, detailsPage = false }: Props) => {
               rel="noopener noreferrer"
               href={skillData?.url}
               data-text={skillData?.name}
+              aria-label={`Visit ${skillData?.name} site`}
               className={`${styles.techTag} ${
                 detailsPage ? `${styles.extendedTag}` : ""
               }`}

@@ -32,9 +32,9 @@ export const SocialMediaLinks = () => {
                   <li key={index}>
                     {mediaData.link ? (
                       <m.a
-                        tabIndex={1}
                         variants={socialMediaVariants.item}
                         className={styles.logo}
+                        aria-label={mediaData.title}
                         href={mediaData.link}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -48,9 +48,9 @@ export const SocialMediaLinks = () => {
                       </m.a>
                     ) : (
                       <m.button
-                        tabIndex={1}
                         variants={socialMediaVariants.item}
                         className={styles.logo}
+                        aria-label={mediaData.title}
                         onClick={() => {
                           if (mediaData.action === "copyuser") {
                             copyToClipboard("aggutierrez#1860");

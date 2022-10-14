@@ -9,7 +9,7 @@ import { sectionItemVariant } from "../../layout/variants";
 export const SkillsList = ({ data }: { data: any }) => {
   return (
     <div className={styles.skillsContainer}>
-      <m.h5>My skills</m.h5>
+      <h3>My skills</h3>
       <div className={styles.skillsTable}>
         <m.div className={styles.skillsSection} variants={sectionItemVariant}>
           <h3>Frontend</h3>
@@ -23,7 +23,6 @@ export const SkillsList = ({ data }: { data: any }) => {
               return (
                 <li key={index}>
                   <motion.a
-                    tabIndex={2}
                     whileHover="hover"
                     whileFocus="focus"
                     animate="rest"
@@ -58,7 +57,6 @@ export const SkillsList = ({ data }: { data: any }) => {
               return (
                 <li key={index}>
                   <motion.a
-                    tabIndex={2}
                     whileHover="hover"
                     whileFocus="focus"
                     animate="rest"
@@ -93,7 +91,6 @@ export const SkillsList = ({ data }: { data: any }) => {
               return (
                 <li key={index}>
                   <motion.a
-                    tabIndex={2}
                     whileHover="hover"
                     whileFocus="focus"
                     animate="rest"
@@ -128,7 +125,6 @@ export const SkillsList = ({ data }: { data: any }) => {
               return (
                 <li key={index}>
                   <motion.a
-                    tabIndex={2}
                     whileHover="hover"
                     whileFocus="focus"
                     animate="rest"

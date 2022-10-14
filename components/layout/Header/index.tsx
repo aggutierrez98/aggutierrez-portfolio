@@ -34,7 +34,7 @@ export const Header = () => {
         initial="hidden"
       >
         <div className={styles.headerContainer}>
-          <Logo className={styles.logo} tabIndex={1} />
+          <Logo className={styles.logo} />
           <HeaderMenu />
         </div>
       </m.header>

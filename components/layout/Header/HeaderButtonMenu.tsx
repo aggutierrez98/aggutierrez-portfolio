@@ -9,7 +9,13 @@ interface Props {
 
 export const HeaderButtonMenu = ({ action, value, refValue }: Props) => {
   return (
-    <button tabIndex={1} className={styles.bar} ref={refValue} onClick={action}>
+    <button
+      tabIndex={0}
+      className={styles.bar}
+      ref={refValue}
+      onClick={action}
+      aria-label="open menu"
+    >
       <input
         type="checkbox"
         className={styles.check}

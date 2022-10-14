@@ -19,7 +19,6 @@
 }
 
 .techTag {
-  display: block;
   border: 1px var(--foreground-color) solid;
   padding: 10px;
   display: flex;
@@ -35,7 +34,7 @@
     content: attr(data-text);
     opacity: 0;
     font-weight: bold;
-    font-family: Raleway;
+    font-family: Raleway, sans-serif;
     font-size: 80%;
     display: inline-block;
     max-width: 0;
@@ -83,6 +82,14 @@
     display: block;
   }
 
+  &:after {
+    margin-left: 10px;
+    opacity: 1;
+    visibility: visible;
+    max-width: 120px;
+    font-size: 16px;
+  }
+
   &:hover {
     &:after {
       margin-left: 10px;
@@ -90,12 +97,5 @@
       visibility: visible;
       max-width: 120px;
     }
-  }
-  &::after {
-    margin-left: 10px;
-    opacity: 1;
-    visibility: visible;
-    max-width: 120px;
-    font-size: 16px;
   }
 }

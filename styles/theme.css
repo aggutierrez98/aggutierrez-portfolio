@@ -22,15 +22,12 @@
 
   --background-color: #222831;
   --background-light-color: #2b3338;
+  --overlay-color: rgba(82, 97, 107, 0.4);
   --foreground-color: #393e46;
-  --overlay-color: rgba(29, 41, 56, 0.75);
   --primary-color: #00adb5;
   --secondary-color: #a5c9ca;
   --accent-color: #eeeeee;
 
-  --overlay-color: rgba(82, 97, 107, 0.4);
-
-  --shadow-color: 209deg 38% 6%;
   --shadow-color: 209deg 38% 6%;
   --shadow-elevation-low: 0px 0.1px 0.1px hsl(var(--second-shadow-color) / 1),
     -0.1px 0.7px 0.7px -1.2px hsl(var(--second-shadow-color) / 1),

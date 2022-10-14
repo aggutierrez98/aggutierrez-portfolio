@@ -33,8 +33,8 @@ export const ScrollToTopButtton = () => {
         <div>
           {showButton ? (
             <motion.button
-              tabIndex={2}
               id="side-button-up"
+              aria-label="Scroll to top"
               initial={{ opacity: 0, scaleX: 0 }}
               exit={{ opacity: 0, scaleX: 0 }}
               whileInView={{ opacity: 1, scaleX: 1 }}
@@ -53,8 +53,8 @@ export const ScrollToTopButtton = () => {
             </motion.button>
           ) : (
             <motion.button
-              tabIndex={1}
               id="side-button-down"
+              aria-label="Scroll to bottom"
               initial={{ opacity: 0, scaleX: 0 }}
               exit={{ opacity: 0, scaleX: 0 }}
               whileInView={{ opacity: 1, scaleX: 1 }}

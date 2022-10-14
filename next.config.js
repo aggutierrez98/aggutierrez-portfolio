@@ -2,8 +2,8 @@
 
 module.exports = {
   reactStrictMode: true,
-  images:{
-    domains: ["res.cloudinary.com"]
+  images: {
+    domains: ["res.cloudinary.com"],
   },
   experimental: {
     outputStandalone: true,
@@ -11,9 +11,9 @@ module.exports = {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"]
+      use: ["@svgr/webpack"],
     });
 
     return config;
-  }
-}
+  },
+};

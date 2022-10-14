@@ -42,7 +42,7 @@ export const Home = ({ data }: Props) => {
           <m.h4 variants={itemVariant}>{memoizedData.subtitle}</m.h4>
           <div className={styles.titleContainer}>
             <m.h1
-              tabIndex={2}
+              tabIndex={0}
               variants={itemVariant}
               initial="hidden"
               animate="visible"
@@ -51,10 +51,10 @@ export const Home = ({ data }: Props) => {
             >
               {memoizedData.title1}
             </m.h1>
-            <m.h3 className={styles.text} variants={itemVariant}>
+            <m.h2 className={styles.text} variants={itemVariant}>
               {memoizedData.title2}
               <span id="typing" className={styles.typewrittingText}></span>
-            </m.h3>
+            </m.h2>
           </div>
           <m.p variants={itemVariant}>{memoizedData.description}</m.p>
           <ResumeButton />

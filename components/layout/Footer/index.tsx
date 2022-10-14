@@ -16,7 +16,7 @@ export const Footer = () => {
           className={styles.footerContainer}
           variants={sectionVariant}
         >
-          <Logo tabIndex={2} className={styles.logo} />
+          <Logo tabIndex={0} className={styles.logo} />
           <div className={styles.textContainer}>
             <div className={styles.socialMediaContainer}>
               <p>You can follow me on</p>
@@ -25,7 +25,7 @@ export const Footer = () => {
             <div className={styles.legendContainer}>
               <m.p className={styles.legendText} variants={sectionItemVariant}>
                 Made with{" "}
-                <IoIosHeartEmpty tabIndex={2} className={styles.legendIcon} />{" "}
+                <IoIosHeartEmpty tabIndex={0} className={styles.legendIcon} />{" "}
                 by Agustin Gutierrez
               </m.p>
               <m.p

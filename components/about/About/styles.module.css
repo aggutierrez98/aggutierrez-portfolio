@@ -164,9 +164,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  h5 {
+  h3 {
     font-weight: 500;
-    font-family: Source Code Pro;
+    font-family: Source Code Pro, sans-serif;
     width: fit-content;
     margin: 0;
     margin-bottom: 25px;
@@ -179,7 +179,6 @@
   width: 100%;
   display: grid;
   gap: 1rem;
-  grid-auto-rows: 10rem;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-auto-rows: max-content;
 

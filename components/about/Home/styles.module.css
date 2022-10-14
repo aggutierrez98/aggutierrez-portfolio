@@ -23,7 +23,7 @@
     color: var(--primary-color);
     margin-bottom: 0;
     font-weight: 400;
-    font-family: "Source Code Pro";
+    font-family: Source Code Pro, sans-serif;
     font-size: clamp(1.2rem, 1.5vw, 2rem);
     @media (min-width: 1300px) {
       font-size: clamp(1.2rem, 2vw, 2rem);
@@ -44,14 +44,17 @@
     }
   }
 
-  h3 {
+  h2 {
     font-weight: 300;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: clamp(2.5rem, 5.5vw, 6rem);
+    font-family: inherit !important;
+    font-size: clamp(2.5rem, 5.5vw, 6rem) !important;
     @media (min-width: 1300px) {
-      font-size: clamp(2.5rem, 5vw, 6rem);
+      font-size: clamp(2.5rem, 5vw, 6rem) !important;
     }
+    background: none;
+    text-shadow: none !important;
   }
 
   .typewrittingText {
@@ -121,7 +124,7 @@
       color: var(--accent-color);
       position: relative;
       z-index: 1;
-      font-family: Raleway;
+      font-family: Raleway, sans-serif;
       font-weight: bold;
       font-size: clamp(1rem, 1.8vw, 4rem);
     }

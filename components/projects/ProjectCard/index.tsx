@@ -26,8 +26,8 @@ export const ProjectCard = ({
           <div className={styles.textContainer}>
             <h3 id="style-2" data-replace={title}>
               <Link href={demo_url} passHref>
-                <a tabIndex={2} href={demo_url}>
-                  <span>{title}</span>
+                <a href={demo_url}>
+                  <span className={styles.title}>{title}</span>
                 </a>
               </Link>
             </h3>

@@ -18,7 +18,7 @@ export const WorkModule = ({ works }: Props) => {
           initial="hidden"
           whileInView="visible"
         >
-          <m.h2 tabIndex={2} variants={sectionItemVariant}>
+          <m.h2 tabIndex={0} variants={sectionItemVariant}>
             Experience
           </m.h2>
           <ul>

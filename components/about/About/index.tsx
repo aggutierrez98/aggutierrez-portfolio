@@ -21,7 +21,7 @@ export const About = ({ data }: Props) => {
         >
           <div className={styles.aboutContainer}>
             <div className={styles.textContainer}>
-              <m.h2 tabIndex={2} variants={sectionItemVariant}>
+              <m.h2 tabIndex={0} variants={sectionItemVariant}>
                 {data.title}
               </m.h2>
               <m.p variants={sectionItemVariant}>{data.description1}</m.p>

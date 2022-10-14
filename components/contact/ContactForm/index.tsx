@@ -45,7 +45,6 @@ export const ContactForm = ({
         }`}
       >
         <input
-          tabIndex={2}
           id="name"
           type="text"
           name="name"
@@ -65,7 +64,6 @@ export const ContactForm = ({
         }`}
       >
         <input
-          tabIndex={2}
           id="email"
           type="email"
           aria-describedby="emailHelp"
@@ -87,7 +85,6 @@ export const ContactForm = ({
         }`}
       >
         <textarea
-          tabIndex={2}
           id="message"
           name="message"
           placeholder="message"

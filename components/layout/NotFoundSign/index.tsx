@@ -8,7 +8,7 @@ export const NotFoundSign = () => {
       <h2>404</h2>
       <h3>Page Not Found</h3>
       <Link href="/" passHref>
-        <button tabIndex={2}>Back To Home</button>
+        <button>Back To Home</button>
       </Link>
     </div>
   );

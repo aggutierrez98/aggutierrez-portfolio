@@ -34,7 +34,7 @@ export const ContactModule = () => {
           initial="hidden"
           whileInView="visible"
         >
-          <m.h2 tabIndex={2} variants={sectionItemVariant}>
+          <m.h2 tabIndex={0} variants={sectionItemVariant}>
             Get in touch!
           </m.h2>
           <div className={styles.firstContainer}>

@@ -61,7 +61,7 @@
       }
     }
     margin: 15px 0px;
-    span {
+    .title {
       max-width: fit-content;
       font-size: clamp(1.5rem, 2vw, 2rem);
       white-space: nowrap;
@@ -91,7 +91,7 @@
       object-fit: fill;
       display: block;
       /* filter: sepia(14%) saturate(292%) hue-rotate(15deg) brightness(86%)
-        contrast(85%) opacity(80%); */
+          contrast(85%) opacity(80%); */
       position: relative;
       width: 100%;
       /* &:hover { */

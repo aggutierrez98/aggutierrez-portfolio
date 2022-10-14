@@ -19,7 +19,7 @@ export const ProjectsModule = ({ projects }: Props) => {
           initial="hidden"
           whileInView="visible"
         >
-          <m.h2 tabIndex={2} variants={sectionItemVariant}>
+          <m.h2 tabIndex={0} variants={sectionItemVariant}>
             My Projects:
           </m.h2>
           <m.div variants={sectionItemVariant}>

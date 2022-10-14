@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: Raleway;
+  font-family: Raleway, sans-serif;
   margin: 0;
   box-sizing: border-box;
   --typewrittetext-length: 0;
@@ -13,6 +13,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 a,
 span,
 p {
@@ -51,7 +52,7 @@ h1 {
       transparent 0 calc(200% / 3),
       var(--secondary-color) 0
     )
-    var(--d, 0%) 100% /300% 1px no-repeat;
+    var(--d, 0%) 100% / 300% 1px no-repeat;
   transition: all ease 0.5s;
   /* text-shadow: 0 0 2px var(--accent-color); */
   &:hover,
@@ -68,7 +69,7 @@ h1 {
 }
 
 h2 {
-  font-family: Source Code Pro;
+  font-family: Source Code Pro, sans-serif;
   font-weight: 500;
   width: fit-content;
   font-size: clamp(1.8rem, 3.2vw, 3rem);
@@ -79,7 +80,7 @@ h2 {
       transparent 0 calc(200% / 3),
       var(--primary-color) 0
     )
-    var(--d, 0%) 100% /300% 1px no-repeat;
+    var(--d, 0%) 100% / 300% 1px no-repeat;
   transition: 0.5s;
   &:hover,
   &:focus {
@@ -122,8 +123,43 @@ ul {
 [data-title] {
   color: var(--background-color);
   font-weight: bold;
-  font-family: Raleway;
+  font-family: Raleway, sans-serif;
   position: relative;
+
+  &:after {
+    background-color: var(--background-color);
+    color: var(--accent-color);
+    content: attr(data-title);
+    position: absolute;
+    bottom: -35px;
+    left: -10%;
+    padding: 4px 8px;
+    white-space: nowrap;
+    border-radius: 5px;
+    box-shadow: var(--shadow-elevation-medium);
+    opacity: 0;
+    z-index: 5;
+    visibility: hidden;
+    font-size: 1.2em;
+    @media (max-width: 800px) {
+      font-size: 1em;
+    }
+    @media (max-width: 500px) {
+      font-size: 0.8em;
+    }
+  }
+
+  &:before {
+    visibility: hidden;
+    border: solid;
+    border-color: var(--background-color) transparent;
+    border-width: 0 5px 5px 5px;
+    bottom: -11px;
+    content: "";
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+  }
 
   &:hover,
   &:focus {
@@ -139,37 +175,4 @@ ul {
       visibility: visible;
     }
   }
-}
-[data-title]:after {
-  background-color: var(--background-color);
-  color: var(--accent-color);
-  content: attr(data-title);
-  position: absolute;
-  bottom: -35px;
-  left: -10%;
-  padding: 4px 8px;
-  white-space: nowrap;
-  border-radius: 5px;
-  box-shadow: var(--shadow-elevation-medium);
-  opacity: 0;
-  z-index: 5;
-  visibility: hidden;
-  font-size: 1.2em;
-  @media (max-width: 800px) {
-    font-size: 1em;
-  }
-  @media (max-width: 500px) {
-    font-size: 0.8em;
-  }
-}
-[data-title]:before {
-  visibility: hidden;
-  border: solid;
-  border-color: var(--background-color) transparent;
-  border-width: 0 5px 5px 5px;
-  bottom: -11px;
-  content: "";
-  position: absolute;
-  opacity: 0;
-  z-index: 5;
 }

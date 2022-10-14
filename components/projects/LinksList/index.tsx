@@ -24,7 +24,7 @@ export const LinksList = ({
         whileHover="visible"
         whileFocus="visible"
         variants={titleVariants}
-        tabIndex={2}
+        tabIndex={0}
       >
         Links
       </m.h3>

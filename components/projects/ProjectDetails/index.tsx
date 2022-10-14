@@ -27,7 +27,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
     <LazyMotion features={domAnimation}>
       <div className={styles.detailsContainer}>
         <m.h1
-          tabIndex={2}
+          tabIndex={0}
           initial="hidden"
           whileHover="visible"
           whileFocus="visible"
@@ -58,7 +58,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
             whileHover="visible"
             whileFocus="visible"
             variants={titleVariants}
-            tabIndex={2}
+            tabIndex={0}
           >
             Description
           </m.h3>
@@ -80,7 +80,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
             whileHover="visible"
             whileFocus="visible"
             variants={titleVariants}
-            tabIndex={2}
+            tabIndex={0}
           >
             Tech Stack
           </m.h3>
