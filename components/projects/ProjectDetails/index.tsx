@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Project } from "interfaces";
+import { Project, Skill } from "interfaces";
 import styles from "./styles.module.css";
 import { TechsList, LinksList } from "components";
 import { m, LazyMotion, domAnimation } from "framer-motion";
@@ -84,7 +84,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
           >
             Tech Stack
           </m.h3>
-          <TechsList techs={techs} detailsPage />
+          <TechsList techs={techs as Skill[]} detailsPage />
         </m.div>
 
         <div className={styles.separator} />

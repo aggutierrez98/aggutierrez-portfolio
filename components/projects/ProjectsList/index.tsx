@@ -24,7 +24,7 @@ export const ProjectsModule = ({ projects }: Props) => {
           </m.h2>
           <m.div variants={sectionItemVariant}>
             {projects.map((proyect, index) => (
-              <ProjectCard key={index} proyectData={proyect} />
+              <ProjectCard key={index} projectData={proyect} />
             ))}
           </m.div>
         </m.div>

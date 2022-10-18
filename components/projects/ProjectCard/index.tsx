@@ -3,16 +3,16 @@ import styles from "./styles.module.css";
 import { domAnimation, LazyMotion, m } from "framer-motion";
 import { TechsList } from "components";
 import { LearnMoreButton } from "./LearnMoreButton";
-import { Project } from "interfaces";
+import { Project, Skill } from "interfaces";
 import { boxVariants } from "./variants";
 import Link from "next/link";
 
 interface Props {
-  proyectData: Project;
+  projectData: Project;
 }
 
 export const ProjectCard = ({
-  proyectData: { title, description, image_url, techs, demo_url },
+  projectData: { title, description, image_url, techs, demo_url },
 }: Props) => {
   return (
     <LazyMotion features={domAnimation}>
@@ -33,7 +33,7 @@ export const ProjectCard = ({
             </h3>
             <p>{description}</p>
             <div className={styles.textBottom}>
-              <TechsList techs={techs} />
+              <TechsList techs={techs as Skill[]} />
               <LearnMoreButton title={title} />
             </div>
           </div>
