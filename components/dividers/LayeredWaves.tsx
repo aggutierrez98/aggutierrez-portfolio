@@ -2,7 +2,7 @@ interface Props {
   color?: string;
 }
 
-const LayeredWaves = ({ color }: Props) => (
+export const LayeredWaves = ({ color }: Props) => (
   <svg
     id="visual"
     viewBox="0 0 2000 500"
@@ -36,5 +36,3 @@ const LayeredWaves = ({ color }: Props) => (
     ></path>
   </svg>
 );
-
-export default LayeredWaves;

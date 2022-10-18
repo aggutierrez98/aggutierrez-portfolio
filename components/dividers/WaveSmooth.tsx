@@ -4,7 +4,7 @@ interface Props {
   number: 1 | 2;
 }
 
-const WaveSmooth = ({ number }: Props) => (
+export const WaveSmooth = ({ number }: Props) => (
   <svg
     className={number === 1 ? "divider-1" : "divider-2"}
     id="visual"
@@ -20,5 +20,3 @@ const WaveSmooth = ({ number }: Props) => (
     ></path>
   </svg>
 );
-
-export default WaveSmooth;

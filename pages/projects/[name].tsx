@@ -1,25 +1,30 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import projects from "data/projects.json";
-import { Metadata, Project } from "interfaces";
+import { Project, MediaData } from "interfaces";
 import { ProjectDetails } from "components/projects/ProjectDetails";
-import LayeredWaves from "@c/dividers/LayeredWaves";
-import metadata from "data/metadata/project.json";
+import { LayeredWaves, MainLayout } from "components";
 import { useRouter } from "next/router";
+import {
+  getProjectsData,
+  getSocialMediaData,
+  loadProjectTechsData,
+} from "helpers";
+import { ReactElement } from "react";
 
 interface Props {
   projectData: Project;
-  metaData: Metadata;
+  socialMedia: MediaData;
 }
 
-const ProyectPage = ({ projectData, metaData }: Props) => {
+const ProjectPage = ({ projectData }: Props) => {
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
 
   const seo = {
-    title: metaData.title,
-    description: metaData.description,
-    image_source: metaData.image_source,
+    title: "Aggutierrez | ",
+    description: "Agustin Gutierrez project: ",
+    image_source:
+      "https://res.cloudinary.com/aggutierrez/image/upload/v1665500194/Portfolio",
     url: `${origin}${pathname}`,
   };
 
@@ -87,9 +92,14 @@ const ProyectPage = ({ projectData, metaData }: Props) => {
   );
 };
 
-export default ProyectPage;
+ProjectPage.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout socialMedia={page.props.socialMedia}>{page}</MainLayout>;
+};
+
+export default ProjectPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const projects = await getProjectsData();
   const proyectNames = projects.map((proyect) => proyect.title);
 
   const paths = proyectNames.map((name: string) => ({
@@ -105,7 +115,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const name = context.params?.name;
 
-  const projectData = projects.find((project) => project.title === name);
+  const socialMedia = await getSocialMediaData();
+  const projects = await getProjectsData();
+  let projectData = projects.find((project: Project) => project.title === name);
 
   if (!projectData) {
     return {
@@ -113,10 +125,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   }
 
+  projectData.techs = await loadProjectTechsData(projectData!);
+
   return {
     props: {
       projectData,
-      metaData: metadata,
+      socialMedia,
     },
     // revalidate: 10,
   };

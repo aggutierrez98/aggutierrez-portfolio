@@ -1,152 +1,37 @@
-import React from "react";
-import { motion, m } from "framer-motion";
-import { pMotion, tagMotion } from "./variants";
-import { getSkillInfo } from "helpers";
-import dynamic from "next/dynamic";
+import React, { useEffect } from "react";
+import { m } from "framer-motion";
 import styles from "./styles.module.css";
 import { sectionItemVariant } from "../../layout/variants";
+import { SkillCard } from "./SkillCard";
+import { Skill } from "../../../interfaces/index";
 
 export const SkillsList = ({ data }: { data: any }) => {
   return (
     <div className={styles.skillsContainer}>
       <h3>My skills</h3>
       <div className={styles.skillsTable}>
-        <m.div className={styles.skillsSection} variants={sectionItemVariant}>
-          <h3>Frontend</h3>
-          <ul>
-            {data.skills.frontend?.map((skill: string, index: number) => {
-              const skillData = getSkillInfo(skill);
-              const Icon = dynamic(
-                async () =>
-                  await import(`public/assets/techs/${skillData?.assetName}`)
-              );
-              return (
-                <li key={index}>
-                  <motion.a
-                    whileHover="hover"
-                    whileFocus="focus"
-                    animate="rest"
-                    initial="rest"
-                    exit="hidden"
-                    custom={skillData?.color}
-                    variants={tagMotion}
-                    className={styles.skillCard}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={skillData?.url}
-                  >
-                    <Icon />
-                    <motion.p custom={skillData?.color} variants={pMotion}>
-                      {skill}
-                    </motion.p>
-                  </motion.a>
-                </li>
-              );
-            })}
-          </ul>
-        </m.div>
-        <m.div className={styles.skillsSection} variants={sectionItemVariant}>
-          <h3>Backend</h3>
-          <ul>
-            {data.skills.backend?.map((skill: string, index: number) => {
-              const skillData = getSkillInfo(skill);
-              const Icon = dynamic(
-                async () =>
-                  await import(`public/assets/techs/${skillData?.assetName}`)
-              );
-              return (
-                <li key={index}>
-                  <motion.a
-                    whileHover="hover"
-                    whileFocus="focus"
-                    animate="rest"
-                    initial="rest"
-                    exit="hidden"
-                    custom={skillData?.color}
-                    variants={tagMotion}
-                    className={styles.skillCard}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={skillData?.url}
-                  >
-                    <Icon />
-                    <motion.p custom={skillData?.color} variants={pMotion}>
-                      {skill}
-                    </motion.p>
-                  </motion.a>
-                </li>
-              );
-            })}
-          </ul>
-        </m.div>
-        <m.div className={styles.skillsSection} variants={sectionItemVariant}>
-          <h3>Database</h3>
-          <ul>
-            {data.skills.database?.map((skill: string, index: number) => {
-              const skillData = getSkillInfo(skill);
-              const Icon = dynamic(
-                async () =>
-                  await import(`public/assets/techs/${skillData?.assetName}`)
-              );
-              return (
-                <li key={index}>
-                  <motion.a
-                    whileHover="hover"
-                    whileFocus="focus"
-                    animate="rest"
-                    initial="rest"
-                    exit="hidden"
-                    custom={skillData?.color}
-                    variants={tagMotion}
-                    className={styles.skillCard}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={skillData?.url}
-                  >
-                    <Icon />
-                    <motion.p custom={skillData?.color} variants={pMotion}>
-                      {skill}
-                    </motion.p>
-                  </motion.a>
-                </li>
-              );
-            })}
-          </ul>
-        </m.div>
-        <m.div className={styles.skillsSection} variants={sectionItemVariant}>
-          <h3>Others</h3>
-          <ul>
-            {data.skills.others?.map((skill: string, index: number) => {
-              const skillData = getSkillInfo(skill);
-              const Icon = dynamic(
-                async () =>
-                  await import(`public/assets/techs/${skillData?.assetName}`)
-              );
-              return (
-                <li key={index}>
-                  <motion.a
-                    whileHover="hover"
-                    whileFocus="focus"
-                    animate="rest"
-                    initial="rest"
-                    exit="hidden"
-                    custom={skillData?.color}
-                    variants={tagMotion}
-                    className={styles.skillCard}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={skillData?.url}
-                  >
-                    <Icon />
-                    <motion.p custom={skillData?.color} variants={pMotion}>
-                      {skill}
-                    </motion.p>
-                  </motion.a>
-                </li>
-              );
-            })}
-          </ul>
-        </m.div>
+        {data.skills.map((skillSet: Skill[], index: number) => {
+          let name = "";
+          if (index === 0) name = "Frontend";
+          if (index === 1) name = "Backend";
+          if (index === 2) name = "Database";
+          if (index === 3) name = "Others";
+
+          return (
+            <m.div
+              key={index}
+              className={styles.skillsSection}
+              variants={sectionItemVariant}
+            >
+              <h3>{name}</h3>
+              <ul>
+                {skillSet.map((skill, index: number) => {
+                  return <SkillCard skill={skill} key={index} />;
+                })}
+              </ul>
+            </m.div>
+          );
+        })}
       </div>
     </div>
   );

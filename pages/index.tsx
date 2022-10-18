@@ -1,34 +1,44 @@
 import Head from "next/head";
-import projects from "data/projects.json";
-import data from "data/info.json";
-import works from "data/experience.json";
 import {
   ProjectsModule,
   Home,
   ContactModule,
   About,
   WorkModule,
+  LayeredWaves,
+  WaveSmooth,
+  MainLayout,
 } from "components";
-import { Metadata, Project } from "../interfaces/index";
-import LayeredWaves from "@c/dividers/LayeredWaves";
-import WaveSmooth from "components/dividers/WaveSmooth";
-import metadata from "data/metadata/index.json";
+import { Project, Info, Work, MediaData, Skill } from "interfaces";
 import { useRouter } from "next/router";
+import {
+  getExperienceData,
+  getProjectsData,
+  getInfoData,
+  loadSkillsInfo,
+  loadProjectsData,
+} from "helpers";
+import { ReactElement } from "react";
+import { getSocialMediaData } from "../helpers/fetchData";
 
 interface Props {
   projects: Project[];
-  metaData: Metadata;
+  info: Info;
+  experience: Work[];
+  socialMedia: MediaData;
 }
 
-const HomePage = ({ projects, metaData }: Props) => {
-  const { home: homeData, about: aboutData } = data;
+const HomePage = ({ projects, experience, info }: Props) => {
+  const { home: homeData, about: aboutData } = info;
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
 
   const seo = {
-    title: metaData.title,
-    description: metaData.description,
-    image_source: metadata.image_source,
+    title: "Aggutierrez",
+    description:
+      "This is Agustin Gutierrez's portfolio page with projects and experience about him.",
+    image_source:
+      "https://res.cloudinary.com/aggutierrez/image/upload/v1665500194/Portfolio",
     url: `${origin}${pathname}`,
   };
 
@@ -60,7 +70,7 @@ const HomePage = ({ projects, metaData }: Props) => {
 
       <WaveSmooth number={2} />
 
-      <WorkModule works={works} />
+      <WorkModule works={experience} />
 
       <WaveSmooth number={1} />
 
@@ -75,13 +85,30 @@ const HomePage = ({ projects, metaData }: Props) => {
   );
 };
 
+HomePage.getLayout = function getLayout(page: ReactElement) {
+  return <MainLayout socialMedia={page.props.socialMedia}>{page}</MainLayout>;
+};
+
 export default HomePage;
 
 export const getStaticProps = async () => {
+  const experience = await getExperienceData();
+  const socialMedia = await getSocialMediaData();
+  let projects = await getProjectsData();
+  let info = await getInfoData();
+
+  //@ts-ignore
+  info.about.skills = await loadSkillsInfo(info.about.skills);
+
+  //@ts-ignore
+  projects = await loadProjectsData(projects);
+
   return {
     props: {
       projects,
-      metaData: metadata,
+      experience,
+      socialMedia,
+      info,
     },
   };
 };

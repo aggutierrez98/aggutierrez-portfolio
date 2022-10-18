@@ -1,22 +1,17 @@
 import Head from "next/head";
-import { Metadata } from "../interfaces/index";
-import LayeredWaves from "@c/dividers/LayeredWaves";
-import metadata from "data/metadata/index.json";
 import { useRouter } from "next/router";
-import { NotFoundSign } from "components";
+import { NotFoundSign, LayeredWaves } from "components";
 
-interface Props {
-  metaData: Metadata;
-}
-
-const HomePage = ({ metaData }: Props) => {
+const HomePage = () => {
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
 
   const seo = {
-    title: metaData.title,
-    description: metaData.description,
-    image_source: metaData.image_source,
+    title: "Aggutierrez",
+    description:
+      "This is Agustin Gutierrez's portfolio page with projects and experience about him.",
+    image_source:
+      "https://res.cloudinary.com/aggutierrez/image/upload/v1665500194/Portfolio",
     url: `${origin}${pathname}`,
   };
 
@@ -24,7 +19,7 @@ const HomePage = ({ metaData }: Props) => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{`Page Not Found | ${seo.title}`}</title>
+        <title>{`Page Not Found | ${"Aggutierrez"}`}</title>
         <meta name="description" content={`${seo.description}`} />
         <meta name="image" content={`${seo.image_source}/banner.png`} />
 
@@ -55,8 +50,6 @@ export default HomePage;
 
 export const getStaticProps = async () => {
   return {
-    props: {
-      metaData: metadata,
-    },
+    props: {},
   };
 };

@@ -20,7 +20,7 @@ export const CustomToastsContainer = ({
   return (
     <div id="#toast-container" className={styles.toastsContainer}>
       <AnimatePresence>
-        {toastList.map((toast, i) => (
+        {toastList?.map((toast, i) => (
           <Toast
             key={i}
             toast={toast}

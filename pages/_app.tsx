@@ -26,29 +26,28 @@ export default function MyApp({
   const getLayout =
     Component.getLayout ??
     ((page) => {
-      return (
-        <ToastProvider>
-          <MainLayout>{page}</MainLayout>
-        </ToastProvider>
-      );
+      console.log(page.props.socialMedia);
+      return <MainLayout>{page}</MainLayout>;
     });
 
-  return getLayout(
-    <AnimatePresence exitBeforeEnter>
-      <motion.div
-        key={router.pathname}
-        animate="enter"
-        exit="exit"
-        initial="hidden"
-        transition={{ type: "spring", duration: 0.3 }}
-        variants={{
-          hidden: { opacity: 0 },
-          enter: { opacity: 1 },
-          exit: { opacity: 0 },
-        }}
-      >
-        <Component {...pageProps} />
-      </motion.div>
-    </AnimatePresence>
+  return (
+    <ToastProvider>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key={router.pathname}
+          animate="enter"
+          exit="exit"
+          initial="hidden"
+          transition={{ type: "spring", duration: 0.3 }}
+          variants={{
+            hidden: { opacity: 0 },
+            enter: { opacity: 1 },
+            exit: { opacity: 0 },
+          }}
+        >
+          {getLayout(<Component {...pageProps} />)}
+        </motion.div>
+      </AnimatePresence>
+    </ToastProvider>
   );
 }

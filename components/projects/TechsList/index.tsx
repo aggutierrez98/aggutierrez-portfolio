@@ -1,11 +1,11 @@
-import { getSkillInfo } from "helpers";
 import styles from "./styles.module.css";
 import { m } from "framer-motion";
 import dynamic from "next/dynamic";
 import { techsVariants } from "./variants";
+import { Skill } from "../../../interfaces/index";
 
 interface Props {
-  techs: string[];
+  techs: Skill[];
   detailsPage?: boolean;
 }
 
@@ -16,50 +16,48 @@ export const TechsList = ({ techs, detailsPage = false }: Props) => {
         detailsPage ? `${styles.extended}` : ""
       }`}
     >
-      {techs?.map((name) => {
-        const skillData = getSkillInfo(name);
+      {techs?.map((tech: Skill) => {
         const Icon = dynamic(
-          async () =>
-            await import(`public/assets/techs/${skillData?.assetName}`)
+          async () => await import(`public/assets/techs/${tech?.assetName}`)
         );
         return (
-          <li title={`${name}-icon`} key={name}>
+          <li title={`${tech.name}-icon`} key={tech.name}>
             <m.a
               viewport={{ once: true }}
               whileHover={
                 detailsPage
                   ? {
-                      boxShadow: `0 0 15px ${skillData.color}`,
+                      boxShadow: `0 0 15px ${tech.color}`,
                       transition: { duration: 0.15 },
                     }
                   : {
-                      borderColor: skillData.color,
-                      boxShadow: `0 0 15px ${skillData.color}`,
+                      borderColor: tech.color,
+                      boxShadow: `0 0 15px ${tech.color}`,
                       transition: { duration: 0.25 },
                     }
               }
               whileFocus={
                 detailsPage
                   ? {
-                      boxShadow: `0 0 15px ${skillData.color}`,
+                      boxShadow: `0 0 15px ${tech.color}`,
                       transition: { duration: 0.15 },
                     }
                   : {
-                      borderColor: skillData.color,
-                      boxShadow: `0 0 15px ${skillData.color}`,
+                      borderColor: tech.color,
+                      boxShadow: `0 0 15px ${tech.color}`,
                       transition: { duration: 0.25 },
                     }
               }
               variants={techsVariants.item}
               custom={{
-                color: skillData?.color,
+                color: tech?.color,
                 isDetailsPage: detailsPage,
               }}
               target="_blank"
               rel="noopener noreferrer"
-              href={skillData?.url}
-              data-text={skillData?.name}
-              aria-label={`Visit ${skillData?.name} site`}
+              href={tech?.url}
+              data-text={tech?.name}
+              aria-label={`Visit ${tech?.name} site`}
               className={`${styles.techTag} ${
                 detailsPage ? `${styles.extendedTag}` : ""
               }`}

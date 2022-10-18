@@ -6,7 +6,7 @@ export interface Project {
   demo_url: string;
   server_url: string;
   image_url?: string;
-  techs: string[];
+  techs: string[] | Skill[];
 }
 
 export interface Skill {
@@ -35,4 +35,31 @@ export interface MediaData {
   icon: string;
   title: string;
   action?: string;
+}
+
+export interface Info {
+  home: Home;
+  about: About;
+}
+
+export interface About {
+  title: string;
+  description1: string;
+  description2: string;
+  skills: Skills;
+}
+
+export interface Skills {
+  frontend: string[] | Skill[];
+  backend: string[] | Skill[];
+  database: string[] | Skill[];
+  others: string[] | Skill[];
+}
+
+export interface Home {
+  subtitle: string;
+  title1: string;
+  title2: string;
+  specials: string[];
+  description: string;
 }

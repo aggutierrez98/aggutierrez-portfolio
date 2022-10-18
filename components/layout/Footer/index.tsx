@@ -4,8 +4,13 @@ import { Logo } from "components";
 import { SocialMediaLinks } from "../MainLayout/SocialMediaLinks";
 import { LazyMotion, m, domAnimation } from "framer-motion";
 import { sectionVariant, sectionItemVariant } from "../variants";
+import { MediaData } from "../../../interfaces/index";
 
-export const Footer = () => {
+interface Props {
+  socialMediaData?: MediaData;
+}
+
+export const Footer = ({ socialMediaData }: Props) => {
   return (
     <footer className={styles.container}>
       <LazyMotion features={domAnimation}>
@@ -20,7 +25,7 @@ export const Footer = () => {
           <div className={styles.textContainer}>
             <div className={styles.socialMediaContainer}>
               <p>You can follow me on</p>
-              <SocialMediaLinks />
+              <SocialMediaLinks socialMediaData={socialMediaData} />
             </div>
             <div className={styles.legendContainer}>
               <m.p className={styles.legendText} variants={sectionItemVariant}>

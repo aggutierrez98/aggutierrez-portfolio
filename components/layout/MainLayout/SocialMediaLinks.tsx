@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
 import styles from "./socialMediaLinks.module.css";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import { useCopyToClipboard } from "hooks";
 import { socialMediaVariants } from "./variants";
 import { MediaData } from "interfaces";
 import dynamic from "next/dynamic";
-import socialMediaData from "data/socialMediaData.json";
+interface Props {
+  socialMediaData?: MediaData;
+}
 
-export const SocialMediaLinks = () => {
+export const SocialMediaLinks = ({ socialMediaData }: Props) => {
   const { copyToClipboard } = useCopyToClipboard();
 
   return (
