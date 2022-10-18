@@ -1,3 +1,14 @@
+# [1.3.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.2.0...v1.3.0) (2022-10-18)
+
+### Bug Fixes
+
+- .eslintcache added to gitignore ([51865f0](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/51865f0984f9ed86cca82e855ec1bc9359fc37c4))
+- Little changes to main pipeline ([0d0c57a](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/0d0c57a948f0bf4b961e6f41d0e7740ba0fd2a72))
+
+### Features
+
+- All data storaged passed to cloud (jsonbin) ([0a07ea0](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/0a07ea003d787bbe16efa02d7c88cbd34f17e4fc))
+
 # [1.2.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.1.7...v1.2.0) (2022-10-14)
 
 ### Bug Fixes
