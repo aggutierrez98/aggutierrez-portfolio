@@ -1,3 +1,9 @@
+## [1.3.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.3.0...v1.3.1) (2022-10-18)
+
+### Bug Fixes
+
+- Solved building error ([a2252bd](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/a2252bd9c68e55c7e35668e5bfc8d031a03827e6))
+
 # [1.3.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.2.0...v1.3.0) (2022-10-18)
 
 ### Bug Fixes
