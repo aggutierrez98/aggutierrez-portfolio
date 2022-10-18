@@ -37,6 +37,7 @@ yarn-error.log*
 
 # cache
 .stylelintcache
+.eslintcache
 
 # tasks
 todo.md
