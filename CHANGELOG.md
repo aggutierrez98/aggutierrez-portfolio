@@ -1,3 +1,9 @@
+## [1.3.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.3.1...v1.3.2) (2022-10-18)
+
+### Bug Fixes
+
+- Solved problem with environment variables ([4bb5a31](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/4bb5a31365f2b737353d64d565fc3c6424a734bc))
+
 ## [1.3.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.3.0...v1.3.1) (2022-10-18)
 
 ### Bug Fixes
