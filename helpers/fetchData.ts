@@ -1,12 +1,13 @@
 import axios from "axios";
 import { MediaData, Project, Skill, Work, Info } from "interfaces";
+const JB_CCESS_KEY =
+  "$2b$10$gRTmpk9nRd.4HP/bEPAh8OYtgixBEnc5g.w6ezXsJ6nFpAbhQkH.K";
 
 const binInstance = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_JB_URL}`,
 });
 
-binInstance.defaults.headers.common["X-Master-Key"] =
-  "$2b$10$S8MCS.OJJqV07pACFE.jJuT32kmkrUZZUxTReIQwRG6FSwnUZXvxq";
+binInstance.defaults.headers.common["X-Access-Key"] = JB_CCESS_KEY;
 binInstance.defaults.headers.common["X-Bin-Meta"] = false;
 
 interface BinResponse {
