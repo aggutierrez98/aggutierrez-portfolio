@@ -1,3 +1,9 @@
+## [1.5.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.5.0...v1.5.1) (2022-10-19)
+
+### Bug Fixes
+
+- MIT license added to repo ([17a85a5](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/17a85a5d71ba5eaf53adddaee4dedc3186703edc))
+
 # [1.5.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.4.0...v1.5.0) (2022-10-19)
 
 ### Features
