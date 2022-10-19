@@ -1,3 +1,9 @@
+# [1.5.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.4.0...v1.5.0) (2022-10-19)
+
+### Features
+
+- README.md improved ([a579419](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/a579419d9d4936dc065d87b8157e205a4a42c406))
+
 # [1.4.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.3.2...v1.4.0) (2022-10-19)
 
 ### Bug Fixes
