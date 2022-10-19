@@ -36,17 +36,24 @@ const useActiveSectionId = (href: string): [SectionId, boolean] => {
     const sectionIds = (sections as unknown as string[]).reverse();
 
     const handleScroll = () => {
-      const body = document.getElementById("main-layout");
+      const scrollTop = document.getElementById("main-layout")!.scrollTop;
+      const offsetTops = sectionIds.map((sectionId) => {
+        return document.getElementById(sectionId)!.offsetTop;
+      });
 
-      for (const sectionId of sectionIds) {
-        const section = document.getElementById(sectionId);
-        const sectionActive =
-          section &&
-          section.offsetTop <
-            body!.scrollTop + document.documentElement.clientHeight / 8;
+      for (let index = 0; index < sectionIds.length; index++) {
+        const sectionHeight = offsetTops[index];
+        const scrollY = scrollTop + document.documentElement.clientHeight / 8;
+        const sectionActive = sectionHeight < scrollY;
 
         if (sectionActive) {
-          startTransition(() => setActiveSectionId(sectionId));
+          console.log(
+            `${sectionHeight} < ${scrollY}   = ${scrollTop} + ${
+              document.documentElement.clientHeight / 8
+            }    ----> ${sectionActive}`
+          );
+
+          startTransition(() => setActiveSectionId(sectionIds[index]));
           break;
         }
       }
