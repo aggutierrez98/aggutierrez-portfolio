@@ -1,3 +1,14 @@
+# [1.4.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.3.2...v1.4.0) (2022-10-19)
+
+### Bug Fixes
+
+- Fixed error in responsive navbar menu and button menu ([e77e8dd](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/e77e8ddc29e911d97d354589ad42284faf7829f7))
+- Scroll to top button now not appears in project details and 404 pages ([4099bc5](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/4099bc583ab9bfdb9132a4d02c1a190f99c570a6))
+
+### Features
+
+- Added animations to 404 and project details page ([d8b8162](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/d8b8162e16cb7af26c58fc84a5eef162d42b1858))
+
 ## [1.3.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.3.1...v1.3.2) (2022-10-18)
 
 ### Bug Fixes
