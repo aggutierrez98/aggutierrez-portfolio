@@ -4,9 +4,13 @@
   </a>
 </p>
 
-<h1 align="center">Aggutierrez.com</h1>
+<h1 align="center">aggutierrez.com</h1>
 
 <div align="center">
+
+  ![Website](https://img.shields.io/website?logo=vercel&style=for-the-badge&up_message=online&url=https%3A%2F%2Fwww.aggutierrez.com%2F)
+  ![Security Headers](https://img.shields.io/github/workflow/status/aggutierrez98/aggutierrez-portfolio/Main%20Pipeline?label=Main%20Pipeline&logo=github-actions&style=for-the-badge)
+  ![GitHub](https://img.shields.io/github/license/aggutierrez98/aggutierrez-portfolio?style=for-the-badge) 
 
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/aggutierrez98/aggutierrez-portfolio/react?style=for-the-badge)
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/aggutierrez98/aggutierrez-portfolio/next?style=for-the-badge)
@@ -15,6 +19,35 @@
 
 </div>
 
-## Greetings 👋
+## 👋 Greetings
 
-Welcome to the source code of [aggutierrez.com](https://aggutierrez.com). You can see how I created my own personal site here.
+Welcome to the source code of [aggutierrez.com](https://aggutierrez.com). Built with Nexjts and hosted with Vercel. You can see my personal web page code here.
+
+
+
+## 🛠 Installation & Set Up
+
+1. Install project dependecies
+
+   ```sh
+   yarn install
+   ```
+2. Start the development server
+
+   ```sh
+   yarn dev
+   ```
+
+## 🚀 Building and Running for Production
+
+1. Generate a full static production build
+
+   ```sh
+   yarn build
+   ```
+
+2. Preview the site build
+
+   ```sh
+   yarn start
+   ```
