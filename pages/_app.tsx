@@ -26,12 +26,11 @@ export default function MyApp({
   const getLayout =
     Component.getLayout ??
     ((page) => {
-      console.log(page.props.socialMedia);
       return <MainLayout>{page}</MainLayout>;
     });
 
-  return (
-    <ToastProvider>
+  return getLayout(
+    <ToastProvider {...pageProps}>
       <AnimatePresence exitBeforeEnter>
         <motion.div
           key={router.pathname}
@@ -45,7 +44,7 @@ export default function MyApp({
             exit: { opacity: 0 },
           }}
         >
-          {getLayout(<Component {...pageProps} />)}
+          {<Component {...pageProps} />}
         </motion.div>
       </AnimatePresence>
     </ToastProvider>

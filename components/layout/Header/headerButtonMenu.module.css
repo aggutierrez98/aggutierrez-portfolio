@@ -27,17 +27,16 @@
     display: inline-block;
     transition: 0.3s ease;
     left: 0;
+  }
+  .top {
+    top: 0;
+  }
 
-    .top {
-      top: 0;
-    }
-
-    .middle {
-      top: 42.5%;
-    }
-    .bottom {
-      bottom: 0;
-    }
+  .middle {
+    top: 42.5%;
+  }
+  .bottom {
+    bottom: 0;
   }
 
   @media (max-width: 550px) {
@@ -54,7 +53,7 @@
 
 .check[type]:checked ~ span.top {
   transform-origin: top left;
-  width: 109%;
+  width: 110%;
   transform: rotate(45deg);
   left: 7.5%;
 }
@@ -63,7 +62,7 @@
   transform-origin: top left;
   transform: rotate(-45deg);
   bottom: -5%;
-  width: 107%;
+  width: 110%;
   box-shadow: 0 0 10px #495057;
 }
 
