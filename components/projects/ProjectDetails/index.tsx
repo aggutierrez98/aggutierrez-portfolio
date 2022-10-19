@@ -4,8 +4,9 @@ import { Project, Skill } from "interfaces";
 import styles from "./styles.module.css";
 import { TechsList, LinksList } from "components";
 import { m, LazyMotion, domAnimation } from "framer-motion";
-import { boxVariants } from "../ProjectCard/variants";
 import { titleVariants } from "./variants";
+import { boxVariants } from "../ProjectCard/variants";
+import { sectionVariant, sectionItemVariant } from "../../layout/variants";
 
 interface Props {
   projectData: Project;
@@ -25,18 +26,20 @@ export const ProjectDetails = ({ projectData }: Props) => {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className={styles.detailsContainer}>
-        <m.h1
-          tabIndex={0}
-          initial="hidden"
-          whileHover="visible"
-          whileFocus="visible"
-          variants={titleVariants}
-        >
+      <m.div
+        className={styles.detailsContainer}
+        variants={sectionVariant}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <m.h1 tabIndex={0} variants={sectionItemVariant}>
           {title}
         </m.h1>
         {image_url && (
-          <div className={styles.imageContainer}>
+          <m.div
+            className={styles.imageContainer}
+            variants={sectionItemVariant}
+          >
             <div className={styles.imageBox}>
               <Image
                 priority
@@ -47,22 +50,16 @@ export const ProjectDetails = ({ projectData }: Props) => {
               />
             </div>
             <div className={styles.imageBackground}></div>
-          </div>
+          </m.div>
         )}
 
         <div className={styles.separator} />
 
         <div className={styles.descriptionContainer}>
-          <m.h3
-            initial="hidden"
-            whileHover="visible"
-            whileFocus="visible"
-            variants={titleVariants}
-            tabIndex={0}
-          >
+          <m.h3 tabIndex={0} variants={sectionItemVariant}>
             Description
           </m.h3>
-          <p>{description}</p>
+          <m.p variants={sectionItemVariant}>{description}</m.p>
         </div>
 
         <div className={styles.separator} />
@@ -95,7 +92,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
           demo_url={demo_url}
           server_url={server_url}
         />
-      </div>
+      </m.div>
     </LazyMotion>
   );
 };
