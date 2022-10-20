@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.5.1...v1.5.2) (2022-10-20)
+
+### Bug Fixes
+
+- Fixed problem with toast notifications not working properly ([a94dd0c](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/a94dd0ceb749572f1b03322c29a622dda5f68eca))
+- Problem with color schema dark ([ada739b](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/ada739b5721e19aacef129049879fe0bb330b992))
+
 ## [1.5.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.5.0...v1.5.1) (2022-10-19)
 
 ### Bug Fixes
