@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.6.0...v1.6.1) (2022-10-20)
+
+### Bug Fixes
+
+- Little detail from footer heart fixed ([a830540](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/a830540370c52710069fff0a0dd9d86f2ffa8493))
+- Projects data source changed from JSONbin.io to github private repo ([a6dba0a](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/a6dba0ab7d69a78ba244484d19308cbd214f599a))
+
 # [1.6.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.5.2...v1.6.0) (2022-10-20)
 
 ### Features
