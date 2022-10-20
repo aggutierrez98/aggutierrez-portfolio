@@ -47,7 +47,12 @@ export const ScrollToTopButtton = () => {
                 initial={{ opacity: 0, scaleX: 0 }}
                 exit={{ opacity: 0, scaleX: 0 }}
                 whileInView={{ opacity: 1, scaleX: 1 }}
-                whileHover={{ scale: 1.15 }}
+                whileHover={{
+                  scale: 1.15,
+                  // transition: {
+                  //   delay: 0.5,
+                  // },
+                }}
                 whileFocus={{ scale: 1.15 }}
                 transition={{ duration: 0.25 }}
                 className={styles.goToTopButton}

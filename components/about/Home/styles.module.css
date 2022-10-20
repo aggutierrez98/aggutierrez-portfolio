@@ -21,7 +21,7 @@
   }
   h4 {
     color: var(--primary-color);
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
     font-weight: 400;
     font-family: Source Code Pro, sans-serif;
     font-size: clamp(1.2rem, 1.5vw, 2rem);
@@ -37,8 +37,9 @@
   h1 {
     font-weight: 400;
     margin: 1rem 0 0.2rem;
+    display: inline;
     color: var(--accent-color);
-    font-size: clamp(2em, 5vw, 6rem);
+    font-size: clamp(2.5em, 5vw, 6rem);
     @media (min-width: 1300px) {
       font-size: clamp(2em, 4.5vw, 6rem);
     }
@@ -46,7 +47,7 @@
 
   h2 {
     font-weight: 300;
-    margin-top: 10px;
+    margin-top: 1rem;
     margin-bottom: 10px;
     font-family: inherit !important;
     font-size: clamp(2.5rem, 5.5vw, 6rem) !important;
@@ -65,9 +66,13 @@
     margin-top: 1.5rem;
     color: var(--secondary-color);
     font-weight: 400;
-    max-width: 80%;
+    line-height: 1.8rem;
+    width: 100%;
     letter-spacing: 1px;
     @media (min-width: 450px) {
+      max-width: 95%;
+    }
+    @media (min-width: 650px) {
       max-width: 50%;
     }
 
@@ -79,7 +84,7 @@
 }
 
 .resumeButton {
-  margin-top: 2rem;
+  margin-top: 4rem;
   @media (min-width: 600px) {
     margin-top: 3rem;
   }

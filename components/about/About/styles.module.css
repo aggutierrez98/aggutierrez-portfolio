@@ -16,7 +16,6 @@
   margin-bottom: 5vh;
   padding-top: 8.5vh;
   padding-bottom: 5vh;
-  /* margin: 10vh 0; */
   @media (max-width: 800px) {
     width: 80%;
     flex-direction: column;
@@ -32,7 +31,7 @@
   width: 400px;
   display: flex;
   flex-direction: column;
-  max-width: 85%;
+  max-width: 100%;
   p {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -53,6 +52,7 @@
     align-self: center;
   }
   @media (max-width: 500px) {
+    margin: 0;
     margin-bottom: 1.5rem;
   }
 }

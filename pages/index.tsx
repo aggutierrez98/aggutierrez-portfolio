@@ -91,6 +91,8 @@ export const getStaticProps = async () => {
   let projects = await getProjectsData();
   let info = await getInfoData();
 
+  // console.log(info.about);
+
   //@ts-ignore
   info.about.skills = await loadSkillsInfo(info.about.skills);
 

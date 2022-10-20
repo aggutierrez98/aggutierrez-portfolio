@@ -202,7 +202,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background-color: var(--secondary-color);
     box-shadow: 0 0 5px var(--secondary-color);
     svg {

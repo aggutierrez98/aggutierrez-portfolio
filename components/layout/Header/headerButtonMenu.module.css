@@ -43,7 +43,6 @@
     display: block;
   }
   &:hover,
-  &:focus,
   &:focus-visible {
     span {
       box-shadow: 0 0 15px var(--primary-color);

@@ -55,17 +55,11 @@ h1 {
     )
     var(--d, 0%) 100% / 300% 1px no-repeat;
   transition: all ease 0.5s;
-  /* text-shadow: 0 0 2px var(--accent-color); */
   &:hover,
   &:focus-visible {
     --d: 100%;
     outline: none;
     text-shadow: 0 0 10px var(--accent-color);
-  }
-
-  @media (max-width: 342px) {
-    background: none;
-    text-decoration: underline 1px var(--primary-color);
   }
 }
 

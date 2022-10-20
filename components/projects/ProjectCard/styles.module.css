@@ -155,7 +155,7 @@
   outline: none;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     animation: ani 5s linear infinite;
     border: none;
 
