@@ -1,29 +1,32 @@
-import { getSkillData } from "./fetchData";
-import { Project, Skills } from "../interfaces/index";
+import { Project, Skills, Skill } from "../interfaces/index";
 
-export const loadProjectsData = async (projects: Project[]) => {
+export const loadProjectsData = async (
+  projects: Project[],
+  skillsData: Skill[]
+) => {
   for (let project of projects) {
-    project.techs = await loadProjectTechsData(project);
+    project.techs = loadProjectTechsData(project, skillsData);
   }
   return projects;
 };
 
-export const loadProjectTechsData = async (project: Project) => {
-  let newTechsSet = [];
+export const loadProjectTechsData = (project: Project, skillsData: Skill[]) => {
+  let newTechsSet: Skill[] = [];
   for (const tech of project.techs) {
-    const techData = await getSkillData(tech as string);
+    const techData = skillsData.find((skill) => skill.name === tech)!;
     newTechsSet.push(techData);
   }
   return newTechsSet;
 };
 
-export const loadSkillsInfo = async (skills: Skills) => {
+export const loadSkillsInfo = async (skills: Skills, skillsData: Skill[]) => {
   const skillsArr = Object.values(skills);
   let newSkillsArr = [];
+
   for (const skillSet of skillsArr) {
     let newSkillSet = [];
     for (const skillName of skillSet) {
-      const skillData = await getSkillData(skillName as string);
+      const skillData = skillsData.find((skill) => skill.name === skillName);
       newSkillSet.push(skillData);
     }
     newSkillsArr.push(newSkillSet);

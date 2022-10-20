@@ -2,14 +2,14 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { Project, MediaData } from "interfaces";
 import { ProjectDetails } from "components/projects/ProjectDetails";
-import { LayeredWaves, MainLayout } from "components";
+import { LayeredWaves } from "components";
 import { useRouter } from "next/router";
 import {
   getProjectsData,
   getSocialMediaData,
   loadProjectTechsData,
 } from "helpers";
-import { ReactElement } from "react";
+import { getSkillsData } from "helpers/fetchData";
 
 interface Props {
   projectData: Project;
@@ -111,6 +111,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const socialMedia = await getSocialMediaData();
   const projects = await getProjectsData();
+  const skillsData = await getSkillsData();
+
   let projectData = projects.find((project: Project) => project.title === name);
 
   if (!projectData) {
@@ -119,7 +121,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   }
 
-  projectData.techs = await loadProjectTechsData(projectData!);
+  projectData.techs = await loadProjectTechsData(projectData!, skillsData);
 
   return {
     props: {

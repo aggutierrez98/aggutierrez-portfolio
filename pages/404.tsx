@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { NotFoundSign, LayeredWaves } from "components";
+import { getExperienceData } from "../helpers/fetchData";
 
 const HomePage = () => {
   const origin = typeof window === "undefined" ? "" : window.location.origin;

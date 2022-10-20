@@ -9,7 +9,7 @@ import {
   WaveSmooth,
   MainLayout,
 } from "components";
-import { Project, Info, Work, MediaData, Skill } from "interfaces";
+import { Project, Info, Work, MediaData } from "interfaces";
 import { useRouter } from "next/router";
 import {
   getExperienceData,
@@ -18,8 +18,7 @@ import {
   loadSkillsInfo,
   loadProjectsData,
 } from "helpers";
-import { ReactElement } from "react";
-import { getSocialMediaData } from "../helpers/fetchData";
+import { getSkillsData, getSocialMediaData } from "helpers/fetchData";
 
 interface Props {
   projects: Project[];
@@ -88,16 +87,15 @@ const HomePage = ({ projects, experience, info }: Props) => {
 export const getStaticProps = async () => {
   const experience = await getExperienceData();
   const socialMedia = await getSocialMediaData();
+  const skillsData = await getSkillsData();
   let projects = await getProjectsData();
   let info = await getInfoData();
 
-  // console.log(info.about);
+  //@ts-ignore
+  info.about.skills = await loadSkillsInfo(info.about.skills, skillsData);
 
   //@ts-ignore
-  info.about.skills = await loadSkillsInfo(info.about.skills);
-
-  //@ts-ignore
-  projects = await loadProjectsData(projects);
+  projects = await loadProjectsData(projects, skillsData);
 
   return {
     props: {
