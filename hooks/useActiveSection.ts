@@ -22,39 +22,55 @@ const useActiveSectionId = (href: string): [SectionId, boolean] => {
   const [activeSectionId, setActiveSectionId] = useState("home");
   let active = activeSectionId === href.split("#")[1];
 
-  if (asPath.includes("/projects/")) {
-    if (href.split("#")[1] === "projects") {
-      active = true;
-    } else active = false;
-  } else if (route === "/404") {
-    active = false;
-  }
+  // if (asPath.includes("/projects/")) {
+  //   if (href.split("#")[1] === "projects") {
+  //     active = true;
+  //   } else active = false;
+  // } else if (route === "/404") {
+  //   active = false;
+  // }
 
   useEffect(() => {
     const initId = window.location.hash?.slice(1);
+
     if (isSectionId(initId)) setActiveSectionId(initId);
-    const sectionIds = (sections as unknown as string[]).reverse();
+
+    //@ts-ignore
+    const sectionIds = sections.reverse();
+    const body = document.getElementById("main-layout")!;
 
     const handleScroll = () => {
-      const scrollTop = document.getElementById("main-layout")!.scrollTop;
-      const offsetTops = sectionIds.map((sectionId) => {
-        return document.getElementById(sectionId)!.offsetTop;
-      });
+      const scrollBottom =
+        document.querySelector("main")?.offsetTop! +
+          document.querySelector("main")!.scrollTop >=
+        document.body.offsetHeight;
 
-      for (let index = 0; index < sectionIds.length; index++) {
-        const sectionHeight = offsetTops[index];
-        const scrollY = scrollTop + document.documentElement.clientHeight / 8;
-        const sectionActive = sectionHeight < scrollY;
+      // console.log(
+      //   `${document.querySelector("main")?.offsetTop!} + ${
+      //     document.querySelector("main")?.scrollTop
+      //   } =   ${
+      //     document.querySelector("main")?.offsetTop! +
+      //     document.querySelector("main")!.scrollTop
+      //   } >= ${document.body.offsetHeight}  -->  ${scrollBottom}`
+      // );
 
-        if (sectionActive) {
-          console.log(
-            `${sectionHeight} < ${scrollY}   = ${scrollTop} + ${
-              document.documentElement.clientHeight / 8
-            }    ----> ${sectionActive}`
-          );
+      if (!scrollBottom) {
+        startTransition(() => setActiveSectionId(sectionIds[0]));
+      } else {
+        for (const sectionId of sectionIds) {
+          const section = document.getElementById(sectionId);
+          const sectionActive =
+            section &&
+            section.offsetTop <
+              document.documentElement.scrollTop +
+                document.documentElement.clientHeight / 8;
 
-          startTransition(() => setActiveSectionId(sectionIds[index]));
-          break;
+          // console.log({ section });
+
+          if (sectionActive) {
+            startTransition(() => setActiveSectionId(sectionId));
+            break;
+          }
         }
       }
     };
@@ -70,3 +86,51 @@ const useActiveSectionId = (href: string): [SectionId, boolean] => {
 };
 
 export default useActiveSectionId;
+
+// import nav, { HOME } from "constants/nav";
+// import { useEffect, useState, useTransition } from "react";
+
+// import type { SectionId } from "types";
+
+// const isSectionId = (value: string): value is SectionId => {
+//   const sectionIds = Object.values(nav).map(({ id }) => id as string);
+//   return sectionIds.includes(value);
+// };
+
+// const useActiveSectionId = (): SectionId => {
+//   const [, startTransition] = useTransition();
+//   const [activeSectionId, setActiveSectionId] = useState(HOME.id);
+
+//   useEffect(() => {
+//     const initId = window.location.hash?.slice(1);
+
+//     if (isSectionId(initId)) setActiveSectionId(initId);
+
+//     const sectionIds = Object.values(nav).map(({ id }) => id).reverse();
+
+//     const handleScroll = () => {
+//       const scrollBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+//       if (scrollBottom) {
+//         startTransition(() => setActiveSectionId(sectionIds[0]));
+//       } else {
+//         for (const sectionId of sectionIds) {
+//           const section = document.getElementById(sectionId);
+//           const sectionActive = section
+//             && section.offsetTop < document.documentElement.scrollTop
+//             + document.documentElement.clientHeight / 8;
+
+//           if (sectionActive) {
+//             startTransition(() => setActiveSectionId(sectionId));
+//             break;
+//           }
+//         }
+//       }
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   return activeSectionId;
+// };

@@ -85,12 +85,6 @@ const HomePage = ({ projects, experience, info }: Props) => {
   );
 };
 
-HomePage.getLayout = function getLayout(page: ReactElement) {
-  return <MainLayout socialMedia={page.props.socialMedia}>{page}</MainLayout>;
-};
-
-export default HomePage;
-
 export const getStaticProps = async () => {
   const experience = await getExperienceData();
   const socialMedia = await getSocialMediaData();
@@ -112,3 +106,5 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+export default HomePage;

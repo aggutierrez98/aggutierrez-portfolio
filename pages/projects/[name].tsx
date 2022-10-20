@@ -92,12 +92,6 @@ const ProjectPage = ({ projectData }: Props) => {
   );
 };
 
-ProjectPage.getLayout = function getLayout(page: ReactElement) {
-  return <MainLayout socialMedia={page.props.socialMedia}>{page}</MainLayout>;
-};
-
-export default ProjectPage;
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const projects = await getProjectsData();
   const proyectNames = projects.map((proyect) => proyect.title);
@@ -135,3 +129,5 @@ export const getStaticProps: GetStaticProps = async (context) => {
     // revalidate: 10,
   };
 };
+
+export default ProjectPage;

@@ -23,30 +23,26 @@ export default function MyApp({
 }: AppPropsWithLayout) {
   usePreserveScroll();
 
-  const getLayout =
-    Component.getLayout ??
-    ((page) => {
-      return <MainLayout>{page}</MainLayout>;
-    });
-
-  return getLayout(
-    <ToastProvider {...pageProps}>
-      <AnimatePresence exitBeforeEnter>
-        <motion.div
-          key={router.pathname}
-          animate="enter"
-          exit="exit"
-          initial="hidden"
-          transition={{ type: "spring", duration: 0.3 }}
-          variants={{
-            hidden: { opacity: 0 },
-            enter: { opacity: 1 },
-            exit: { opacity: 0 },
-          }}
-        >
-          {<Component {...pageProps} />}
-        </motion.div>
-      </AnimatePresence>
-    </ToastProvider>
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <motion.div
+        key={router.pathname}
+        animate="enter"
+        exit="exit"
+        initial="hidden"
+        transition={{ type: "spring", duration: 0.3 }}
+        variants={{
+          hidden: { opacity: 0 },
+          enter: { opacity: 1 },
+          exit: { opacity: 0 },
+        }}
+      >
+        <ToastProvider>
+          <MainLayout {...pageProps}>
+            <Component {...pageProps} />
+          </MainLayout>
+        </ToastProvider>
+      </motion.div>
+    </AnimatePresence>
   );
 }

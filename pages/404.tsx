@@ -46,10 +46,10 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
-
 export const getStaticProps = async () => {
   return {
     props: {},
   };
 };
+
+export default HomePage;

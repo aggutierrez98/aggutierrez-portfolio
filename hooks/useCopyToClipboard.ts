@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import copy from "copy-text-to-clipboard";
-import { ToastContext } from "../context/ToastContext";
+import { ToastContext } from "context/ToastContext";
 
 export const useCopyToClipboard = () => {
   const [value, setValue] = useState("");
