@@ -1,3 +1,9 @@
+# [1.6.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.5.2...v1.6.0) (2022-10-20)
+
+### Features
+
+- Visual effects and css improvments ([dc305a4](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/dc305a48cd6a56a8a79c73c0f711558e06d9424e))
+
 ## [1.5.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.5.1...v1.5.2) (2022-10-20)
 
 ### Bug Fixes
