@@ -1,3 +1,9 @@
+## [1.6.3](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.6.2...v1.6.3) (2022-10-21)
+
+### Bug Fixes
+
+- Deleted react imports ([5461723](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/5461723329d8e6418a4e86aac7359ed64869e172))
+
 ## [1.6.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.6.1...v1.6.2) (2022-10-21)
 
 ### Bug Fixes
