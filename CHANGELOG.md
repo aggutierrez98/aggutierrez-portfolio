@@ -1,3 +1,9 @@
+## [1.7.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.7.0...v1.7.1) (2022-10-21)
+
+### Bug Fixes
+
+- Some fixes added to manifest.json ([f41f2e6](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/f41f2e6ede4a4466dcc7bc4311a37e854be4e7dc))
+
 # [1.7.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.6.4...v1.7.0) (2022-10-21)
 
 ### Bug Fixes
