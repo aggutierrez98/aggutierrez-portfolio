@@ -1,3 +1,9 @@
+## [1.6.4](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.6.3...v1.6.4) (2022-10-21)
+
+### Bug Fixes
+
+- eslint promise plugin added to project ([e42edc4](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/e42edc49cda333e6c6937ef6f819206e62030d3e))
+
 ## [1.6.3](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.6.2...v1.6.3) (2022-10-21)
 
 ### Bug Fixes
