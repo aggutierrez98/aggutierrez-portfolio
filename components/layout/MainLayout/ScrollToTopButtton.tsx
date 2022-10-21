@@ -71,7 +71,13 @@ export const ScrollToTopButtton = () => {
                 aria-label="Scroll to bottom"
                 initial={{ opacity: 0, scaleX: 0 }}
                 exit={{ opacity: 0, scaleX: 0 }}
-                whileInView={{ opacity: 1, scaleX: 1 }}
+                whileInView={{
+                  opacity: 1,
+                  scaleX: 1,
+                  transition: {
+                    delay: 1,
+                  },
+                }}
                 whileHover={{ scale: 1.15 }}
                 transition={{ duration: 0.25 }}
                 className={styles.goToTopButton}

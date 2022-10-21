@@ -44,7 +44,6 @@ const HomePage = ({ projects, experience, info }: Props) => {
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{`${seo.title}`}</title>
         <meta name="description" content={`${seo.description}`} />
         <meta name="image" content={`${seo.image_source}/banner.png`} />

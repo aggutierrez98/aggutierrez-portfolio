@@ -4,8 +4,8 @@ export default function Document() {
   const fontData = {
     source: "https://fonts.googleapis.com/css2",
     fonts: [
-      "family=Raleway:ital,wght@0,100;0,200;0,300;0,400;1,200;1,300;1,400;1,500",
-      "family=Source+Code+Pro:wght@200;300;400",
+      "family=Raleway:wght@200;300;400;500;600",
+      "family=Source+Code+Pro:wght@300;400",
     ],
     display: "display=swap",
   };
@@ -18,7 +18,7 @@ export default function Document() {
           content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk"
         />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+
         <html lang="en" />
         <meta charSet="utf-8" />
         <link

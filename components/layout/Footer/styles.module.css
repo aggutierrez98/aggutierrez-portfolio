@@ -38,7 +38,6 @@
   top: -11vw;
   outline: none;
   font-weight: bold;
-  font-style: italic;
   background-color: transparent;
   @media (max-width: 2000px) {
     top: -12.5vw;
