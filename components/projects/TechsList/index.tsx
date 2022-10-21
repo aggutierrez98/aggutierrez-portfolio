@@ -18,7 +18,10 @@ export const TechsList = ({ techs, detailsPage = false }: Props) => {
     >
       {techs?.map((tech: Skill) => {
         const Icon = dynamic(
-          async () => await import(`public/assets/techs/${tech?.assetName}`)
+          async () =>
+            await import(
+              `${process.env.NEXT_PUBLIC_ASSETS_URL}/techs/${tech?.assetName}`
+            )
         );
         return (
           <li title={`${tech.name}-icon`} key={tech.name}>

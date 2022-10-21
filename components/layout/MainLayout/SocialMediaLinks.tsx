@@ -25,7 +25,7 @@ export const SocialMediaLinks = ({ socialMediaData }: Props) => {
                 const Icon = dynamic(
                   async () =>
                     await import(
-                      `public/assets/social-media/${mediaData.icon}.svg`
+                      `${process.env.NEXT_PUBLIC_ASSETS_URL}/social-media/${mediaData.icon}.svg`
                       // `components/layout/Icons/${mediaData.icon}`
                     )
                 );

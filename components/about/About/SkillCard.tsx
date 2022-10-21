@@ -10,7 +10,10 @@ interface Props {
 
 export const SkillCard = ({ skill }: Props) => {
   const Icon = dynamic(
-    async () => await import(`public/assets/techs/${skill?.assetName}`)
+    async () =>
+      await import(
+        `${process.env.NEXT_PUBLIC_ASSETS_URL}/techs/${skill?.assetName}`
+      )
   );
 
   return (
