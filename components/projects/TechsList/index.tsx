@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import { m } from "framer-motion";
 import dynamic from "next/dynamic";
 import { techsVariants } from "./variants";
-import { Skill } from "../../../interfaces/index";
+import { Skill } from "interfaces/index";
 
 interface Props {
   techs: Skill[];

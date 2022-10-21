@@ -1,5 +1,3 @@
-import Link from "next/link";
-import React from "react";
 import { HeaderMenu } from "./HeaderMenu";
 import styles from "./styles.module.css";
 import { useScrollingUp } from "hooks";

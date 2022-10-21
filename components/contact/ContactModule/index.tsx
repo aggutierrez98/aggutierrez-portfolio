@@ -1,4 +1,3 @@
-import React from "react";
 import { CustomModal, ContactForm, Loading } from "components";
 import { useContactForm } from "hooks";
 import styles from "./styles.module.css";

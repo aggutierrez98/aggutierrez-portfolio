@@ -1,7 +1,7 @@
-import React, { RefObject } from "react";
+import { RefObject } from "react";
 import styles from "./sideMenu.module.css";
 import { HeaderLink } from "./HeaderLink";
-import { AnimatePresence, motion, m } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { headerSideListVariant } from "./variants";
 
 interface Props {

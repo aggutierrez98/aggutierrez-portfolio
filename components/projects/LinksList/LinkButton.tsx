@@ -1,6 +1,5 @@
 import { VscLink, VscGithub } from "react-icons/vsc";
 import Link from "next/link";
-import React from "react";
 import styles from "./styles.module.css";
 
 interface Props {

@@ -1,10 +1,7 @@
-import Image from "next/image";
-import React from "react";
 import styles from "./styles.module.css";
 import { SkillsList } from "./SkillsList";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { sectionItemVariant, sectionVariant } from "../../layout/variants";
-import { Skill } from "interfaces";
 
 interface Props {
   data: any;

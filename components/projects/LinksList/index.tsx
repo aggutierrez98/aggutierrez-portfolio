@@ -1,8 +1,6 @@
-import React from "react";
 import styles from "./styles.module.css";
 import { LinkButton } from "./LinkButton";
 import { m } from "framer-motion";
-import { titleVariants } from "../ProjectDetails/variants";
 import { sectionItemVariant, sectionVariant } from "../../layout/variants";
 
 interface Props {

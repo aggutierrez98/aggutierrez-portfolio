@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { m } from "framer-motion";
 import styles from "./styles.module.css";
 import { sectionItemVariant } from "../../layout/variants";

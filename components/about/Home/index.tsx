@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import styles from "./styles.module.css";
 import TypeIt from "typeit";
 import { ResumeButton } from "./ResumeButton";

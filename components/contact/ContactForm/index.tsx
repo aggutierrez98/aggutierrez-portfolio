@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent } from "react";
+import { ChangeEvent, FormEvent } from "react";
 import styles from "./styles.module.css";
 import { SendButton } from "./SendButton";
 import { MdMail, MdChat, MdPerson } from "react-icons/md";

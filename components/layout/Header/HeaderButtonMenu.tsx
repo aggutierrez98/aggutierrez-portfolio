@@ -1,4 +1,4 @@
-import React, { RefObject } from "react";
+import { RefObject } from "react";
 import styles from "./headerButtonMenu.module.css";
 
 interface Props {

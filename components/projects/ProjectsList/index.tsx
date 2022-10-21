@@ -1,4 +1,3 @@
-import React from "react";
 import { ProjectCard } from "components";
 import { Project } from "interfaces";
 import styles from "./styles.module.css";

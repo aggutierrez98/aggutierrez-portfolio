@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import { Project, Skill } from "interfaces";
 import styles from "./styles.module.css";
 import { TechsList, LinksList } from "components";

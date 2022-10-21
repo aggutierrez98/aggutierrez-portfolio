@@ -1,10 +1,8 @@
 import Link from "next/link";
-import React from "react";
 import styles from "./styles.module.css";
 import { m } from "framer-motion";
 import { headerItemVariant } from "./variants";
 import useActiveSectionId from "hooks/useActiveSection";
-import { useRouter } from "next/router";
 
 interface Props {
   href: string;

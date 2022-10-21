@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { useRouter } from "next/router";

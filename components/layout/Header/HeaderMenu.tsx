@@ -1,10 +1,4 @@
-import React, {
-  RefObject,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 import { HeaderLink } from "./HeaderLink";
 import { HeaderButtonMenu } from "./HeaderButtonMenu";
