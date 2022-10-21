@@ -1,3 +1,13 @@
+# [1.7.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.6.4...v1.7.0) (2022-10-21)
+
+### Bug Fixes
+
+- Little fix to scrollToTop button and to font loading ([467508c](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/467508c3b974c86bbb17bc0f457a3a6fc51a8139))
+
+### Features
+
+- Added configuration to make site PWA ([796fc4c](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/796fc4c5c8e7ef03dc561ad742c56a49c809cb14))
+
 ## [1.6.4](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.6.3...v1.6.4) (2022-10-21)
 
 ### Bug Fixes
