@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.6.1...v1.6.2) (2022-10-21)
+
+### Bug Fixes
+
+- env.example added to project ([033150c](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/033150c9e0a32182a3cf2bc080a6935f8360e16b))
+- Fixed error in navbar effect when scrolling ([2bc5529](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/2bc552953b76094fc17609240b343e87e8e9713b))
+
 ## [1.6.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.6.0...v1.6.1) (2022-10-20)
 
 ### Bug Fixes
