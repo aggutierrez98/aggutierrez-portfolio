@@ -18,10 +18,10 @@ export default function Document() {
           content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk"
         />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="msapplication-TileColor" content="#00adb5" />
-        <meta name="theme-color" content="#00adb5" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00ADB5" />
-        <meta name="apple-mobile-web-app-status-bar" content="#00adb5" />
+        <meta name="msapplication-TileColor" content="#222831" />
+        <meta name="theme-color" content="#222831" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#222831" />
+        <meta name="apple-mobile-web-app-status-bar" content="#222831" />
         <link rel="icon" href="/favicon.ico" />
         <html lang="en" />
         <meta charSet="utf-8" />
