@@ -3,11 +3,10 @@ import { MediaData, Project, Skill, Work, Info } from "interfaces";
 
 const dataInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_RAW_DATA_URL,
+  headers: {
+    Authorization: `token ${process.env.NEXT_PUBLIC_GH_DATA_TOKEN}`,
+  },
 });
-
-dataInstance.defaults.headers.common[
-  "Authorization"
-] = `token ${process.env.NEXT_PUBLIC_GH_DATA_TOKEN}`;
 
 export const getExperienceData = async () => {
   const resp = await dataInstance.get<any>("experience.json");
