@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.7.1...v1.7.2) (2022-10-25)
+
+### Bug Fixes
+
+- Added style fixes ([c52b72a](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/c52b72a831ea46bc883fcc0a013a8bb894ed0cac))
+- Changes in pages revalidation ([4638c47](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/4638c47ba7426df4d357c05193d8b40e613322ae))
+
 ## [1.7.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.7.0...v1.7.1) (2022-10-21)
 
 ### Bug Fixes
