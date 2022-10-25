@@ -6,7 +6,7 @@
   box-shadow: var(--shadow-elevation-medium);
   backdrop-filter: blur(2px);
   padding: 20px;
-  border-radius: 30px;
+  border-radius: 25px;
 
   @media (max-width: 850px) {
     width: 100%;
@@ -81,7 +81,7 @@
   color: var(--accent-color);
   background-color: transparent;
   border: none;
-  border-radius: 20px;
+  border-radius: 16px;
   font-family: Raleway, sans-serif;
   font-weight: bold;
 
@@ -177,7 +177,7 @@
   margin-top: 10px;
   cursor: pointer;
   border: none;
-  border-radius: 20px;
+  border-radius: 18px;
   height: 40px;
   width: 100%;
   outline: none;

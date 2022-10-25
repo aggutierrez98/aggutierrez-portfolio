@@ -55,7 +55,7 @@
   /* bottom: 7%;
   right: 5%; */
   border: none;
-  border-radius: 30px;
+  border-radius: 22px;
   cursor: pointer;
   background-color: var(--primary-color);
   padding: 15px;
@@ -69,6 +69,7 @@
   right: 35px;
   @media (max-width: 550px) {
     padding: 12px;
+    border-radius: 18px;
     svg {
       width: 15px;
       height: 15px;

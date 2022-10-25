@@ -5,7 +5,6 @@
   right: 0;
   height: 100vh;
   box-shadow: -10px 0px 30px -15px var(--shadow-elevation-medium);
-  overflow: hidden;
   display: flex;
   background-color: var(--background-color);
   position: absolute;

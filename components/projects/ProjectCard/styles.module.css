@@ -150,7 +150,7 @@
     var(--primary-color)
   );
   background-size: 300%;
-  border-radius: 30px;
+  border-radius: 21px;
   z-index: 1;
   outline: none;
 
@@ -173,7 +173,7 @@
     bottom: 0;
     z-index: -1;
     background-color: var(--primary-color);
-    border-radius: 30px;
+    border-radius: 22px;
     transition: 0.5s;
   }
 

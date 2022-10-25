@@ -22,9 +22,9 @@ export const HeaderButtonMenu = ({ action, value, refValue }: Props) => {
         checked={value}
         disabled
       />
-      <span className={styles.top}></span>
-      <span className={styles.middle}></span>
-      <span className={styles.bottom}></span>
+      <div className={styles.top}></div>
+      <div className={styles.middle}></div>
+      <div className={styles.bottom}></div>
     </button>
   );
 };
