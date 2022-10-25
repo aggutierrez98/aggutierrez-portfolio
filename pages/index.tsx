@@ -91,10 +91,10 @@ export const getStaticProps = async () => {
   let info = await getInfoData();
 
   //@ts-ignore
-  info.about.skills = await loadSkillsInfo(info.about.skills, skillsData);
+  info.about.skills = loadSkillsInfo(info.about.skills, skillsData);
 
   //@ts-ignore
-  projects = await loadProjectsData(projects, skillsData);
+  projects = loadProjectsData(projects, skillsData);
 
   return {
     props: {
@@ -103,6 +103,7 @@ export const getStaticProps = async () => {
       socialMedia,
       info,
     },
+    revalidate: 3600,
   };
 };
 

@@ -1,9 +1,6 @@
 import { Project, Skills, Skill } from "../interfaces/index";
 
-export const loadProjectsData = async (
-  projects: Project[],
-  skillsData: Skill[]
-) => {
+export const loadProjectsData = (projects: Project[], skillsData: Skill[]) => {
   for (let project of projects) {
     project.techs = loadProjectTechsData(project, skillsData);
   }
@@ -19,7 +16,7 @@ export const loadProjectTechsData = (project: Project, skillsData: Skill[]) => {
   return newTechsSet;
 };
 
-export const loadSkillsInfo = async (skills: Skills, skillsData: Skill[]) => {
+export const loadSkillsInfo = (skills: Skills, skillsData: Skill[]) => {
   const skillsArr = Object.values(skills);
   let newSkillsArr = [];
 

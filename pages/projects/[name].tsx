@@ -121,14 +121,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   }
 
-  projectData.techs = await loadProjectTechsData(projectData!, skillsData);
+  projectData.techs = loadProjectTechsData(projectData!, skillsData);
 
   return {
     props: {
       projectData,
       socialMedia,
     },
-    // revalidate: 10,
+    revalidate: 3600,
   };
 };
 
