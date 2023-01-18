@@ -6,12 +6,14 @@ import { LearnMoreButton } from "./LearnMoreButton";
 import { Project, Skill } from "interfaces";
 import { boxVariants } from "./variants";
 import Link from "next/link";
+import parse from "html-react-parser";
+import { memo } from "react";
 
 interface Props {
   projectData: Project;
 }
 
-export const ProjectCard = ({
+const InitProjectCard = ({
   projectData: { title, description, image_url, techs, demo_url },
 }: Props) => {
   return (
@@ -31,7 +33,7 @@ export const ProjectCard = ({
                 </a>
               </Link>
             </h3>
-            <p>{description}</p>
+            <div className={styles.descriptionText}>{parse(description)}</div>
             <div className={styles.textBottom}>
               <TechsList techs={techs as Skill[]} />
               <LearnMoreButton title={title} />
@@ -47,6 +49,7 @@ export const ProjectCard = ({
                     objectFit="contain"
                     alt={`${title}-example`}
                   />
+                  {/* <img src={image_url} alt={`${title}-example`}></img> */}
                 </a>
               </Link>
             </div>
@@ -56,3 +59,5 @@ export const ProjectCard = ({
     </LazyMotion>
   );
 };
+
+export const ProjectCard = memo(InitProjectCard);

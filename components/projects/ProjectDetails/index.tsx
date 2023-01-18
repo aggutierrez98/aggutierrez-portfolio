@@ -6,6 +6,7 @@ import { m, LazyMotion, domAnimation } from "framer-motion";
 import { titleVariants } from "./variants";
 import { boxVariants } from "../ProjectCard/variants";
 import { sectionVariant, sectionItemVariant } from "../../layout/variants";
+import parse from "html-react-parser";
 
 interface Props {
   projectData: Project;
@@ -58,7 +59,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
           <m.h3 tabIndex={0} variants={sectionItemVariant}>
             Description
           </m.h3>
-          <m.p variants={sectionItemVariant}>{description}</m.p>
+          <m.p variants={sectionItemVariant}>{parse(description)}</m.p>
         </div>
 
         <div className={styles.separator} />

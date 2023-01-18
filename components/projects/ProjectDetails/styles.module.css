@@ -69,6 +69,19 @@
     font-weight: 400;
     letter-spacing: 0.05rem;
     /* letter-spacing: 1px; */
+
+    a {
+      color: var(--primary-color);
+      background: linear-gradient(currentColor 0 0) 0 100% / var(--d, 0) 1.5px
+          no-repeat,
+        linear-gradient(currentColor 0 0) 100% 100% / var(--d, 0) 1.5px
+          no-repeat;
+      transition: 0.25s;
+    }
+
+    a:hover {
+      --d: 51%;
+    }
   }
 }
 .techStackContainer {

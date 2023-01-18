@@ -142,18 +142,18 @@
       width: 100%;
       height: inherit;
       background: linear-gradient(
-        82.3deg,
+        120.3deg,
         var(--primary-color),
         var(--secondary-color)
       );
-      transition: all 0.475s;
+      transition: all 0.5s;
     }
   }
 
   &:hover,
   &:focus {
     button {
-      transition: ease-in-out 0.475s;
+      transition: ease-in-out 0.5s;
       box-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 20px var(--primary-color),
         0 0 30px var(--primary-color);
       &::before {
