@@ -63,7 +63,12 @@ export const ProjectDetails = ({ projectData }: Props) => {
           <m.h3 tabIndex={0} variants={sectionItemVariant}>
             Description
           </m.h3>
-          <m.p variants={sectionItemVariant}>{parse(description)}</m.p>
+          <m.div
+            className={styles.descriptionText}
+            variants={sectionItemVariant}
+          >
+            {parse(description)}
+          </m.div>
         </div>
 
         <div className={styles.separator} />

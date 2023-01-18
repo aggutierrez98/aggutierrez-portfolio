@@ -63,7 +63,7 @@
     font-size: clamp(1.25rem, 5vw, 2rem);
     margin-bottom: 1.5rem;
   }
-  p {
+  .descriptionText p {
     color: var(--secondary-color);
     font-size: clamp(1rem, 5vw, 1.5rem);
     font-weight: 400;
