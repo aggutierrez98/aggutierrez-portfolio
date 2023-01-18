@@ -14,7 +14,7 @@ interface Props {
 }
 
 const InitProjectCard = ({
-  projectData: { title, description, image_url, techs, demo_url },
+  projectData: { title, description, image_url, images_data, techs, demo_url },
 }: Props) => {
   return (
     <LazyMotion features={domAnimation}>
@@ -39,12 +39,12 @@ const InitProjectCard = ({
               <LearnMoreButton title={title} />
             </div>
           </div>
-          {image_url && (
+          {(image_url || images_data) && (
             <div className={styles.imageContainer}>
               <Link href={demo_url} passHref>
                 <a href={demo_url}>
                   <Image
-                    src={image_url}
+                    src={image_url ? image_url : `${images_data?.folder}/1.jpg`}
                     layout="fill"
                     objectFit="contain"
                     alt={`${title}-example`}

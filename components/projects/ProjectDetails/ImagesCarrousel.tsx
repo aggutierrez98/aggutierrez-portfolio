@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, m } from "framer-motion";
 import styles from "./styles.module.css";
-// import Image from "next/image";
-import { wrap } from "popmotion";
+import { sectionItemVariant } from "@c/layout/variants";
+import { sliderVariants } from "./variants";
+import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 interface Props {
   data: {
@@ -11,92 +12,66 @@ interface Props {
   };
 }
 
-const variants = {
-  enter: (direction: number) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction: number) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-};
-
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
 
 export const ImagesCarrousel = ({ data: { count, folder } }: Props) => {
+  const [[page, direction], setPage] = useState([0, 0]);
+
   const images = Array.from(
     { length: count },
     (_, i) => `${folder}/${i + 1}.jpg`
   );
 
-  const [[page, direction], setPage] = useState([0, 0]);
-
-  // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
-  // then wrap that within 0-2 to find our image ID in the array below. By passing an
-  // absolute page index as the `motion` component's `key` prop, `AnimatePresence` will
-  // detect it as an entirely new image. So you can infinitely paginate as few as 1 images.
-  const imageIndex = wrap(0, images.length, page);
-
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
   };
-  return (
-    <div className={styles.container}>
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.img
-          key={page}
-          src={images[imageIndex]}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 },
-          }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
 
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-        />
-      </AnimatePresence>
-      <div
-        className={styles.prev}
-        aria-hidden="true"
-        onClick={() => paginate(-1)}
-      >
-        {"‣"}
-      </div>
-      <div
-        className={styles.next}
-        aria-hidden="true"
-        onClick={() => paginate(1)}
-      >
-        {"‣"}
-      </div>
-    </div>
+  const setNextPage = () => {
+    if (page !== images.length - 1) paginate(1);
+  };
+
+  const setPrevPage = () => {
+    if (page !== 0) paginate(-1);
+  };
+
+  return (
+    <m.div className={styles.carrouselContainer} variants={sectionItemVariant}>
+      <motion.div className={styles.carrouselImageBox}>
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={page}
+            src={images[page]}
+            custom={direction}
+            variants={sliderVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+            }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.5}
+            whileTap={{ cursor: "grabbing" }}
+            onDragEnd={(_, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x);
+              if (swipe < -swipeConfidenceThreshold) setNextPage();
+              else if (swipe > swipeConfidenceThreshold) setPrevPage();
+            }}
+          />
+        </AnimatePresence>
+      </motion.div>
+      <div className={styles.imageBackground}></div>
+      <button className={styles.prev} onClick={() => setPrevPage()}>
+        <MdArrowBackIosNew />
+      </button>
+      <button className={styles.next} onClick={() => setNextPage()}>
+        <MdArrowForwardIos />
+      </button>
+    </m.div>
   );
 };

@@ -7,6 +7,7 @@ import { titleVariants } from "./variants";
 import { boxVariants } from "../ProjectCard/variants";
 import { sectionVariant, sectionItemVariant } from "../../layout/variants";
 import parse from "html-react-parser";
+import { ImagesCarrousel } from "./ImagesCarrousel";
 
 interface Props {
   projectData: Project;
@@ -21,6 +22,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
     back_github_url,
     title,
     image_url,
+    images_data,
     techs,
   } = projectData;
 
@@ -52,6 +54,8 @@ export const ProjectDetails = ({ projectData }: Props) => {
             <div className={styles.imageBackground}></div>
           </m.div>
         )}
+
+        {images_data && <ImagesCarrousel data={images_data} />}
 
         <div className={styles.separator} />
 

@@ -6,6 +6,10 @@ export interface Project {
   demo_url: string;
   server_url: string;
   image_url?: string;
+  images_data?: {
+    folder: string;
+    count: number;
+  };
   techs: string[] | Skill[];
 }
 
