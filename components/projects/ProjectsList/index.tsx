@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 interface Props {
   projects: Project[];
-  isProjectsPage: boolean;
+  isProjectsPage?: boolean;
 }
 
 export const ProjectsModule = ({ projects, isProjectsPage = false }: Props) => {
