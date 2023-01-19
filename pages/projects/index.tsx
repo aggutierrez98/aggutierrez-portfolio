@@ -60,7 +60,7 @@ export const getStaticProps = async () => {
       projects,
       socialMedia,
     },
-    revalidate: 3600,
+    revalidate: 1200,
   };
 };
 

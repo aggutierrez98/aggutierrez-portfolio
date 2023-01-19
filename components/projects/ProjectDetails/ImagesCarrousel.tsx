@@ -4,6 +4,8 @@ import styles from "./styles.module.css";
 import { sectionItemVariant } from "@c/layout/variants";
 import { sliderVariants } from "./variants";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+import { useImageCarrousel } from "hooks";
+import { swipeConfidenceThreshold, swipePower } from "helpers";
 
 interface Props {
   data: {
@@ -12,30 +14,14 @@ interface Props {
   };
 }
 
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-  return Math.abs(offset) * velocity;
-};
-
 export const ImagesCarrousel = ({ data: { count, folder } }: Props) => {
-  const [[page, direction], setPage] = useState([0, 0]);
-
   const images = Array.from(
     { length: count },
     (_, i) => `${folder}/${i + 1}.jpg`
   );
 
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
-
-  const setNextPage = () => {
-    if (page !== images.length - 1) paginate(1);
-  };
-
-  const setPrevPage = () => {
-    if (page !== 0) paginate(-1);
-  };
+  const { direction, page, setNextPage, setPrevPage } =
+    useImageCarrousel(images);
 
   return (
     <m.div className={styles.carrouselContainer} variants={sectionItemVariant}>
@@ -49,14 +35,10 @@ export const ImagesCarrousel = ({ data: { count, folder } }: Props) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-            }}
+            whileTap="tap"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.5}
-            whileTap={{ cursor: "grabbing" }}
             onDragEnd={(_, { offset, velocity }) => {
               const swipe = swipePower(offset.x, velocity.x);
               if (swipe < -swipeConfidenceThreshold) setNextPage();

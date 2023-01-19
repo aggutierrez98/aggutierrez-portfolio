@@ -31,7 +31,7 @@ export const About = ({ data }: Props) => {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={
-                  "https://res.cloudinary.com/aggutierrez/image/upload/c_crop,h_900,w_900,x_40,y_145,e_colorize:27,co_rgb:00adb5/f_webp/v1664817205/Portfolio/WhatsApp_Image_2023-01-18_at_6.00.20_PM_sjighm.jpg"
+                  "https://res.cloudinary.com/aggutierrez/image/upload/c_crop,h_900,w_900,x_40,y_145,e_colorize:27,co_rgb:00adb5/f_webp/v1664817205/Portfolio/avatar-image.jpg"
                 }
                 alt="Agustin Gutierrez"
               />
