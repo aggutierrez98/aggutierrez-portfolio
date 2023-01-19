@@ -1,3 +1,9 @@
+## [1.9.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.0...v1.9.1) (2023-01-19)
+
+### Bug Fixes
+
+- Little fix in responsive ui ([826cb8b](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/826cb8bdba99a0afaf0579a66e78468405d72c9d))
+
 # [1.9.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.8.1...v1.9.0) (2023-01-19)
 
 ### Features
