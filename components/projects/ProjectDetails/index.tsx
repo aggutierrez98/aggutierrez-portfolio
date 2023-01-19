@@ -8,7 +8,8 @@ import { boxVariants } from "../ProjectCard/variants";
 import { sectionVariant, sectionItemVariant } from "components/layout/variants";
 import parse from "html-react-parser";
 import { ImagesCarrousel } from "./ImagesCarrousel";
-import { useImageModal } from "hooks";
+import { useImages } from "hooks";
+import { useEffect, useState } from "react";
 
 interface Props {
   projectData: Project;
@@ -27,7 +28,23 @@ export const ProjectDetails = ({ projectData }: Props) => {
     techs,
   } = projectData;
 
-  const { modalOpen, imageToShow, openModal, closeModal } = useImageModal();
+  const [images, setImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (images_data) {
+      setImages(() => {
+        return Array.from(
+          { length: images_data.count },
+          (_, i) => `${images_data.folder}/${i + 1}.jpg`
+        );
+      });
+    } else {
+      setImages(() => (image_url ? [image_url] : []));
+    }
+    return () => {};
+  }, [images_data, image_url]);
+
+  const { modalOpen, imageToShow, openModal, closeModal } = useImages(images);
 
   return (
     <LazyMotion features={domAnimation}>
@@ -40,31 +57,12 @@ export const ProjectDetails = ({ projectData }: Props) => {
         <m.h1 tabIndex={0} variants={sectionItemVariant}>
           {title}
         </m.h1>
-        {image_url && (
-          <m.div
-            className={styles.imageContainer}
-            variants={sectionItemVariant}
-          >
-            <div className={styles.imageBox}>
-              <Image
-                onClick={(e) => {
-                  e.stopPropagation();
-                  openModal(image_url);
-                }}
-                priority
-                src={image_url}
-                layout="fill"
-                objectFit="contain"
-                alt={`${title}-example`}
-              />
-            </div>
-            <div className={styles.imageBackground}></div>
-          </m.div>
-        )}
 
-        {images_data && (
-          <ImagesCarrousel data={images_data} actionCallback={openModal} />
-        )}
+        <ImagesCarrousel
+          images={images}
+          title={title}
+          actionCallback={openModal}
+        />
 
         <div className={styles.separator} />
 

@@ -182,7 +182,7 @@
     padding: 5px;
   }
 
-  @media screen and (orientation: landscape) {
+  @media only screen and (orientation: landscape) and (max-width: 600px) {
     padding: 0;
   }
 }
@@ -200,7 +200,7 @@
     border-radius: inherit;
   }
 
-  @media screen and (orientation: landscape) {
+  @media only screen and (orientation: landscape) and (max-width: 600px) {
     height: 95%;
     img {
       height: 100%;
