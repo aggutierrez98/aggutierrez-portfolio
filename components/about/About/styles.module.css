@@ -8,17 +8,16 @@
 }
 
 .aboutContainer {
-  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3vh;
-  margin-bottom: 5vh;
+  margin-bottom: 8vh;
   padding-top: 8.5vh;
   padding-bottom: 5vh;
   @media (max-width: 800px) {
     width: 80%;
     flex-direction: column;
+    padding-top: 1rem;
   }
   @media (max-width: 500px) {
     width: 100%;
@@ -27,7 +26,7 @@
 
 .textContainer {
   margin-right: 50px;
-  padding: 15px;
+  /* padding: 15px; */
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -35,8 +34,8 @@
   p {
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 1.5rem 0;
-    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    margin: 1.5rem 0 1rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
     font-weight: 300;
     letter-spacing: 1px;
   }
@@ -48,8 +47,9 @@
     width: 90%;
     padding: 15px 0;
     margin-right: 20px;
-    margin-bottom: 3rem;
+    margin-top: 3rem;
     align-self: center;
+    order: 1;
   }
   @media (max-width: 500px) {
     margin: 0;
@@ -59,97 +59,66 @@
 
 .imageContainer {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  width: 380px;
+  /* clip-path: ellipse(50% 48% at 50% 50%); */
+  /* border-radius: 35%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 35%;
+  width: 400px;
+  height: 400px;
+  grid-row-end: 400px;
+  box-shadow: 0 0 30px 15px var(--background-light-color);
 
   img {
-    pointer-events: none;
-    position: relative;
-    transform-origin: 50% bottom;
-    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
-    object-fit: contain;
-    bottom: 0;
-    top: 205px;
-    left: 5px;
     width: 380px;
     height: 380px;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: inherit;
+    overflow: hidden;
+
     @media (max-width: 850px) {
-      width: 380px;
-      height: 380px;
-      top: 160px;
-      left: -10px;
+      width: 360px;
+      height: 360px;
     }
     @media (max-width: 500px) {
-      top: 205px;
-      width: 300px;
-      height: 300px;
+      width: 280px;
+      height: 280px;
     }
   }
 
   @media (max-width: 850px) {
-    width: 350px;
-    height: 350px;
+    width: 380px;
+    height: 380px;
   }
 
   @media (max-width: 500px) {
     margin-bottom: 50px;
-    width: 280px;
-    height: 280px;
-  }
-}
-
-.imageContainerInner {
-  position: relative;
-  top: -200px;
-  bottom: 0;
-  width: 380px;
-  clip-path: path(
-    "M 380 386 C 380 504.9341 285 571 190 571 C 94 572 0 504.9341 0 380 V 1 H 200 H 380 Z"
-  );
-
-  @media (max-width: 850px) {
-    top: -180px;
-    width: 150px;
-    clip-path: path(
-      "M 350 350 C 353 507 205 534 175 530 C 147 534 1 504 0 354 V 0 H 176 H 350 Z"
-    );
+    width: 300px;
+    height: 300px;
   }
 
-  @media (max-width: 500px) {
-    width: 280px;
-    clip-path: path(
-      "M 280 350 C 280 477 159 496 140 493 C 121 497 0 472 0 354 V 0 H 140 H 280 Z"
-    );
-  }
-}
-
-.circle {
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: var(--primary-color);
-  width: 380px;
-  height: 380px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 200px;
-  position: absolute;
-
-  @media (max-width: 850px) {
-    width: 350px;
-    height: 350px;
-    top: 183px;
-  }
-  @media (max-width: 500px) {
-    width: 280px;
-    height: 280px;
-    top: 215px;
+  &:hover img {
+    transform: scale(1.05);
   }
 
-  &:hover {
-    ~ img {
-      transform: translateY(-10px) scale(1.15);
-    }
+  .block {
+    border-radius: inherit;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* inset: 0; */
+    /* bottom: 2px; */
+    /* top: -2px; */
+    /* border-radius: 35%; */
+    box-shadow: inset 0 0 12px 20px var(--background-light-color);
   }
 }
 
