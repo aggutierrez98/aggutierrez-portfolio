@@ -7,7 +7,6 @@ import {
   WorkModule,
   LayeredWaves,
   WaveSmooth,
-  MainLayout,
 } from "components";
 import { Project, Info, Work, MediaData } from "interfaces";
 import { useRouter } from "next/router";

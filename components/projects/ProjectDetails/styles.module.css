@@ -181,6 +181,10 @@
   @media (max-width: 600px) {
     padding: 5px;
   }
+
+  @media screen and (orientation: landscape) {
+    padding: 0;
+  }
 }
 
 .modelContent {
@@ -189,12 +193,18 @@
   justify-content: center;
   border-radius: 5px;
   padding: 0;
-  /* width: 100%; */
   width: fit-content;
   backdrop-filter: blur(3);
   img {
     max-width: 100%;
     border-radius: inherit;
+  }
+
+  @media screen and (orientation: landscape) {
+    height: 95%;
+    img {
+      height: 100%;
+    }
   }
 }
 
