@@ -1,10 +1,11 @@
 import styles from "./styles.module.css";
 import { SkillsList } from "./SkillsList";
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import { sectionItemVariant, sectionVariant } from "../../layout/variants";
+import { sectionItemVariant, sectionVariant } from "components/layout/variants";
+import { About as AboutInterface } from "interfaces";
 
 interface Props {
-  data: any;
+  data: AboutInterface;
 }
 
 export const About = ({ data }: Props) => {
@@ -29,12 +30,7 @@ export const About = ({ data }: Props) => {
               variants={sectionItemVariant}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={
-                  "https://res.cloudinary.com/aggutierrez/image/upload/c_crop,h_900,w_900,x_40,y_145,e_colorize:27,co_rgb:00adb5/f_webp/v1664817205/Portfolio/avatar-image.jpg"
-                }
-                alt="Agustin Gutierrez"
-              />
+              <img src={data.avatar_img} alt="Agustin Gutierrez" />
               <div className={styles.block}></div>
             </m.div>
           </div>

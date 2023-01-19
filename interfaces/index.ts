@@ -47,6 +47,7 @@ export interface Info {
 }
 
 export interface About {
+  avatar_img: string;
   title: string;
   description1: string;
   description2: string;
