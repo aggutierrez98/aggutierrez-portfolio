@@ -1,3 +1,9 @@
+## [1.7.3](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.7.2...v1.7.3) (2023-01-19)
+
+### Bug Fixes
+
+- Fixed bug in typing ([d5b358d](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/d5b358d1e44826fc851745abbbef7377fef09a06))
+
 ## [1.7.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.7.1...v1.7.2) (2022-10-25)
 
 ### Bug Fixes
