@@ -1,3 +1,9 @@
+# [1.9.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.8.1...v1.9.0) (2023-01-19)
+
+### Features
+
+- Added image linking when opening modal ([e610a29](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/e610a29cb14e93430f7cc4ce4bb1f2871a966783))
+
 ## [1.8.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.8.0...v1.8.1) (2023-01-19)
 
 ### Bug Fixes
