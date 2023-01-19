@@ -1,3 +1,9 @@
+## [1.8.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.8.0...v1.8.1) (2023-01-19)
+
+### Bug Fixes
+
+- Fixed about image loading now load from cloud data ([bb419aa](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/bb419aafbe61ff6cad061e47c67bc82f3f65cbf4))
+
 # [1.8.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.7.4...v1.8.0) (2023-01-19)
 
 ### Features
