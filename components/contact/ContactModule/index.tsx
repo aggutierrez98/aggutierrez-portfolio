@@ -8,7 +8,7 @@ import {
 import { MdLocationPin, MdMail, MdPhoneAndroid } from "react-icons/md";
 import Image from "next/image";
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import { sectionVariant, sectionItemVariant } from "../../layout/variants";
+import { sectionVariant, sectionItemVariant } from "components/layout/variants";
 
 export const ContactModule = () => {
   const {

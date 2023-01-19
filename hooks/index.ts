@@ -5,3 +5,4 @@ export * from "./useOutsideAndEscapeKeyAlerter";
 export * from "./usePreserveScroll";
 export * from "./useScrollingUp";
 export * from "./useImageCarrousel";
+export * from "./useImageModal";

@@ -10,7 +10,8 @@ interface ModalProps {
   visible: boolean;
   onClose: () => void;
   overlayClassName?: string;
-  contentClassName?: any;
+  contentClassName?: string;
+  buttonClassName?: string;
 }
 
 const ModalBase = ({
@@ -18,6 +19,7 @@ const ModalBase = ({
   onClose,
   overlayClassName,
   contentClassName,
+  buttonClassName,
 }: ModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -39,7 +41,11 @@ const ModalBase = ({
         className={styles.modalContent + " " + (contentClassName || "")}
         ref={modalRef}
       >
-        <button className={styles.button} onClick={onClose} ref={buttonRef}>
+        <button
+          className={styles.button + " " + (buttonClassName || "")}
+          onClick={onClose}
+          ref={buttonRef}
+        >
           <MdOutlineClose />
         </button>
         {children}
@@ -54,6 +60,7 @@ export const CustomModal = ({
   visible,
   overlayClassName,
   contentClassName,
+  buttonClassName,
 }: ModalProps) => {
   if (typeof document === "undefined") return <></>;
 
@@ -65,6 +72,7 @@ export const CustomModal = ({
           visible={visible}
           overlayClassName={overlayClassName}
           contentClassName={contentClassName}
+          buttonClassName={buttonClassName}
         >
           {children}
         </ModalBase>

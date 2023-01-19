@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { Project, Skill } from "interfaces";
 import styles from "./styles.module.css";
-import { TechsList, LinksList } from "components";
+import { TechsList, LinksList, CustomModal } from "components";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import { titleVariants } from "./variants";
 import { boxVariants } from "../ProjectCard/variants";
-import { sectionVariant, sectionItemVariant } from "../../layout/variants";
+import { sectionVariant, sectionItemVariant } from "components/layout/variants";
 import parse from "html-react-parser";
 import { ImagesCarrousel } from "./ImagesCarrousel";
+import { useImageModal } from "hooks";
 
 interface Props {
   projectData: Project;
@@ -25,6 +26,8 @@ export const ProjectDetails = ({ projectData }: Props) => {
     images_data,
     techs,
   } = projectData;
+
+  const { modalOpen, imageToShow, openModal, closeModal } = useImageModal();
 
   return (
     <LazyMotion features={domAnimation}>
@@ -44,6 +47,10 @@ export const ProjectDetails = ({ projectData }: Props) => {
           >
             <div className={styles.imageBox}>
               <Image
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openModal(image_url);
+                }}
                 priority
                 src={image_url}
                 layout="fill"
@@ -55,7 +62,9 @@ export const ProjectDetails = ({ projectData }: Props) => {
           </m.div>
         )}
 
-        {images_data && <ImagesCarrousel data={images_data} />}
+        {images_data && (
+          <ImagesCarrousel data={images_data} actionCallback={openModal} />
+        )}
 
         <div className={styles.separator} />
 
@@ -102,6 +111,21 @@ export const ProjectDetails = ({ projectData }: Props) => {
           server_url={server_url}
         />
       </m.div>
+
+      <CustomModal
+        onClose={closeModal}
+        visible={modalOpen}
+        overlayClassName={styles.modalOverlay}
+        buttonClassName={styles.modalButton}
+        contentClassName={styles.modelContent}
+      >
+        {imageToShow && (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={imageToShow} alt={`${title}-example`} />
+          </>
+        )}
+      </CustomModal>
     </LazyMotion>
   );
 };

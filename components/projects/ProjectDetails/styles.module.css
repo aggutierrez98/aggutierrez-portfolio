@@ -27,6 +27,7 @@
 }
 
 .imageBox {
+  cursor: pointer;
   z-index: 1;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -117,6 +118,7 @@
 }
 
 .carrouselImageBox {
+  cursor: pointer;
   position: absolute;
   overflow: hidden;
   z-index: 1;
@@ -138,18 +140,65 @@
   border-radius: 30px;
   padding: 10px;
   background: var(--background-color);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  color: var(--accent-color);
+  box-shadow: 0px 8px 55px var(--background-color);
+  color: var(--primary-color);
   user-select: none;
-  font-size: 18px;
+  font-size: 20px;
   z-index: 2;
+  outline: none;
+  transition: all 0.2s ease;
+
+  &.next {
+    right: 10px;
+  }
+
+  &.prev {
+    left: 10px;
+    transform: scale(-1) rotate(180);
+  }
+
+  &:focus {
+    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 5px var(--primary-color),
+      0 0 10px var(--primary-color);
+  }
+
+  &:disabled {
+    opacity: 0;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 15px;
+  }
 }
 
-.next {
-  right: 10px;
+.modalOverlay {
+  padding: 60px;
+  z-index: 5;
+
+  @media (max-width: 800px) {
+    padding: 30px;
+  }
+  @media (max-width: 600px) {
+    padding: 5px;
+  }
 }
 
-.prev {
-  left: 10px;
-  transform: scale(-1) rotate(180);
+.modelContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 0;
+  /* width: 100%; */
+  width: fit-content;
+  backdrop-filter: blur(3);
+  img {
+    max-width: 100%;
+    border-radius: inherit;
+  }
+}
+
+.modalButton {
+  position: fixed !important;
+  background-color: var(--background-color) !important;
 }
