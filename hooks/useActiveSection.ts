@@ -23,7 +23,7 @@ const useActiveSectionId = (href: string): [SectionId, boolean] => {
 
   let active = activeSectionId === href.split("#")[1];
 
-  if (asPath.includes("/projects/")) {
+  if (asPath.includes("/projects")) {
     if (href.split("#")[1] === "projects") {
       active = true;
     } else active = false;

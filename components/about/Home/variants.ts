@@ -16,15 +16,12 @@ export const homeVariants = {
 };
 
 export const itemVariant = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
   visible: {
     opacity: 1,
     y: 0,
-  },
-  hover: {
-    textShadow: `0 0 10px #eeeeee`,
-    transition: {
-      duration: 0.15,
-    },
   },
 };

@@ -41,14 +41,7 @@ export const Home = ({ data }: Props) => {
         >
           <m.h4 variants={itemVariant}>{memoizedData.subtitle}</m.h4>
           <div className={styles.titleContainer}>
-            <m.h1
-              tabIndex={0}
-              variants={itemVariant}
-              initial="hidden"
-              animate="visible"
-              whileHover="hover"
-              whileFocus="hover"
-            >
+            <m.h1 tabIndex={0} variants={itemVariant}>
               {memoizedData.title1}
             </m.h1>
             <m.h2 className={styles.text} variants={itemVariant}>
