@@ -182,7 +182,7 @@
     padding: 5px;
   }
 
-  @media only screen and (orientation: landscape) and (max-width: 600px) {
+  @media only screen and (orientation: landscape) and (max-width: 900px) {
     padding: 0;
   }
 }
@@ -194,13 +194,18 @@
   border-radius: 5px;
   padding: 0;
   width: fit-content;
+  height: fit-content;
   backdrop-filter: blur(3);
+  background-color: transparent;
+
   img {
     max-width: 100%;
     border-radius: inherit;
+    object-fit: contain;
+    object-position: center;
   }
 
-  @media only screen and (orientation: landscape) and (max-width: 800px) {
+  @media only screen and (orientation: landscape) and (max-width: 900px) {
     height: 95%;
     img {
       height: 100%;
