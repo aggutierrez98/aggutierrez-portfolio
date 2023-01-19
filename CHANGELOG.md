@@ -1,3 +1,9 @@
+## [1.7.4](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.7.3...v1.7.4) (2023-01-19)
+
+### Bug Fixes
+
+- Little refactor in components ([d2df914](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/d2df9148562a6d3ea1e12b63619139864e999032))
+
 ## [1.7.3](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.7.2...v1.7.3) (2023-01-19)
 
 ### Bug Fixes
