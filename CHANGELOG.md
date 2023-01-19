@@ -1,3 +1,9 @@
+# [1.8.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.7.4...v1.8.0) (2023-01-19)
+
+### Features
+
+- Image modal details added to project with some other changes ([1634e4d](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/1634e4d73e29d2c4befc96d6773dc8c218075430))
+
 ## [1.7.4](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.7.3...v1.7.4) (2023-01-19)
 
 ### Bug Fixes
