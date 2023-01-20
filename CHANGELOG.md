@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.1...v1.9.2) (2023-01-20)
+
+### Bug Fixes
+
+- Little fixes in navigation ([21a6d12](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/21a6d12de6e066e5fa89b9c14f2a1b2b2fa2f1f7))
+- Solved error in responsive ui ([e94a3a2](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/e94a3a26a58f6d31ad7b7c7dd76964267fb93719))
+
 ## [1.9.1](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.0...v1.9.1) (2023-01-19)
 
 ### Bug Fixes
