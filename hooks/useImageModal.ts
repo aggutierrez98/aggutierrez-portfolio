@@ -9,14 +9,11 @@ export const useImages = (images: string[]) => {
 
   const closeModal = () => {
     const path = asPath.split("/images")[0];
-    push(`${path}`);
+    push(path);
     setIsModalOpen(false);
   };
 
   const openModal = (image_index: number) => {
-    setIsModalOpen(true);
-    setImageToShow(images[image_index]);
-
     push(
       {
         pathname: `${pathname}`,
@@ -27,6 +24,8 @@ export const useImages = (images: string[]) => {
         pathname: `${asPath}/images/${image_index}`,
       }
     );
+    setIsModalOpen(true);
+    setImageToShow(images[image_index]);
   };
 
   useEffect(() => {
