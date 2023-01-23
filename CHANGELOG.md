@@ -1,3 +1,10 @@
+## [1.9.5](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.4...v1.9.5) (2023-01-23)
+
+### Bug Fixes
+
+- Icon component deleted ([f86a0b1](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/f86a0b18372650dbe49a4f71bb90a6cea311bef0))
+- Little change in icon loading ([f4c2a19](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/f4c2a1929c3d81fd6c0a0aee6e3c8ac23b8da945))
+
 ## [1.9.4](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.3...v1.9.4) (2023-01-23)
 
 ### Bug Fixes
