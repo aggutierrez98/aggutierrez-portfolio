@@ -87,10 +87,10 @@ interface Props {
 }
 
 export const IconComponent = ({ name }: Props) => {
-  let nameToSearch = name.split(".svg")[0].toLowerCase();
+  let nameToSearch = name.toLowerCase();
 
-  if (name.includes("-")) {
-    let parts = name.split(".svg")[0].toLowerCase().split("-");
+  if (nameToSearch.includes("-")) {
+    let parts = nameToSearch.split("-");
     parts[1] = parts[1].charAt(0).toUpperCase() + parts[1].slice(1);
     nameToSearch = parts.join("");
   }

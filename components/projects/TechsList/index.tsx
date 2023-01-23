@@ -20,7 +20,7 @@ export const TechsList = ({ techs, detailsPage = false }: Props) => {
         const Icon = dynamic(
           async () =>
             await import(
-              `${process.env.NEXT_PUBLIC_ASSETS_URL}/techs/${tech?.assetName}`
+              `${process.env.NEXT_PUBLIC_ASSETS_URL}/techs/${tech?.assetName}.svg`
             )
         );
         return (
