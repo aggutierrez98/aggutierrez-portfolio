@@ -190,10 +190,13 @@
   outline: 1px solid var(--foreground-color);
   cursor: pointer;
   transition: all 0.2s ease;
+  position: relative;
+
   p {
     font-weight: 200;
     margin-left: 10px;
     color: var(--accent-color);
+    text-shadow: 0 0 0 var(--accent-color);
   }
 
   svg {
@@ -212,6 +215,30 @@
     padding: 10px;
     p {
       font-size: 14px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 10px var(--box-color);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: inherit;
+  }
+
+  &:hover {
+    p {
+      color: var(--box-color);
+      text-shadow: 0 0 10px var(--box-color);
+    }
+
+    &::after {
+      opacity: 1;
     }
   }
 }
