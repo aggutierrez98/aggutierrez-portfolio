@@ -3,7 +3,7 @@ import { useOutsideAndEscapeKeyAlerter } from "hooks";
 import { useRef } from "react";
 import styles from "./styles.module.css";
 import { MdOutlineClose } from "react-icons/md";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, m } from "framer-motion";
 
 interface ModalProps {
   children: React.ReactNode;
@@ -26,7 +26,7 @@ const ModalBase = ({
   useOutsideAndEscapeKeyAlerter(modalRef, onClose, buttonRef);
 
   return (
-    <motion.div
+    <m.div
       className={styles.modalOverlay + " " + (overlayClassName || "")}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -50,7 +50,7 @@ const ModalBase = ({
         </button>
         {children}
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

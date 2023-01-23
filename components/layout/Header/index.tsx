@@ -24,18 +24,16 @@ export const Header = () => {
   const showClass = !isScrollingUp ? styles.hidden : "";
 
   return (
-    <LazyMotion features={domAnimation}>
-      <m.header
-        className={`${styles.header} ${showClass}`}
-        variants={variants}
-        animate="visible"
-        initial="hidden"
-      >
-        <div className={styles.headerContainer}>
-          <Logo className={styles.logo} />
-          <HeaderMenu />
-        </div>
-      </m.header>
-    </LazyMotion>
+    <m.header
+      className={`${styles.header} ${showClass}`}
+      variants={variants}
+      animate="visible"
+      initial="hidden"
+    >
+      <div className={styles.headerContainer}>
+        <Logo className={styles.logo} />
+        <HeaderMenu />
+      </div>
+    </m.header>
   );
 };

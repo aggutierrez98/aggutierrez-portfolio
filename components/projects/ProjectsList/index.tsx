@@ -37,51 +37,49 @@ export const ProjectsModule = ({ projects, isProjectsPage = false }: Props) => {
 
   return (
     <section id="projects" className={styles.projects}>
-      <LazyMotion features={domAnimation}>
-        <m.div
-          className={styles.projectsContainer}
-          variants={sectionVariant}
-          initial="hidden"
-          whileInView="visible"
-        >
-          <m.h2 tabIndex={0} variants={sectionItemVariant}>
-            {isProjectsPage ? "Projects Page:" : "My Projects:"}
-          </m.h2>
-          <m.div variants={sectionItemVariant}>
-            {projectsToRender.map((proyect, index) => (
-              <ProjectCard key={index} projectData={proyect} />
-            ))}
-          </m.div>
-
-          {!isProjectsPage ? (
-            <Link href={`/projects`} passHref scroll={false}>
-              <m.div className={styles.showMoreButton}>
-                <button
-                  onMouseUp={(e) =>
-                    e.button === 1 && window.open(`/projects`, "_blank")
-                  }
-                >
-                  SHOW MORE
-                </button>
-                ;
-              </m.div>
-            </Link>
-          ) : (
-            hasMoreProjects && (
-              <m.div className={styles.showMoreButton}>
-                <button
-                  onClick={() => {
-                    setPage((prevPage) => prevPage + 1);
-                  }}
-                >
-                  LOAD MORE
-                </button>
-                ;
-              </m.div>
-            )
-          )}
+      <m.div
+        className={styles.projectsContainer}
+        variants={sectionVariant}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <m.h2 tabIndex={0} variants={sectionItemVariant}>
+          {isProjectsPage ? "Projects Page:" : "My Projects:"}
+        </m.h2>
+        <m.div variants={sectionItemVariant}>
+          {projectsToRender.map((proyect, index) => (
+            <ProjectCard key={index} projectData={proyect} />
+          ))}
         </m.div>
-      </LazyMotion>
+
+        {!isProjectsPage ? (
+          <Link href={`/projects`} passHref scroll={false}>
+            <m.div className={styles.showMoreButton}>
+              <button
+                onMouseUp={(e) =>
+                  e.button === 1 && window.open(`/projects`, "_blank")
+                }
+              >
+                SHOW MORE
+              </button>
+              ;
+            </m.div>
+          </Link>
+        ) : (
+          hasMoreProjects && (
+            <m.div className={styles.showMoreButton}>
+              <button
+                onClick={() => {
+                  setPage((prevPage) => prevPage + 1);
+                }}
+              >
+                LOAD MORE
+              </button>
+              ;
+            </m.div>
+          )
+        )}
+      </m.div>
     </section>
   );
 };

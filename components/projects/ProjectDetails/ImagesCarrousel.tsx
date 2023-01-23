@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { AnimatePresence, motion, m } from "framer-motion";
 import styles from "./styles.module.css";
 import { sectionItemVariant } from "@c/layout/variants";
@@ -43,6 +43,7 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
                 layout="fill"
                 objectFit="contain"
                 alt={`${title}-example`}
+                placeholder="blur"
               />
             </div>
             <div className={styles.imageBackground}></div>
@@ -51,8 +52,10 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
           <m.div
             className={styles.carrouselContainer}
             variants={sectionItemVariant}
+            initial="hidden"
+            whileInView="visible"
           >
-            <motion.div className={styles.carrouselImageBox}>
+            <div className={styles.carrouselImageBox}>
               <AnimatePresence initial={false} custom={direction}>
                 <motion.img
                   onClick={(e) => {
@@ -80,7 +83,7 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
                   }}
                 />
               </AnimatePresence>
-            </motion.div>
+            </div>
             <div className={styles.imageBackground}></div>
             <button
               className={styles.prev}

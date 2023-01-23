@@ -32,27 +32,25 @@ export const Home = ({ data }: Props) => {
 
   return (
     <section id="home" className={styles.home}>
-      <LazyMotion features={domAnimation}>
-        <m.div
-          className={styles.aboutContainer}
-          initial="hidden"
-          animate="visible"
-          variants={homeVariants}
-        >
-          <m.h4 variants={itemVariant}>{memoizedData.subtitle}</m.h4>
-          <div className={styles.titleContainer}>
-            <m.h1 tabIndex={0} variants={itemVariant}>
-              {memoizedData.title1}
-            </m.h1>
-            <m.h2 className={styles.text} variants={itemVariant}>
-              {memoizedData.title2}
-              <span id="typing" className={styles.typewrittingText}></span>
-            </m.h2>
-          </div>
-          <m.p variants={itemVariant}>{memoizedData.description}</m.p>
-          <ResumeButton />
-        </m.div>
-      </LazyMotion>
+      <m.div
+        className={styles.aboutContainer}
+        initial="hidden"
+        animate="visible"
+        variants={homeVariants}
+      >
+        <m.h4 variants={itemVariant}>{memoizedData.subtitle}</m.h4>
+        <div className={styles.titleContainer}>
+          <m.h1 tabIndex={0} variants={itemVariant}>
+            {memoizedData.title1}
+          </m.h1>
+          <m.h2 className={styles.text} variants={itemVariant}>
+            {memoizedData.title2}
+            <span id="typing" className={styles.typewrittingText}></span>
+          </m.h2>
+        </div>
+        <m.p variants={itemVariant}>{memoizedData.description}</m.p>
+        <ResumeButton />
+      </m.div>
     </section>
   );
 };

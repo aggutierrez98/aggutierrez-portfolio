@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, m } from "framer-motion";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
@@ -41,7 +41,7 @@ export const ScrollToTopButtton = () => {
         <div>
           {inHomePage &&
             (showButton ? (
-              <motion.button
+              <m.button
                 id="side-button-up"
                 aria-label="Scroll to top"
                 initial={{ opacity: 0, scaleX: 0 }}
@@ -64,9 +64,9 @@ export const ScrollToTopButtton = () => {
                 }}
               >
                 <FaChevronUp />
-              </motion.button>
+              </m.button>
             ) : (
-              <motion.button
+              <m.button
                 id="side-button-down"
                 aria-label="Scroll to bottom"
                 initial={{ opacity: 0, scaleX: 0 }}
@@ -89,7 +89,7 @@ export const ScrollToTopButtton = () => {
                 }}
               >
                 <FaChevronDown />
-              </motion.button>
+              </m.button>
             ))}
         </div>
       </AnimatePresence>

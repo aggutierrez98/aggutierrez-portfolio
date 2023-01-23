@@ -4,7 +4,13 @@ import { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { MainLayout } from "components";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  domAnimation,
+  LazyMotion,
+  motion,
+  m,
+} from "framer-motion";
 import { ToastProvider } from "context/ToastContext";
 import { usePreserveScroll } from "hooks";
 import Head from "next/head";
@@ -30,26 +36,28 @@ export default function MyApp({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <AnimatePresence exitBeforeEnter>
-        <motion.div
-          key={router.pathname}
-          animate="enter"
-          exit="exit"
-          initial="hidden"
-          transition={{ type: "spring", duration: 0.3 }}
-          variants={{
-            hidden: { opacity: 0 },
-            enter: { opacity: 1 },
-            exit: { opacity: 0 },
-          }}
-        >
-          <ToastProvider>
-            <MainLayout {...pageProps}>
-              <Component {...pageProps} />
-            </MainLayout>
-          </ToastProvider>
-        </motion.div>
-      </AnimatePresence>
+      <LazyMotion features={domAnimation} strict>
+        <AnimatePresence exitBeforeEnter>
+          <m.div
+            key={router.pathname}
+            animate="enter"
+            exit="exit"
+            initial="hidden"
+            transition={{ type: "spring", duration: 0.3 }}
+            variants={{
+              hidden: { opacity: 0 },
+              enter: { opacity: 1 },
+              exit: { opacity: 0 },
+            }}
+          >
+            <ToastProvider>
+              <MainLayout {...pageProps}>
+                <Component {...pageProps} />
+              </MainLayout>
+            </ToastProvider>
+          </m.div>
+        </AnimatePresence>
+      </LazyMotion>
     </>
   );
 }

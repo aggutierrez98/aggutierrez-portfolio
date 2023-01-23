@@ -14,67 +14,63 @@ export const SocialMediaLinks = ({ socialMediaData }: Props) => {
   return (
     <div id="social-media-side" className={styles.container}>
       {socialMediaData && (
-        <LazyMotion features={domAnimation}>
-          <m.ul
-            initial="hidden"
-            animate="visible"
-            variants={socialMediaVariants.container}
-          >
-            {Object.values(socialMediaData).map(
-              (mediaData: MediaData, index) => {
-                const Icon = dynamic(
-                  async () =>
-                    await import(
-                      `${process.env.NEXT_PUBLIC_ASSETS_URL}/social-media/${mediaData.icon}.svg`
-                    )
-                );
+        <m.ul
+          initial="hidden"
+          animate="visible"
+          variants={socialMediaVariants.container}
+        >
+          {Object.values(socialMediaData).map((mediaData: MediaData, index) => {
+            const Icon = dynamic(
+              async () =>
+                await import(
+                  `${process.env.NEXT_PUBLIC_ASSETS_URL}/social-media/${mediaData.icon}.svg`
+                )
+            );
 
-                return (
-                  <li key={index}>
-                    {mediaData.link ? (
-                      <m.a
-                        variants={socialMediaVariants.item}
-                        className={styles.logo}
-                        aria-label={mediaData.title}
-                        href={mediaData.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        // data-title={mediaData.title}
-                      >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <Icon />
-                      </m.a>
-                    ) : (
-                      <m.button
-                        variants={socialMediaVariants.item}
-                        className={styles.logo}
-                        aria-label={mediaData.title}
-                        onClick={() => {
-                          if (mediaData.action === "copyuser") {
-                            copyToClipboard("aggutierrez#1860");
-                          } else if (mediaData.action === "sendemail") {
-                            window.open(
-                              "mailto:agustinguti123@gmail.com?subject=Subject&body=Hi!%20I%20want%20to%20get%20in%20touch!"
-                            );
-                          }
-                        }}
-                      >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <Icon />
-                      </m.button>
-                    )}
-                  </li>
-                );
-              }
-            )}
-          </m.ul>
-        </LazyMotion>
+            return (
+              <li key={index}>
+                {mediaData.link ? (
+                  <m.a
+                    variants={socialMediaVariants.item}
+                    className={styles.logo}
+                    aria-label={mediaData.title}
+                    href={mediaData.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    // data-title={mediaData.title}
+                  >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <Icon />
+                  </m.a>
+                ) : (
+                  <m.button
+                    variants={socialMediaVariants.item}
+                    className={styles.logo}
+                    aria-label={mediaData.title}
+                    onClick={() => {
+                      if (mediaData.action === "copyuser") {
+                        copyToClipboard("aggutierrez#1860");
+                      } else if (mediaData.action === "sendemail") {
+                        window.open(
+                          "mailto:agustinguti123@gmail.com?subject=Subject&body=Hi!%20I%20want%20to%20get%20in%20touch!"
+                        );
+                      }
+                    }}
+                  >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <Icon />
+                  </m.button>
+                )}
+              </li>
+            );
+          })}
+        </m.ul>
       )}
     </div>
   );

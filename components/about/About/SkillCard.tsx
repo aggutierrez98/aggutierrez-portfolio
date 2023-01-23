@@ -32,9 +32,9 @@ export const SkillCard = ({ skill }: Props) => {
         href={skill?.url}
       >
         <Icon />
-        <motion.p custom={skill?.color} variants={pMotion}>
+        <m.p custom={skill?.color} variants={pMotion}>
           {skill.name}
-        </motion.p>
+        </m.p>
       </m.a>
     </li>
   );

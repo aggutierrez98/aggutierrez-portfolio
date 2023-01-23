@@ -1,5 +1,5 @@
 import { memo, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, m } from "framer-motion";
 import styles from "./styles.module.css";
 import { Toast as ToastType } from "context/ToastContext";
 import { IoIosClose } from "react-icons/io";
@@ -29,7 +29,7 @@ const ToastBase = ({
   }, [deleteToast, deleteTime, autoDelete, toast.id]);
 
   return (
-    <motion.div
+    <m.div
       className={styles.toastContent + " " + (toastClassName || "")}
       id={`toast-${toast.id}`}
       initial={{ opacity: 0, x: +200 }}
@@ -49,7 +49,7 @@ const ToastBase = ({
         <h4>{toast.title}</h4>
         <p>{toast.description}</p>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 
