@@ -1,5 +1,3 @@
-// import { m } from "framer-motion";
-// import { tagMotion, pMotion } from "./variants";
 import styles from "./styles.module.css";
 import { Skill } from "interfaces";
 // import dynamic from "next/dynamic";
@@ -27,13 +25,6 @@ export const SkillCard = ({ skill }: Props) => {
     <li>
       <a
         id={`skill-${skill.name}`}
-        // // whileHover="hover"
-        // // whileFocus="focus"
-        // // // animate="rest"
-        // // initial="rest"
-        // // exit="hidden"
-        // // custom={skill?.color}
-        // // variants={tagMotion}
         className={styles.skillCard}
         target="_blank"
         rel="noopener noreferrer"

@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import { SkillsList } from "./SkillsList";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { m } from "framer-motion";
 import { sectionItemVariant, sectionVariant } from "components/layout/variants";
 import { About as AboutInterface } from "interfaces";
 

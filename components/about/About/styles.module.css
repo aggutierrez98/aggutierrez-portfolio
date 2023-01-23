@@ -193,10 +193,10 @@
   position: relative;
 
   p {
-    font-weight: 200;
+    font-weight: 300;
     margin-left: 10px;
     color: var(--accent-color);
-    text-shadow: 0 0 0 var(--accent-color);
+    transition: color 0.2s ease-in;
   }
 
   svg {
@@ -227,14 +227,14 @@
     bottom: 0;
     box-shadow: 0 0 10px var(--box-color);
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease-in;
     border-radius: inherit;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     p {
       color: var(--box-color);
-      text-shadow: 0 0 10px var(--box-color);
     }
 
     &::after {
