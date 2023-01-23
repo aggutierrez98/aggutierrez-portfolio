@@ -1,4 +1,4 @@
-import { motion, m } from "framer-motion";
+import { m } from "framer-motion";
 import { tagMotion, pMotion } from "./variants";
 import styles from "./styles.module.css";
 import { Skill } from "interfaces";

@@ -21,20 +21,20 @@ export const tagMotion = {
 
 export const pMotion = {
   hover: (color: string) => ({
-    textShadow: `0 0 20px ${color}`,
+    // textShadow: `0 0 20px ${color}`,
     color: color,
     transition: {
       duration: 0.1,
     },
   }),
   focus: (color: string) => ({
-    textShadow: `0 0 20px ${color}`,
+    // textShadow: `0 0 20px ${color}`,
     color: color,
     transition: {
       duration: 0.1,
     },
   }),
-  rest: (color: string) => ({
+  rest: () => ({
     textShadow: `0 0 0px #eeeeee`,
   }),
 };
