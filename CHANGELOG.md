@@ -1,3 +1,9 @@
+## [1.9.3](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.2...v1.9.3) (2023-01-23)
+
+### Bug Fixes
+
+- Added code improvments and fixed one minor bug ([7774619](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/77746190e7f8918ebe374c7c223998f6a6d58ee6))
+
 ## [1.9.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.1...v1.9.2) (2023-01-20)
 
 ### Bug Fixes
