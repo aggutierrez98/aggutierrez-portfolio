@@ -2,19 +2,20 @@ import { m } from "framer-motion";
 import { tagMotion, pMotion } from "./variants";
 import styles from "./styles.module.css";
 import { Skill } from "interfaces";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
+import { IconComponent } from "@c/layout/Icon";
 
 interface Props {
   skill: Skill;
 }
 
 export const SkillCard = ({ skill }: Props) => {
-  const Icon = dynamic(
-    async () =>
-      await import(
-        `${process.env.NEXT_PUBLIC_ASSETS_URL}/techs/${skill?.assetName}`
-      )
-  );
+  // const Icon = dynamic(
+  //   async () =>
+  //     await import(
+  //       `${process.env.NEXT_PUBLIC_ASSETS_URL}/techs/${skill?.assetName}`
+  //     )
+  // );
 
   return (
     <li>
@@ -31,7 +32,8 @@ export const SkillCard = ({ skill }: Props) => {
         rel="noopener noreferrer"
         href={skill?.url}
       >
-        <Icon />
+        {/* <Icon /> */}
+        <IconComponent name={skill.assetName} />
         <m.p custom={skill?.color} variants={pMotion}>
           {skill.name}
         </m.p>

@@ -1,7 +1,7 @@
 export const tagMotion = {
   hover: (color: string) => ({
     outlineColor: color,
-    boxShadow: `0 0 10px ${color}`,
+    // boxShadow: `0 0 10px ${color}`,
     transition: {
       duration: 0.2,
       type: "tween",
@@ -10,7 +10,7 @@ export const tagMotion = {
   }),
   focus: (color: string) => ({
     outlineColor: color,
-    boxShadow: `0 0 10px ${color}`,
+    // boxShadow: `0 0 10px ${color}`,
     transition: {
       duration: 0.2,
       type: "tween",
