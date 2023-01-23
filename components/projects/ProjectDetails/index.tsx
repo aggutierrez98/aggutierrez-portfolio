@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Project, Skill } from "interfaces";
 import styles from "./styles.module.css";
 import { TechsList, LinksList, CustomModal } from "components";
@@ -47,7 +46,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
   const { modalOpen, imageToShow, openModal, closeModal } = useImages(images);
 
   return (
-    <LazyMotion features={domAnimation}>
+    <>
       <m.div
         className={styles.detailsContainer}
         variants={sectionVariant}
@@ -124,6 +123,6 @@ export const ProjectDetails = ({ projectData }: Props) => {
           </>
         )}
       </CustomModal>
-    </LazyMotion>
+    </>
   );
 };
