@@ -1,3 +1,9 @@
+## [1.9.4](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.3...v1.9.4) (2023-01-23)
+
+### Bug Fixes
+
+- Deleted al unnecesary lazy motions and added domMax for carrousel ([59ecbf6](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/59ecbf69df513b9c759c054441d2c66b2ca4de66))
+
 ## [1.9.3](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.2...v1.9.3) (2023-01-23)
 
 ### Bug Fixes
