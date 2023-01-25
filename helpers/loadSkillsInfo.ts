@@ -17,17 +17,23 @@ export const loadProjectTechsData = (project: Project, skillsData: Skill[]) => {
 };
 
 export const loadSkillsInfo = (skills: Skills, skillsData: Skill[]) => {
-  const skillsArr = Object.values(skills);
-  let newSkillsArr = [];
+  const skillsArr: string[][] = Object.values(skills);
+  let newSkillsArr: Skills = {};
+  let index = 0;
 
   for (const skillSet of skillsArr) {
-    let newSkillSet = [];
+    let newSkillSet: Skill[] = [];
     for (const skillName of skillSet) {
       const skillData = skillsData.find((skill) => skill.name === skillName);
-      newSkillSet.push(skillData);
+      if (skillData) newSkillSet.push(skillData);
     }
-    newSkillsArr.push(newSkillSet);
+
+    if (index === 0) newSkillsArr.frontend = newSkillSet;
+    if (index === 1) newSkillsArr.backend = newSkillSet;
+    if (index === 2) newSkillsArr.database = newSkillSet;
+    if (index === 3) newSkillsArr.others = newSkillSet;
+    index++;
   }
 
-  return newSkillsArr;
+  return newSkillsArr as Skills;
 };

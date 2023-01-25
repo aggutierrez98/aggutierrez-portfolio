@@ -1,13 +1,13 @@
-import Image from "next/image";
-import styles from "./styles.module.css";
-import { domAnimation, LazyMotion, m } from "framer-motion";
-import { TechsList } from "components";
-import { LearnMoreButton } from "./LearnMoreButton";
-import { Project, Skill } from "interfaces";
-import { boxVariants } from "./variants";
-import Link from "next/link";
-import parse from "html-react-parser";
 import { memo } from "react";
+import parse from "html-react-parser";
+import Link from "next/link";
+import Image from "next/image";
+import { m } from "framer-motion";
+import { TechsList } from "components";
+import { Project, Skill } from "interfaces";
+import { LearnMoreButton } from "./LearnMoreButton";
+import styles from "./styles.module.css";
+import { boxVariants } from "./variants";
 
 interface Props {
   projectData: Project;

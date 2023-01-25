@@ -55,10 +55,14 @@ export interface About {
 }
 
 export interface Skills {
-  frontend: string[] | Skill[];
-  backend: string[] | Skill[];
-  database: string[] | Skill[];
-  others: string[] | Skill[];
+  frontend?: string[] | Skill[];
+  backend?: string[] | Skill[];
+  database?: string[] | Skill[];
+  others?: string[] | Skill[];
+}
+
+export interface SkillsDictionary {
+  [index: string]: Skill[];
 }
 
 export interface Home {

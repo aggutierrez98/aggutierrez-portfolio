@@ -1,10 +1,10 @@
 import { ProjectCard } from "components";
 import { Project } from "interfaces";
-import styles from "./styles.module.css";
-import { m } from "framer-motion";
-import { sectionVariant, sectionItemVariant } from "../../layout/variants";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { m } from "framer-motion";
+import { sectionVariant, sectionItemVariant } from "components/layout/variants";
+import styles from "./styles.module.css";
 
 interface Props {
   projects: Project[];
