@@ -1,3 +1,9 @@
+## [1.9.6](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.5...v1.9.6) (2023-01-25)
+
+### Bug Fixes
+
+- Improved imageCarrousel animations ([ec8d7da](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/ec8d7da1a9afdba63764118285443724daab29a2))
+
 ## [1.9.5](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.4...v1.9.5) (2023-01-23)
 
 ### Bug Fixes
