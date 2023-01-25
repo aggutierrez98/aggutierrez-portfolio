@@ -1,3 +1,9 @@
+## [1.9.7](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.6...v1.9.7) (2023-01-25)
+
+### Bug Fixes
+
+- Fixed error in loading icon ([ab0ad71](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/ab0ad710ebbf963773c83a6dae78cc1985857480))
+
 ## [1.9.6](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.5...v1.9.6) (2023-01-25)
 
 ### Bug Fixes
