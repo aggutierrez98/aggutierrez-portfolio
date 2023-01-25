@@ -5,7 +5,7 @@ import { sectionItemVariant } from "@c/layout/variants";
 import { sliderVariants } from "./variants";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import { useImageCarrousel } from "hooks";
-import { swipeConfidenceThreshold, swipePower } from "helpers";
+import { swipeConfidenceThreshold, swipePower, blurImageSrc } from "helpers";
 import Image from "next/image";
 
 interface Props {
@@ -44,6 +44,7 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
                 objectFit="contain"
                 alt={`${title}-example`}
                 placeholder="blur"
+                blurDataURL={blurImageSrc}
               />
             </div>
             <div className={styles.imageBackground}></div>
@@ -75,7 +76,7 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
                     drag="x"
                     onDragStart={toogleDragging}
                     dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={0.4}
+                    dragElastic={0.25}
                     onDragEnd={(_, { offset, velocity }) => {
                       const swipe = swipePower(offset.x, velocity.x);
                       if (swipe < -swipeConfidenceThreshold) setNextPage();

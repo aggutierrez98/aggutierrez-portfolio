@@ -1,7 +1,7 @@
 import { Project, Skill } from "interfaces";
 import styles from "./styles.module.css";
 import { TechsList, LinksList, CustomModal } from "components";
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import { titleVariants } from "./variants";
 import { boxVariants } from "../ProjectCard/variants";
 import { sectionVariant, sectionItemVariant } from "components/layout/variants";

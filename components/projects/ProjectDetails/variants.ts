@@ -17,7 +17,6 @@ export const sliderVariants = {
       x: direction > 0 ? 1000 : -1000,
       opacity: 0,
       transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
         opacity: { duration: 0.5 },
       },
     };
@@ -26,6 +25,14 @@ export const sliderVariants = {
     zIndex: 1,
     x: 0,
     opacity: 1,
+    transition: {
+      x: {
+        type: "spring",
+        bounce: 0.15,
+        duration: 0.5,
+      },
+      opacity: { duration: 0.5 },
+    },
   },
   exit: (direction: number) => {
     return {

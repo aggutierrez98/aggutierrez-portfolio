@@ -128,7 +128,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       projectData,
       socialMedia,
     },
-    revalidate: 3600,
+    revalidate: 300,
   };
 };
 

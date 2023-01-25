@@ -102,7 +102,7 @@ export const getStaticProps = async () => {
       socialMedia,
       info,
     },
-    revalidate: 3600,
+    revalidate: 300,
   };
 };
 
