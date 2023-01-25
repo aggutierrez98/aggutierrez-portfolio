@@ -76,7 +76,7 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
                     drag="x"
                     onDragStart={toogleDragging}
                     dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={0.25}
+                    dragElastic={0.55}
                     onDragEnd={(_, { offset, velocity }) => {
                       const swipe = swipePower(offset.x, velocity.x);
                       if (swipe < -swipeConfidenceThreshold) setNextPage();
