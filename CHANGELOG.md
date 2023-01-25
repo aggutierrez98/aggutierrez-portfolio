@@ -1,3 +1,9 @@
+## [1.9.8](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.7...v1.9.8) (2023-01-25)
+
+### Bug Fixes
+
+- Fixed image dragging elastic in imageCarrousel ([628e38f](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/628e38ff1a3b7d19325c95fb123739486f09e9a0))
+
 ## [1.9.7](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.6...v1.9.7) (2023-01-25)
 
 ### Bug Fixes
