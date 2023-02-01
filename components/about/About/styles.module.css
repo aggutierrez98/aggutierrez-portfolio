@@ -197,29 +197,22 @@
     font-weight: 300;
     margin-left: 10px;
     color: var(--accent-color);
-    transition: color 0.2s ease-in;
+    /* transition: color 0.2s ease-in; */
   }
 
   svg {
     width: 20px !important;
     height: 20px !important;
-    path {
+    /* path {
       transition: color 0.2s ease-in;
-    }
+    } */
   }
-
+  /* 
   &:hover {
     svg path {
       fill: var(--box-color);
     }
-  }
-
-  @media (max-width: 750px) {
-    padding: 10px;
-    p {
-      font-size: 14px;
-    }
-  }
+  } */
 
   &::after {
     content: "";
@@ -234,7 +227,7 @@
     border-radius: inherit;
   }
 
-  &:hover,
+  /* &:hover,
   &:focus {
     p {
       color: var(--box-color);
@@ -242,6 +235,13 @@
 
     &::after {
       opacity: 1;
+    }
+  } */
+
+  @media (max-width: 750px) {
+    padding: 10px;
+    p {
+      font-size: 14px;
     }
   }
 }
