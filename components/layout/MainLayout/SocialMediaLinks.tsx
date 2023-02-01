@@ -1,5 +1,5 @@
 import styles from "./socialMediaLinks.module.css";
-import { m, LazyMotion, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import { useCopyToClipboard } from "hooks";
 import { socialMediaVariants } from "./variants";
 import { MediaData } from "interfaces";
@@ -37,7 +37,6 @@ export const SocialMediaLinks = ({ socialMediaData }: Props) => {
                     href={mediaData.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    // data-title={mediaData.title}
                   >
                     <span></span>
                     <span></span>
@@ -50,15 +49,10 @@ export const SocialMediaLinks = ({ socialMediaData }: Props) => {
                     variants={socialMediaVariants.item}
                     className={styles.logo}
                     aria-label={mediaData.title}
-                    onClick={() => {
-                      if (mediaData.action === "copyuser") {
-                        copyToClipboard("aggutierrez#1860");
-                      } else if (mediaData.action === "sendemail") {
-                        window.open(
-                          "mailto:agustinguti123@gmail.com?subject=Subject&body=Hi!%20I%20want%20to%20get%20in%20touch!"
-                        );
-                      }
-                    }}
+                    onClick={() =>
+                      mediaData.action === "copyuser" &&
+                      copyToClipboard("aggutierrez#1860")
+                    }
                   >
                     <span></span>
                     <span></span>
