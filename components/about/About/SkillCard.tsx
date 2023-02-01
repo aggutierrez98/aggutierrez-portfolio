@@ -22,7 +22,7 @@ export const SkillCard = ({ skill }: Props) => {
         rel="noopener noreferrer"
         href={skill?.url}
       >
-        <IconComponent name={skill.assetName} />
+        {/* <IconComponent name={skill.assetName} /> */}
         <p data-text={skill.name}>{skill.name}</p>
       </a>
     </li>

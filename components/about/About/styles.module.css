@@ -197,7 +197,7 @@
     font-weight: 300;
     margin-left: 10px;
     color: var(--accent-color);
-    /* transition: color 0.2s ease-in; */
+    transition: color 0.2s ease-in;
   }
 
   svg {
@@ -227,7 +227,7 @@
     border-radius: inherit;
   }
 
-  /* &:hover,
+  &:hover,
   &:focus {
     p {
       color: var(--box-color);
@@ -236,7 +236,7 @@
     &::after {
       opacity: 1;
     }
-  } */
+  }
 
   @media (max-width: 750px) {
     padding: 10px;
