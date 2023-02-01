@@ -7,14 +7,10 @@ import { About, Skill, SkillsDictionary } from "interfaces";
 export const SkillsList = ({ data }: { data: About }) => {
   return (
     <div className={styles.skillsContainer}>
-      <h3>My skills</h3>
-      <div className={styles.skillsTable}>
+      <m.h3 variants={sectionItemVariant}>My skills</m.h3>
+      <m.div className={styles.skillsTable} variants={sectionItemVariant}>
         {Object.keys(data.skills).map((skillType) => (
-          <m.div
-            key={skillType}
-            className={styles.skillsSection}
-            variants={sectionItemVariant}
-          >
+          <div key={skillType} className={styles.skillsSection}>
             <h3>{skillType}</h3>
             <ul>
               {(data.skills as SkillsDictionary)[skillType].map(
@@ -23,9 +19,9 @@ export const SkillsList = ({ data }: { data: About }) => {
                 }
               )}
             </ul>
-          </m.div>
+          </div>
         ))}
-      </div>
+      </m.div>
     </div>
   );
 };
