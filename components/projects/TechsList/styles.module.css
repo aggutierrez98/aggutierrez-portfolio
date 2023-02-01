@@ -13,6 +13,7 @@
 
   @media (max-width: 500px) {
     margin: 0;
+    display: none;
   }
 }
 
@@ -55,18 +56,20 @@
       max-width: 80px;
     }
   }
-  @media (max-width: 500px) {
-    display: none;
-  }
 
   svg {
     width: 20px !important;
     height: 20px !important;
+    path {
+      transition: color 0.2s ease-in;
+    }
   }
 
-  &:not(:hover, :focus, .extendedTag) {
+  &:hover,
+  &:focus,
+  &.extendedTag {
     svg path {
-      fill: var(--accent-color);
+      fill: var(--box-color);
     }
   }
 }
