@@ -1,3 +1,9 @@
+## [1.9.10](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.9...v1.9.10) (2023-02-01)
+
+### Bug Fixes
+
+- CV/Resume updated and fixed ([0e29fd2](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/0e29fd2f6f043cc9e290b1f485b8d97fbd0a72a7))
+
 ## [1.9.9](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.8...v1.9.9) (2023-02-01)
 
 ### Bug Fixes
