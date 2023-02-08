@@ -203,16 +203,17 @@
   svg {
     width: 20px !important;
     height: 20px !important;
-    /* path {
-      transition: color 0.2s ease-in;
-    } */
+    path {
+      fill: var(--accent-color);
+      transition: fill 0.2s ease-in;
+    }
   }
-  /* 
+
   &:hover {
     svg path {
       fill: var(--box-color);
     }
-  } */
+  }
 
   &::after {
     content: "";
