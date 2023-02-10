@@ -1,3 +1,9 @@
+## [1.9.11](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.10...v1.9.11) (2023-02-10)
+
+### Bug Fixes
+
+- Style improves ([63999ff](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/63999ff68cce28a6e279791966756b008dd5a0b2))
+
 ## [1.9.10](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.9...v1.9.10) (2023-02-01)
 
 ### Bug Fixes
