@@ -66,7 +66,7 @@
     margin-top: 1.5rem;
     color: var(--secondary-color);
     font-weight: 400;
-    line-height: 1.8rem;
+    line-height: 1.2em;
     width: 100%;
     letter-spacing: 1px;
     @media (min-width: 450px) {
@@ -87,8 +87,9 @@
   margin-top: 4rem;
   display: flex;
   width: fit-content;
-  border-radius: 22.5px;
+  border-radius: 25rem;
   outline: none;
+
   button {
     border-radius: inherit;
     display: flex;
@@ -98,18 +99,25 @@
     position: relative;
     overflow: hidden;
     height: 3rem;
-    padding: 0 1.5rem;
+    padding: 1.8rem 1.5rem;
     border: none;
     outline: 1px solid var(--primary-color);
     background-size: 400%;
     cursor: pointer;
+
     @media (min-width: 1050px) {
-      height: 3.5rem;
-      padding: 0 1.8rem;
+      /* height: 3.5rem; */
+      padding: 2.3rem 1.8rem;
     }
+
+    @media (min-width: 1250px) {
+      padding: 2.7em 1.8rem;
+    }
+
     @media (min-width: 2000px) {
-      padding: 2rem 2rem;
+      padding: 2.8rem 2rem;
     }
+
     svg {
       color: var(--accent-color);
       margin-right: 10px;
@@ -127,8 +135,9 @@
       position: relative;
       z-index: 1;
       font-family: Raleway, sans-serif;
-      font-weight: bold;
-      font-size: clamp(1rem, 1.8vw, 4rem);
+      font-weight: 500;
+      /* text-transform: uppercase; */
+      font-size: clamp(1rem, 1.8vw, 2.2rem);
     }
 
     &::before {
@@ -140,7 +149,8 @@
       transform: scaleX(0);
       transform-origin: 0 50%;
       width: 100%;
-      height: inherit;
+      height: 100%;
+      /* height: inherit; */
       background: linear-gradient(
         120.3deg,
         var(--primary-color),

@@ -17,4 +17,16 @@
     5.8px 8.6px 15.6px hsl(var(--shadow-color) / 0.45);
   --error-icon-color: #e53935;
   --success-icon-color: #4caf50;
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #222831;
+      --background-light-color: #2b3338;
+      --foreground-color: #393e46;
+      --primary-color: #00adb5;
+      --secondary-color: #a5c9ca;
+      --accent-color: #eeeeee;
+      --overlay-color: rgba(82, 97, 107, 0.4);
+    }
+  }
 }
