@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./styles.module.css";
-import { LazyMotion, m, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import { sectionItemVariant, sectionVariant } from "../variants";
 
 export const NotFoundSign = () => {

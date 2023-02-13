@@ -41,7 +41,7 @@ const HomePage = () => {
 
       <NotFoundSign />
 
-      <LayeredWaves color="#222830" />
+      <LayeredWaves alt />
     </>
   );
 };

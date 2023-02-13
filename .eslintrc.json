@@ -44,5 +44,6 @@
   },
   "globals": {
     "React": "writable"
-  }
+  },
+  "ignorePatterns": ["public/**"]
 }

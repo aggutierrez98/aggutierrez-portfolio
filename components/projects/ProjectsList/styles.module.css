@@ -42,7 +42,7 @@
     &:hover {
       color: var(--foreground-light-color);
       background: var(--primary-color);
-      box-shadow: 0 0 10px 5px var(--secondary-color);
+      box-shadow: 0 0 10px 5px var(--primary-color);
       transition: all 0.2s ease-out;
     }
 

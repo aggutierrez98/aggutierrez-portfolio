@@ -4,7 +4,7 @@ export const SendButton = () => {
   return (
     <button className={styles.button} type="submit">
       <div>
-        <div className={styles["svg-wrapper"]}>
+        <div className={styles.iconContainer}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

@@ -30,7 +30,7 @@ export const LinksList = ({
         {github_repo_front_url && (
           <m.li variants={sectionItemVariant}>
             <LinkButton
-              text={"Github frontend repo"}
+              text={"Client repository"}
               link={github_repo_front_url}
             />
           </m.li>
@@ -38,7 +38,7 @@ export const LinksList = ({
         {github_repo_back_url && (
           <m.li variants={sectionItemVariant}>
             <LinkButton
-              text={"Github backend repo"}
+              text={"Server repository"}
               link={github_repo_back_url}
             />
           </m.li>

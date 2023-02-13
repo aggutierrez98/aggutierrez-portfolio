@@ -26,12 +26,16 @@
     background-color: transparent;
     color: var(--primary-color);
     transition: all 0.15s ease-in-out;
-    font-size: 15px;
+    font-size: clamp(1em, 1vw, 2em);
     &:hover,
     &:focus {
       background-color: var(--primary-color);
       color: var(--accent-color);
       box-shadow: 0 0 20px var(--primary-color);
+    }
+
+    @media (max-width: 850px) {
+      padding: 1rem 2rem;
     }
   }
 }

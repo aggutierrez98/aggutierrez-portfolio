@@ -27,7 +27,9 @@
     "stylelint": "stylelint **/*.css **/*.module.css --cache --fix",
     "stylelint-check": "stylelint-config-prettier-check",
     "prettier": "prettier . --write",
-    "prepare": "husky install"
+    "check-types": "tsc --noemit",
+    "prepare": "husky install",
+    "pre-commit-lint": "yarn check-types && yarn lint-staged"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
@@ -74,7 +76,7 @@
     "stylelint-config-css-modules": "^4.1.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended-scss": "^7.0.0",
-    "typescript": "4.6.3"
+    "typescript": "4.5.5"
   },
   "plugins": [
     "@semantic-release/commit-analyzer",
