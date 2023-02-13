@@ -1,3 +1,9 @@
+## [1.9.12](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.11...v1.9.12) (2023-02-13)
+
+### Bug Fixes
+
+- More fixes added to UI ([e39b693](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/e39b69383a7c0a02a2123a78a1d8de696acab4dc))
+
 ## [1.9.11](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.10...v1.9.11) (2023-02-10)
 
 ### Bug Fixes
