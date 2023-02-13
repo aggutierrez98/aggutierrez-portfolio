@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, m } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
@@ -44,16 +44,9 @@ export const ScrollToTopButtton = () => {
               <m.button
                 id="side-button-up"
                 aria-label="Scroll to top"
-                initial={{ opacity: 0, scaleX: 0 }}
-                exit={{ opacity: 0, scaleX: 0 }}
-                whileInView={{ opacity: 1, scaleX: 1 }}
-                whileHover={{
-                  scale: 1.15,
-                  // transition: {
-                  //   delay: 0.5,
-                  // },
-                }}
-                whileFocus={{ scale: 1.15 }}
+                initial={{ opacity: 0 }}
+                exit={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.25 }}
                 className={styles.goToTopButton}
                 onClick={() => {
@@ -69,16 +62,14 @@ export const ScrollToTopButtton = () => {
               <m.button
                 id="side-button-down"
                 aria-label="Scroll to bottom"
-                initial={{ opacity: 0, scaleX: 0 }}
-                exit={{ opacity: 0, scaleX: 0 }}
+                initial={{ opacity: 0 }}
+                exit={{ opacity: 0 }}
                 whileInView={{
                   opacity: 1,
-                  scaleX: 1,
                   transition: {
                     delay: 1,
                   },
                 }}
-                whileHover={{ scale: 1.15 }}
                 transition={{ duration: 0.25 }}
                 className={styles.goToTopButton}
                 onClick={() => {

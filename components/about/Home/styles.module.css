@@ -1,5 +1,5 @@
 .home {
-  background: rgba(43, 51, 56, 1);
+  background: var(--background-light-color);
   display: flex;
   flex-direction: column;
   align-items: center;

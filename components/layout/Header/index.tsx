@@ -2,7 +2,7 @@ import { HeaderMenu } from "./HeaderMenu";
 import styles from "./styles.module.css";
 import { useScrollingUp } from "hooks";
 import { Logo } from "components";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { m } from "framer-motion";
 
 const variants = {
   hidden: {
@@ -31,7 +31,7 @@ export const Header = () => {
       initial="hidden"
     >
       <div className={styles.headerContainer}>
-        <Logo className={styles.logo} />
+        <Logo />
         <HeaderMenu />
       </div>
     </m.header>

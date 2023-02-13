@@ -154,7 +154,7 @@
   position: absolute;
   border: none;
   font-family: inherit;
-  color: var(--accent-color);
+  color: var(--foreground-light-color);
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;

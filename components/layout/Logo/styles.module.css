@@ -1,0 +1,24 @@
+.logo {
+  transition: all ease-in-out 0.2s;
+  border-radius: 10px;
+  padding: 0;
+  outline: none;
+  &:hover {
+    box-shadow: 0 0 15px var(--primary-color);
+    cursor: pointer;
+    transition: 0.2 ease;
+  }
+
+  path:nth-child(1) {
+    stroke: var(--primary-color);
+  }
+  path:nth-child(2) {
+    stroke: var(--primary-color);
+  }
+  path:nth-child(3) {
+    fill: var(--primary-color);
+  }
+  path:nth-child(5) {
+    fill: var(--primary-color);
+  }
+}

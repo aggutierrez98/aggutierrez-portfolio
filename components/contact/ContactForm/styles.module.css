@@ -185,7 +185,7 @@
   svg {
     width: 20px;
     height: 20px;
-    color: var(--accent-color);
+    color: var(--foreground-light-color);
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
@@ -195,7 +195,7 @@
     font-family: Raleway, sans-serif;
     font-weight: 800;
     font-size: 15px;
-    color: var(--accent-color);
+    color: var(--foreground-light-color);
     display: block;
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;

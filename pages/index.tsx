@@ -61,23 +61,23 @@ const HomePage = ({ projects, experience, info }: Props) => {
 
       <Home data={homeData} />
 
-      <WaveSmooth number={1} />
+      <WaveSmooth alt={1} />
 
       <About data={aboutData} />
 
-      <WaveSmooth number={2} />
+      <WaveSmooth alt={2} />
 
       <WorkModule works={experience} />
 
-      <WaveSmooth number={1} />
+      <WaveSmooth alt={1} />
 
       <ProjectsModule projects={projects} />
 
-      <WaveSmooth number={2} />
+      <WaveSmooth alt={2} />
 
       <ContactModule />
 
-      <LayeredWaves color="#2B3338" />
+      <LayeredWaves />
     </>
   );
 };

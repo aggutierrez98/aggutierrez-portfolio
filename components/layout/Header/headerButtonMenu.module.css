@@ -10,7 +10,7 @@
   cursor: pointer;
   padding: 0;
   justify-content: space-between;
-  height: 1.5rem;
+  height: 1.6rem;
   width: 2.05rem;
   flex-direction: column;
   transition: 0.2s ease-in-out;
@@ -35,11 +35,13 @@
 .check[type]:checked ~ div.top {
   transform: rotate(45deg);
   margin-left: 1px;
+  width: 2.29rem;
 }
 
 .check[type]:checked ~ div.bottom {
   transform: rotate(-45deg);
   margin-bottom: -0.7px;
+  width: 2.25rem;
 }
 
 .check[type]:checked ~ div.middle {

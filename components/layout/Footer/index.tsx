@@ -20,7 +20,6 @@ export const Footer = ({ socialMediaData }: Props) => {
         className={styles.footerContainer}
         variants={sectionVariant}
       >
-        <Logo tabIndex={0} className={styles.logo} />
         <div className={styles.textContainer}>
           <div className={styles.socialMediaContainer}>
             <p>You can follow me on</p>

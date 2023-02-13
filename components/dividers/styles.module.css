@@ -1,0 +1,40 @@
+.divider1 {
+  color: var(--background-color);
+  fill: var(--background-light-color);
+}
+.divider2 {
+  color: var(--background-light-color);
+  fill: var(--background-color);
+}
+
+.layeredWaves {
+  rect {
+    fill: var(--background-light-color);
+  }
+
+  &.alt rect {
+    fill: var(--background-color);
+  }
+
+  path {
+    fill: var(--background-light-color);
+  }
+  path:nth-child(2) {
+    filter: brightness(0.95);
+  }
+  path:nth-child(3) {
+    filter: brightness(0.9);
+  }
+  path:nth-child(4) {
+    filter: brightness(0.86);
+  }
+  path:nth-child(5) {
+    filter: brightness(0.83);
+  }
+  path:nth-child(6) {
+    filter: brightness(0.8);
+  }
+  path:nth-child(7) {
+    fill: var(--background-color);
+  }
+}

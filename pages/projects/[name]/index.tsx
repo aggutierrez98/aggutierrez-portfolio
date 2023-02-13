@@ -86,7 +86,7 @@ const ProjectPage = ({ projectData }: Props) => {
       <main className="detailsBody">
         <ProjectDetails projectData={projectData} />
 
-        <LayeredWaves color="#222830" />
+        <LayeredWaves alt />
       </main>
     </>
   );

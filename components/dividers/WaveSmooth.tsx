@@ -1,12 +1,11 @@
-import { FC, FunctionComponent } from "react";
-
+import styles from "./styles.module.css";
 interface Props {
-  number: 1 | 2;
+  alt: 1 | 2;
 }
 
-export const WaveSmooth = ({ number }: Props) => (
+export const WaveSmooth = ({ alt }: Props) => (
   <svg
-    className={number === 1 ? "divider-1" : "divider-2"}
+    className={alt === 1 ? styles.divider1 : styles.divider2}
     id="visual"
     viewBox="0 0 4000 300"
     width="4000"

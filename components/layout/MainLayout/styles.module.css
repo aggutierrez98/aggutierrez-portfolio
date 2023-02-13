@@ -55,18 +55,35 @@
   /* bottom: 7%;
   right: 5%; */
   border: none;
-  border-radius: 22px;
+  border-radius: 25px;
   cursor: pointer;
   background-color: var(--primary-color);
-  padding: 15px;
+  padding: 20px;
   color: var(--background-color);
   outline: none;
-  svg {
-    width: 18px;
-    height: 18px;
-  }
   bottom: 35px;
   right: 35px;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 0 0 10px var(--primary-color);
+    transition: all 0.15s ease;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 1350px) {
+    padding: 18px;
+    border-radius: 22px;
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
   @media (max-width: 550px) {
     padding: 12px;
     border-radius: 18px;
@@ -74,11 +91,5 @@
       width: 15px;
       height: 15px;
     }
-  }
-
-  &:hover,
-  &:focus-visible {
-    box-shadow: 0 0 10px var(--primary-color);
-    transition: all 0.15s ease;
   }
 }
