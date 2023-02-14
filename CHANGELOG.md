@@ -1,3 +1,9 @@
+# [1.10.0](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.12...v1.10.0) (2023-02-14)
+
+### Features
+
+- Changes to about and home modules folder structure and added ui fixes and improvments in about module and other parts of main layout ([376483e](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/376483eea50448ea81a6619021365a7fc031dac0))
+
 ## [1.9.12](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.11...v1.9.12) (2023-02-13)
 
 ### Bug Fixes
