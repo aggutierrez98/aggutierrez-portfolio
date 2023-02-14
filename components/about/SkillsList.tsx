@@ -1,6 +1,6 @@
 import { m } from "framer-motion";
 import styles from "./styles.module.css";
-import { sectionItemVariant } from "../../layout/variants";
+import { sectionItemVariant } from "../layout/variants";
 import { SkillCard } from "./SkillCard";
 import { About, Skill, SkillsDictionary } from "interfaces";
 

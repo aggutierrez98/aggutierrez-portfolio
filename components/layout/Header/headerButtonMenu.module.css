@@ -16,6 +16,7 @@
   transition: 0.2s ease-in-out;
   display: flex;
   outline: none;
+  border-radius: 50px;
 
   div {
     width: 100%;
@@ -35,13 +36,13 @@
 .check[type]:checked ~ div.top {
   transform: rotate(45deg);
   margin-left: 1px;
-  width: 2.29rem;
+  width: 2.209rem;
 }
 
 .check[type]:checked ~ div.bottom {
   transform: rotate(-45deg);
   margin-bottom: -0.7px;
-  width: 2.25rem;
+  width: 2.1rem;
 }
 
 .check[type]:checked ~ div.middle {

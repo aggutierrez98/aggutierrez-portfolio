@@ -2,7 +2,7 @@ import { useEffect, useMemo } from "react";
 import styles from "./styles.module.css";
 import TypeIt from "typeit";
 import { ResumeButton } from "./ResumeButton";
-import { LazyMotion, m, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import { homeVariants, itemVariant } from "./variants";
 
 interface Props {

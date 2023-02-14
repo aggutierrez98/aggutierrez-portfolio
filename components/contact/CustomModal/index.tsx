@@ -33,8 +33,6 @@ const ModalBase = ({
       exit={{ opacity: 0 }}
       transition={{
         duration: 0.2,
-        // type: "spring",
-        // bounce: 0.15,
       }}
     >
       <div
