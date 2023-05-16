@@ -35,6 +35,13 @@ export interface Metadata {
 }
 
 export interface MediaData {
+  github: MediaDataEntry;
+  linkedin: MediaDataEntry;
+  mail: MediaDataEntry;
+  discord: MediaDataEntry;
+}
+
+export interface MediaDataEntry {
   link?: string;
   icon: string;
   title: string;
@@ -44,6 +51,7 @@ export interface MediaData {
 export interface Info {
   home: Home;
   about: About;
+  contact: Contact;
 }
 
 export interface About {
@@ -52,6 +60,24 @@ export interface About {
   description1: string;
   description2: string;
   skills: Skills;
+}
+
+export interface Contact {
+  title: string;
+  description1: string;
+  description2: string;
+  suboptions: {
+    phone: ContactCard;
+    email: ContactCard;
+  };
+  image: string;
+  alt: string;
+}
+
+export interface ContactCard {
+  title: string;
+  value: string;
+  link?: string;
 }
 
 export interface Skills {

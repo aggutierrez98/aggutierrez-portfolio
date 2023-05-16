@@ -4,13 +4,7 @@ import { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { MainLayout } from "components";
-import {
-  AnimatePresence,
-  domAnimation,
-  LazyMotion,
-  motion,
-  m,
-} from "framer-motion";
+import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { ToastProvider } from "context/ToastContext";
 import { usePreserveScroll } from "hooks";
 import Head from "next/head";

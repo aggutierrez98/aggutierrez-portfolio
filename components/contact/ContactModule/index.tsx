@@ -5,12 +5,17 @@ import {
   IoIosCheckmarkCircleOutline,
   IoMdInformationCircleOutline,
 } from "react-icons/io";
-import { MdLocationPin, MdMail, MdPhoneAndroid } from "react-icons/md";
+import { MdMail, MdPhoneAndroid } from "react-icons/md";
 import Image from "next/image";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { m } from "framer-motion";
 import { sectionVariant, sectionItemVariant } from "components/layout/variants";
+import { Contact as ContactInterface } from "interfaces";
 
-export const ContactModule = () => {
+interface Props {
+  data: ContactInterface;
+}
+
+export const ContactModule = ({ data }: Props) => {
   const {
     formData,
     success,
@@ -24,6 +29,8 @@ export const ContactModule = () => {
     closeModal,
   } = useContactForm();
 
+  const { title, description1, description2, suboptions, image, alt } = data;
+
   return (
     <section id="contact" className={styles.contact}>
       <m.div
@@ -33,43 +40,41 @@ export const ContactModule = () => {
         whileInView="visible"
       >
         <m.h2 tabIndex={0} variants={sectionItemVariant}>
-          Get in touch!
+          {title}
         </m.h2>
         <div className={styles.firstContainer}>
           <m.h3 className={styles.title} variants={sectionItemVariant}>
-            Contact me through an email or by any of my social media accounts
+            {description1}
           </m.h3>
           <div className={styles.infoContainer}>
             <m.div variants={sectionItemVariant}>
               <MdPhoneAndroid />
-              <h4>Call me on</h4>
-              <p>+5401167059660</p>
+              <h4>{suboptions.phone.title}</h4>
+              <p>{suboptions.phone.value}</p>
             </m.div>
             <m.div variants={sectionItemVariant}>
               <MdMail />
-              <h4>Email me at</h4>
-              <p>agustinguti123@gmail.com</p>
-            </m.div>
-            <m.div variants={sectionItemVariant}>
-              <MdLocationPin />
-              <h4>Find me at</h4>
-              <p>Buenos Aires, Argentina</p>
+              <h4>{suboptions.email.title}</h4>
+              <p>
+                <a
+                  href={suboptions.email.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {suboptions.email.value}
+                </a>
+              </p>
             </m.div>
           </div>
         </div>
         <div className={styles.contactContainer}>
           <m.div className={styles.textContainer} variants={sectionItemVariant}>
-            <h3>You can send me a message here</h3>
-            <div className={styles.imageContainer}>
-              <Image
-                src={
-                  "https://res.cloudinary.com/aggutierrez/image/upload/v1664806129/Portfolio/send-email-art-image.png"
-                }
-                width={265}
-                height={265}
-                alt="send-email"
-              />
-            </div>
+            <h3>{description2}</h3>
+            {image && (
+              <div className={styles.imageContainer}>
+                <Image src={data.image} width={265} height={265} alt={alt} />
+              </div>
+            )}
           </m.div>
           <ContactForm
             errorFields={errorFields}

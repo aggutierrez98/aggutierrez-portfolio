@@ -26,8 +26,8 @@ interface Props {
   socialMedia: MediaData;
 }
 
-const HomePage = ({ projects, experience, info }: Props) => {
-  const { home: homeData, about: aboutData } = info;
+const HomePage = ({ projects, experience, info, socialMedia }: Props) => {
+  const { home: homeData, about: aboutData, contact: contactData } = info;
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
 
@@ -75,7 +75,7 @@ const HomePage = ({ projects, experience, info }: Props) => {
 
       <WaveSmooth alt={2} />
 
-      <ContactModule />
+      <ContactModule data={contactData} />
 
       <LayeredWaves />
     </>

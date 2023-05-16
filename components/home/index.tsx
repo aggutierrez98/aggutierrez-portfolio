@@ -4,9 +4,10 @@ import TypeIt from "typeit";
 import { ResumeButton } from "./ResumeButton";
 import { m } from "framer-motion";
 import { homeVariants, itemVariant } from "./variants";
+import { Home as HomeInterface } from "interfaces";
 
 interface Props {
-  data: any;
+  data: HomeInterface;
 }
 
 export const Home = ({ data }: Props) => {

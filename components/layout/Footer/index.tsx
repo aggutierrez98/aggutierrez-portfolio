@@ -1,8 +1,7 @@
 import styles from "./styles.module.css";
 import { IoIosHeartEmpty } from "react-icons/io";
-import { Logo } from "components";
 import { SocialMediaLinks } from "../MainLayout/SocialMediaLinks";
-import { LazyMotion, m, domAnimation } from "framer-motion";
+import { m } from "framer-motion";
 import { sectionVariant, sectionItemVariant } from "../variants";
 import { MediaData } from "../../../interfaces/index";
 
