@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/fonts.css";
 import "../styles/theme.css";
 import { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
