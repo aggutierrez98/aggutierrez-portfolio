@@ -13,7 +13,7 @@ module.exports = withPWA({
   },
   reactStrictMode: true,
   experimental: {
-    outputStandalone: true,
+    output: "standalone",
   },
   webpack(config) {
     config.module.rules.push({
