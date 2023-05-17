@@ -9,7 +9,7 @@ const sections = [
   "contact",
 ] as const;
 
-type SectionId = typeof sections[number];
+type SectionId = (typeof sections)[number];
 
 const isSectionId = (value: string): value is SectionId => {
   const sectionIds = sections;

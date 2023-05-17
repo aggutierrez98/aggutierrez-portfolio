@@ -3337,7 +3337,7 @@ entities@^2.0.0:
   resolved "https://registry.yarnpkg.com/entities/-/entities-2.2.0.tgz#098dc90ebb83d8dffa089d55256b351d34c4da55"
   integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
 
-entities@^4.2.0, entities@^4.4.0:
+entities@^4.2.0, entities@^4.3.0, entities@^4.4.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/entities/-/entities-4.5.0.tgz#5d268ea5e7113ec74c4d033b79ea5a35a488fb48"
   integrity sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==
@@ -4001,14 +4001,7 @@ fraction.js@^4.2.0:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
   integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
 
-framer-motion-carousel@^2.0.1:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/framer-motion-carousel/-/framer-motion-carousel-2.0.3.tgz#f73fee56499c93ef75aebe528198fea014eaf9c1"
-  integrity sha512-x/sJsSUd1G/MF2vuLkJyxyiA0RbeE4ZvVb7Z95arF1wlA5efOHJBPDY7Ou91nyy2/nvr2nqSfxuFhTZ6dsWxXA==
-  dependencies:
-    framer-motion "^6.3.11"
-
-framer-motion@^6.3.11, framer-motion@^6.5.1:
+framer-motion@^6.5.1:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.5.1.tgz#802448a16a6eb764124bf36d8cbdfa6dd6b931a7"
   integrity sha512-o1BGqqposwi7cgDrtg0dNONhkmPsUFDaLcKXigzuTFC5x58mE8iyTazxSudFzmT6MEyJKfjjU8ItoMe3W+3fiw==
@@ -4413,21 +4406,21 @@ hosted-git-info@^5.0.0, hosted-git-info@^5.2.1:
   dependencies:
     lru-cache "^7.5.1"
 
-html-dom-parser@3.1.7:
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/html-dom-parser/-/html-dom-parser-3.1.7.tgz#89debae290d1117ad98a174264bb478dce3f3e74"
-  integrity sha512-cDgNF4YgF6J3H+d9mcldGL19p0GzVdS3iGuDNzYWQpU47q3+IRM85X3Xo07E+nntF4ek4s78A9V24EwxlPTjig==
+html-dom-parser@3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/html-dom-parser/-/html-dom-parser-3.1.3.tgz#ba87ca379f2817ca733523cac55c90de6bac43dd"
+  integrity sha512-fI0yyNlIeSboxU+jnrA4v8qj4+M8SI9/q6AKYdwCY2qki22UtKCDTxvagHniECu7sa5/o2zFRdLleA67035lsA==
   dependencies:
     domhandler "5.0.3"
-    htmlparser2 "8.0.2"
+    htmlparser2 "8.0.1"
 
-html-react-parser@^3.0.8:
-  version "3.0.16"
-  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-3.0.16.tgz#bdd535a7730683c6d0ec60e7493e5d7a5463c8ca"
-  integrity sha512-ysQZtRFPcg+McVb4B05oNWSnqM14zagpvTgGcI5e1/BvCl38YwzWzKibrbBmXeemg70olN1bAoeixo7o06G5Eg==
+html-react-parser@3.0.8:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-3.0.8.tgz#d0bb3cea8c1db7a687b51138dfd54f31a0c8e1aa"
+  integrity sha512-eIxPq/3Ja3+nZkx6X/BNpFy0lNuW+v3V4nzABzuL8KkRVdYY/2KyXO42epKonsEVVRSBxm2zsxWcOkT6fYL+iQ==
   dependencies:
     domhandler "5.0.3"
-    html-dom-parser "3.1.7"
+    html-dom-parser "3.1.3"
     react-property "2.0.0"
     style-to-js "1.1.3"
 
@@ -4436,15 +4429,15 @@ html-tags@^3.2.0:
   resolved "https://registry.yarnpkg.com/html-tags/-/html-tags-3.3.1.tgz#a04026a18c882e4bba8a01a3d39cfe465d40b5ce"
   integrity sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==
 
-htmlparser2@8.0.2:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-8.0.2.tgz#f002151705b383e62433b5cf466f5b716edaec21"
-  integrity sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==
+htmlparser2@8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-8.0.1.tgz#abaa985474fcefe269bc761a779b544d7196d010"
+  integrity sha512-4lVbmc1diZC7GUJQtRQ5yBAeUCL1exyMwmForWkRLnwyzWBFxN633SALPMGYaWZvKe9j1pRZJpauvmxENSp/EA==
   dependencies:
     domelementtype "^2.3.0"
-    domhandler "^5.0.3"
+    domhandler "^5.0.2"
     domutils "^3.0.1"
-    entities "^4.4.0"
+    entities "^4.3.0"
 
 http-cache-semantics@^4.1.0:
   version "4.1.1"
@@ -7913,10 +7906,10 @@ typed-array-length@^1.0.4:
     for-each "^0.3.3"
     is-typed-array "^1.1.9"
 
-typeit@^8.7.0:
-  version "8.7.1"
-  resolved "https://registry.yarnpkg.com/typeit/-/typeit-8.7.1.tgz#d45921def11d4b71a445d34e546a5cdb4d1f9014"
-  integrity sha512-Bx/O4NMz10NWh9FWYtVwV4XwGHF9UDJfpCZPJRtw2/oUcahFAStU8J0t19aroPfTV6s1UlS5ICoqilOqmEnh2Q==
+typeit@8.7.0:
+  version "8.7.0"
+  resolved "https://registry.yarnpkg.com/typeit/-/typeit-8.7.0.tgz#97f1e62c12543a7df9b9ca2c45cf6d27c050d777"
+  integrity sha512-MeraWJAquZr0EPo2yRYQnSdAxIuzgS5s4JEvzOdp63ZRRpETxtiHYvCJiK4aJA6FuScz3oUJkjmjQsLrx6VOMA==
 
 typescript@4.5.5:
   version "4.5.5"
