@@ -43,7 +43,7 @@ const InitProjectCard = ({
             <Link href={demo_url} passHref>
               <a href={demo_url}>
                 <Image
-                  src={image_url ? image_url : `${images_data?.folder}/1.jpg`}
+                  src={image_url ? image_url : `${images_data?.folder}/1.png`}
                   layout="fill"
                   objectFit="contain"
                   alt={`${title}-example`}

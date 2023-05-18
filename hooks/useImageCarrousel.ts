@@ -15,7 +15,7 @@ export const useImageCarrousel = (images: string[]) => {
     if (page !== 0) paginate(-1);
   };
 
-  const toogleDragging = () => {
+  const toggleDragging = () => {
     setIsDragging((prevDragging) => !prevDragging);
   };
 
@@ -23,7 +23,7 @@ export const useImageCarrousel = (images: string[]) => {
     page,
     direction,
     isDragging,
-    toogleDragging,
+    toggleDragging,
     setNextPage,
     setPrevPage,
   };

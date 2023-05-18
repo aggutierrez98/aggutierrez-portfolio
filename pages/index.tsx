@@ -31,7 +31,6 @@ const HomePage = ({ projects, experience, info, metadata }: Props) => {
   const { home: homeData, about: aboutData, contact: contactData } = info;
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
-
   const { title, description, image_source } = metadata[pathname];
   const url = `${origin}${pathname}`;
 

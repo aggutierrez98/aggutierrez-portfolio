@@ -19,7 +19,6 @@ interface Props {
 const ProjectsPage = ({ projects, metadata }: Props) => {
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
-
   const { title, description, image_source } = metadata[pathname];
   const url = `${origin}${pathname}`;
 

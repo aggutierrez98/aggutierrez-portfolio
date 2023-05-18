@@ -20,7 +20,7 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
     page,
     setNextPage,
     setPrevPage,
-    toogleDragging,
+    toggleDragging,
     isDragging,
   } = useImageCarrousel(images);
 
@@ -74,14 +74,14 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
                     exit="exit"
                     whileTap="tap"
                     drag="x"
-                    onDragStart={toogleDragging}
+                    onDragStart={toggleDragging}
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={0.55}
                     onDragEnd={(_, { offset, velocity }) => {
                       const swipe = swipePower(offset.x, velocity.x);
                       if (swipe < -swipeConfidenceThreshold) setNextPage();
                       else if (swipe > swipeConfidenceThreshold) setPrevPage();
-                      toogleDragging();
+                      toggleDragging();
                     }}
                   />
                 </AnimatePresence>

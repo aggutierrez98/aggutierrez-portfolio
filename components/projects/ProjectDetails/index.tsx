@@ -34,7 +34,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
       setImages(() => {
         return Array.from(
           { length: images_data.count },
-          (_, i) => `${images_data.folder}/${i + 1}.jpg`
+          (_, i) => `${images_data.folder}/${i + 1}.png`
         );
       });
     } else {
