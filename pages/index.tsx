@@ -32,7 +32,7 @@ const HomePage = ({ projects, experience, info, socialMedia }: Props) => {
   const { pathname } = useRouter();
 
   const seo = {
-    title: "Aggutierrez",
+    title: "Aggutierrez portfolio web page",
     description:
       "This is Agustin Gutierrez's portfolio page with projects and experience about him.",
     image_source:
