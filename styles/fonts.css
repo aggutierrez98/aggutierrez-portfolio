@@ -57,7 +57,7 @@
 
 @font-face {
   font-family: "Source Code Pro";
-  src: url("/fonts/SourceCodePro/SourceCodePro-Regular.ttf") format("woff2"),
+  src: url("/fonts/SourceCodePro/SourceCodePro-Regular.woff2") format("woff2"),
     url("/fonts/SourceCodePro/SourceCodePro-Regular.woff") format("woff"),
     url("/fonts/SourceCodePro/SourceCodePro-Regular.ttf") format("truetype");
   font-weight: 400;

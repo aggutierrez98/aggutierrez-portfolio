@@ -190,7 +190,7 @@ export default function Document() {
           rel="preload"
           href="/fonts/SourceCodePro/SourceCodePro-VariableFont_wght.woff"
           as="font"
-          type="font/woff2"
+          type="font/woff"
           crossOrigin="anonymous"
         />
         <link
@@ -211,7 +211,7 @@ export default function Document() {
           rel="preload"
           href="/fonts/SourceCodePro/SourceCodePro-Light.woff"
           as="font"
-          type="font/woff2"
+          type="font/woff"
           crossOrigin="anonymous"
         />
         <link
@@ -232,7 +232,7 @@ export default function Document() {
           rel="preload"
           href="/fonts/SourceCodePro/SourceCodePro-Regular.woff"
           as="font"
-          type="font/woff2"
+          type="font/woff"
           crossOrigin="anonymous"
         />
         <link

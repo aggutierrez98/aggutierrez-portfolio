@@ -70,11 +70,16 @@ export const ContactModule = ({ data }: Props) => {
         <div className={styles.contactContainer}>
           <m.div className={styles.textContainer} variants={sectionItemVariant}>
             <h3>{description2}</h3>
-            {image && (
-              <div className={styles.imageContainer}>
-                <Image src={data.image} width={265} height={265} alt={alt} />
-              </div>
-            )}
+            <div className={styles.imageContainer}>
+              <Image
+                src={data.image}
+                width={265}
+                height={265}
+                layout="fixed"
+                objectFit="contain"
+                alt={`${alt}-example`}
+              />
+            </div>
           </m.div>
           <ContactForm
             errorFields={errorFields}
