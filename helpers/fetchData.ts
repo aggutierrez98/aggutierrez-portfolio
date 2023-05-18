@@ -1,5 +1,5 @@
 import axios from "axios";
-import { MediaData, Project, Skill, Work, Info } from "interfaces";
+import { MediaData, Project, Skill, Work, Info, MetaData } from "interfaces";
 
 const dataInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_RAW_DATA_URL,
@@ -33,4 +33,9 @@ export const getProjectsData = async () => {
 export const getInfoData = async () => {
   const resp = await dataInstance.get<any>("info.json");
   return resp.data as Info;
+};
+
+export const getMetaData = async () => {
+  const resp = await dataInstance.get<any>("metadata.json");
+  return resp.data as MetaData;
 };

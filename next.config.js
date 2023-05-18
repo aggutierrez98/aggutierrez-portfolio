@@ -8,19 +8,17 @@ const withPWA = require("next-pwa")({
 });
 
 module.exports = withPWA({
+  poweredByHeader: false,
   images: {
     domains: ["res.cloudinary.com"],
   },
   reactStrictMode: true,
-  experimental: {
-    output: "standalone",
-  },
+  output: "standalone",
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"],
     });
-
     return config;
   },
 });

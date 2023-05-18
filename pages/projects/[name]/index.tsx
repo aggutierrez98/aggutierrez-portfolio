@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import { Project, MediaData } from "interfaces";
+import { Project, MediaData, MetaData } from "interfaces";
 import { ProjectDetails } from "components/projects/ProjectDetails";
 import { LayeredWaves } from "components";
 import { useRouter } from "next/router";
@@ -9,78 +9,50 @@ import {
   getSocialMediaData,
   loadProjectTechsData,
 } from "helpers";
-import { getSkillsData } from "helpers/fetchData";
+import { getMetaData, getSkillsData } from "helpers/fetchData";
 
 interface Props {
+  metadata: MetaData;
   projectData: Project;
   socialMedia: MediaData;
 }
 
-const ProjectPage = ({ projectData }: Props) => {
+const ProjectPage = ({ projectData, metadata }: Props) => {
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
 
-  const seo = {
-    title: "Aggutierrez | ",
-    description: "Agustin Gutierrez project: ",
-    image_source:
-      "https://res.cloudinary.com/aggutierrez/image/upload/v1665500194/Portfolio",
-    url: `${origin}${pathname}`,
-  };
+  const { title, description, image_source } = metadata[pathname];
+  const url = `${origin}${pathname}`;
+  const { title: prjTitle, image_url: prjImage } = projectData;
 
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{`${seo.title} ${projectData.title}`}</title>
-        <meta name="description" content="Agustin Gutierrez web page" />
-        <meta
-          name="description"
-          content={`${seo.description} ${projectData.title}`}
-        />
-        <meta
-          name="image"
-          content={
-            projectData.image_url
-              ? projectData.image_url
-              : `${seo.image_source}/banner.png`
-          }
-        />
-        <meta
-          property="og:title"
-          content={`${seo.title} ${projectData.title}`}
-        />
+        <title>{`${title} ${prjTitle}`}</title>
+        <meta name="description" content={`${description} ${prjTitle}`} />
+        <meta name="image" content={prjImage ? prjImage : image_source} />
+        <meta property="og:title" content={`${title} ${prjTitle}`} />
         <meta
           property="og:description"
-          content={`${seo.description} ${projectData.title}`}
+          content={`${description} ${prjTitle}`}
         />
         <meta
           property="og:image"
-          content={
-            projectData.image_url
-              ? projectData.image_url
-              : `${seo.image_source}/banner.png`
-          }
+          content={prjImage ? prjImage : image_source}
         />
-        <meta property="og:url" content={seo.url} />
+        <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content={`${seo.title} ${projectData.title}`}
-        />
+        <meta name="twitter:title" content={`${title} ${prjTitle}`} />
         <meta
           name="twitter:description"
-          content={`${seo.description} ${projectData.title}`}
+          content={`${description} ${prjTitle}`}
         />
         <meta
           name="twitter:image"
-          content={
-            projectData.image_url
-              ? projectData.image_url
-              : `${seo.image_source}/banner.png`
-          }
+          content={prjImage ? prjImage : image_source}
         />
       </Head>
       <main className="detailsBody">
@@ -109,6 +81,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const name = context.params?.name;
 
+  const metadata = await getMetaData();
   const socialMedia = await getSocialMediaData();
   const projects = await getProjectsData();
   const skillsData = await getSkillsData();
@@ -125,6 +98,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
+      metadata,
       projectData,
       socialMedia,
     },

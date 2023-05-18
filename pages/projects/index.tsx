@@ -1,44 +1,45 @@
 import Head from "next/head";
 import { ProjectsModule, LayeredWaves } from "components";
-import { Project, MediaData } from "interfaces";
+import { Project, MediaData, MetaData } from "interfaces";
 import { useRouter } from "next/router";
 import { getProjectsData, loadProjectsData } from "helpers";
-import { getSkillsData, getSocialMediaData } from "helpers/fetchData";
+import {
+  getMetaData,
+  getSkillsData,
+  getSocialMediaData,
+} from "helpers/fetchData";
+import { GetStaticProps } from "next";
 
 interface Props {
+  metadata: MetaData;
   projects: Project[];
   socialMedia: MediaData;
 }
 
-const ProjectsPage = ({ projects }: Props) => {
+const ProjectsPage = ({ projects, metadata }: Props) => {
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
 
-  const seo = {
-    title: "Aggutierrez",
-    description: "Agustin Gutierrez projects page",
-    image_source:
-      "https://res.cloudinary.com/aggutierrez/image/upload/v1665500194/Portfolio",
-    url: `${origin}${pathname}`,
-  };
+  const { title, description, image_source } = metadata[pathname];
+  const url = `${origin}${pathname}`;
 
   return (
     <>
       <Head>
-        <title>{`${seo.title}`}</title>
-        <meta name="description" content={`${seo.description}`} />
-        <meta name="image" content={`${seo.image_source}/banner.png`} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="image" content={image_source} />
 
-        <meta property="og:title" content={seo.title} />
-        <meta property="og:description" content={seo.description} />
-        <meta property="og:image" content={`${seo.image_source}/banner.png`} />
-        <meta property="og:url" content={seo.url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image_source} />
+        <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seo.title} />
-        <meta name="twitter:description" content={seo.description} />
-        <meta name="twitter:image" content={`${seo.image_source}/banner.png`} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image_source} />
       </Head>
 
       <ProjectsModule projects={projects} isProjectsPage={true} />
@@ -48,7 +49,8 @@ const ProjectsPage = ({ projects }: Props) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const metadata = await getMetaData();
   const socialMedia = await getSocialMediaData();
   const skillsData = await getSkillsData();
   let projects = await getProjectsData();
@@ -57,6 +59,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
+      metadata,
       projects,
       socialMedia,
     },

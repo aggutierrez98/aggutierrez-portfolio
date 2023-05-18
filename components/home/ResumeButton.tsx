@@ -7,8 +7,7 @@ export const ResumeButton = () => {
     <m.a
       href="/cv.pdf"
       title="Download CV"
-      target="_blank"
-      rel="nooperner noreferrer"
+      download="cv"
       className={styles.resumeButton}
       variants={itemVariant}
     >

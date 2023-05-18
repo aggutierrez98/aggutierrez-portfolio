@@ -1,42 +1,43 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { NotFoundSign, LayeredWaves } from "components";
+import { getMetaData } from "helpers";
+import { MetaData } from "interfaces";
+import { GetStaticProps } from "next";
 
-const HomePage = () => {
+interface Props {
+  metadata: MetaData;
+}
+
+const HomePage = ({ metadata }: Props) => {
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
 
-  const seo = {
-    title: "Aggutierrez",
-    description:
-      "This is Agustin Gutierrez's portfolio page with projects and experience about him.",
-    image_source:
-      "https://res.cloudinary.com/aggutierrez/image/upload/v1665500194/Portfolio",
-    url: `${origin}${pathname}`,
-  };
+  const { title, description, image_source } = metadata[pathname];
+  const url = `${origin}${pathname}`;
 
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{`Page Not Found | ${"Aggutierrez"}`}</title>
-        <meta name="description" content={`${seo.description}`} />
-        <meta name="image" content={`${seo.image_source}/banner.png`} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="image" content={image_source} />
 
-        <meta property="og:title" content={`Page Not Found | ${seo.title}`} />
-        <meta property="og:description" content={seo.description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta
           property="og:image:secure_url"
           itemProp="image"
-          content={`${seo.image_source}/banner.png`}
+          content={image_source}
         />
-        <meta property="og:url" content={seo.url} />
+        <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Page Not Found | ${seo.title}`} />
-        <meta name="twitter:description" content={seo.description} />
-        <meta name="twitter:image" content={`${seo.image_source}/banner.png`} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image_source} />
       </Head>
 
       <NotFoundSign />
@@ -46,9 +47,13 @@ const HomePage = () => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const metadata = await getMetaData();
+
   return {
-    props: {},
+    props: {
+      metadata,
+    },
   };
 };
 
