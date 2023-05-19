@@ -31,7 +31,7 @@ jobs:
           node-version: 16
           cache-dependency-path: yarn.lock
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install
 
   lint:
     needs: install
@@ -46,7 +46,7 @@ jobs:
           node-version: 16
           cache-dependency-path: yarn.lock
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
       - name: Lint
         run: yarn lint | yarn stylelint
 
