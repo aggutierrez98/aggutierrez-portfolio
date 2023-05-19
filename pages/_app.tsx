@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import "../styles/fonts.css";
 import "../styles/theme.css";
 import { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
@@ -9,6 +8,21 @@ import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { ToastProvider } from "context/ToastContext";
 import { usePreserveScroll } from "hooks";
 import Head from "next/head";
+// import { Source_Code_Pro, Raleway } from "@next/font/google";
+
+// const raleway = Raleway({
+//   weight: ["200", "300", "400", "500", "600"],
+//   style: ["normal"],
+//   subsets: ["latin"],
+//   display: "swap",
+// });
+
+// const sourceCodePro = Source_Code_Pro({
+//   weight: ["300", "400"],
+//   style: ["normal"],
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -27,10 +41,15 @@ export default function MyApp({
 
   return (
     <>
+      {/* <style jsx global>{`
+        html {
+          font-family: ${raleway.style.fontFamily};
+          font-family: ${sourceCodePro.style.fontFamily};
+        }
+      `}</style> */}
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-
       <LazyMotion features={domAnimation} strict>
         <AnimatePresence exitBeforeEnter>
           <m.div

@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { useRouter } from "next/router";
 
-export const ScrollToTopButtton = () => {
+export const ScrollToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
   const { route } = useRouter();
   const [inHomePage, setInHomePage] = useState(true);

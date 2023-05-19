@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import { CustomToastsContainer, Header, Footer } from "components";
-import { ScrollToTopButtton } from "./ScrollToTopButtton";
+import { ScrollToTopButton } from "./ScrollToTopButton";
 import { MediaData } from "../../../interfaces/index";
 interface Props {
   children: React.ReactElement;
@@ -20,7 +20,7 @@ export const MainLayout = ({ children, socialMedia }: Props) => {
       <div id="loader"></div>
       <div id="side-menu"></div>
       <CustomToastsContainer />
-      <ScrollToTopButtton />
+      <ScrollToTopButton />
     </main>
   );
 };
