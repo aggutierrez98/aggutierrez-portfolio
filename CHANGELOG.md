@@ -2,7 +2,7 @@
 
 ### Features
 
-- Changes to about and home modules folder structure and added ui fixes and improvments in about module and other parts of main layout ([376483e](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/376483eea50448ea81a6619021365a7fc031dac0))
+- Changes to about and home modules folder structure and added ui fixes and improvements in about module and other parts of main layout ([376483e](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/376483eea50448ea81a6619021365a7fc031dac0))
 
 ## [1.9.12](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.11...v1.9.12) (2023-02-13)
 
@@ -57,13 +57,13 @@
 
 ### Bug Fixes
 
-- Deleted al unnecesary lazy motions and added domMax for carrousel ([59ecbf6](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/59ecbf69df513b9c759c054441d2c66b2ca4de66))
+- Deleted al unnecessary lazy motions and added domMax for carrousel ([59ecbf6](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/59ecbf69df513b9c759c054441d2c66b2ca4de66))
 
 ## [1.9.3](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.2...v1.9.3) (2023-01-23)
 
 ### Bug Fixes
 
-- Added code improvments and fixed one minor bug ([7774619](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/77746190e7f8918ebe374c7c223998f6a6d58ee6))
+- Added code improvements and fixed one minor bug ([7774619](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/77746190e7f8918ebe374c7c223998f6a6d58ee6))
 
 ## [1.9.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.9.1...v1.9.2) (2023-01-20)
 
@@ -161,7 +161,7 @@
 
 ### Features
 
-- Visual effects and css improvments ([dc305a4](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/dc305a48cd6a56a8a79c73c0f711558e06d9424e))
+- Visual effects and css improvements ([dc305a4](https://github.com/aggutierrez98/aggutierrez-portfolio/commit/dc305a48cd6a56a8a79c73c0f711558e06d9424e))
 
 ## [1.5.2](https://github.com/aggutierrez98/aggutierrez-portfolio/compare/v1.5.1...v1.5.2) (2022-10-20)
 

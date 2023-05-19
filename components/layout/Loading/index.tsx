@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import styles from "./styles.module.css";
 
 interface Props {
-  loading?: boolean;
+  isLoading?: boolean;
 }
 
 const LoadingBase = () => {
@@ -20,11 +20,11 @@ const LoadingBase = () => {
   );
 };
 
-export const Loading = ({ loading = true }: Props) => {
+export const Loading = ({ isLoading = true }: Props) => {
   if (typeof document === "undefined") return <></>;
 
   return createPortal(
-    <AnimatePresence>{loading && <LoadingBase />}</AnimatePresence>,
+    <AnimatePresence>{isLoading && <LoadingBase />}</AnimatePresence>,
     document?.getElementById("modal")!
   );
 };

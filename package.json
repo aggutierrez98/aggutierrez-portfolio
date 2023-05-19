@@ -28,6 +28,7 @@
     "stylelint-check": "stylelint-config-prettier-check",
     "prettier": "prettier . --write",
     "check-types": "tsc --noemit",
+    "spell-check": "spellchecker --config .spellcheckerrc.json",
     "prepare": "husky install",
     "pre-commit-lint": "yarn check-types && yarn lint-staged"
   },
@@ -72,6 +73,7 @@
     "postcss-scss": "^4.0.5",
     "prettier": "^2.7.1",
     "semantic-release": "^19.0.5",
+    "spellchecker-cli": "^6.1.1",
     "stylelint": "^14.13.0",
     "stylelint-config-css-modules": "^4.1.0",
     "stylelint-config-prettier": "^9.0.3",

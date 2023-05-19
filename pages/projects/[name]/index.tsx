@@ -65,9 +65,9 @@ const ProjectPage = ({ projectData, metadata }: Props) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const projects = await getProjectsData();
-  const proyectNames = projects.map((proyect) => proyect.title);
+  const projectNames = projects.map((project) => project.title);
 
-  const paths = proyectNames.map((name: string) => ({
+  const paths = projectNames.map((name: string) => ({
     params: { name },
   }));
 

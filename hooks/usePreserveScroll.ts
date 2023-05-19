@@ -8,8 +8,8 @@ export const usePreserveScroll = () => {
 
   const onRouteChangeStart = useCallback(() => {
     const url = router.pathname;
-    const scollY = document.getElementById("main-layout")?.scrollTop;
-    scrollPositions.current[url] = scollY || 0;
+    const scrollY = document.getElementById("main-layout")?.scrollTop;
+    scrollPositions.current[url] = scrollY || 0;
   }, [router.pathname]);
 
   const onRouteChangeComplete = (url: any) => {

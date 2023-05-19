@@ -102,7 +102,7 @@ export const ContactModule = ({ data }: Props) => {
             </div>
           </CustomModal>
 
-          <Loading loading={loading} />
+          <Loading isLoading={loading} />
         </div>
       </m.div>
     </section>

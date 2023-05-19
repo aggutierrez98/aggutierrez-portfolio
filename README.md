@@ -25,7 +25,7 @@ Welcome to the source code of [aggutierrez.com](https://aggutierrez.com). Built 
 
 ## 🛠 Installation & Set Up
 
-1. Install project dependecies
+1. Install project dependencies
 
    ```sh
    yarn install

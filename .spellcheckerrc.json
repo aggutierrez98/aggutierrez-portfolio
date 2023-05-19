@@ -1,0 +1,7 @@
+{
+  "files": ["**/*.md", "**/*.ts", "**/*.tsx"],
+  "generateDictionary": "generated-dictionary.txt",
+  "dictionaries": ["dictionary-clean.txt"],
+  "ignore": ["[a-z]+((\\d)|([A-Z0-9][a-z0-9]+))+"],
+  "quiet": false
+}
