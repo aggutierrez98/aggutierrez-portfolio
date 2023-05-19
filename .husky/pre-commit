@@ -4,4 +4,5 @@
 changedFiles="$(git diff --name-only --cached)"
 
 yarn spell-check --files ${changedFiles} "!public/**" "!**/*.css" "!**/*.lock" "!**/*.json" "!node_modules/*" "!next/*"
-yarn pre-commit-lint  
+yarn check-types
+yarn lint-staged

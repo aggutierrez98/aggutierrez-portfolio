@@ -546,4 +546,9 @@ ubuntu-latest
 .vercel
 DS_Store
 vercel
+config
+dest
+webpack
+withPWA
+
 
