@@ -9,6 +9,7 @@ import parse from "html-react-parser";
 import { ImagesCarrousel } from "./ImagesCarrousel";
 import { useImages } from "hooks";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Props {
   projectData: Project;
@@ -116,12 +117,8 @@ export const ProjectDetails = ({ projectData }: Props) => {
         buttonClassName={styles.modalButton}
         contentClassName={styles.modelContent}
       >
-        {imageToShow && (
-          <>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={imageToShow} alt={`${title}-example`} />
-          </>
-        )}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {imageToShow && <img src={imageToShow} alt={`${title}-example`} />}
       </CustomModal>
     </>
   );

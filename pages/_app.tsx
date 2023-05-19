@@ -8,21 +8,23 @@ import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { ToastProvider } from "context/ToastContext";
 import { usePreserveScroll } from "hooks";
 import Head from "next/head";
-// import { Source_Code_Pro, Raleway } from "@next/font/google";
+import { Source_Code_Pro, Raleway } from "next/font/google";
 
-// const raleway = Raleway({
-//   weight: ["200", "300", "400", "500", "600"],
-//   style: ["normal"],
-//   subsets: ["latin"],
-//   display: "swap",
-// });
+const raleway = Raleway({
+  weight: ["200", "300", "400", "500", "600"],
+  style: ["normal"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--Raleway-font",
+});
 
-// const sourceCodePro = Source_Code_Pro({
-//   weight: ["300", "400"],
-//   style: ["normal"],
-//   subsets: ["latin"],
-//   display: "swap",
-// });
+const sourceCodePro = Source_Code_Pro({
+  weight: ["300", "400"],
+  style: ["normal"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--SourceCodePro-font",
+});
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -41,14 +43,14 @@ export default function MyApp({
 
   return (
     <>
-      {/* <style jsx global>{`
-        html {
-          font-family: ${raleway.style.fontFamily};
-          font-family: ${sourceCodePro.style.fontFamily};
-        }
-      `}</style> */}
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style jsx global>{`
+          html {
+            font-family: ${raleway.style.fontFamily};
+            font-family: ${sourceCodePro.style.fontFamily};
+          }
+        `}</style>
       </Head>
       <LazyMotion features={domAnimation} strict>
         <AnimatePresence exitBeforeEnter>
@@ -65,9 +67,11 @@ export default function MyApp({
             }}
           >
             <ToastProvider>
-              <MainLayout {...pageProps}>
-                <Component {...pageProps} />
-              </MainLayout>
+              <div className={`${raleway.variable} ${sourceCodePro.variable}`}>
+                <MainLayout {...pageProps}>
+                  <Component {...pageProps} />
+                </MainLayout>
+              </div>
             </ToastProvider>
           </m.div>
         </AnimatePresence>

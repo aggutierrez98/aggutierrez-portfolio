@@ -1,4 +1,4 @@
-import emailjs from "@emailjs/browser";
+import { sendForm } from "@emailjs/browser";
 import { RefObject } from "react";
 interface Params {
   name: string;
@@ -55,7 +55,7 @@ export const sendEmail = async (
   }
 
   try {
-    await emailjs.sendForm(
+    await sendForm(
       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
       formRef.current!,
@@ -63,7 +63,7 @@ export const sendEmail = async (
     );
 
     return {
-      title: "Mail sent succesfully!",
+      title: "Mail sent successfully!",
       messages: [
         "Mail was sent to Agustin Gutierrez, soon he will be in touch",
       ],

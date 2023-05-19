@@ -1,15 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
-  const fontData = {
-    source: "https://fonts.googleapis.com/css2",
-    fonts: [
-      "family=Raleway:wght@200;300;400;500;600",
-      "family=Source+Code+Pro:wght@300;400",
-    ],
-    display: "display=swap",
-  };
-
   return (
     <Html>
       <Head>
@@ -62,12 +53,6 @@ export default function Document() {
           name="keywords"
           content="Aggutierrez, Agustin, Gutierrez, developer, software, engineer, web, mobile, backend, react, node, javascript, typescript"
         ></meta>
-        <link
-          href={`${fontData.source}?${fontData.fonts.join("&")}&${
-            fontData.display
-          }`}
-          rel="stylesheet"
-        />
       </Head>
       <body>
         <Main />

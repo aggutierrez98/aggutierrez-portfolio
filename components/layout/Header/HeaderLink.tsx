@@ -27,7 +27,7 @@ export const HeaderLink = ({
       onClick={toogle}
     >
       <Link href={href} scroll={false}>
-        <a href={href}>{title}</a>
+        {title}
       </Link>
     </m.li>
   );

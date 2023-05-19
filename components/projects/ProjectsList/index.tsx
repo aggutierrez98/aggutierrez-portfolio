@@ -53,7 +53,7 @@ export const ProjectsModule = ({ projects, isProjectsPage = false }: Props) => {
         </m.div>
 
         {!isProjectsPage ? (
-          <Link href={`/projects`} passHref scroll={false}>
+          <Link href={`/projects`} passHref scroll={false} legacyBehavior>
             <m.div className={styles.showMoreButton}>
               <button
                 onMouseUp={(e) =>

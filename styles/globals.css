@@ -3,11 +3,9 @@ html {
 }
 
 body {
-  font-family: Raleway, sans-serif;
   margin: 0;
   box-sizing: border-box;
   background-color: var(--background-color);
-  --typewrittetext-length: 0;
 }
 
 h1,
@@ -48,7 +46,7 @@ h1 {
 }
 
 h2 {
-  font-family: Source Code Pro, sans-serif;
+  font-family: var(--SourceCodePro-font), sans-serif;
   font-weight: 500;
   width: fit-content;
   font-size: clamp(1.8rem, 3.2vw, 3rem);

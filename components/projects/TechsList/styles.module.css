@@ -25,7 +25,7 @@
 }
 
 .techTag {
-  border: 1px var(--foreground-color) solid;
+  border: 2px var(--foreground-color) solid;
   padding: 10px;
   display: flex;
   min-width: 20px;
@@ -40,7 +40,6 @@
     content: attr(data-text);
     opacity: 0;
     font-weight: bold;
-    font-family: Raleway, sans-serif;
     font-size: 80%;
     display: inline-block;
     max-width: 0;

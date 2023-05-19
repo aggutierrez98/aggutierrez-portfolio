@@ -83,7 +83,6 @@
   background-color: transparent;
   border: none;
   border-radius: 16px;
-  font-family: Raleway, sans-serif;
   font-weight: bold;
 
   &::-webkit-scrollbar {
@@ -193,7 +192,6 @@
   }
 
   span {
-    font-family: Raleway, sans-serif;
     font-weight: 800;
     font-size: 20px;
     color: var(--foreground-light-color);

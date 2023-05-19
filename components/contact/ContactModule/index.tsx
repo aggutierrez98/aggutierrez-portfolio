@@ -75,8 +75,6 @@ export const ContactModule = ({ data }: Props) => {
                 src={data.image}
                 width={265}
                 height={265}
-                layout="fixed"
-                objectFit="contain"
                 alt={`${alt}-example`}
               />
             </div>

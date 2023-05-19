@@ -1,4 +1,5 @@
 .main {
+  font-family: var(--Raleway-font), sans-serif;
   z-index: -1;
   overflow: auto;
   background-color: var(--background-color);

@@ -27,9 +27,7 @@ const InitProjectCard = ({
         <div className={styles.textContainer}>
           <h3 id="style-2" data-replace={title}>
             <Link href={demo_url} passHref>
-              <a href={demo_url}>
-                <span className={styles.title}>{title}</span>
-              </a>
+              <span className={styles.title}>{title}</span>
             </Link>
           </h3>
           <div className={styles.descriptionText}>{parse(description)}</div>
@@ -40,16 +38,13 @@ const InitProjectCard = ({
         </div>
         {(image_url || images_data) && (
           <div className={styles.imageContainer}>
-            <Link href={demo_url} passHref>
-              <a href={demo_url}>
-                <Image
-                  src={image_url ? image_url : `${images_data?.folder}/1.png`}
-                  layout="fill"
-                  objectFit="contain"
-                  alt={`${title}-example`}
-                />
-                {/* <img src={image_url} alt={`${title}-example`}></img> */}
-              </a>
+            <Link href={demo_url} passHref className={styles.imageLink}>
+              <Image
+                src={image_url ? image_url : `${images_data?.folder}/1.png`}
+                alt={`${title}-example`}
+                fill
+                sizes="(max-width: 768px) 80vw, (max-width: 1000px) 50vw"
+              />
             </Link>
           </div>
         )}

@@ -40,11 +40,11 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
                 }}
                 priority
                 src={images[0]}
-                layout="fill"
-                objectFit="contain"
                 alt={`${title}-example`}
                 placeholder="blur"
                 blurDataURL={blurImageSrc}
+                fill
+                sizes="100vw"
               />
             </div>
             <div className={styles.imageBackground}></div>

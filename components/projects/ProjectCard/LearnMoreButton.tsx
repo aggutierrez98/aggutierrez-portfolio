@@ -7,7 +7,13 @@ interface Props {
 
 export const LearnMoreButton = ({ title }: Props) => {
   return (
-    <Link key={title} href={`/projects/${title}`} passHref scroll={false}>
+    <Link
+      key={title}
+      href={`/projects/${title}`}
+      passHref
+      scroll={false}
+      legacyBehavior
+    >
       <button
         className={styles.button}
         onMouseUp={(e) =>

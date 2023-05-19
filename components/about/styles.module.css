@@ -152,7 +152,7 @@
   justify-content: center;
   h3 {
     font-weight: 500;
-    font-family: Source Code Pro, sans-serif;
+    font-family: var(--SourceCodePro-font), sans-serif;
     width: fit-content;
     margin: 0;
     margin-bottom: 25px;

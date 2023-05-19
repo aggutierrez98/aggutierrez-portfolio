@@ -11,7 +11,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {
 }
 
 export const Logo = ({ className, tabIndex, width, height }: Props) => (
-  <Link href="/" passHref scroll={false}>
+  <Link href="/" passHref scroll={false} legacyBehavior>
     <m.svg
       width={width ? width : 45}
       height={height ? height : 45}

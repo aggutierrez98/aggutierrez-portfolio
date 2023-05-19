@@ -13,7 +13,7 @@ export const NotFoundSign = () => {
     >
       <m.h2 variants={sectionItemVariant}>404</m.h2>
       <m.h3 variants={sectionItemVariant}>Page Not Found</m.h3>
-      <Link href="/" passHref>
+      <Link href="/" passHref legacyBehavior>
         <m.button variants={sectionItemVariant}>Back To Home</m.button>
       </Link>
     </m.div>
