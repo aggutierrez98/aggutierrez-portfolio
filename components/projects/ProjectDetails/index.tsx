@@ -1,5 +1,5 @@
-import { Project, Skill } from "interfaces";
 import styles from "./styles.module.css";
+import { Project, Skill } from "interfaces";
 import { TechsList, LinksList, CustomModal } from "components";
 import { m } from "framer-motion";
 import { titleVariants } from "./variants";
@@ -9,7 +9,6 @@ import parse from "html-react-parser";
 import { ImagesCarrousel } from "./ImagesCarrousel";
 import { useImages } from "hooks";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 interface Props {
   projectData: Project;

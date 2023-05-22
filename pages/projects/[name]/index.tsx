@@ -1,15 +1,15 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import { Project, MediaData, MetaData } from "interfaces";
-import { ProjectDetails } from "components/projects/ProjectDetails";
-import { LayeredWaves } from "components";
 import { useRouter } from "next/router";
+import { LayeredWaves, ProjectDetails } from "components";
+import { Project, MediaData, MetaData } from "interfaces";
 import {
   getProjectsData,
   getSocialMediaData,
   loadProjectTechsData,
+  getMetaData,
+  getSkillsData,
 } from "helpers";
-import { getMetaData, getSkillsData } from "helpers/fetchData";
 
 interface Props {
   metadata: MetaData;

@@ -78,7 +78,9 @@
       transition: 0.25s;
     }
 
-    a:hover {
+    a:hover,
+    :focus {
+      outline: none;
       --d: 51%;
     }
   }
@@ -116,7 +118,9 @@
     height: 100%;
     transition: all 0.25s;
   }
-  &:hover {
+  &:hover,
+  :focus {
+    outline: none;
     img {
       filter: blur(0);
     }

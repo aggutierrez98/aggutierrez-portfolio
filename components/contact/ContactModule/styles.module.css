@@ -135,18 +135,25 @@
   width: 100%;
   justify-content: space-evenly;
   div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
+
     h4 {
       margin: 5px 0;
       color: var(--primary-color);
       font-size: clamp(1rem, 2.5vw, 1.3rem);
     }
+
     svg {
       width: 30px;
       height: 30px;
       fill: var(--accent-color);
     }
-    p {
+
+    p,
+    a {
       color: var(--accent-color);
       font-weight: 600;
       font-size: clamp(0.85rem, 2vw, 1.1rem);
@@ -154,11 +161,9 @@
       outline: none;
       &:hover,
       &:focus {
+        outline: none;
         text-shadow: 0 0 10px var(--accent-color);
       }
     }
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 }

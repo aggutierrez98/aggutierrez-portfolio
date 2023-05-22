@@ -1,14 +1,15 @@
 import Head from "next/head";
+import { GetStaticProps } from "next";
 import { ProjectsModule, LayeredWaves } from "components";
 import { Project, MediaData, MetaData } from "interfaces";
 import { useRouter } from "next/router";
-import { getProjectsData, loadProjectsData } from "helpers";
 import {
+  getProjectsData,
+  loadProjectsData,
   getMetaData,
   getSkillsData,
   getSocialMediaData,
-} from "helpers/fetchData";
-import { GetStaticProps } from "next";
+} from "helpers";
 
 interface Props {
   metadata: MetaData;

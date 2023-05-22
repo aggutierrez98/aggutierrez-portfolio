@@ -47,8 +47,8 @@ export const ProjectsModule = ({ projects, isProjectsPage = false }: Props) => {
           {isProjectsPage ? "Projects Page:" : "My Projects:"}
         </m.h2>
         <m.div variants={sectionItemVariant}>
-          {projectsToRender.map((proyect, index) => (
-            <ProjectCard key={index} projectData={proyect} />
+          {projectsToRender.map((project, index) => (
+            <ProjectCard key={index} projectData={project} />
           ))}
         </m.div>
 

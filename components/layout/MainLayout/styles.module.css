@@ -76,11 +76,11 @@
   }
 
   @media (max-width: 1350px) {
-    padding: 18px;
+    padding: 14px;
     border-radius: 22px;
     svg {
-      width: 18px;
-      height: 18px;
+      width: 22px;
+      height: 22px;
     }
   }
 
@@ -90,8 +90,8 @@
     padding: 12px;
     border-radius: 18px;
     svg {
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
     }
   }
 }

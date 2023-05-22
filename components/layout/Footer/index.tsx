@@ -28,7 +28,7 @@ export const Footer = ({ socialMediaData }: Props) => {
             <m.p className={styles.legendText} variants={sectionItemVariant}>
               Made with{" "}
               <FavoriteBorderSVGIcon
-                tabIndex={0}
+                // tabIndex={0}
                 className={styles.legendIcon}
               />{" "}
               by Agustin Gutierrez

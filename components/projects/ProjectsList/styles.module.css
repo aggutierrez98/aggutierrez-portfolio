@@ -39,7 +39,9 @@
     box-shadow: 0 0 0 0 transparent;
     transition: all 0.2s ease-in;
 
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: none;
       color: var(--foreground-light-color);
       background: var(--primary-color);
       box-shadow: 0 0 10px 5px var(--primary-color);
@@ -60,7 +62,8 @@
       transform: skewX(-20deg);
     }
 
-    &:hover::before {
+    &:hover::before,
+    &:focus::before {
       -webkit-animation: sh02 0.5s 0s linear;
       -moz-animation: sh02 0.5s 0s linear;
       animation: sh02 0.5s 0s linear;

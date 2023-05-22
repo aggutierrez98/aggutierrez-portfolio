@@ -3,12 +3,12 @@ import "../styles/theme.css";
 import { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
-import { MainLayout } from "components";
-import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
-import { ToastProvider } from "context/ToastContext";
-import { usePreserveScroll } from "hooks";
 import Head from "next/head";
 import { Source_Code_Pro, Raleway } from "next/font/google";
+import { MainLayout } from "components";
+import { ToastProvider } from "context/ToastContext";
+import { usePreserveScroll } from "hooks";
+import { AnimatePresence, domMax, LazyMotion, m } from "framer-motion";
 
 const raleway = Raleway({
   weight: ["200", "300", "400", "500", "600"],
@@ -46,7 +46,7 @@ export default function MyApp({
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <LazyMotion features={domAnimation} strict>
+      <LazyMotion features={domMax} strict>
         <AnimatePresence exitBeforeEnter>
           <m.div
             key={router.pathname}

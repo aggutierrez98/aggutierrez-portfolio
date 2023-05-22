@@ -1,6 +1,7 @@
 import React from "react";
-import { AnimatePresence, m, LazyMotion, domMax } from "framer-motion";
+import Image from "next/image";
 import styles from "./styles.module.css";
+import { AnimatePresence, m } from "framer-motion";
 import { sectionItemVariant } from "@c/layout/variants";
 import { sliderVariants } from "./variants";
 import {
@@ -9,7 +10,6 @@ import {
 } from "@react-md/material-icons";
 import { useImageCarrousel } from "hooks";
 import { swipeConfidenceThreshold, swipePower, blurImageSrc } from "helpers";
-import Image from "next/image";
 
 interface Props {
   images: string[];
@@ -60,35 +60,33 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
             whileInView="visible"
           >
             <div className={styles.carrouselImageBox}>
-              <LazyMotion features={domMax}>
-                <AnimatePresence initial={false}>
-                  <m.img
-                    onClick={(e) => {
-                      if (isDragging) return;
-                      e.stopPropagation();
-                      if (actionCallback) actionCallback(page);
-                    }}
-                    key={page}
-                    src={images[page]}
-                    custom={direction}
-                    variants={sliderVariants}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    whileTap="tap"
-                    drag="x"
-                    onDragStart={toggleDragging}
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={0.55}
-                    onDragEnd={(_, { offset, velocity }) => {
-                      const swipe = swipePower(offset.x, velocity.x);
-                      if (swipe < -swipeConfidenceThreshold) setNextPage();
-                      else if (swipe > swipeConfidenceThreshold) setPrevPage();
-                      toggleDragging();
-                    }}
-                  />
-                </AnimatePresence>
-              </LazyMotion>
+              <AnimatePresence initial={false}>
+                <m.img
+                  onClick={(e) => {
+                    if (isDragging) return;
+                    e.stopPropagation();
+                    if (actionCallback) actionCallback(page);
+                  }}
+                  key={page}
+                  src={images[page]}
+                  custom={direction}
+                  variants={sliderVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  whileTap="tap"
+                  drag="x"
+                  onDragStart={toggleDragging}
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.55}
+                  onDragEnd={(_, { offset, velocity }) => {
+                    const swipe = swipePower(offset.x, velocity.x);
+                    if (swipe < -swipeConfidenceThreshold) setNextPage();
+                    else if (swipe > swipeConfidenceThreshold) setPrevPage();
+                    toggleDragging();
+                  }}
+                />
+              </AnimatePresence>
             </div>
             <div className={styles.imageBackground}></div>
             <button

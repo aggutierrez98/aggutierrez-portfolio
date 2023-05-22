@@ -46,7 +46,7 @@ export const Home = ({ data }: Props) => {
           </m.h1>
           <m.h2 className={styles.text} variants={itemVariant}>
             {memoizedData.title2}
-            <span id="typing" className={styles.typewrittingText}></span>
+            <span id="typing" className={styles.typewritingText}></span>
           </m.h2>
         </div>
         <m.p variants={itemVariant}>{memoizedData.description}</m.p>
