@@ -13,7 +13,7 @@ import { GetStaticProps } from "next";
 interface Props {
   metadata: MetaData;
   projects: Project[];
-  socialMedia: MediaData;
+  socialMediaData: MediaData;
 }
 
 const ProjectsPage = ({ projects, metadata }: Props) => {
@@ -50,7 +50,7 @@ const ProjectsPage = ({ projects, metadata }: Props) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const metadata = await getMetaData();
-  const socialMedia = await getSocialMediaData();
+  const socialMediaData = await getSocialMediaData();
   const skillsData = await getSkillsData();
   let projects = await getProjectsData();
 
@@ -60,7 +60,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       metadata,
       projects,
-      socialMedia,
+      socialMediaData,
     },
     revalidate: 300,
   };

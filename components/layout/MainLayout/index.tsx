@@ -4,10 +4,10 @@ import { ScrollToTopButton } from "./ScrollToTopButton";
 import { MediaData } from "../../../interfaces/index";
 interface Props {
   children: React.ReactElement;
-  socialMedia?: MediaData;
+  socialMediaData?: MediaData;
 }
 
-export const MainLayout = ({ children, socialMedia }: Props) => {
+export const MainLayout = ({ children, socialMediaData }: Props) => {
   return (
     <main className={styles.main} id="main-layout">
       <div id="top-section"></div>
@@ -15,7 +15,7 @@ export const MainLayout = ({ children, socialMedia }: Props) => {
       <main className={styles.body} id="body">
         {children}
       </main>
-      <Footer socialMediaData={socialMedia} />
+      <Footer socialMediaData={socialMediaData} />
       <div id="modal"></div>
       <div id="loader"></div>
       <div id="side-menu"></div>

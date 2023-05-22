@@ -13,7 +13,7 @@
     li {
       margin-right: 18px;
       svg {
-        color: var(--primary-color);
+        fill: var(--primary-color);
         width: 25px;
         height: 25px;
         margin-right: 10px;
@@ -55,7 +55,7 @@
     color: var(--accent-color);
     transform: translateY(-7px);
     svg {
-      color: var(--accent-color);
+      fill: var(--accent-color);
     }
   }
 

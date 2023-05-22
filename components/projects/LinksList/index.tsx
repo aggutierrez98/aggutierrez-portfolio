@@ -45,16 +45,12 @@ export const LinksList = ({
         )}
         {demo_url && (
           <m.li variants={sectionItemVariant}>
-            <LinkButton text={"Client deploy"} link={demo_url} deploy={true} />
+            <LinkButton text={"Client deploy"} link={demo_url} />
           </m.li>
         )}
         {server_url && (
           <m.li variants={sectionItemVariant}>
-            <LinkButton
-              text={"Server deploy"}
-              link={server_url}
-              deploy={true}
-            />
+            <LinkButton text={"Server deploy"} link={server_url} />
           </m.li>
         )}
       </ul>

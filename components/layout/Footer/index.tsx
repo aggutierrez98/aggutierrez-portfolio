@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import { IoIosHeartEmpty } from "react-icons/io";
+import { FavoriteBorderSVGIcon } from "@react-md/material-icons";
 import { SocialMediaLinks } from "../MainLayout/SocialMediaLinks";
 import { m } from "framer-motion";
 import { sectionVariant, sectionItemVariant } from "../variants";
@@ -27,13 +27,13 @@ export const Footer = ({ socialMediaData }: Props) => {
           <div className={styles.legendContainer}>
             <m.p className={styles.legendText} variants={sectionItemVariant}>
               Made with{" "}
-              <IoIosHeartEmpty tabIndex={0} className={styles.legendIcon} /> by
-              Agustin Gutierrez
+              <FavoriteBorderSVGIcon
+                tabIndex={0}
+                className={styles.legendIcon}
+              />{" "}
+              by Agustin Gutierrez
             </m.p>
-            <m.p
-              className={styles.legendTextyles}
-              variants={sectionItemVariant}
-            >
+            <m.p className={styles.legendText} variants={sectionItemVariant}>
               Copyright © 2022 Agustin Gutierrez
             </m.p>
           </div>

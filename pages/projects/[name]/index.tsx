@@ -81,7 +81,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const name = context.params?.name;
 
   const metadata = await getMetaData();
-  const socialMedia = await getSocialMediaData();
+  const socialMediaData = await getSocialMediaData();
   const projects = await getProjectsData();
   const skillsData = await getSkillsData();
 
@@ -99,7 +99,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       metadata,
       projectData,
-      socialMedia,
+      socialMediaData,
     },
     revalidate: 300,
   };

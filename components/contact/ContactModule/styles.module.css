@@ -118,10 +118,7 @@
     width: 150px;
     height: 150px;
     margin-bottom: 20px;
-    path {
-      /* color: var(--error-icon-color); */
-      color: var(--primary-color);
-    }
+    fill: var(--primary-color);
   }
 }
 
@@ -147,7 +144,7 @@
     svg {
       width: 30px;
       height: 30px;
-      color: var(--accent-color);
+      fill: var(--accent-color);
     }
     p {
       color: var(--accent-color);

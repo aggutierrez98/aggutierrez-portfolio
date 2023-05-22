@@ -2,8 +2,8 @@ import { createPortal } from "react-dom";
 import { useOutsideAndEscapeKeyAlerter } from "hooks";
 import { useRef } from "react";
 import styles from "./styles.module.css";
-import { MdOutlineClose } from "react-icons/md";
-import { AnimatePresence, motion, m } from "framer-motion";
+import { CloseSVGIcon } from "@react-md/material-icons";
+import { AnimatePresence, m } from "framer-motion";
 
 interface ModalProps {
   children: React.ReactNode;
@@ -44,7 +44,7 @@ const ModalBase = ({
           onClick={onClose}
           ref={buttonRef}
         >
-          <MdOutlineClose />
+          <CloseSVGIcon />
         </button>
         {children}
       </div>

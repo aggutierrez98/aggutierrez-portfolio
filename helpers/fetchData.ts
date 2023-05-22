@@ -10,13 +10,11 @@ const dataInstance = axios.create({
 
 export const getExperienceData = async () => {
   const resp = await dataInstance.get<any>("experience.json");
-
   return resp.data as Work[];
 };
 
 export const getSocialMediaData = async () => {
   const resp = await dataInstance.get<any>("social-media.json");
-
   return resp.data as MediaData;
 };
 

@@ -1,14 +1,13 @@
-import { VscLink, VscGithub } from "react-icons/vsc";
+import { LaunchSVGIcon } from "@react-md/material-icons";
 import Link from "next/link";
 import styles from "./styles.module.css";
 
 interface Props {
   text: string;
   link: string;
-  deploy?: boolean;
 }
 
-export const LinkButton = ({ text, link, deploy = false }: Props) => {
+export const LinkButton = ({ text, link }: Props) => {
   return (
     <Link
       href={link}
@@ -18,8 +17,7 @@ export const LinkButton = ({ text, link, deploy = false }: Props) => {
       rel="noopener noreferrer"
       className={styles.button}
     >
-      {deploy ? <VscLink /> : <VscGithub />}
-      {text}
+      <LaunchSVGIcon /> {text}
     </Link>
   );
 };

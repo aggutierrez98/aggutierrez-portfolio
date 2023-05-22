@@ -5,8 +5,9 @@
     "node": true
   },
   "extends": [
-    "next/core-web-vitals",
+    // "./node_modules/prettier/bin-prettier.js",
     "prettier",
+    "next/core-web-vitals",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",

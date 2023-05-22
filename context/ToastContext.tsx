@@ -1,7 +1,4 @@
-import {
-  IoIosCheckmarkCircleOutline,
-  IoMdInformationCircleOutline,
-} from "react-icons/io";
+import { CheckSVGIcon, InfoOutlineSVGIcon } from "@react-md/material-icons";
 import { createContext, ReactElement, useState, useCallback } from "react";
 
 interface ContextProps {
@@ -24,12 +21,12 @@ const TypeToast = [
   {
     title: "Success",
     backgroundColor: "#5cb85c",
-    icon: <IoIosCheckmarkCircleOutline />,
+    icon: <CheckSVGIcon />,
   },
   {
     title: "Info",
     backgroundColor: "#5bc0de",
-    icon: <IoMdInformationCircleOutline />,
+    icon: <InfoOutlineSVGIcon />,
   },
 ];
 

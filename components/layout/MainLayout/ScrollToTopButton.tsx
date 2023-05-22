@@ -1,7 +1,7 @@
 import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+import { ExpandMoreSVGIcon, ExpandLessSVGIcon } from "@react-md/material-icons";
 import { useRouter } from "next/router";
 
 export const ScrollToTopButton = () => {
@@ -56,7 +56,7 @@ export const ScrollToTopButton = () => {
                   });
                 }}
               >
-                <FaChevronUp />
+                <ExpandLessSVGIcon />
               </m.button>
             ) : (
               <m.button
@@ -79,7 +79,7 @@ export const ScrollToTopButton = () => {
                     .scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                <FaChevronDown />
+                <ExpandMoreSVGIcon />
               </m.button>
             ))}
         </div>

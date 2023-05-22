@@ -2,10 +2,10 @@ import { CustomModal, ContactForm, Loading } from "components";
 import { useContactForm } from "hooks";
 import styles from "./styles.module.css";
 import {
-  IoIosCheckmarkCircleOutline,
-  IoMdInformationCircleOutline,
-} from "react-icons/io";
-import { MdMail, MdPhoneAndroid } from "react-icons/md";
+  InfoOutlineSVGIcon,
+  MailOutlineSVGIcon,
+  PhoneAndroidSVGIcon,
+} from "@react-md/material-icons";
 import Image from "next/image";
 import { m } from "framer-motion";
 import { sectionVariant, sectionItemVariant } from "components/layout/variants";
@@ -18,7 +18,6 @@ interface Props {
 export const ContactModule = ({ data }: Props) => {
   const {
     formData,
-    success,
     loading,
     errorFields,
     modalVisible,
@@ -29,7 +28,7 @@ export const ContactModule = ({ data }: Props) => {
     closeModal,
   } = useContactForm();
 
-  const { title, description1, description2, suboptions, image, alt } = data;
+  const { title, description1, description2, suboptions, alt } = data;
 
   return (
     <section id="contact" className={styles.contact}>
@@ -48,12 +47,12 @@ export const ContactModule = ({ data }: Props) => {
           </m.h3>
           <div className={styles.infoContainer}>
             <m.div variants={sectionItemVariant}>
-              <MdPhoneAndroid />
+              <PhoneAndroidSVGIcon />
               <h4>{suboptions.phone.title}</h4>
               <p>{suboptions.phone.value}</p>
             </m.div>
             <m.div variants={sectionItemVariant}>
-              <MdMail />
+              <MailOutlineSVGIcon />
               <h4>{suboptions.email.title}</h4>
               <p>
                 <a
@@ -88,11 +87,7 @@ export const ContactModule = ({ data }: Props) => {
           />
           <CustomModal onClose={closeModal} visible={modalVisible}>
             <div className={styles.modalContainer}>
-              {success ? (
-                <IoIosCheckmarkCircleOutline />
-              ) : (
-                <IoMdInformationCircleOutline />
-              )}
+              <InfoOutlineSVGIcon />
               <h2>{modalData.title}</h2>
               <ul>
                 {modalData.messages.map((message) => (

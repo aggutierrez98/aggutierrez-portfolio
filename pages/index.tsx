@@ -17,7 +17,11 @@ import {
   loadSkillsInfo,
   loadProjectsData,
 } from "helpers";
-import { getMetaData, getSkillsData } from "helpers/fetchData";
+import {
+  getMetaData,
+  getSkillsData,
+  getSocialMediaData,
+} from "helpers/fetchData";
 import { GetStaticProps } from "next";
 
 interface Props {
@@ -80,6 +84,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const metadata = await getMetaData();
   const experience = await getExperienceData();
   const skillsData = await getSkillsData();
+  const socialMediaData = await getSocialMediaData();
+
   let projects = await getProjectsData();
   let info = await getInfoData();
 
@@ -91,6 +97,7 @@ export const getStaticProps: GetStaticProps = async () => {
       metadata,
       projects,
       experience,
+      socialMediaData,
       info,
     },
     revalidate: 300,

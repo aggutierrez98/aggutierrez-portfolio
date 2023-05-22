@@ -550,5 +550,22 @@ config
 dest
 webpack
 withPWA
-
+ArrowBackSVGIcon
+ArrowForwardSVGIcon
+ChatBubbleOutlineSVGIcon
+CheckSVGIcon
+CloseSVGIcon
+ExpandLessSVGIcon
+ExpandMoreSVGIcon
+FavoriteBorderSVGIcon
+InfoOutlineSVGIcon
+LaunchSVGIcon
+MailOutlineSVGIcon
+PersonOutlineSVGIcon
+PhoneAndroidSVGIcon
+jsx-runtime
+jsx-uses-react
+jsx-uses-vars
+plugin:jsx-a11y
+pragma
 

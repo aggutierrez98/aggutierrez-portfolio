@@ -93,7 +93,8 @@
 .legendIcon {
   margin: 0 5px;
   width: 25px;
-  color: var(--primary-color);
+  fill: var(--primary-color);
+  /* color: var(--primary-color); */
   outline: none;
   transition: drop-shadow 0.2s;
   &:hover,

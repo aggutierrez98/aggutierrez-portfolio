@@ -45,12 +45,6 @@ export default function MyApp({
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style jsx global>{`
-          html {
-            font-family: ${raleway.style.fontFamily};
-            font-family: ${sourceCodePro.style.fontFamily};
-          }
-        `}</style>
       </Head>
       <LazyMotion features={domAnimation} strict>
         <AnimatePresence exitBeforeEnter>

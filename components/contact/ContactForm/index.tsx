@@ -1,9 +1,13 @@
 import { ChangeEvent, FormEvent } from "react";
 import styles from "./styles.module.css";
 import { SendButton } from "./SendButton";
-import { MdMail, MdChat, MdPerson } from "react-icons/md";
-import { m } from "framer-motion";
+import {
+  MailOutlineSVGIcon,
+  ChatBubbleOutlineSVGIcon,
+  PersonOutlineSVGIcon,
+} from "@react-md/material-icons";
 import { sectionItemVariant } from "../../layout/variants";
+import { m } from "framer-motion";
 
 interface Props {
   formRef: React.RefObject<HTMLFormElement>;
@@ -53,7 +57,7 @@ export const ContactForm = ({
           className={styles.input}
           onChange={onChange}
         />
-        <MdPerson className={styles.icon} />
+        <PersonOutlineSVGIcon className={styles.icon} />
         <label htmlFor="name" className={styles.label}>
           Name
         </label>
@@ -73,7 +77,7 @@ export const ContactForm = ({
           className={styles.input}
           onChange={onChange}
         />
-        <MdMail className={styles.icon} />
+        <MailOutlineSVGIcon className={styles.icon} />
         <label htmlFor="name" className={styles.label}>
           Email
         </label>
@@ -93,7 +97,7 @@ export const ContactForm = ({
           onChange={onChange}
           rows={6}
         />
-        <MdChat className={styles.textareaIcon} />
+        <ChatBubbleOutlineSVGIcon className={styles.textareaIcon} />
         <label htmlFor="message" className={styles.label}>
           Message
         </label>

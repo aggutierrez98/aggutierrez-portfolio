@@ -3,7 +3,10 @@ import { AnimatePresence, m, LazyMotion, domMax } from "framer-motion";
 import styles from "./styles.module.css";
 import { sectionItemVariant } from "@c/layout/variants";
 import { sliderVariants } from "./variants";
-import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+import {
+  ArrowBackSVGIcon,
+  ArrowForwardSVGIcon,
+} from "@react-md/material-icons";
 import { useImageCarrousel } from "hooks";
 import { swipeConfidenceThreshold, swipePower, blurImageSrc } from "helpers";
 import Image from "next/image";
@@ -93,14 +96,14 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
               onClick={() => setPrevPage()}
               disabled={page === 0}
             >
-              <MdArrowBackIosNew />
+              <ArrowBackSVGIcon />
             </button>
             <button
               className={styles.next}
               onClick={() => setNextPage()}
               disabled={page === images.length - 1}
             >
-              <MdArrowForwardIos />
+              <ArrowForwardSVGIcon />
             </button>
           </m.div>
         )
