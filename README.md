@@ -9,12 +9,11 @@
 <div align="center">
 
 ![Website](https://img.shields.io/website?logo=vercel&style=for-the-badge&up_message=online&url=https%3A%2F%2Fwww.aggutierrez.com%2F)
-![Security Headers](https://img.shields.io/github/workflow/status/aggutierrez98/aggutierrez-portfolio/Main%20Pipeline?label=Main%20Pipeline&logo=github-actions&style=for-the-badge)
+![Security Headers](https://img.shields.io/github/actions/workflow/status/aggutierrez98/aggutierrez-portfolio/main.yml?branch=main&label=Main%20pipeline&logo=github-actions&style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/aggutierrez98/aggutierrez-portfolio?style=for-the-badge)
 
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/aggutierrez98/aggutierrez-portfolio/react?style=for-the-badge)
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/aggutierrez98/aggutierrez-portfolio/next?style=for-the-badge)
-![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/aggutierrez98/aggutierrez-portfolio/react-icons?style=for-the-badge)
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/aggutierrez98/aggutierrez-portfolio/framer-motion?style=for-the-badge)
 
 </div>

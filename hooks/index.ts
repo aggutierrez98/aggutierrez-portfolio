@@ -8,3 +8,4 @@ export * from "./useActiveSection";
 export * from "./useImageCarrousel";
 export * from "./useImageModal";
 export * from "./useParagraphFromJSON";
+export * from "./useTypedText";
