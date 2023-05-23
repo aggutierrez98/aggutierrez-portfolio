@@ -5,11 +5,9 @@ import { m } from "framer-motion";
 import { titleVariants } from "./variants";
 import { boxVariants } from "../ProjectCard/variants";
 import { sectionVariant, sectionItemVariant } from "components/layout/variants";
-import parse from "html-react-parser";
 import { ImagesCarrousel } from "./ImagesCarrousel";
-import { useImages } from "hooks";
+import { useImages, useParagraphFromJSON } from "hooks";
 import { useEffect, useState } from "react";
-
 interface Props {
   projectData: Project;
 }
@@ -27,23 +25,11 @@ export const ProjectDetails = ({ projectData }: Props) => {
     techs,
   } = projectData;
 
-  const [images, setImages] = useState<string[]>([]);
-
-  useEffect(() => {
-    if (images_data) {
-      setImages(() => {
-        return Array.from(
-          { length: images_data.count },
-          (_, i) => `${images_data.folder}/${i + 1}.png`
-        );
-      });
-    } else {
-      setImages(() => (image_url ? [image_url] : []));
-    }
-    return () => {};
-  }, [images_data, image_url]);
-
-  const { modalOpen, imageToShow, openModal, closeModal } = useImages(images);
+  const paragraphRef = useParagraphFromJSON(description);
+  const { modalOpen, imageToShow, openModal, closeModal, images } = useImages({
+    image_url,
+    images_data,
+  });
 
   return (
     <>
@@ -64,7 +50,6 @@ export const ProjectDetails = ({ projectData }: Props) => {
         />
 
         <div className={styles.separator} />
-
         <div className={styles.descriptionContainer}>
           <m.h3 tabIndex={0} variants={sectionItemVariant}>
             Description
@@ -73,7 +58,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
             className={styles.descriptionText}
             variants={sectionItemVariant}
           >
-            {parse(description)}
+            <m.p ref={paragraphRef} />
           </m.div>
         </div>
 

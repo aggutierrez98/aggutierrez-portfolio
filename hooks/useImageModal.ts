@@ -1,9 +1,20 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export const useImages = (images: string[]) => {
+interface Props {
+  images_data:
+    | {
+        folder: string;
+        count: number;
+      }
+    | undefined;
+  image_url: string | undefined;
+}
+
+export const useImages = ({ image_url, images_data }: Props) => {
   const { query, asPath, push, pathname } = useRouter();
 
+  const [images, setImages] = useState<string[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageToShow, setImageToShow] = useState("");
 
@@ -29,6 +40,20 @@ export const useImages = (images: string[]) => {
   };
 
   useEffect(() => {
+    if (images_data) {
+      setImages(() => {
+        return Array.from(
+          { length: images_data.count },
+          (_, i) => `${images_data.folder}/${i + 1}.png`
+        );
+      });
+    } else {
+      setImages(() => (image_url ? [image_url] : []));
+    }
+    return () => {};
+  }, [images_data, image_url]);
+
+  useEffect(() => {
     if (query.image) {
       setIsModalOpen(true);
       setImageToShow(images[Number(query.image)]);
@@ -42,5 +67,6 @@ export const useImages = (images: string[]) => {
     imageToShow,
     openModal,
     closeModal,
+    images,
   };
 };

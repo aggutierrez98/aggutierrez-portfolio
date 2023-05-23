@@ -4,5 +4,7 @@ export * from "./useCopyToClipboard";
 export * from "./useOutsideAndEscapeKeyAlerter";
 export * from "./usePreserveScroll";
 export * from "./useScrollingUp";
+export * from "./useActiveSection";
 export * from "./useImageCarrousel";
 export * from "./useImageModal";
+export * from "./useParagraphFromJSON";

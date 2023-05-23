@@ -16,7 +16,7 @@ const isSectionId = (value: string): value is SectionId => {
   return sectionIds.includes(value as SectionId);
 };
 
-const useActiveSectionId = (href: string): [SectionId, boolean] => {
+export const useActiveSection = (href: string): [SectionId, boolean] => {
   const { asPath, route } = useRouter();
   const [, startTransition] = useTransition();
   const [activeSectionId, setActiveSectionId] = useState<string>(sections[0]);
@@ -70,5 +70,3 @@ const useActiveSectionId = (href: string): [SectionId, boolean] => {
 
   return [activeSectionId as SectionId, active];
 };
-
-export default useActiveSectionId;

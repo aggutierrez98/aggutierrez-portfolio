@@ -1,5 +1,4 @@
 import { memo } from "react";
-import parse from "html-react-parser";
 import Link from "next/link";
 import Image from "next/image";
 import { m } from "framer-motion";
@@ -8,6 +7,7 @@ import { Project, Skill } from "interfaces";
 import { LearnMoreButton } from "./LearnMoreButton";
 import styles from "./styles.module.css";
 import { boxVariants } from "./variants";
+import { useParagraphFromJSON } from "hooks";
 
 interface Props {
   projectData: Project;
@@ -16,6 +16,8 @@ interface Props {
 const InitProjectCard = ({
   projectData: { title, description, image_url, images_data, techs, demo_url },
 }: Props) => {
+  const paragraphRef = useParagraphFromJSON(description);
+
   return (
     <m.article
       variants={boxVariants}
@@ -30,7 +32,9 @@ const InitProjectCard = ({
               <span className={styles.title}>{title}</span>
             </Link>
           </h3>
-          <div className={styles.descriptionText}>{parse(description)}</div>
+          <div className={styles.descriptionText}>
+            <p ref={paragraphRef}></p>
+          </div>
           <div className={styles.textBottom}>
             <TechsList techs={techs as Skill[]} />
             <LearnMoreButton title={title} />

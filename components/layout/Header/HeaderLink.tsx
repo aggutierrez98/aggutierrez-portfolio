@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./styles.module.css";
 import { m } from "framer-motion";
 import { headerItemVariant } from "./variants";
-import useActiveSectionId from "hooks/useActiveSection";
+import { useActiveSection } from "hooks";
 
 interface Props {
   href: string;
@@ -17,7 +17,7 @@ export const HeaderLink = ({
   toogle,
   isSideLink = false,
 }: Props) => {
-  const [, active] = useActiveSectionId(href);
+  const [, active] = useActiveSection(href);
 
   return (
     <m.li

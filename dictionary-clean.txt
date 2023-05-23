@@ -569,3 +569,7 @@ jsx-uses-vars
 plugin:jsx-a11y
 pragma
 prefetch
+HTMLParagraphElement
+https
+urlify
+useParagraphFromJSON
