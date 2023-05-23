@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Skill } from "interfaces";
-import { IconComponent } from "./IconComponent";
 import styles from "./styles.module.css";
+import dynamic from "next/dynamic";
 
 interface Props {
   skill: Skill;
@@ -13,6 +13,13 @@ export const SkillCard = ({ skill }: Props) => {
     el?.setProperty("--box-color", skill.color);
   }, [skill.color, skill.name]);
 
+  const Icon = dynamic(
+    async () =>
+      await import(
+        `${process.env.NEXT_PUBLIC_ASSETS_URL}/techs/${skill.assetName}.svg`
+      )
+  );
+
   return (
     <li>
       <a
@@ -22,7 +29,8 @@ export const SkillCard = ({ skill }: Props) => {
         rel="noopener noreferrer"
         href={skill?.url}
       >
-        <IconComponent name={skill.assetName} />
+        <Icon />
+
         <p data-text={skill.name}>{skill.name}</p>
       </a>
     </li>

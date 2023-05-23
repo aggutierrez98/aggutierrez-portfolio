@@ -9,6 +9,7 @@ import { MainLayout } from "components";
 import { ToastProvider } from "context/ToastContext";
 import { usePreserveScroll } from "hooks";
 import { AnimatePresence, domMax, LazyMotion, m } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 
 const raleway = Raleway({
   weight: ["200", "300", "400", "500", "600"],
@@ -64,6 +65,7 @@ export default function MyApp({
               <div className={`${raleway.variable} ${sourceCodePro.variable}`}>
                 <MainLayout {...pageProps}>
                   <Component {...pageProps} />
+                  <Analytics />
                 </MainLayout>
               </div>
             </ToastProvider>

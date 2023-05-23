@@ -16,6 +16,7 @@ export const LinkButton = ({ text, link }: Props) => {
       target="_blank"
       rel="noopener noreferrer"
       className={styles.button}
+      prefetch={false}
     >
       <LaunchSVGIcon /> {text}
     </Link>

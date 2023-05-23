@@ -1,39 +1,75 @@
-import axios from "axios";
 import { MediaData, Project, Skill, Work, Info, MetaData } from "interfaces";
+const baseUrl = process.env.NEXT_PUBLIC_RAW_DATA_URL;
 
-const dataInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_RAW_DATA_URL,
+const config = {
+  method: "GET",
   headers: {
     Authorization: `token ${process.env.NEXT_PUBLIC_GH_DATA_TOKEN}`,
   },
-});
+};
 
 export const getExperienceData = async () => {
-  const resp = await dataInstance.get<any>("experience.json");
-  return resp.data as Work[];
+  try {
+    const resp = await fetch(`${baseUrl}/experience.json`, config);
+    const data = await resp.json();
+    return data as Work[];
+  } catch (error: any) {
+    console.log(error);
+    throw new Error("Error when fetching data");
+  }
 };
 
 export const getSocialMediaData = async () => {
-  const resp = await dataInstance.get<any>("social-media.json");
-  return resp.data as MediaData;
+  try {
+    const resp = await fetch(`${baseUrl}/social-media.json`, config);
+    const data = await resp.json();
+    return data as MediaData;
+  } catch (error: any) {
+    console.log(error);
+    throw new Error("Error when fetching data");
+  }
 };
 
 export const getSkillsData = async () => {
-  const resp = await dataInstance.get<any>("skills.json");
-  return resp.data as Skill[];
+  try {
+    const resp = await fetch(`${baseUrl}/skills.json`, config);
+    const data = await resp.json();
+    return data as Skill[];
+  } catch (error: any) {
+    console.log(error);
+    throw new Error("Error when fetching data");
+  }
 };
 
 export const getProjectsData = async () => {
-  const resp = await dataInstance.get<any>("projects.json");
-  return resp.data as Project[];
+  try {
+    const resp = await fetch(`${baseUrl}/projects.json`, config);
+    const data = await resp.json();
+    return data as Project[];
+  } catch (error: any) {
+    console.log(error);
+    throw new Error("Error when fetching data");
+  }
 };
 
 export const getInfoData = async () => {
-  const resp = await dataInstance.get<any>("info.json");
-  return resp.data as Info;
+  try {
+    const resp = await fetch(`${baseUrl}/info.json`, config);
+    const data = await resp.json();
+    return data as Info;
+  } catch (error: any) {
+    console.log(error);
+    throw new Error("Error when fetching data");
+  }
 };
 
 export const getMetaData = async () => {
-  const resp = await dataInstance.get<any>("metadata.json");
-  return resp.data as MetaData;
+  try {
+    const resp = await fetch(`${baseUrl}/metadata.json`, config);
+    const data = await resp.json();
+    return data as MetaData;
+  } catch (error: any) {
+    console.log(error);
+    throw new Error("Error when fetching data");
+  }
 };

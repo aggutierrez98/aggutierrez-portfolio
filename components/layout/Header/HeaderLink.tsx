@@ -26,7 +26,7 @@ export const HeaderLink = ({
       variants={headerItemVariant}
       onClick={toogle}
     >
-      <Link href={href} scroll={false}>
+      <Link href={href} scroll={false} prefetch={false}>
         {title}
       </Link>
     </m.li>
