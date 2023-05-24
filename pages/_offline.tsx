@@ -47,12 +47,7 @@ const OfflinePage = ({ metadata }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  let metadata;
-  try {
-    metadata = await getMetaData();
-  } catch (error) {
-    console.log(error);
-  }
+  const metadata = await getMetaData();
 
   return {
     props: {

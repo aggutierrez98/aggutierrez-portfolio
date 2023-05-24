@@ -5,6 +5,7 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
+  "purpose": "any maskable",
   "theme_color": "#222831",
   "background_color": "#222831",
   "description": "Agustin Gutierrez personal webpage",
