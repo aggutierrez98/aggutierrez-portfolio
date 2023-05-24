@@ -64,7 +64,7 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
                 <m.img
                   onClick={(e) => {
                     // if (isDragging) return;
-                    // e.stopPropagation();
+                    e.stopPropagation();
                     if (actionCallback) actionCallback(page);
                   }}
                   key={page}

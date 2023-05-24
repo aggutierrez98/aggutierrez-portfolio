@@ -32,7 +32,7 @@ export const useImages = ({ image_url, images_data }: Props) => {
         query: { image: image_index, name: query.name },
       },
       {
-        pathname: `${asPath}/images/${image_index}`,
+        pathname: `${asPath}images/${image_index}`,
       }
     );
     setIsModalOpen(true);

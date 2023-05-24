@@ -1,11 +1,12 @@
 {
-  "theme_color": "#222831",
-  "background_color": "#222831",
-  "display": "standalone",
-  "scope": "/",
-  "start_url": "/",
   "name": "aggutierrez-portfolio",
   "short_name": "aggutierrez",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#222831",
+  "background_color": "#222831",
   "description": "Agustin Gutierrez personal webpage",
   "icons": [
     {
