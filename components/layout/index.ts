@@ -5,3 +5,4 @@ export * from "./Header";
 export * from "./Logo";
 export * from "./MainLayout";
 export * from "./NotFoundSign";
+export * from "./OfflineSign";

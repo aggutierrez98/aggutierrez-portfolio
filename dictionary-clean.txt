@@ -575,3 +575,8 @@ urlify
 useParagraphFromJSON
 vegadev
 40vw
+viewport-fit=cover
+NotFoundPage
+OfflinePage
+OfflineSign
+next-pwa

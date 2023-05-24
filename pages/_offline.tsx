@@ -1,15 +1,15 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { NotFoundSign, LayeredWaves } from "components";
-import { getMetaData } from "helpers";
-import { MetaData } from "interfaces";
 import { GetStaticProps } from "next";
+import { LayeredWaves, OfflineSign } from "components";
+import { MetaData } from "interfaces";
+import { getMetaData } from "helpers";
 
 interface Props {
   metadata: MetaData;
 }
 
-const NotFoundPage = ({ metadata }: Props) => {
+const OfflinePage = ({ metadata }: Props) => {
   const origin = typeof window === "undefined" ? "" : window.location.origin;
   const { pathname } = useRouter();
   const { title, description, image_source } = metadata[pathname];
@@ -39,15 +39,20 @@ const NotFoundPage = ({ metadata }: Props) => {
         <meta name="twitter:image" content={image_source} />
       </Head>
 
-      <NotFoundSign />
+      <OfflineSign />
 
       <LayeredWaves alt />
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const metadata = await getMetaData();
+export const getStaticProps: GetStaticProps = async () => {
+  let metadata;
+  try {
+    metadata = await getMetaData();
+  } catch (error) {
+    console.log(error);
+  }
 
   return {
     props: {
@@ -56,4 +61,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export default NotFoundPage;
+export default OfflinePage;

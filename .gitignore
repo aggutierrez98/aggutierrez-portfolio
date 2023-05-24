@@ -45,6 +45,7 @@ todo.md
 **/public/workbox-*.js
 **/public/worker-*.js
 **/public/sw.js.map
+**/public/fallback-*.js
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
 
