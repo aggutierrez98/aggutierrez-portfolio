@@ -3,6 +3,7 @@ import { SkillsList } from "./SkillsList";
 import { m } from "framer-motion";
 import { sectionItemVariant, sectionVariant } from "components/layout/variants";
 import { About as AboutInterface } from "interfaces";
+import Image from "next/image";
 
 interface Props {
   data: AboutInterface;
@@ -30,8 +31,12 @@ export const About = ({ data }: Props) => {
               className={styles.imageContainer}
               variants={sectionItemVariant}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={data.avatar_img} alt="Agustin Gutierrez" />
+              <Image
+                src={data.avatar_img}
+                alt="Agustin Gutierrez"
+                fill
+                sizes="(max-width: 768px) 50vw, (max-width: 1000px) 40vw"
+              />
               <div className={styles.block}></div>
             </m.div>
           </div>
