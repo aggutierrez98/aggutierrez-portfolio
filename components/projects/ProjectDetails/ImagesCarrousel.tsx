@@ -23,8 +23,8 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
     page,
     setNextPage,
     setPrevPage,
-    toggleDragging,
-    isDragging,
+    // toggleDragging,
+    // isDragging,
   } = useImageCarrousel(images);
 
   return (
@@ -63,8 +63,8 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
               <AnimatePresence initial={false}>
                 <m.img
                   onClick={(e) => {
-                    if (isDragging) return;
-                    e.stopPropagation();
+                    // if (isDragging) return;
+                    // e.stopPropagation();
                     if (actionCallback) actionCallback(page);
                   }}
                   key={page}
@@ -76,15 +76,15 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
                   exit="exit"
                   whileTap="tap"
                   drag="x"
-                  onDragStart={toggleDragging}
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.55}
-                  onDragEnd={(_, { offset, velocity }) => {
-                    const swipe = swipePower(offset.x, velocity.x);
-                    if (swipe < -swipeConfidenceThreshold) setNextPage();
-                    else if (swipe > swipeConfidenceThreshold) setPrevPage();
-                    toggleDragging();
-                  }}
+                  // onDragStart={toggleDragging}
+                  // dragConstraints={{ left: 0, right: 0 }}
+                  // dragElastic={0.55}
+                  // onDragEnd={(_, { offset, velocity }) => {
+                  //   const swipe = swipePower(offset.x, velocity.x);
+                  //   if (swipe < -swipeConfidenceThreshold) setNextPage();
+                  //   else if (swipe > swipeConfidenceThreshold) setPrevPage();
+                  //   toggleDragging();
+                  // }}
                 />
               </AnimatePresence>
             </div>

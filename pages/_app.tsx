@@ -8,7 +8,7 @@ import { Source_Code_Pro, Raleway } from "next/font/google";
 import { MainLayout } from "components";
 import { ToastProvider } from "context/ToastContext";
 import { usePreserveScroll } from "hooks";
-import { AnimatePresence, domMax, LazyMotion, m } from "framer-motion";
+import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 
 const raleway = Raleway({
@@ -47,7 +47,7 @@ export default function MyApp({
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <LazyMotion features={domMax} strict>
+      <LazyMotion features={domAnimation} strict>
         <AnimatePresence exitBeforeEnter>
           <m.div
             key={router.pathname}
