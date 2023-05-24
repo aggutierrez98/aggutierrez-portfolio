@@ -49,6 +49,7 @@ export default function Document() {
         <meta name="author" content="Agustin Gutierrez"></meta>
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Aggutierrez"></meta>
+        <link rel="preconnect" href="https://vitals.vercel-insights.com" />
         <meta
           name="keywords"
           content="Aggutierrez, Agustin, Gutierrez, developer, software, engineer, web, mobile, backend, react, node, javascript, typescript"
