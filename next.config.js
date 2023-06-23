@@ -8,24 +8,6 @@ const withPWA = require("next-pwa")({
   cacheOnFrontEndNav: true,
   scope: "/",
   disable: process.env.NODE_ENV === "development",
-  // mode: "production",
-  // runtimeCaching: [
-  //   {
-  //     urlPattern: /\.(?:js)$/i,
-  //     handler: 'StaleWhileRevalidate',
-  //     options: {
-  //       cacheableResponse: {
-  //         statuses: [200, 404],
-  //       },
-  //       cacheName: 'static-js-assets',
-  //       expiration: {
-  //         maxEntries: 32,
-  //         maxAgeSeconds: 24 * 60 * 60 // 24 hours
-  //       }
-  //     }
-  //   },
-  //   ...defaultRuntimeCaching,
-  // ],
 });
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({

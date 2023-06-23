@@ -20,12 +20,12 @@
     "personal-website"
   ],
   "scripts": {
-    "dev": "next dev",
+    "dev": "infisical run -- next dev",
     "dev-open": "yarn open & yarn dev",
     "open": "open http://localhost:3000",
     "build": "next build",
     "analyze": "cross-env ANALYZE=true yarn build",
-    "start": "next start",
+    "start": "infisical run -- next start",
     "lint": "eslint . --cache --fix",
     "stylelint": "stylelint **/*.css **/*.module.css --cache --fix",
     "stylelint-check": "stylelint-config-prettier-check",
