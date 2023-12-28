@@ -5,7 +5,7 @@ import { itemVariant } from "./variants";
 export const ResumeButton = () => {
   return (
     <m.a
-      href="/cv.pdf"
+      href="/cv-ing.pdf"
       title="Download CV"
       download="cv"
       className={styles.resumeButton}

@@ -580,3 +580,7 @@ NotFoundPage
 OfflinePage
 OfflineSign
 next-pwa
+CLI
+Infisical
+diffetent
+npm

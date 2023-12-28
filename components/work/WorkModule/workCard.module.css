@@ -6,19 +6,20 @@
 }
 
 .leftSide {
-  width: 25%;
-  /* width: fit-content !important; */
+  width: 20%;
   height: 100%;
   text-align: right;
   padding: 5px;
   margin-right: 10px;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     display: none;
   }
   p {
     margin-top: 0.2rem;
     font-size: clamp(1rem, 1.2vw, 2rem);
-    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
@@ -28,7 +29,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
   @media (max-width: 800px) {
     order: -1;
   }
@@ -59,9 +59,10 @@
 }
 
 .rightSide {
+  width: 80%;
   padding: 5px;
   margin-left: 10px;
-  flex-grow: 1;
+  flex-grow: 2;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -121,5 +122,9 @@
     letter-spacing: 1px;
     font-weight: 300;
     font-size: clamp(1rem, 1.4vw, 2rem);
+    flex-grow: 1;
+    /* overflow: hidden; */
+    /* white-space: nowrap; */
+    /* text-overflow: clip; */
   }
 }
