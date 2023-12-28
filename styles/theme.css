@@ -9,6 +9,7 @@
   --accent-color: #eeeeee; */
   --background-color: #151618;
   --background-light-color: #1c1e1f;
+  --background-light-color-transparented: #1c1e1ff2;
   --foreground-color: #25272c;
   --foreground-light-color: #333e5e;
   --overlay-color: rgba(35, 39, 41, 0.4);
@@ -35,6 +36,7 @@
   --shadow-elevation-medium: 0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
     2px 3px 5.4px hsl(var(--shadow-color) / 0.22),
     5.8px 8.6px 15.6px hsl(var(--shadow-color) / 0.45);
+  --shadow-light: 2px 25px 57px 10px rgba(31, 31, 34, 0.87);
 
   /* Special colors */
   --error-icon-color: #e53935;

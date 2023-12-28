@@ -58,7 +58,7 @@
   border-radius: 25px;
   cursor: pointer;
   background-color: var(--primary-color);
-  padding: 15px;
+  padding: 10px;
   color: var(--background-color);
   outline: none;
   bottom: 35px;
@@ -71,27 +71,27 @@
   }
 
   svg {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
   }
 
   @media (max-width: 1350px) {
-    padding: 14px;
-    border-radius: 22px;
+    padding: 12px;
+    border-radius: 25px;
     svg {
-      width: 22px;
-      height: 22px;
+      width: 28px;
+      height: 28px;
     }
   }
 
   @media (max-width: 550px) {
     bottom: 20px;
     right: 20px;
-    padding: 12px;
+    padding: 10px;
     border-radius: 18px;
     svg {
-      width: 18px;
-      height: 18px;
+      width: 22px;
+      height: 22px;
     }
   }
 }

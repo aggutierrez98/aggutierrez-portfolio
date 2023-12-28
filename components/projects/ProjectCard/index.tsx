@@ -26,6 +26,19 @@ const InitProjectCard = ({
       exit="exit"
     >
       <div className={styles.cardContainer}>
+        {(image_url || images_data) && (
+          <div className={styles.imageContainer}>
+            <Link href={demo_url} passHref className={styles.imageLink}>
+              <Image
+                src={image_url ? image_url : `${images_data?.folder}/1.png`}
+                alt={`${title}-example`}
+                fill
+                sizes="(max-width: 768px) 80vw, (max-width: 1000px) 50vw"
+              />
+            </Link>
+          </div>
+        )}
+
         <div className={styles.textContainer}>
           <h3 id="style-2" data-replace={title}>
             <Link href={demo_url} passHref>
@@ -40,18 +53,6 @@ const InitProjectCard = ({
             <LearnMoreButton title={title} />
           </div>
         </div>
-        {(image_url || images_data) && (
-          <div className={styles.imageContainer}>
-            <Link href={demo_url} passHref className={styles.imageLink}>
-              <Image
-                src={image_url ? image_url : `${images_data?.folder}/1.png`}
-                alt={`${title}-example`}
-                fill
-                sizes="(max-width: 768px) 80vw, (max-width: 1000px) 50vw"
-              />
-            </Link>
-          </div>
-        )}
       </div>
     </m.article>
   );
