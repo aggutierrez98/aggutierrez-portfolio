@@ -50,16 +50,23 @@
     margin-top: 1rem;
     margin-bottom: 10px;
     font-family: inherit !important;
-    font-size: clamp(2.5rem, 5.5vw, 6rem) !important;
-    @media (min-width: 1300px) {
+    font-size: clamp(2.5rem, 4.5vw, 6rem) !important;
+    /* @media (min-width: 1300px) {
       font-size: clamp(2.5rem, 5vw, 6rem) !important;
-    }
+    } */
     background: none;
     text-shadow: none !important;
+    @media (max-width: 500px) {
+      height: 90px !important;
+    }
   }
 
   .typewritingText {
     color: var(--primary-color);
+
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* text-overflow: clip; */
   }
 
   p {
@@ -84,7 +91,7 @@
 }
 
 .resumeButton {
-  margin-top: 8vh;
+  margin-top: 5vh;
   display: flex;
   width: fit-content;
   border-radius: 25rem;
