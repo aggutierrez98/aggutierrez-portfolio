@@ -22,6 +22,34 @@
 
 Welcome to the source code of [aggutierrez.com](https://aggutierrez.com). Built with Nexjts and hosted with Vercel. You can see my personal web page code here.
 
+## Requirements
+
+1. Must have npm or yarn installed in computer. I will follow the installation using yarn as an example.
+
+2. Must have Infisical CLI installed in your computer.
+   [See documentation to install it in diffetent OS](https://infisical.com/docs/cli/overview).
+
+3. Ensure you are logged in Infisical CLI
+
+   ```sh
+    infisical auth
+   ```
+
+4. Create a project in Infisical and the secrets needed.
+
+   ```dosini
+   # VARIABLES NEEDED
+
+   NEXT_PUBLIC_ASSETS_URL  # Path (relative to project root) of public assets loaded.
+   NEXT_PUBLIC_RAW_DATA_URL  # Url of the github repository from which the information shown in the portfolio is loaded.
+   NEXT_PUBLIC_GH_DATA_TOKEN  # Token needed to read data from that github repository.
+
+   # Emailjs service variables to send mails
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+   ```
+
 ## 🛠 Installation & Set Up
 
 1. Install project dependencies
