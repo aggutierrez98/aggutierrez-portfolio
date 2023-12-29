@@ -1,12 +1,25 @@
-export const headerListVariant = {
+import { Variants } from "framer-motion";
+
+export const headerVariant: Variants = {
+  hidden: {
+    opacity: 1,
+  },
   visible: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.25,
-      delayChildren: 1,
+      duration: 0.1,
     },
   },
 };
-export const headerItemVariant = {
+
+export const headerListVariant: Variants = {
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+export const headerItemVariant: Variants = {
   hidden: (isSide: boolean) => {
     let variants = {
       opacity: 0,
@@ -27,7 +40,7 @@ export const headerItemVariant = {
   },
 };
 
-export const headerSideListVariant = {
+export const headerSideListVariant: Variants = {
   hidden: {
     width: 0,
     opacity: 0,

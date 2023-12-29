@@ -3,21 +3,7 @@ import styles from "./styles.module.css";
 import { useScrollingUp } from "hooks";
 import { Logo } from "components";
 import { m } from "framer-motion";
-
-const variants = {
-  hidden: {
-    opacity: 1,
-    y: -80,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.4,
-      duration: 0.5,
-    },
-  },
-};
+import { headerVariant } from "./variants";
 
 export const Header = () => {
   const isScrollingUp = useScrollingUp();
@@ -26,7 +12,7 @@ export const Header = () => {
   return (
     <m.header
       className={`${styles.header} ${showClass}`}
-      variants={variants}
+      variants={headerVariant}
       animate="visible"
       initial="hidden"
     >

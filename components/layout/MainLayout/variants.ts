@@ -1,8 +1,13 @@
-export const socialMediaVariants = {
+import { Variants } from "framer-motion";
+
+export const socialMediaVariants: {
+  container: Variants;
+  item: Variants;
+} = {
   container: {
     visible: {
       transition: {
-        delayChildren: 0.5,
+        delayChildren: 0.1,
         staggerChildren: 0.2,
       },
     },
