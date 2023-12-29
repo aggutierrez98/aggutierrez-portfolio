@@ -2,11 +2,11 @@ import { Variants } from "framer-motion";
 
 export const sectionVariant: Variants = {
   visible: {
+    type: "spring",
     transition: {
-      staggerChildren: 0.3,
-      type: "tween",
-      stiffness: 100,
       damping: 10,
+      stiffness: 100,
+      staggerChildren: 0.3,
     },
   },
 };
