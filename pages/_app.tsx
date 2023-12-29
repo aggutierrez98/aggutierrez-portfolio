@@ -4,7 +4,7 @@ import { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { Source_Code_Pro, Raleway } from "next/font/google";
+import { Source_Code_Pro, Raleway, Rajdhani } from "next/font/google";
 import { MainLayout } from "components";
 import { ToastProvider } from "context/ToastContext";
 import { usePreserveScroll } from "hooks";
@@ -19,12 +19,12 @@ const raleway = Raleway({
   variable: "--Raleway-font",
 });
 
-const sourceCodePro = Source_Code_Pro({
+const rajdhani = Rajdhani({
   weight: ["300", "400"],
   style: ["normal"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--SourceCodePro-font",
+  variable: "--Rajdhani-font",
 });
 
 type NextPageWithLayout = NextPage & {
@@ -65,7 +65,7 @@ export default function MyApp({
             }}
           >
             <ToastProvider>
-              <div className={`${raleway.variable} ${sourceCodePro.variable}`}>
+              <div className={`${raleway.variable} ${rajdhani.variable}`}>
                 <MainLayout {...pageProps}>
                   <Component {...pageProps} />
                   <Analytics />

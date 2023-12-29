@@ -41,7 +41,7 @@
   cursor: pointer;
   outline: none;
   font-size: 16px;
-  font-family: var(--SourceCodePro-font), sans-serif;
+  font-family: var(--Rajdhani-font), sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   @media (max-width: 800px) {

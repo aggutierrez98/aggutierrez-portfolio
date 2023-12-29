@@ -192,6 +192,7 @@
   }
 
   span {
+    font-family: var(--Rajdhani-font), sans-serif;
     font-weight: 800;
     font-size: 20px;
     color: var(--foreground-light-color);

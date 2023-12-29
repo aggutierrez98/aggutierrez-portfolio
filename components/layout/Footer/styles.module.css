@@ -81,6 +81,8 @@
     margin-top: 1rem;
     font-size: clamp(1rem, 2vw, 1.2rem);
     color: var;
+    font-family: var(--Rajdhani-font), sans-serif;
+    font-weight: 500;
   }
 }
 .legendText {

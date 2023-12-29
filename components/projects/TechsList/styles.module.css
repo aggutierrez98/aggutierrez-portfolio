@@ -24,8 +24,10 @@
 }
 
 .techTag {
+  font-family: var(--Rajdhani-font), sans-serif;
+  font-weight: 500;
   border: 1px var(--foreground-light-color) solid;
-  padding: 10px;
+  padding: 10px 10px;
   display: flex;
   min-width: 20px;
   min-height: 20px;
@@ -39,7 +41,7 @@
     content: attr(data-text);
     opacity: 0;
     font-weight: bold;
-    font-size: 80%;
+    font-size: 90%;
     display: inline-block;
     max-width: 0;
     transition: all 0.3s;
@@ -53,6 +55,7 @@
       opacity: 1;
       visibility: visible;
       max-width: 80px;
+      margin-right: 3px;
     }
   }
 
@@ -76,6 +79,7 @@
 .extendedTag {
   margin-bottom: 10px;
   display: flex !important;
+  /* padding: 0 5px; */
 
   &:hover::after {
     margin-left: 5px;
@@ -89,7 +93,8 @@
   }
 
   &:after {
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     opacity: 1;
     visibility: visible;
     max-width: 120px;
@@ -98,7 +103,8 @@
 
   &:hover {
     &:after {
-      margin-left: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
       opacity: 1;
       visibility: visible;
       max-width: 120px;

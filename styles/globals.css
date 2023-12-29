@@ -46,7 +46,7 @@ h1 {
 }
 
 h2 {
-  font-family: var(--SourceCodePro-font), sans-serif;
+  font-family: var(--Rajdhani-font), sans-serif;
   font-weight: 500;
   width: fit-content;
   font-size: clamp(1.8rem, 3.2vw, 3rem);

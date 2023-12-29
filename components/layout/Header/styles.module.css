@@ -56,8 +56,8 @@
   }
   a {
     color: var(--accent-color);
-    /* font-family: Source Code Pro; */
-    font-size: 18px;
+    font-family: var(--Rajdhani-font), sans-serif;
+    font-size: 20px;
     text-decoration: none;
     display: inline-block;
     margin: 0;

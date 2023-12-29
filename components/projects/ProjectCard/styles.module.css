@@ -50,6 +50,7 @@
       }
     }
     .title {
+      font-family: var(--Rajdhani-font), sans-serif;
       max-width: fit-content;
       font-size: clamp(1.5rem, 2vw, 2rem);
       white-space: nowrap;

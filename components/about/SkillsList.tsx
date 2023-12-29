@@ -11,7 +11,7 @@ export const SkillsList = ({ data }: { data: About }) => {
       <m.div className={styles.skillsTable} variants={sectionItemVariant}>
         {Object.keys(data.skills).map((skillType) => (
           <div key={skillType} className={styles.skillsSection}>
-            <h3>{skillType}</h3>
+            <h4>{skillType}</h4>
             <ul>
               {(data.skills as SkillsDictionary)[skillType].map(
                 (skill: Skill, index: number) => {

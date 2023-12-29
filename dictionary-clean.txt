@@ -584,3 +584,6 @@ CLI
 Infisical
 diffetent
 npm
+Rajdhani
+Rajdhani-font
+rajdhani

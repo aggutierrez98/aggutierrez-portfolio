@@ -4,6 +4,7 @@
   margin-bottom: 5rem;
   color: var(--accent-color);
   h1 {
+    font-family: var(--Rajdhani-font), sans-serif;
     outline: none;
     margin: 5px;
     margin-bottom: 20px;
