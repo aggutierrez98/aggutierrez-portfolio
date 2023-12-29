@@ -3,6 +3,7 @@ export * from "./useContactForm";
 export * from "./useCopyToClipboard";
 export * from "./useOutsideAndEscapeKeyAlerter";
 export * from "./usePreserveScroll";
+export * from "./useShowScrollButton";
 export * from "./useScrollingUp";
 export * from "./useActiveSection";
 export * from "./useImageCarrousel";

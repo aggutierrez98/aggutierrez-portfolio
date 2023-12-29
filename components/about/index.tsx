@@ -26,6 +26,7 @@ export const About = ({ data }: Props) => {
             <div className={styles.textContainer}>
               <m.p variants={sectionItemVariant}>{data.description1}</m.p>
               <m.p variants={sectionItemVariant}>{data.description2}</m.p>
+              <m.p variants={sectionItemVariant}>{data.description3}</m.p>
             </div>
             <m.div
               className={styles.imageContainer}
