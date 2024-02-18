@@ -30,7 +30,7 @@ const InitProjectCard = ({
           <div className={styles.imageContainer}>
             <Link href={demo_url} passHref className={styles.imageLink}>
               <Image
-                src={image_url ? image_url : `${images_data?.folder}/1.png`}
+                src={image_url ? image_url : `${images_data?.folder}/1.jpg`}
                 alt={`${title}-example`}
                 fill
                 sizes="(max-width: 768px) 80vw, (max-width: 1000px) 50vw"

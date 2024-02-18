@@ -44,7 +44,7 @@ export const useImages = ({ image_url, images_data }: Props) => {
       setImages(() => {
         return Array.from(
           { length: images_data.count },
-          (_, i) => `${images_data.folder}/${i + 1}.png`
+          (_, i) => `${images_data.folder}/${i + 1}.jpg`
         );
       });
     } else {

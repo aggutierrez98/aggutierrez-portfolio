@@ -587,3 +587,4 @@ npm
 Rajdhani
 Rajdhani-font
 rajdhani
+.jpg
