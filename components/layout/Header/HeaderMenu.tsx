@@ -32,8 +32,8 @@ export const HeaderMenu = () => {
     <menu className={styles.menu}>
       <m.ul initial="hidden" animate="visible" variants={headerListVariant}>
         <HeaderLink href="/#home" title="Home" />
-        <HeaderLink href="/#about" title="About" />
         <HeaderLink href="/#experience" title="Experience" />
+        <HeaderLink href="/#about" title="About" />
         <HeaderLink href="/#projects" title="Projects" />
         <HeaderLink href="/#contact" title="Contact" />
       </m.ul>

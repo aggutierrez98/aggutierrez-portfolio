@@ -1,22 +1,20 @@
+.aboutSection {
+  background-color: var(--background-light-color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .about {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 7.5rem 0;
-  width: 100%;
-}
-
-.aboutContainer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  margin-bottom: 8vh;
-  padding-top: 8.5vh;
-  padding-bottom: 5vh;
-  width: 90%;
-  @media (max-width: 1000px) {
+  /* padding: 10rem 0; */
+  width: 1024px;
+  @media (max-width: 1024px) {
     width: 90%;
     flex-direction: column;
     padding-top: 1rem;
@@ -24,6 +22,14 @@
   @media (max-width: 500px) {
     width: 90%;
   }
+}
+
+.aboutContainer {
+  margin-bottom: 8vh;
+  padding-top: 8.5vh;
+  padding-bottom: 5vh;
+  width: 90%;
+
   h2 {
     align-self: flex-start;
   }
@@ -36,7 +42,7 @@
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
   }
@@ -57,11 +63,11 @@
     font-weight: 300;
     letter-spacing: 1px;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     margin-right: 20px;
     width: 400px;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     width: 100%;
     max-width: fit-content;
     margin-right: 0;

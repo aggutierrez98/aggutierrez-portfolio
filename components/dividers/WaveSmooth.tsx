@@ -1,11 +1,11 @@
 import styles from "./styles.module.css";
 interface Props {
-  alt: 1 | 2;
+  alt: "light" | "dark";
 }
 
 export const WaveSmooth = ({ alt }: Props) => (
   <svg
-    className={alt === 1 ? styles.divider1 : styles.divider2}
+    className={alt === "dark" ? styles.divider1 : styles.divider2}
     id="visual"
     viewBox="0 0 4000 300"
     width="4000"

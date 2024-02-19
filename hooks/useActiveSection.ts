@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 
 const sections = [
   "home",
-  "about",
   "experience",
+  "about",
   "projects",
   "contact",
 ] as const;

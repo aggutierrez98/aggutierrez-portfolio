@@ -11,7 +11,7 @@ interface Props {
 
 export const About = ({ data }: Props) => {
   return (
-    <section id="about">
+    <section id="about" className={styles.aboutSection}>
       <m.div
         className={styles.about}
         initial="hidden"
