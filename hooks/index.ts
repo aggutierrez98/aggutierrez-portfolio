@@ -6,7 +6,6 @@ export * from "./usePreserveScroll";
 export * from "./useShowScrollButton";
 export * from "./useScrollingUp";
 export * from "./useActiveSection";
-export * from "./useImageCarrousel";
 export * from "./useImageModal";
 export * from "./useParagraphFromJSON";
 export * from "./useTypedText";

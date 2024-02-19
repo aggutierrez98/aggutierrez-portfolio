@@ -5,10 +5,11 @@ export interface Project {
   back_github_url: string;
   demo_url: string;
   server_url: string;
-  image_url?: string;
-  images_data?: {
-    folder: string;
-    count: number;
+  images_data: {
+    main_image: string;
+    image_url?: string;
+    folder?: string;
+    count?: number;
   };
   techs: string[] | Skill[];
 }

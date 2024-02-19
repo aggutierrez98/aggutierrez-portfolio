@@ -1,15 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { AnimatePresence, m } from "framer-motion";
+import { m } from "framer-motion";
 import { sectionItemVariant } from "@c/layout/variants";
-import { sliderVariants } from "./variants";
+import { blurImageSrc } from "helpers";
+import { Swiper, SwiperSlide } from "swiper/react";
 import {
-  ArrowBackSVGIcon,
-  ArrowForwardSVGIcon,
-} from "@react-md/material-icons";
-import { useImageCarrousel } from "hooks";
-import { swipeConfidenceThreshold, swipePower, blurImageSrc } from "helpers";
+  Navigation,
+  Scrollbar,
+  A11y,
+  Keyboard,
+  EffectCreative,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/scrollbar";
 
 interface Props {
   images: string[];
@@ -18,95 +23,78 @@ interface Props {
 }
 
 export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
-  const {
-    direction,
-    page,
-    setNextPage,
-    setPrevPage,
-    // toggleDragging,
-    // isDragging,
-  } = useImageCarrousel(images);
-
   return (
     <>
-      {images.length > 0 ? (
-        images.length === 1 ? (
-          <m.div
-            className={styles.imageContainer}
-            variants={sectionItemVariant}
+      {images?.length === 1 ? (
+        <m.div className={styles.imageContainer} variants={sectionItemVariant}>
+          <div className={styles.imageBox}>
+            <Image
+              onClick={(e) => {
+                e.stopPropagation();
+                if (actionCallback) actionCallback(0);
+              }}
+              priority
+              src={images[0]}
+              alt={`${title}-example`}
+              placeholder="blur"
+              blurDataURL={blurImageSrc}
+              fill
+              sizes="100vw"
+            />
+          </div>
+          <div className={styles.imageBackground}></div>
+        </m.div>
+      ) : (
+        <m.div
+          className={styles.carrouselContainer}
+          variants={sectionItemVariant}
+          initial="hidden"
+          whileInView="visible"
+        >
+          <Swiper
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+            tag="section"
+            modules={[Navigation, Scrollbar, A11y, Keyboard, EffectCreative]}
+            keyboard
+            effect="creative"
+            creativeEffect={{
+              prev: {
+                shadow: true,
+                translate: [0, 0, -400],
+              },
+              next: {
+                translate: ["100%", 0, 0],
+              },
+            }}
+            navigation
+            scrollbar={{
+              draggable: true,
+            }}
           >
-            <div className={styles.imageBox}>
-              <Image
+            {images.map((image, index) => (
+              <SwiperSlide
+                key={index}
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (actionCallback) actionCallback(0);
+                  if (actionCallback) actionCallback(index);
                 }}
-                priority
-                src={images[0]}
-                alt={`${title}-example`}
-                placeholder="blur"
-                blurDataURL={blurImageSrc}
-                fill
-                sizes="100vw"
-              />
-            </div>
-            <div className={styles.imageBackground}></div>
-          </m.div>
-        ) : (
-          <m.div
-            className={styles.carrouselContainer}
-            variants={sectionItemVariant}
-            initial="hidden"
-            whileInView="visible"
-          >
-            <div className={styles.carrouselImageBox}>
-              <AnimatePresence initial={false}>
-                <m.img
-                  onClick={(e) => {
-                    // if (isDragging) return;
-                    e.stopPropagation();
-                    if (actionCallback) actionCallback(page);
-                  }}
-                  key={page}
-                  src={images[page]}
-                  custom={direction}
-                  variants={sliderVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  whileTap="tap"
-                  drag="x"
-                  // onDragStart={toggleDragging}
-                  // dragConstraints={{ left: 0, right: 0 }}
-                  // dragElastic={0.55}
-                  // onDragEnd={(_, { offset, velocity }) => {
-                  //   const swipe = swipePower(offset.x, velocity.x);
-                  //   if (swipe < -swipeConfidenceThreshold) setNextPage();
-                  //   else if (swipe > swipeConfidenceThreshold) setPrevPage();
-                  //   toggleDragging();
-                  // }}
-                />
-              </AnimatePresence>
-            </div>
-            <div className={styles.imageBackground}></div>
-            <button
-              className={styles.prev}
-              onClick={() => setPrevPage()}
-              disabled={page === 0}
-            >
-              <ArrowBackSVGIcon />
-            </button>
-            <button
-              className={styles.next}
-              onClick={() => setNextPage()}
-              disabled={page === images.length - 1}
-            >
-              <ArrowForwardSVGIcon />
-            </button>
-          </m.div>
-        )
-      ) : (
-        <></>
+              >
+                <div className={styles.carrouselImageBox}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    alt={`${title}-illustration-${index}`}
+                    src={image}
+                    loading="lazy"
+                  />
+                  <div className="swiper-lazy-preloader"></div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </m.div>
       )}
     </>
   );

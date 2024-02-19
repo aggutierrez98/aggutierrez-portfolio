@@ -13,27 +13,15 @@ interface Props {
 
 export const ProjectsModule = ({ projects, isProjectsPage = false }: Props) => {
   const [projectsToRender, setProjectsToRender] = useState(
-    projects.slice(0, 4)
+    projects.slice(0, 3)
   );
-  const [page, setPage] = useState(0);
-  const [hasMoreProjects, setHasMoreProjects] = useState(true);
+  const [page] = useState(0);
 
   useEffect(() => {
-    if (!isProjectsPage) setProjectsToRender(projects.slice(0, 4));
-    else {
-      setProjectsToRender(() => {
-        const newProjects = projects.slice(0, (page + 1) * 4);
-        return newProjects;
-      });
-    }
-
+    if (!isProjectsPage) setProjectsToRender(projects.slice(0, 3));
+    else setProjectsToRender(projects);
     return () => setProjectsToRender([]);
   }, [isProjectsPage, projects, page]);
-
-  useEffect(() => {
-    if (projectsToRender.length % 4 !== 0) setHasMoreProjects(false);
-    return () => setHasMoreProjects(true);
-  }, [projectsToRender]);
 
   return (
     <section id="projects" className={styles.projects}>
@@ -52,7 +40,7 @@ export const ProjectsModule = ({ projects, isProjectsPage = false }: Props) => {
           ))}
         </m.div>
 
-        {!isProjectsPage ? (
+        {!isProjectsPage && (
           <Link
             href={`/projects`}
             passHref
@@ -71,19 +59,6 @@ export const ProjectsModule = ({ projects, isProjectsPage = false }: Props) => {
               ;
             </m.div>
           </Link>
-        ) : (
-          hasMoreProjects && (
-            <m.div className={styles.showMoreButton}>
-              <button
-                onClick={() => {
-                  setPage((prevPage) => prevPage + 1);
-                }}
-              >
-                LOAD MORE
-              </button>
-              ;
-            </m.div>
-          )
         )}
       </m.div>
     </section>

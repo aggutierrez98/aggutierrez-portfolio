@@ -7,7 +7,6 @@ import { boxVariants } from "../ProjectCard/variants";
 import { sectionVariant, sectionItemVariant } from "components/layout/variants";
 import { ImagesCarrousel } from "./ImagesCarrousel";
 import { useImages, useParagraphFromJSON } from "hooks";
-import { useEffect, useState } from "react";
 interface Props {
   projectData: Project;
 }
@@ -20,14 +19,12 @@ export const ProjectDetails = ({ projectData }: Props) => {
     front_github_url,
     back_github_url,
     title,
-    image_url,
     images_data,
     techs,
   } = projectData;
 
   const paragraphRef = useParagraphFromJSON(description);
   const { modalOpen, imageToShow, openModal, closeModal, images } = useImages({
-    image_url,
     images_data,
   });
 

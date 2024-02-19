@@ -103,3 +103,24 @@ ul {
     filter: blur(5px) brightness(0.7);
   }
 }
+
+/* SWIPER STYLES */
+.swiper-button {
+  &-prev,
+  &-next {
+    &:after {
+      font-size: 30px !important;
+    }
+    &::after {
+      color: var(--primary-color);
+    }
+  }
+}
+.swiper-lazy-preloader {
+  border-color: var(--primary-color) !important;
+  border-top-color: transparent !important;
+}
+.swiper-scrollbar-drag {
+  height: 5px !important;
+  background-color: var(--primary-color) !important;
+}

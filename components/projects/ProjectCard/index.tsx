@@ -14,7 +14,7 @@ interface Props {
 }
 
 const InitProjectCard = ({
-  projectData: { title, description, image_url, images_data, techs, demo_url },
+  projectData: { title, description, images_data, techs, demo_url },
 }: Props) => {
   const paragraphRef = useParagraphFromJSON(description);
 
@@ -26,11 +26,11 @@ const InitProjectCard = ({
       exit="exit"
     >
       <div className={styles.cardContainer}>
-        {(image_url || images_data) && (
+        {(images_data.folder || images_data.image_url) && (
           <div className={styles.imageContainer}>
             <Link href={demo_url} passHref className={styles.imageLink}>
               <Image
-                src={image_url ? image_url : `${images_data?.folder}/1.jpg`}
+                src={images_data.main_image}
                 alt={`${title}-example`}
                 fill
                 sizes="(max-width: 768px) 80vw, (max-width: 1000px) 50vw"
