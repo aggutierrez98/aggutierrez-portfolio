@@ -588,3 +588,10 @@ Rajdhani
 Rajdhani-font
 rajdhani
 .jpg
+EffectCreative
+Swiper
+SwiperSlide
+draggable
+prev
+scrollbar
+swiper

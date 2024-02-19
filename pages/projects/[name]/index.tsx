@@ -22,7 +22,10 @@ const ProjectPage = ({ projectData, metadata }: Props) => {
   const { pathname } = useRouter();
   const { title, description, image_source } = metadata[pathname];
   const url = `${origin}${pathname}`;
-  const { title: prjTitle, image_url: prjImage } = projectData;
+  const {
+    title: prjTitle,
+    images_data: { image_url: prjImage },
+  } = projectData;
 
   return (
     <>
