@@ -75,7 +75,6 @@ const HomePage = ({ projects, experience, info, metadata }: Props) => {
 
       <ContactModule data={contactData} />
 
-      {/* <WaveSmooth alt="dark" /> */}
       <LayeredWaves />
     </>
   );

@@ -13,15 +13,14 @@ interface Props {
 export const useImages = ({
   images_data: { image_url, count, folder },
 }: Props) => {
-  const { query, asPath, push, pathname } = useRouter();
+  const { query, asPath, push, pathname, back } = useRouter();
 
   const [images, setImages] = useState<string[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageToShow, setImageToShow] = useState("");
 
   const closeModal = () => {
-    const path = asPath.split("/images")[0];
-    push(path);
+    back();
     setIsModalOpen(false);
   };
 
@@ -36,8 +35,6 @@ export const useImages = ({
         pathname: `${asPath}images/${image_index}`,
       }
     );
-    setIsModalOpen(true);
-    setImageToShow(images[image_index]);
   };
 
   useEffect(() => {

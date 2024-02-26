@@ -35,6 +35,7 @@ export const ContactModule = ({ data }: Props) => {
       <m.div
         className={styles.contactModule}
         variants={sectionVariant}
+        viewport={{ once: true }}
         initial="hidden"
         whileInView="visible"
       >

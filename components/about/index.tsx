@@ -17,6 +17,7 @@ export const About = ({ data }: Props) => {
         initial="hidden"
         whileInView="visible"
         variants={sectionVariant}
+        viewport={{ once: true }}
       >
         <div className={styles.aboutContainer}>
           <m.h2 tabIndex={0} variants={sectionItemVariant}>

@@ -1,8 +1,10 @@
 import { Variants } from "framer-motion";
 
 export const sectionVariant: Variants = {
-  visible: {
+  hidden: {
     type: "spring",
+  },
+  visible: {
     transition: {
       damping: 10,
       stiffness: 100,

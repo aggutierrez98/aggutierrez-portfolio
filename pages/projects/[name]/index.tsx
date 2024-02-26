@@ -81,14 +81,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const name = context.params?.name;
+  const name = context.params?.name as string;
 
   const metadata = await getMetaData();
   const socialMediaData = await getSocialMediaData();
   const projects = await getProjectsData();
   const skillsData = await getSkillsData();
 
-  let projectData = projects.find((project: Project) => project.title === name);
+  let projectData = projects.find(
+    (project: Project) =>
+      project.title.toLocaleUpperCase() === name?.toLocaleUpperCase()
+  );
 
   if (!projectData) {
     return {

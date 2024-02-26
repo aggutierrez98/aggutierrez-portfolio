@@ -1,7 +1,6 @@
 import { Work } from "interfaces";
 import styles from "./workCard.module.css";
 import { m } from "framer-motion";
-import { sectionItemVariant } from "../../layout/variants";
 import {
   timeLineVariant,
   tasksContainerVariant,
@@ -22,6 +21,7 @@ export const WorkCard = ({
       variants={containerVariant}
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: true }}
     >
       <div className={styles.leftSide}>
         <p>{time}</p>

@@ -22,6 +22,7 @@ export const LinksList = ({
       variants={sectionVariant}
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: true }}
     >
       <m.h3 variants={sectionItemVariant} tabIndex={0}>
         Links

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { NotFoundSign, LayeredWaves } from "components";
-import { getMetaData } from "helpers";
+import { getMetaData, getSocialMediaData } from "helpers";
 import { MetaData } from "interfaces";
 import { GetStaticProps } from "next";
 
@@ -46,12 +46,14 @@ const NotFoundPage = ({ metadata }: Props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const metadata = await getMetaData();
+  const socialMediaData = await getSocialMediaData();
 
   return {
     props: {
       metadata,
+      socialMediaData,
     },
   };
 };

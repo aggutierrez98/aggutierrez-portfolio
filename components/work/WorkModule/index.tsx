@@ -14,6 +14,7 @@ export const WorkModule = ({ works }: Props) => {
       <m.div
         className={styles.workContainer}
         variants={sectionVariant}
+        viewport={{ once: true }}
         initial="hidden"
         whileInView="visible"
       >

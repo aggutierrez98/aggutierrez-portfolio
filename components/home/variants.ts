@@ -7,7 +7,7 @@ export const homeVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      // duration: 0.1,
+      duration: 0.1,
       staggerChildren: 0.2,
       type: "spring",
       stiffness: 400,

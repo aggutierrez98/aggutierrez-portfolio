@@ -10,6 +10,7 @@ export const NotFoundSign = () => {
       initial="hidden"
       whileInView="visible"
       variants={sectionVariant}
+      viewport={{ once: true }}
     >
       <m.h2 variants={sectionItemVariant}>404</m.h2>
       <m.h3 variants={sectionItemVariant}>Page Not Found</m.h3>

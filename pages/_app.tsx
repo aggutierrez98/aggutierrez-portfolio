@@ -4,7 +4,7 @@ import { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { Source_Code_Pro, Raleway, Rajdhani } from "next/font/google";
+import { Raleway, Rajdhani } from "next/font/google";
 import { MainLayout } from "components";
 import { ToastProvider } from "context/ToastContext";
 import { usePreserveScroll } from "hooks";

@@ -24,6 +24,7 @@ const InitProjectCard = ({
       whileInView="visible"
       initial="hidden"
       exit="exit"
+      viewport={{ once: true }}
     >
       <div className={styles.cardContainer}>
         {(images_data.folder || images_data.image_url) && (

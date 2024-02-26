@@ -35,7 +35,7 @@ export const tasksContainerVariant = {
       delayChildren: 0.5,
       duration: 0.35,
       staggerChildren: 0.3,
-      //   type: "spring",
+      type: "spring",
       //   stiffness: 400,
       //   damping: 10,
     },

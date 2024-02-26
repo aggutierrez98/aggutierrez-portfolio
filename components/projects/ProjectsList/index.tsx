@@ -28,6 +28,7 @@ export const ProjectsModule = ({ projects, isProjectsPage = false }: Props) => {
       <m.div
         className={styles.projectsContainer}
         variants={sectionVariant}
+        viewport={{ once: true }}
         initial="hidden"
         whileInView="visible"
       >

@@ -22,7 +22,6 @@ export const ProjectDetails = ({ projectData }: Props) => {
     images_data,
     techs,
   } = projectData;
-
   const paragraphRef = useParagraphFromJSON(description);
   const { modalOpen, imageToShow, openModal, closeModal, images } = useImages({
     images_data,
@@ -33,6 +32,7 @@ export const ProjectDetails = ({ projectData }: Props) => {
       <m.div
         className={styles.detailsContainer}
         variants={sectionVariant}
+        viewport={{ once: true }}
         initial="hidden"
         whileInView="visible"
       >
