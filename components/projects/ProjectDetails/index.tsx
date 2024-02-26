@@ -7,6 +7,7 @@ import { boxVariants } from "../ProjectCard/variants";
 import { sectionVariant, sectionItemVariant } from "components/layout/variants";
 import { ImagesCarrousel } from "./ImagesCarrousel";
 import { useImages, useParagraphFromJSON } from "hooks";
+import Image from "next/image";
 interface Props {
   projectData: Project;
 }
@@ -98,8 +99,14 @@ export const ProjectDetails = ({ projectData }: Props) => {
         buttonClassName={styles.modalButton}
         contentClassName={styles.modelContent}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        {imageToShow && <img src={imageToShow} alt={`${title}-example`} />}
+        {imageToShow && (
+          <Image
+            src={imageToShow}
+            alt={`${title}-example`}
+            loading="lazy"
+            fill={true}
+          />
+        )}
       </CustomModal>
     </>
   );

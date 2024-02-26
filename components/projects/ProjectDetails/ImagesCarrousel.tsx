@@ -62,11 +62,12 @@ export const ImagesCarrousel = ({ images, title, actionCallback }: Props) => {
             }}
           >
             <div className={styles.carrouselImageBox}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
+                priority={index === 0}
                 alt={`${title}-illustration-${index}`}
                 src={image}
-                loading="lazy"
+                loading={index === 0 ? "eager" : "lazy"}
+                fill={true}
               />
               <div className="swiper-lazy-preloader"></div>
             </div>
