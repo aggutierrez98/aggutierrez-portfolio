@@ -1,40 +1,51 @@
 {
-  "name": "aggutierrez-portfolio",
-  "short_name": "aggutierrez",
-  "start_url": "/",
-  "scope": "/",
-  "display": "standalone",
-  "orientation": "portrait",
-  "purpose": "any maskable",
   "theme_color": "#222831",
   "background_color": "#222831",
-  "description": "Agustin Gutierrez personal webpage",
   "icons": [
     {
-      "src": "/maskable_icon_x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/icon-256x256.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "/icon-512x512.png",
+      "purpose": "maskable",
       "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
       "type": "image/png"
     }
-  ]
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot.png",
+      "sizes": "2869x1918",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Aggutierrez homepage"
+    },
+    {
+      "src": "screenshot2.png",
+      "sizes": "726x1478",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Aggutierrez homepage"
+    },
+    {
+      "src": "screenshot3.png",
+      "sizes": "726x1478",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Aggutierrez experience section"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "ltr",
+  "lang": "en-EN",
+  "start_url": "/",
+  "scope": "/",
+  "name": "aggutierrez-portfolio",
+  "short_name": "aggutierrez",
+  "description": "Agustin Gutierrez personal webpage",
+  "id": "aggutierrez-portfolio"
 }

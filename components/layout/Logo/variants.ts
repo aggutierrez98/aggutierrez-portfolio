@@ -5,22 +5,25 @@ export const svgVariant: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-  },
-};
-
-export const boxVariant: Variants = {
-  initial: { pathLength: 0, filter: "none" },
-  visible: {
-    pathLength: 1,
-    transition: { duration: 1.25, ease: "easeOut" },
+    // transition: {
+    //   duration: 0.25
+    // }
   },
 };
 
 export const logoVariant: Variants = {
-  initial: { pathLength: 0, opacity: 0 },
+  initial: { pathLength: 0, filter: "none", pathOffset: 0 },
   visible: {
     pathLength: 1,
-    opacity: 1,
-    transition: { duration: 1.25, ease: "easeIn" },
+    transition: { duration: 15, ease: "easeOut" },
   },
 };
+
+// export const logoVariant: Variants = {
+//   initial: { pathLength: 0, opacity: 0 },
+//   visible: {
+//     pathLength: 1,
+//     opacity: 1,
+//     transition: { duration: .25, ease: "easeIn" },
+//   },
+// };
